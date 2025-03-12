@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F9261CDA2D76166100577301 /* ChatWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9261CBC2D76166100577301 /* ChatWebViewController.m */; };
+		F9261CDB2D76166100577301 /* NetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F9261CBD2D76166100577301 /* NetworkTool.m */; };
+		F9261CDC2D76166100577301 /* CustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = F9261CBE2D76166100577301 /* CustomOptionsView.h */; };
+		F9261CDD2D76166100577301 /* AVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9261CBF2D76166100577301 /* AVCaptureViewController.m */; };
+		F9261CDE2D76166100577301 /* ChatWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F9261CC02D76166100577301 /* ChatWebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9261CDF2D76166100577301 /* CustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9261CC12D76166100577301 /* CustomOptionsView.m */; };
+		F9261CE02D76166100577301 /* NetworkTool.h in Headers */ = {isa = PBXBuildFile; fileRef = F9261CC22D76166100577301 /* NetworkTool.h */; };
+		F9261CE12D76166100577301 /* AVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F9261CC32D76166100577301 /* AVCaptureViewController.h */; };
+		F9261CE52D76166100577301 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9261CC92D76166100577301 /* UserModel.m */; };
+		F9261CE62D76166100577301 /* InitialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9261CCA2D76166100577301 /* InitialModel.m */; };
+		F9261CE72D76166100577301 /* WebCallBackModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F9261CCB2D76166100577301 /* WebCallBackModel.h */; };
+		F9261CE82D76166100577301 /* WebCallBackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9261CCC2D76166100577301 /* WebCallBackModel.m */; };
+		F9261CE92D76166100577301 /* InitialModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F9261CCD2D76166100577301 /* InitialModel.h */; };
+		F9261CEA2D76166100577301 /* UserModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F9261CCE2D76166100577301 /* UserModel.h */; };
+		F9261CEC2D76166100577301 /* VocaiChatModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F9261CD12D76166100577301 /* VocaiChatModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9261CED2D76166100577301 /* VocaiChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9261CD22D76166100577301 /* VocaiChatModel.m */; };
+		F9261CEE2D76166100577301 /* PollingRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F9261CD42D76166100577301 /* PollingRequestTool.m */; };
+		F9261CEF2D76166100577301 /* ImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = F9261CD52D76166100577301 /* ImageUploader.m */; };
+		F9261CF02D76166100577301 /* RandomStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = F9261CD62D76166100577301 /* RandomStringGenerator.h */; };
+		F9261CF12D76166100577301 /* PollingRequestTool.h in Headers */ = {isa = PBXBuildFile; fileRef = F9261CD72D76166100577301 /* PollingRequestTool.h */; };
+		F9261CF22D76166100577301 /* ImageUploader.h in Headers */ = {isa = PBXBuildFile; fileRef = F9261CD82D76166100577301 /* ImageUploader.h */; };
+		F9261CF32D76166100577301 /* RandomStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = F9261CD92D76166100577301 /* RandomStringGenerator.m */; };
+		F9261D512D76225C00577301 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9261D402D76225C00577301 /* Localizable.strings */; };
+		F9261D522D76225C00577301 /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = F9261D482D76225C00577301 /* Localizable.json */; };
+		F9261D532D76225C00577301 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9261D492D76225C00577301 /* Assets.xcassets */; };
+		F9261D742D76F90200577301 /* LanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F9261D722D76F90200577301 /* LanguageTool.m */; };
+		F9261D752D76F90200577301 /* LanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = F9261D732D76F90200577301 /* LanguageTool.h */; };
+		F9B221842D7F168D00DA5B87 /* Source.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F9B221832D7F168D00DA5B87 /* Source.bundle */; };
+		F9B221852D7F178300DA5B87 /* Source.bundle in Sources */ = {isa = PBXBuildFile; fileRef = F9B221832D7F168D00DA5B87 /* Source.bundle */; };
+		F9BB2D412D79E15000C66FC2 /* VocaiSdkBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = F9BB2D3F2D79E15000C66FC2 /* VocaiSdkBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9BB2D422D79E15000C66FC2 /* VocaiSdkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = F9BB2D402D79E15000C66FC2 /* VocaiSdkBuilder.m */; };
+		F9DD8D6F2D7417CA004EFAAF /* VocalWebcomponent.h in Headers */ = {isa = PBXBuildFile; fileRef = F9DD8D6E2D7417CA004EFAAF /* VocalWebcomponent.h */; };
+		F9DD8D782D7417DD004EFAAF /* MySDK.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DD8D762D7417DD004EFAAF /* MySDK.m */; };
+		F9DF29322D78A415001D4E7C /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DF29302D78A415001D4E7C /* PDFDisplayView.m */; };
+		F9DF29332D78A415001D4E7C /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = F9DF29312D78A415001D4E7C /* PDFDisplayView.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F9261CBC2D76166100577301 /* ChatWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatWebViewController.m; sourceTree = "<group>"; };
+		F9261CBD2D76166100577301 /* NetworkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkTool.m; sourceTree = "<group>"; };
+		F9261CBE2D76166100577301 /* CustomOptionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomOptionsView.h; sourceTree = "<group>"; };
+		F9261CBF2D76166100577301 /* AVCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCaptureViewController.m; sourceTree = "<group>"; };
+		F9261CC02D76166100577301 /* ChatWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatWebViewController.h; sourceTree = "<group>"; };
+		F9261CC12D76166100577301 /* CustomOptionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomOptionsView.m; sourceTree = "<group>"; };
+		F9261CC22D76166100577301 /* NetworkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkTool.h; sourceTree = "<group>"; };
+		F9261CC32D76166100577301 /* AVCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCaptureViewController.h; sourceTree = "<group>"; };
+		F9261CC92D76166100577301 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		F9261CCA2D76166100577301 /* InitialModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialModel.m; sourceTree = "<group>"; };
+		F9261CCB2D76166100577301 /* WebCallBackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebCallBackModel.h; sourceTree = "<group>"; };
+		F9261CCC2D76166100577301 /* WebCallBackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebCallBackModel.m; sourceTree = "<group>"; };
+		F9261CCD2D76166100577301 /* InitialModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialModel.h; sourceTree = "<group>"; };
+		F9261CCE2D76166100577301 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		F9261CD12D76166100577301 /* VocaiChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VocaiChatModel.h; sourceTree = "<group>"; };
+		F9261CD22D76166100577301 /* VocaiChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VocaiChatModel.m; sourceTree = "<group>"; };
+		F9261CD42D76166100577301 /* PollingRequestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollingRequestTool.m; sourceTree = "<group>"; };
+		F9261CD52D76166100577301 /* ImageUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageUploader.m; sourceTree = "<group>"; };
+		F9261CD62D76166100577301 /* RandomStringGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomStringGenerator.h; sourceTree = "<group>"; };
+		F9261CD72D76166100577301 /* PollingRequestTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollingRequestTool.h; sourceTree = "<group>"; };
+		F9261CD82D76166100577301 /* ImageUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUploader.h; sourceTree = "<group>"; };
+		F9261CD92D76166100577301 /* RandomStringGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomStringGenerator.m; sourceTree = "<group>"; };
+		F9261D412D76225C00577301 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F9261D422D76225C00577301 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F9261D432D76225C00577301 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		F9261D442D76225C00577301 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F9261D452D76225C00577301 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F9261D462D76225C00577301 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F9261D472D76225C00577301 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F9261D482D76225C00577301 /* Localizable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Localizable.json; sourceTree = "<group>"; };
+		F9261D492D76225C00577301 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F9261D4A2D76225C00577301 /* id-ID */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "id-ID"; path = "id-ID.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		F9261D4C2D76225C00577301 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F9261D4D2D76225C00577301 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		F9261D4E2D76225C00577301 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F9261D4F2D76225C00577301 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F9261D502D76225C00577301 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F9261D722D76F90200577301 /* LanguageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageTool.m; sourceTree = "<group>"; };
+		F9261D732D76F90200577301 /* LanguageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageTool.h; sourceTree = "<group>"; };
+		F9B221832D7F168D00DA5B87 /* Source.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Source.bundle; sourceTree = "<group>"; };
+		F9BB2D3F2D79E15000C66FC2 /* VocaiSdkBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VocaiSdkBuilder.h; sourceTree = "<group>"; };
+		F9BB2D402D79E15000C66FC2 /* VocaiSdkBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VocaiSdkBuilder.m; sourceTree = "<group>"; };
+		F9DD8D6B2D7417C9004EFAAF /* VocalWebcomponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VocalWebcomponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9DD8D6E2D7417CA004EFAAF /* VocalWebcomponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VocalWebcomponent.h; sourceTree = "<group>"; };
+		F9DD8D752D7417DD004EFAAF /* MySDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MySDK.h; sourceTree = "<group>"; };
+		F9DD8D762D7417DD004EFAAF /* MySDK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySDK.m; sourceTree = "<group>"; };
+		F9DF29302D78A415001D4E7C /* PDFDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFDisplayView.m; sourceTree = "<group>"; };
+		F9DF29312D78A415001D4E7C /* PDFDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFDisplayView.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F9DD8D682D7417C9004EFAAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F9261CBB2D76166100577301 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F9BB2D3F2D79E15000C66FC2 /* VocaiSdkBuilder.h */,
+				F9BB2D402D79E15000C66FC2 /* VocaiSdkBuilder.m */,
+				F9DF29312D78A415001D4E7C /* PDFDisplayView.h */,
+				F9DF29302D78A415001D4E7C /* PDFDisplayView.m */,
+				F9261CBC2D76166100577301 /* ChatWebViewController.m */,
+				F9261CC02D76166100577301 /* ChatWebViewController.h */,
+				F9261CBD2D76166100577301 /* NetworkTool.m */,
+				F9261CBE2D76166100577301 /* CustomOptionsView.h */,
+				F9261CBF2D76166100577301 /* AVCaptureViewController.m */,
+				F9261CC12D76166100577301 /* CustomOptionsView.m */,
+				F9261CC22D76166100577301 /* NetworkTool.h */,
+				F9261CC32D76166100577301 /* AVCaptureViewController.h */,
+			);
+			path = View;
+			sourceTree = SOURCE_ROOT;
+		};
+		F9261CC82D76166100577301 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F9261CC92D76166100577301 /* UserModel.m */,
+				F9261CCA2D76166100577301 /* InitialModel.m */,
+				F9261CCB2D76166100577301 /* WebCallBackModel.h */,
+				F9261CCC2D76166100577301 /* WebCallBackModel.m */,
+				F9261CCD2D76166100577301 /* InitialModel.h */,
+				F9261CCE2D76166100577301 /* UserModel.h */,
+			);
+			path = Model;
+			sourceTree = SOURCE_ROOT;
+		};
+		F9261CD02D76166100577301 /* Params */ = {
+			isa = PBXGroup;
+			children = (
+				F9261CD12D76166100577301 /* VocaiChatModel.h */,
+				F9261CD22D76166100577301 /* VocaiChatModel.m */,
+			);
+			path = Params;
+			sourceTree = SOURCE_ROOT;
+		};
+		F9261CD32D76166100577301 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				F9261D732D76F90200577301 /* LanguageTool.h */,
+				F9261D722D76F90200577301 /* LanguageTool.m */,
+				F9261CD42D76166100577301 /* PollingRequestTool.m */,
+				F9261CD52D76166100577301 /* ImageUploader.m */,
+				F9261CD62D76166100577301 /* RandomStringGenerator.h */,
+				F9261CD72D76166100577301 /* PollingRequestTool.h */,
+				F9261CD82D76166100577301 /* ImageUploader.h */,
+				F9261CD92D76166100577301 /* RandomStringGenerator.m */,
+			);
+			path = Tool;
+			sourceTree = SOURCE_ROOT;
+		};
+		F9261D3F2D76225C00577301 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F9261D402D76225C00577301 /* Localizable.strings */,
+				F9261D482D76225C00577301 /* Localizable.json */,
+				F9261D492D76225C00577301 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = SOURCE_ROOT;
+		};
+		F9DD8D612D7417C9004EFAAF = {
+			isa = PBXGroup;
+			children = (
+				F9B221832D7F168D00DA5B87 /* Source.bundle */,
+				F9DD8D6D2D7417CA004EFAAF /* VocalWebcomponent */,
+				F9DD8D6C2D7417C9004EFAAF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F9DD8D6C2D7417C9004EFAAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F9DD8D6B2D7417C9004EFAAF /* VocalWebcomponent.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F9DD8D6D2D7417CA004EFAAF /* VocalWebcomponent */ = {
+			isa = PBXGroup;
+			children = (
+				F9261D3F2D76225C00577301 /* Resource */,
+				F9261CC82D76166100577301 /* Model */,
+				F9261CD02D76166100577301 /* Params */,
+				F9261CD32D76166100577301 /* Tool */,
+				F9261CBB2D76166100577301 /* View */,
+				F9DD8D6E2D7417CA004EFAAF /* VocalWebcomponent.h */,
+				F9DD8D752D7417DD004EFAAF /* MySDK.h */,
+				F9DD8D762D7417DD004EFAAF /* MySDK.m */,
+			);
+			path = VocalWebcomponent;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F9DD8D662D7417C9004EFAAF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9261CE02D76166100577301 /* NetworkTool.h in Headers */,
+				F9BB2D412D79E15000C66FC2 /* VocaiSdkBuilder.h in Headers */,
+				F9DD8D6F2D7417CA004EFAAF /* VocalWebcomponent.h in Headers */,
+				F9261CDC2D76166100577301 /* CustomOptionsView.h in Headers */,
+				F9261CF12D76166100577301 /* PollingRequestTool.h in Headers */,
+				F9261CDE2D76166100577301 /* ChatWebViewController.h in Headers */,
+				F9261CEC2D76166100577301 /* VocaiChatModel.h in Headers */,
+				F9261CE72D76166100577301 /* WebCallBackModel.h in Headers */,
+				F9261CE12D76166100577301 /* AVCaptureViewController.h in Headers */,
+				F9261CF02D76166100577301 /* RandomStringGenerator.h in Headers */,
+				F9DF29332D78A415001D4E7C /* PDFDisplayView.h in Headers */,
+				F9261CF22D76166100577301 /* ImageUploader.h in Headers */,
+				F9261CE92D76166100577301 /* InitialModel.h in Headers */,
+				F9261CEA2D76166100577301 /* UserModel.h in Headers */,
+				F9261D752D76F90200577301 /* LanguageTool.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		F9DD8D6A2D7417C9004EFAAF /* VocalWebcomponent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9DD8D722D7417CA004EFAAF /* Build configuration list for PBXNativeTarget "VocalWebcomponent" */;
+			buildPhases = (
+				F9DD8D662D7417C9004EFAAF /* Headers */,
+				F9DD8D672D7417C9004EFAAF /* Sources */,
+				F9DD8D682D7417C9004EFAAF /* Frameworks */,
+				F9DD8D692D7417C9004EFAAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VocalWebcomponent;
+			productName = VocalWebcomponent;
+			productReference = F9DD8D6B2D7417C9004EFAAF /* VocalWebcomponent.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F9DD8D622D7417C9004EFAAF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					F9DD8D6A2D7417C9004EFAAF = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = F9DD8D652D7417C9004EFAAF /* Build configuration list for PBXProject "VocalWebcomponent" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				de,
+				ar,
+				"zh-Hans",
+				ja,
+				es,
+				it,
+				"id-ID",
+				pl,
+				"pt-BR",
+				fr,
+				fi,
+				id,
+			);
+			mainGroup = F9DD8D612D7417C9004EFAAF;
+			productRefGroup = F9DD8D6C2D7417C9004EFAAF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F9DD8D6A2D7417C9004EFAAF /* VocalWebcomponent */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F9DD8D692D7417C9004EFAAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9261D522D76225C00577301 /* Localizable.json in Resources */,
+				F9B221842D7F168D00DA5B87 /* Source.bundle in Resources */,
+				F9261D532D76225C00577301 /* Assets.xcassets in Resources */,
+				F9261D512D76225C00577301 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F9DD8D672D7417C9004EFAAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9B221852D7F178300DA5B87 /* Source.bundle in Sources */,
+				F9DD8D782D7417DD004EFAAF /* MySDK.m in Sources */,
+				F9BB2D422D79E15000C66FC2 /* VocaiSdkBuilder.m in Sources */,
+				F9261CE52D76166100577301 /* UserModel.m in Sources */,
+				F9261CDA2D76166100577301 /* ChatWebViewController.m in Sources */,
+				F9261CE62D76166100577301 /* InitialModel.m in Sources */,
+				F9261CDD2D76166100577301 /* AVCaptureViewController.m in Sources */,
+				F9261CE82D76166100577301 /* WebCallBackModel.m in Sources */,
+				F9261CDF2D76166100577301 /* CustomOptionsView.m in Sources */,
+				F9261CEE2D76166100577301 /* PollingRequestTool.m in Sources */,
+				F9261CEF2D76166100577301 /* ImageUploader.m in Sources */,
+				F9261CED2D76166100577301 /* VocaiChatModel.m in Sources */,
+				F9DF29322D78A415001D4E7C /* PDFDisplayView.m in Sources */,
+				F9261CF32D76166100577301 /* RandomStringGenerator.m in Sources */,
+				F9261D742D76F90200577301 /* LanguageTool.m in Sources */,
+				F9261CDB2D76166100577301 /* NetworkTool.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F9261D402D76225C00577301 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9261D412D76225C00577301 /* de */,
+				F9261D422D76225C00577301 /* ar */,
+				F9261D432D76225C00577301 /* zh-Hans */,
+				F9261D442D76225C00577301 /* ja */,
+				F9261D452D76225C00577301 /* en */,
+				F9261D462D76225C00577301 /* es */,
+				F9261D472D76225C00577301 /* it */,
+				F9261D4A2D76225C00577301 /* id-ID */,
+				F9261D4C2D76225C00577301 /* pl */,
+				F9261D4D2D76225C00577301 /* pt-BR */,
+				F9261D4E2D76225C00577301 /* fr */,
+				F9261D4F2D76225C00577301 /* fi */,
+				F9261D502D76225C00577301 /* id */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F9DD8D702D7417CA004EFAAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F9DD8D712D7417CA004EFAAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F9DD8D732D7417CA004EFAAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = TTE3BK35DB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vocal.webcomponent.VocalWebcomponent;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F9DD8D742D7417CA004EFAAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = TTE3BK35DB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vocal.webcomponent.VocalWebcomponent;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F9DD8D652D7417C9004EFAAF /* Build configuration list for PBXProject "VocalWebcomponent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9DD8D702D7417CA004EFAAF /* Debug */,
+				F9DD8D712D7417CA004EFAAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9DD8D722D7417CA004EFAAF /* Build configuration list for PBXNativeTarget "VocalWebcomponent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9DD8D732D7417CA004EFAAF /* Debug */,
+				F9DD8D742D7417CA004EFAAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F9DD8D622D7417C9004EFAAF /* Project object */;
+}
