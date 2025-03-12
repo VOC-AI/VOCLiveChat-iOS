@@ -36,9 +36,15 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang);
 // VOCLiveChatParams 类
 @interface VocaiChatModel : NSObject
 
-// 初始化方法
-// 初始化方法
-- (instancetype)initWithId:(NSString *)chatId token:(NSString *)token webViewAddress:(NSString *)webViewAddress uploadUrl:(NSString *)uploadUrl email:(NSString *)email botId:(NSString *)botId language:(NSString*)language otherParams:(NSDictionary *)otherParams;
+// 初始化方法1
+
+
+
+- (instancetype)initWithToken:(NSString *)token email:(NSString *)email botId:(NSString *)botId language:(NSString*)language otherParams:(NSDictionary *)otherParams;
+
+// 初始化方法2
+- (instancetype)initWithChatId:(NSString *)chatId token:(NSString *)token email:(NSString *)email botId:(NSString *)botId language:(NSString*)language otherParams:(NSDictionary *)otherParams;
+
 
 // 属性
 @property (nonatomic, strong) NSString *chatId;
@@ -47,8 +53,6 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang);
 @property (nonatomic, strong, nullable) NSString *brand;
 @property (nonatomic, strong) NSString *botId;
 @property (nonatomic, strong, nullable) NSString *country;
-@property (nonatomic, strong, nullable) NSString *webViewAddress;
-@property (nonatomic, strong, nullable) NSString *uploadUrl;
 @property (nonatomic, strong, nullable) NSString *language;
 //@property (nonatomic, assign, nullable) VOCLiveChatSystemLang lang;
 @property (nonatomic, assign) BOOL noHeader;

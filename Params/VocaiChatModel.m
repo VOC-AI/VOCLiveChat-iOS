@@ -49,14 +49,25 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
 @implementation VocaiChatModel
 
 // 初始化方法
-- (instancetype)initWithId:(NSString *)chatId token:(NSString *)token webViewAddress:(NSString *)webViewAddress uploadUrl:(NSString *)uploadUrl email:(NSString *)email botId:(NSString *)botId language:(NSString*)language otherParams:(NSDictionary *)otherParams {
+- (instancetype)initWithChatId:(NSString *)chatId token:(NSString *)token email:(NSString *)email botId:(NSString *)botId language:(NSString*)language otherParams:(NSDictionary *)otherParams {
     self = [super init];
     if (self) {
         self.chatId = chatId;
         self.token = token;
         self.email = email;
-        self.webViewAddress = webViewAddress;
-        self.uploadUrl = uploadUrl;
+        self.botId = botId;
+        self.language = language;
+        self.otherParams = otherParams;
+    }
+    return self;
+}
+
+// 初始化方法
+- (instancetype)initWithToken:(NSString *)token email:(NSString *)email botId:(NSString *)botId language:(NSString*)language otherParams:(NSDictionary *)otherParams {
+    self = [super init];
+    if (self) {
+        self.token = token;
+        self.email = email;
         self.botId = botId;
         self.language = language;
         self.otherParams = otherParams;

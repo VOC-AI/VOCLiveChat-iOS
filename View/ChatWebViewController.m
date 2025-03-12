@@ -18,6 +18,8 @@
 #import "VocaiChatModel.h"
 #import "LanguageTool.h"
 #import "PDFDisplayView.h"
+#import <AVFoundation/AVFoundation.h>
+
 // 定义文件上传类型
 typedef NS_ENUM(NSInteger, UploaFileType) {
     Pic,
@@ -73,8 +75,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
     
 //      NSString *urlString = @"https://apps.voc.ai/live-chat?id=19365&token=6731F71BE4B0187458389512&disableFileInputModal=true";
     NSString *urlString = [NSString stringWithFormat:
-                           @"%@?id=%@&token=%@&disableFileInputModal=true&lang=%@&",
-                           self.vocaiChatParams.webViewAddress,
+                           @"https://apps.voc.ai/live-chat?id=%@&token=%@&disableFileInputModal=true&lang=%@&",
                            self.vocaiChatParams.botId,
                            self.vocaiChatParams.token,
                            self.vocaiChatParams.language];
@@ -141,10 +142,22 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
             NSString *fileString = [LanguageTool getStringForKey:@"key_choose_from_file" withLanguage:self.vocaiChatParams.language];
             NSString *takePhotoString = [LanguageTool getStringForKey:@"key_take_photo" withLanguage:self.vocaiChatParams.language];
             if ([selectedOption isEqualToString: takePhotoString]){
-                [self openCamera];
+                BOOL isAuthorized = hasCameraPermission();
+                if (isAuthorized) {
+                    [self openCamera];
+                } else {
+                    // 模拟调用显示无权限 Toast 的方法
+                    [self showNoPermissionToastOnView:self.view message:@"没有摄像头权限, 请到设置中心打开"];
+                }
             }
             if ([selectedOption isEqualToString: videoString]){
-                [self startVideoRecording];
+                BOOL isAuthorized = hasCameraPermission();
+                if (isAuthorized) {
+                    [self startVideoRecording];
+                } else {
+                    // 模拟调用显示无权限 Toast 的方法
+                    [self showNoPermissionToastOnView:self.view message:@"没有摄像头权限, 请到设置中心打开"];
+                }
             }
             
             if ([selectedOption isEqualToString: galleryString]){
@@ -311,7 +324,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
     [[ImageUploader sharedUploader] uploadFile:fileData
                                       fileName:fileName
                                       fileType:fileType
-                                         toURL:self.vocaiChatParams.uploadUrl
+                                         toURL: @"https://apps.voc.ai/api_v2/intelli/resource/upload/lead"
                                     withParams:dict
                                       progress:^(NSProgress *uploadProgress) {
                                              // 处理上传进度
@@ -498,6 +511,41 @@ BOOL isStringEmptyOrNil(NSString *string) {
         [components addObject:component];
     }
     return [components componentsJoinedByString:@"&"];
+}
+
+// 封装的检测摄像头权限的方法
+BOOL hasCameraPermission(void) {
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    return authStatus == AVAuthorizationStatusAuthorized;
+}
+
+// 封装显示无权限 Toast 的方法
+- (void)showNoPermissionToastOnView:(UIView *)view message:(NSString *)message {
+    UILabel *toastLabel = [[UILabel alloc] init];
+    toastLabel.text = message;
+    toastLabel.textAlignment = NSTextAlignmentCenter;
+    toastLabel.textColor = [UIColor whiteColor];
+    toastLabel.backgroundColor = [UIColor colorWithWhite:0 alpha:0.7];
+    toastLabel.layer.cornerRadius = 5;
+    toastLabel.clipsToBounds = YES;
+    toastLabel.font = [UIFont systemFontOfSize:14];
+    [toastLabel sizeToFit];
+    toastLabel.frame = CGRectMake((view.bounds.size.width - toastLabel.bounds.size.width) / 2,
+                                  view.bounds.size.height - 100,
+                                  toastLabel.bounds.size.width + 20,
+                                  toastLabel.bounds.size.height + 10);
+    
+    [view addSubview:toastLabel];
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        toastLabel.alpha = 1;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.2 delay:2.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            toastLabel.alpha = 0;
+        } completion:^(BOOL finished) {
+            [toastLabel removeFromSuperview];
+        }];
+    }];
 }
 
 @end

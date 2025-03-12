@@ -40,10 +40,10 @@
 
 - (void)setupCloseButton {
     self.closeButton = [UIButton buttonWithType: UIButtonTypeCustom];
-    [self.closeButton setTitle:@"关闭" forState:UIControlStateNormal];
+    [self.closeButton setImage: [UIImage imageNamed:@"close"] forState: UIControlStateNormal];
     [self.closeButton setTitleColor: [UIColor blackColor] forState:UIControlStateNormal];
     [self.closeButton addTarget:self action:@selector(closeButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-    self.closeButton.frame = CGRectMake(self.bounds.size.width - 60, 100, 50, 30);
+    self.closeButton.frame = CGRectMake(self.bounds.size.width - 60, 60, 25, 25);
     [self addSubview:self.closeButton];
 }
 
