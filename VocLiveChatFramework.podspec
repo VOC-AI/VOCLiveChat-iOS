@@ -18,9 +18,9 @@ Pod::Spec.new do |s|
   # 库的源代码所在的 Git 仓库 URL
   s.source           = { :git => 'https://github.com/VOC-AI/VOCLiveChat-iOS.git', :tag => s.version.to_s }
   # 支持的 iOS 最低版本
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '12.0'
   # Framework 的源代码文件路径
-  s.source_files = 'YourFrameworkName/Classes/**/*'
+  s.source_files = 'VocalWebcomponent/**/*.{h,m}'
   # 如果有资源文件，可以指定资源文件路径
   # s.resource_bundles = {
   #   'YourFrameworkName' => ['YourFrameworkName/Assets/*.png']
