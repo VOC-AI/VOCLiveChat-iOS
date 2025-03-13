@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   A more detailed description of YourFrameworkName.
                        DESC
   # 库的主页 URL
-  s.homepage         = 'https://github.com/yourusername/YourFrameworkName'
+  s.homepage         = 'https://github.com/VOC-AI/VOCLiveChat-iOS.git'
   # 库的许可证信息
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   # 库的作者信息
