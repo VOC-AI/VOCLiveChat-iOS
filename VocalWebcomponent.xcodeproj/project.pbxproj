@@ -38,6 +38,7 @@
 		F9B221852D7F178300DA5B87 /* Source.bundle in Sources */ = {isa = PBXBuildFile; fileRef = F9B221832D7F168D00DA5B87 /* Source.bundle */; };
 		F9BB2D412D79E15000C66FC2 /* VocaiSdkBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = F9BB2D3F2D79E15000C66FC2 /* VocaiSdkBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F9BB2D422D79E15000C66FC2 /* VocaiSdkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = F9BB2D402D79E15000C66FC2 /* VocaiSdkBuilder.m */; };
+		F9C9B6412D884FF200B5361A /* VocalWebcomponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C9B6402D884FF200B5361A /* VocalWebcomponent.framework */; };
 		F9DD8D6F2D7417CA004EFAAF /* VocalWebcomponent.h in Headers */ = {isa = PBXBuildFile; fileRef = F9DD8D6E2D7417CA004EFAAF /* VocalWebcomponent.h */; };
 		F9DF29322D78A415001D4E7C /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DF29302D78A415001D4E7C /* PDFDisplayView.m */; };
 		F9DF29332D78A415001D4E7C /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = F9DF29312D78A415001D4E7C /* PDFDisplayView.h */; };
@@ -86,6 +87,7 @@
 		F9B221832D7F168D00DA5B87 /* Source.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Source.bundle; sourceTree = "<group>"; };
 		F9BB2D3F2D79E15000C66FC2 /* VocaiSdkBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VocaiSdkBuilder.h; sourceTree = "<group>"; };
 		F9BB2D402D79E15000C66FC2 /* VocaiSdkBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VocaiSdkBuilder.m; sourceTree = "<group>"; };
+		F9C9B6402D884FF200B5361A /* VocalWebcomponent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VocalWebcomponent.framework; sourceTree = "<group>"; };
 		F9DD8D6B2D7417C9004EFAAF /* VocalWebcomponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VocalWebcomponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DD8D6E2D7417CA004EFAAF /* VocalWebcomponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VocalWebcomponent.h; sourceTree = "<group>"; };
 		F9DF29302D78A415001D4E7C /* PDFDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFDisplayView.m; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C9B6412D884FF200B5361A /* VocalWebcomponent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +175,7 @@
 		F9DD8D612D7417C9004EFAAF = {
 			isa = PBXGroup;
 			children = (
+				F9C9B6402D884FF200B5361A /* VocalWebcomponent.framework */,
 				F9B221832D7F168D00DA5B87 /* Source.bundle */,
 				F9DD8D6D2D7417CA004EFAAF /* VocalWebcomponent */,
 				F9DD8D6C2D7417C9004EFAAF /* Products */,
@@ -485,6 +489,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -519,6 +527,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
