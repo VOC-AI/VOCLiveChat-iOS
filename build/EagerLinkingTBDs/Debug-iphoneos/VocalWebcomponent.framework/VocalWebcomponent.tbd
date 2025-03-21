@@ -1,0 +1,57 @@
+{
+  "main_library": {
+    "exported_symbols": [
+      {
+        "data": {
+          "global": [
+            "_VocalWebcomponentVersionString",
+            "_VocalWebcomponentVersionNumber"
+          ],
+          "objc_class": [
+            "PollingRequestTool",
+            "InitialModel",
+            "WebCallBackModel",
+            "VocaiSdkBuilder",
+            "ChatWebViewController",
+            "NetworkTool",
+            "UserModel",
+            "VocaiChatModel",
+            "ImageUploader",
+            "CustomOptionsView",
+            "RandomStringGenerator",
+            "AVCaptureViewController",
+            "PDFDisplayView",
+            "LanguageTool"
+          ]
+        },
+        "text": {
+          "global": [
+            "_NSStringFromVOCLiveChatLinkOpenType",
+            "_hasCameraPermission",
+            "_isStringEmptyOrNil",
+            "_NSStringFromVOCLiveChatSystemLang"
+          ]
+        }
+      }
+    ],
+    "flags": [
+      {
+        "attributes": [
+          "not_app_extension_safe"
+        ]
+      }
+    ],
+    "install_names": [
+      {
+        "name": "@rpath/VocalWebcomponent.framework/VocalWebcomponent"
+      }
+    ],
+    "target_info": [
+      {
+        "min_deployment": "12",
+        "target": "arm64-ios"
+      }
+    ]
+  },
+  "tapi_tbd_version": 5
+}
