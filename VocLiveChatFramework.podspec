@@ -24,8 +24,7 @@ Pod::Spec.new do |s|
 	'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64 i386'
   }
   # Framework 的源代码文件路径
-  s.source_files = 'VocalWebcomponent/**/*.{h,m}'
-  s.vendored_frameworks = "VocalWebcomponent.framework"  # 如果有资源文件，可以指定资源文件路径
+  s.source_files = 'VocalWebcomponent/**/*'
   # s.resource_bundles = {
   #   'YourFrameworkName' => ['YourFrameworkName/Assets/*.png']
   # }
