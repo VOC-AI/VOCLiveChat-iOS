@@ -20,7 +20,8 @@ Pod::Spec.new do |s|
   # 支持的 iOS 最低版本
   s.ios.deployment_target = '12.0'
   # Framework 的源代码文件路径
-  s.source_files = 'VocalWebcomponent/**/*.{h,m, framework}'
+  s.source_files = 'VocalWebcomponent/**/*.{h,m}'
+  s.vendored_framework = 'VocLiveChatFramework.framework'
   s.pod_target_xcconfig = {'VALID_ARCHS' => 'arm64'}
   # s.resource_bundles = {
   #   'YourFrameworkName' => ['YourFrameworkName/Assets/*.png']
