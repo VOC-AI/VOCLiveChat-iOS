@@ -20,12 +20,12 @@ Pod::Spec.new do |s|
   # 支持的 iOS 最低版本
   s.ios.deployment_target = '12.0'
   s.pod_target_xcconfig = {
-	'VALID_ARCHS[sdk=iphone*]' => 'arm64',
-	'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64 i386'
+    'VALID_ARCHS[sdk=iphone*]' => 'arm64',
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
   }
   # Framework 的源代码文件路径
   s.source_files = 'VocalWebcomponent/**/*.{h,m}'
-  s.vendored_frameworks = "VocalWebcomponent.framework" 
+  s.vendored_frameworks = "VocalWebcomponent/VocalWebcomponent.framework"
   # s.resource_bundles = {
   #   'YourFrameworkName' => ['YourFrameworkName/Assets/*.png']
   # }
