@@ -22,6 +22,7 @@ Pod::Spec.new do |s|
   # Framework 的源代码文件路径
   s.source_files = 'VocalWebcomponent/**/*.{h,m}'
   s.ios.vendored_frameworks = 'VocalWebcomponent.xcframework'
+  s.pod_target_xcconfig = {'VALID_ARCHS' => 'x86_64 armv7 arm64'}
   # s.resource_bundles = {
   #   'YourFrameworkName' => ['YourFrameworkName/Assets/*.png']
   # }
