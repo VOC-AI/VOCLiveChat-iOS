@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '12.0'
   # Framework 的源代码文件路径
   s.source_files = 'VocalWebcomponent/**/*.{h,m}'
-  s.vendored_frameworks = 'Frameworks/VocalWebcomponent.framework'
+  s.vendored_frameworks = 'VocalWebcomponent.framework'
   s.pod_target_xcconfig = {'VALID_ARCHS' => 'arm64 x86_64 armv7'}
   # s.resource_bundles = {
   #   'YourFrameworkName' => ['YourFrameworkName/Assets/*.png']
