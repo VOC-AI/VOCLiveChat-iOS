@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   # 库的名称
   s.name             = 'VocLiveChatFramework'
   # 库的版本号
-  s.version          = '1.0.7'
+  s.version          = '1.0.8'
   # 库的简短描述
   s.summary          = 'A short description of VocLiveChatFramework.'
   # 库的详细描述

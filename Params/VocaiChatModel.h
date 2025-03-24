@@ -37,13 +37,10 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang);
 @interface VocaiChatModel : NSObject
 
 // 初始化方法1
-
-
-
-- (instancetype)initWithToken:(NSString *)token email:(NSString *)email botId:(NSString *)botId language:(NSString*)language otherParams:(NSDictionary *)otherParams;
+- (instancetype)initWithBotId:(NSString *)botId token:(NSString *)token  email:(NSString *)email language:(NSString*)language otherParams:(NSDictionary *)otherParams;
 
 // 初始化方法2
-- (instancetype)initWithChatId:(NSString *)chatId token:(NSString *)token email:(NSString *)email botId:(NSString *)botId language:(NSString*)language otherParams:(NSDictionary *)otherParams;
+- (instancetype)initWithBotId:(NSString *)botId chatId:(NSString *)chatId token:(NSString *)token email:(NSString *)email language:(NSString*)language otherParams:(NSDictionary *)otherParams;
 
 
 // 属性
