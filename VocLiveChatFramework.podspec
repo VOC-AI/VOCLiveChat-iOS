@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   # 库的名称
   s.name             = 'VocLiveChatFramework'
   # 库的版本号
-  s.version          = '1.0.6'
+  s.version          = '1.0.7'
   # 库的简短描述
   s.summary          = 'A short description of VocLiveChatFramework.'
   # 库的详细描述
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '12.0'
   # Framework 的源代码文件路径
   s.source_files = 'VocalWebcomponent/**/*.{h,m}'
-  s.vendored_frameworks = 'framework/VocalWebcomponent.framework'
+  s.vendored_frameworks = '*/VocalWebcomponent.framework'
   s.pod_target_xcconfig = {'VALID_ARCHS' => 'arm64 x86_64 armv7'}
   # s.resource_bundles = {
   #   'YourFrameworkName' => ['YourFrameworkName/Assets/*.png']
