@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   # 库的许可证信息
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   # 库的作者信息
-  s.author           = { 'Your Name' => '15915872210@163.com' }
+  s.author           = { 'Your Name' => 'anti2moron@gmail.com' }
   # 库的源代码所在的 Git 仓库 URL
   s.source           = { :git => 'https://github.com/VOC-AI/VOCLiveChat-iOS.git', :tag => s.version.to_s }
   # 支持的 iOS 最低版本
