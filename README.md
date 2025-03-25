@@ -1,14 +1,27 @@
 vocai sdk 接入文档
 
-添加依赖 在需要使用本项目的工程中把VocalWebcomponent.framework 拖到工程下面。 效果如下： 
-![截屏2025-03-06 22 25 10](https://github.com/user-attachments/assets/82c3951b-5208-47b4-a8ae-b3174b400309)
+通过cocoaPods集成 
+参考如下：
+platform :ios, '12.0'
+inhibit_all_warnings!
+target 'testProject' do
+   
+  pod 'VocLiveChatFramework', '1.1.0'
+end
 
 
-设置frameWork的ember模式：需要在工程的General 下找到Frame 的设置。 将我们的frame设置成Embed & Sign
-![截屏2025-03-06 22 28 26](https://github.com/user-attachments/assets/556f3943-711b-4235-a80d-f45b53f2943f)
+安装好之后如果有如下报错
+![截屏2025-03-25 09 55 47](https://github.com/user-attachments/assets/aebe0dba-4d79-4598-9891-d77f11212631)
+需要到这里设置：
+![41742867705_ pic](https://github.com/user-attachments/assets/0a6d22e3-b235-4d8c-aaf5-007c0c43d0c4)
+
+导入框架内头文件：
+#import <VocalWebcomponent/VocaiChatModel.h>
+#import <VocalWebcomponent/VocaiSdkBuilder.h>
 
 
-导入框架内头文件： #import "VocalWebcomponent/VocaiChatModel.h" #import "VocalWebcomponent/VocaiSdkBuilder.h"
+将仓库里面的图片和语言配置拖到项目里面去：
+
 
 构建初始化模型: NSDictionary *exampleOtherDict = @{@"value":@"october"}; VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithId:@"" token:@"" email:@"zhikang@163.com" botId:@"19365" language:@"cn" otherParams:exampleOtherDict];
 
