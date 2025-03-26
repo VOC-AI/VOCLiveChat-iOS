@@ -75,10 +75,11 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
     
 //      NSString *urlString = @"https://apps.voc.ai/live-chat?id=19365&token=6731F71BE4B0187458389512&disableFileInputModal=true";
     NSString *urlString = [NSString stringWithFormat:
-                           @"https://apps.voc.ai/live-chat?id=%@&token=%@&disableFileInputModal=true&lang=%@&",
+                           @"https://apps.voc.ai/live-chat?id=%@&token=%@&disableFileInputModal=true&lang=%@&email=%@&",
                            self.vocaiChatParams.botId,
                            self.vocaiChatParams.token,
-                           self.vocaiChatParams.language];
+                           self.vocaiChatParams.language,
+                           self.vocaiChatParams.email];
     NSString *componentUrlString = [urlString stringByAppendingString: [self dictionaryToQueryString:self.vocaiChatParams.otherParams]];
     NSURL *url = [NSURL URLWithString: componentUrlString];
       NSURLRequest *request = [NSURLRequest requestWithURL: url];
