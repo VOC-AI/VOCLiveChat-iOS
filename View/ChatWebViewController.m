@@ -57,6 +57,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view setBackgroundColor: [UIColor whiteColor]];
     self.automaticallyAdjustsScrollViewInsets = YES;
     // 创建 WKWebView 的配置对象
     WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
