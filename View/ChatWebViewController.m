@@ -116,7 +116,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
        NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self.webView
                                                                             attribute:NSLayoutAttributeBottom
                                                                             relatedBy:NSLayoutRelationEqual
-                                                                               toItem:self.view.safeAreaLayoutGuide
+                                                                               toItem:self.view
                                                                             attribute:NSLayoutAttributeBottom
                                                                            multiplier:1.0
                                                                              constant:0];
