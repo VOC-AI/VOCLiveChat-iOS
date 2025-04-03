@@ -6,7 +6,7 @@ platform :ios, '12.0'
 inhibit_all_warnings!
 target 'testProject' do
    
-  pod 'VocLiveChatFramework', '1.1.0'
+  pod 'VocLiveChatFramework', '1.1.8'
 end
 
 
@@ -23,6 +23,16 @@ end
 将仓库里面的图片和语言配置拖到项目里面去：
 
 
-构建初始化模型: NSDictionary *exampleOtherDict = @{@"value":@"october"}; VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithId:@"" token:@"" email:@"zhikang@163.com" botId:@"19365" language:@"cn" otherParams:exampleOtherDict];
+构建初始化模型:
+    NSDictionary *exampleOtherDict = nil;
+    VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"19365" token:@"6731F71BE4B0187458389512" email:@"zhikang@163.com" language:@"cn" otherParams:nil];
+    VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];
+    UIViewController *viewController = [builder buildSdkWithParams: vocaiModel];
 
+如果要监听视图声明周期的ViewWillAppear: 则遵循下面的协议， 设置好代理
+   <VocaiSdkBuilderViewControllerLifecycleDelegate>
+    builder.sdkViewWillAppearDelegate = self;
+然后在对应的代理方法：
+- (void)vocalSdkViewControllerWillAppear:(UIViewController *)viewController animated:(BOOL)animated{
+可以拿到对应的视图控制器。该代理在对应的控制器ViewWillAppear的时候调用。
 初始化模型以及调用返回的ViewController [VocaiSdkBuilder buildSdkWithParams: vocaiModel];
