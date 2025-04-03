@@ -1,0 +1,16 @@
+PODS:
+  - VocLiveChatFramework (1.1.8)
+
+DEPENDENCIES:
+  - VocLiveChatFramework (~> 1.1.8)
+
+SPEC REPOS:
+  trunk:
+    - VocLiveChatFramework
+
+SPEC CHECKSUMS:
+  VocLiveChatFramework: 822a6ea524a989eb5e287709c5a50c397e74b0a4
+
+PODFILE CHECKSUM: 961b071e66344611a2c8902088c153f815098510
+
+COCOAPODS: 1.16.2

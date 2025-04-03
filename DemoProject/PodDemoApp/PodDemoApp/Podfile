@@ -1,0 +1,11 @@
+# 指定支持的iOS平台版本
+platform :ios, '12.0'
+
+# 定义项目的target，YourProjectName需要替换为你的Xcode项目的实际名称
+target 'PodDemoApp' do
+  # 使用ARC（自动引用计数）
+  use_frameworks!
+
+  # 添加你需要的依赖库，这里以AFNetworking为例
+  pod 'VocLiveChatFramework', '~> 1.1.8'
+end

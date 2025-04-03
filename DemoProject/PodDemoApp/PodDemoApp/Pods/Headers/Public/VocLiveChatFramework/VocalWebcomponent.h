@@ -1,0 +1,1 @@
+../../../VocLiveChatFramework/VocalWebcomponent/VocalWebcomponent.h
