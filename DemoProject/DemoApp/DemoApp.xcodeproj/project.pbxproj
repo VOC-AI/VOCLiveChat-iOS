@@ -15,8 +15,8 @@
 		F9BAE7672D9D80DF007B38C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9BAE7652D9D80DF007B38C3 /* LaunchScreen.storyboard */; };
 		F9BAE76A2D9D80DF007B38C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9BAE7692D9D80DF007B38C3 /* main.m */; };
 		F9BAE7712D9D80EF007B38C3 /* language.json in Resources */ = {isa = PBXBuildFile; fileRef = F9BAE7702D9D80EF007B38C3 /* language.json */; };
-		F9BAE7742D9D8190007B38C3 /* VocalWebcomponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BAE7722D9D8144007B38C3 /* VocalWebcomponent.framework */; };
-		F9BAE7752D9D8190007B38C3 /* VocalWebcomponent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F9BAE7722D9D8144007B38C3 /* VocalWebcomponent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F9BAE7792D9EADC3007B38C3 /* VocalWebcomponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BAE7772D9EADAB007B38C3 /* VocalWebcomponent.framework */; };
+		F9BAE77A2D9EADC3007B38C3 /* VocalWebcomponent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F9BAE7772D9EADAB007B38C3 /* VocalWebcomponent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,7 +26,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F9BAE7752D9D8190007B38C3 /* VocalWebcomponent.framework in Embed Frameworks */,
+				F9BAE77A2D9EADC3007B38C3 /* VocalWebcomponent.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,7 +47,7 @@
 		F9BAE7682D9D80DF007B38C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9BAE7692D9D80DF007B38C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F9BAE7702D9D80EF007B38C3 /* language.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = language.json; sourceTree = "<group>"; };
-		F9BAE7722D9D8144007B38C3 /* VocalWebcomponent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VocalWebcomponent.framework; sourceTree = "<group>"; };
+		F9BAE7772D9EADAB007B38C3 /* VocalWebcomponent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VocalWebcomponent.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9BAE7742D9D8190007B38C3 /* VocalWebcomponent.framework in Frameworks */,
+				F9BAE7792D9EADC3007B38C3 /* VocalWebcomponent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +81,7 @@
 		F9BAE7562D9D80DE007B38C3 /* DemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				F9BAE7722D9D8144007B38C3 /* VocalWebcomponent.framework */,
+				F9BAE7772D9EADAB007B38C3 /* VocalWebcomponent.framework */,
 				F9BAE7702D9D80EF007B38C3 /* language.json */,
 				F9BAE7572D9D80DE007B38C3 /* AppDelegate.h */,
 				F9BAE7582D9D80DE007B38C3 /* AppDelegate.m */,
