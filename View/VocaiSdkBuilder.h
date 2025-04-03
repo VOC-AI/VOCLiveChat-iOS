@@ -8,11 +8,24 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "VocaiChatModel.h"
+#import "ChatWebViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface VocaiSdkBuilder : NSObject
-+ (UIViewController *)buildSdkWithParams: (VocaiChatModel *)params;
+
+@protocol VocaiSdkBuilderViewControllerLifecycleDelegate <NSObject>
+@optional
+- (void)vocalSdkViewControllerWillAppear:(UIViewController *)viewController animated:(BOOL)animated;
+@end
+
+@interface VocaiSdkBuilder : NSObject <VocalViewControllerLifecycleDelegate>
+
+@property (nonatomic, weak) id<VocaiSdkBuilderViewControllerLifecycleDelegate> sdkViewWillAppearDelegate;
+
+- (UIViewController *)buildSdkWithParams: (VocaiChatModel *)params;
+
+- (void)sdkViewWillAppear:(UIViewController *)viewController animated:(BOOL)animated;
+
 @end
 
 NS_ASSUME_NONNULL_END

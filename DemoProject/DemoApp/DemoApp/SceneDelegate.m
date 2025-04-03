@@ -11,7 +11,7 @@
 #import "VocalWebcomponent/VocaiSdkBuilder.h"
 
 
-@interface SceneDelegate ()
+@interface SceneDelegate ()<VocaiSdkBuilderViewControllerLifecycleDelegate>
 
 @end
 
@@ -25,12 +25,19 @@
     // 创建自定义视图控制器实例
     NSDictionary *exampleOtherDict = nil;
     VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"19365" token:@"6731F71BE4B0187458389512" email:@"zhikang@163.com" language:@"cn" otherParams:nil];
-    
-//    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController: [VocaiSdkBuilder buildSdkWithParams: vocaiModel]];
-    self.window.rootViewController = [VocaiSdkBuilder buildSdkWithParams: vocaiModel];
+    VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];
+    UIViewController *viewController = [builder buildSdkWithParams: vocaiModel];
+    builder.sdkViewWillAppearDelegate = self;
+    self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
 }
 
+
+- (void)vocalSdkViewControllerWillAppear:(UIViewController *)viewController animated:(BOOL)animated{
+    NSLog(@"---------------------->>>>>>分割线");
+    NSLog(@"%@",viewController);
+    NSLog(@"---------------------->>>>>>分割线");
+}
 
 - (void)sceneDidDisconnect:(UIScene *)scene {
     // Called as the scene is being released by the system.

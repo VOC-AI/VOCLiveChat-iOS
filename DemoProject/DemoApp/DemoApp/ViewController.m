@@ -7,6 +7,8 @@
 
 #import "ViewController.h"
 
+#import "VocalWebcomponent/VocaiChatModel.h"
+#import "VocalWebcomponent/VocaiSdkBuilder.h"
 @interface ViewController ()
 
 @end

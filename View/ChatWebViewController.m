@@ -19,6 +19,7 @@
 #import "LanguageTool.h"
 #import "PDFDisplayView.h"
 #import <AVFoundation/AVFoundation.h>
+#import <objc/runtime.h>
 
 // 定义文件上传类型
 typedef NS_ENUM(NSInteger, UploaFileType) {
@@ -55,6 +56,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
     return self;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor: [UIColor whiteColor]];
@@ -74,7 +76,6 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
     [self setWebViewAnchor];
     // 设置要加载的URL   这里的ID是botId
     
-//      NSString *urlString = @"https://apps.voc.ai/live-chat?id=19365&token=6731F71BE4B0187458389512&disableFileInputModal=true";
     NSString *urlString = [NSString stringWithFormat:
                            @"https://apps.voc.ai/live-chat?id=%@&token=%@&disableFileInputModal=true&lang=%@&email=%@&",
                            self.vocaiChatParams.botId,
@@ -87,6 +88,13 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
      // 添加消息处理脚本，这里的 @"messageHandler" 是前端调用的标识
         
     [self.webView loadRequest:request];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (self.viewDelegate != nil) {
+        [self.viewDelegate vocalViewControllerWillAppear:self animated:animated];
+    }
 }
 
 - (void)setWebViewAnchor {
