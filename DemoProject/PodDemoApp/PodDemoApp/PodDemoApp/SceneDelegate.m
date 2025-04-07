@@ -22,9 +22,9 @@
     if (![scene isKindOfClass:[UIWindowScene class]]) return;
     UIWindowScene *windowScene = (UIWindowScene *)scene;
     self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
-    
-    CustomNavigationController *nav = [[CustomNavigationController alloc] initWithRootViewController: [[ViewController alloc] init]];
-    
+    ViewController *vc = [[ViewController alloc] init];
+    CustomNavigationController *nav = [[CustomNavigationController alloc] initWithRootViewController: vc];
+    vc.navigationItem.title = @"导航栏1";
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
 }

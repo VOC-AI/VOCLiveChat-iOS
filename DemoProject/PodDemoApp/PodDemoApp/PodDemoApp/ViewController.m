@@ -27,7 +27,7 @@
         
         // 将按钮添加到视图上
     [self.view addSubview:button];
-    self.navigationItem.title = @"标题1";
+//    self.navigationItem.title = @"导航栏1";
 }
 
 
@@ -40,7 +40,7 @@
     UIViewController *viewController = [builder buildSdkWithParams: vocaiModel];
     CustomNavigationController * customNav = [[CustomNavigationController alloc] initWithRootViewController:viewController];
     builder.sdkViewWillAppearDelegate = self;
-    viewController.navigationItem.title = @"标题222";
+    viewController.navigationItem.title = @"导航栏2";
     self.navigationController.navigationBar.backgroundColor = [UIColor grayColor];
     [self.navigationController pushViewController:viewController animated:true];
 }
