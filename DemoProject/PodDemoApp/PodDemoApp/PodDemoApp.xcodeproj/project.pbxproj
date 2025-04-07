@@ -16,6 +16,7 @@
 		F9BAE7AB2D9ECCDA007B38C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9BAE7A92D9ECCDA007B38C3 /* LaunchScreen.storyboard */; };
 		F9BAE7AE2D9ECCDA007B38C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9BAE7AD2D9ECCDA007B38C3 /* main.m */; };
 		F9BAE7B52D9ED043007B38C3 /* language.json in Resources */ = {isa = PBXBuildFile; fileRef = F9BAE7B42D9ED043007B38C3 /* language.json */; };
+		F9BAE7B82DA40C00007B38C3 /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9BAE7B72DA40C00007B38C3 /* CustomNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		F9BAE7AC2D9ECCDA007B38C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9BAE7AD2D9ECCDA007B38C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F9BAE7B42D9ED043007B38C3 /* language.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = language.json; path = ../../../DemoApp/DemoApp/language.json; sourceTree = "<group>"; };
+		F9BAE7B62DA40C00007B38C3 /* CustomNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
+		F9BAE7B72DA40C00007B38C3 /* CustomNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				F9BAE79F2D9ECCD9007B38C3 /* SceneDelegate.m */,
 				F9BAE7A12D9ECCD9007B38C3 /* ViewController.h */,
 				F9BAE7A22D9ECCD9007B38C3 /* ViewController.m */,
+				F9BAE7B62DA40C00007B38C3 /* CustomNavigationController.h */,
+				F9BAE7B72DA40C00007B38C3 /* CustomNavigationController.m */,
 				F9BAE7A42D9ECCD9007B38C3 /* Main.storyboard */,
 				F9BAE7A72D9ECCDA007B38C3 /* Assets.xcassets */,
 				F9BAE7A92D9ECCDA007B38C3 /* LaunchScreen.storyboard */,
@@ -220,6 +225,7 @@
 			files = (
 				F9BAE7A32D9ECCD9007B38C3 /* ViewController.m in Sources */,
 				F9BAE79D2D9ECCD9007B38C3 /* AppDelegate.m in Sources */,
+				F9BAE7B82DA40C00007B38C3 /* CustomNavigationController.m in Sources */,
 				F9BAE7AE2D9ECCDA007B38C3 /* main.m in Sources */,
 				F9BAE7A02D9ECCD9007B38C3 /* SceneDelegate.m in Sources */,
 			);

@@ -6,11 +6,12 @@
 //
 
 #import "SceneDelegate.h"
-
+#import "ViewController.h"
+#import "CustomNavigationController.h"
 #import "VocalWebcomponent/VocaiChatModel.h"
 #import "VocalWebcomponent/VocaiSdkBuilder.h"
 
-@interface SceneDelegate ()<VocaiSdkBuilderViewControllerLifecycleDelegate>
+@interface SceneDelegate ()
 
 @end
 
@@ -21,21 +22,11 @@
     if (![scene isKindOfClass:[UIWindowScene class]]) return;
     UIWindowScene *windowScene = (UIWindowScene *)scene;
     self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
-    // 创建自定义视图控制器实例
-    NSDictionary *exampleOtherDict = nil;
-    VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"19365" token:@"6731F71BE4B0187458389512" email:@"zhikang@163.com" language:@"cn" otherParams:nil];
-    VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];
-    UIViewController *viewController = [builder buildSdkWithParams: vocaiModel];
-    builder.sdkViewWillAppearDelegate = self;
-    self.window.rootViewController = viewController;
+    
+    CustomNavigationController *nav = [[CustomNavigationController alloc] initWithRootViewController: [[ViewController alloc] init]];
+    
+    self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
-}
-
-
-- (void)vocalSdkViewControllerWillAppear:(UIViewController *)viewController animated:(BOOL)animated{
-    NSLog(@"---------------------->>>>>>分割线");
-    NSLog(@"%@",viewController);
-    NSLog(@"---------------------->>>>>>分割线");
 }
 
 - (void)sceneDidDisconnect:(UIScene *)scene {

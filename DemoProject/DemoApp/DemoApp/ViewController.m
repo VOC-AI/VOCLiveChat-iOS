@@ -19,6 +19,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+- (void)buttonClicked {
+     
+    NSDictionary *exampleOtherDict = nil;
+    VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"19365" token:@"6731F71BE4B0187458389512" email:@"zhikang@163.com" language:@"cn" otherParams:nil];
+    VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];
+    UIViewController *viewController = [builder buildSdkWithParams: vocaiModel];
+    
+    CustomNavigationController * customNav = [[CustomNavigationController alloc] initWithRootViewController:viewController];
 
+    viewController.navigationItem.title = @"标题2";
+    [self.navigationController pushViewController:viewController animated:true];
+}
 
 @end

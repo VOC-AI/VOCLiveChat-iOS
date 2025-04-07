@@ -86,7 +86,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
     NSURL *url = [NSURL URLWithString: componentUrlString];
       NSURLRequest *request = [NSURLRequest requestWithURL: url];
      // 添加消息处理脚本，这里的 @"messageHandler" 是前端调用的标识
-        
+    
     [self.webView loadRequest:request];
 }
 
