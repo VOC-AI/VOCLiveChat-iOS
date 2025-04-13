@@ -15,6 +15,15 @@
     return  webVC;
 }
 
+- (UINavigationController *)buildSdkNavigationControllerWithParams: (VocaiChatModel *)params navigationColor: (UIColor *)navigationColor title:(NSString *)title{
+    ChatWebViewController *webVC = [[ChatWebViewController alloc] initWithParameter:params];
+    webVC.viewDelegate = self;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController: webVC];
+    nav.title = title;
+    nav.navigationBar.backgroundColor = navigationColor;
+    return nav;
+}
+
 - (void)vocalViewControllerWillAppear:(UIViewController *)viewController animated:(BOOL)animated {
     if (self.sdkViewWillAppearDelegate != nil) {
         [self.sdkViewWillAppearDelegate vocalSdkViewControllerWillAppear:viewController animated:animated];
