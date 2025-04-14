@@ -26,8 +26,6 @@
     VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];
     UIViewController *viewController = [builder buildSdkWithParams: vocaiModel];
     
-    CustomNavigationController * customNav = [[CustomNavigationController alloc] initWithRootViewController:viewController];
-
     viewController.navigationItem.title = @"标题2";
     [self.navigationController pushViewController:viewController animated:true];
 }

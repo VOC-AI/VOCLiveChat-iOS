@@ -22,12 +22,12 @@
     if (![scene isKindOfClass:[UIWindowScene class]]) return;
     UIWindowScene *windowScene = (UIWindowScene *)scene;
     self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
-    // 创建自定义视图控制器实例
     NSDictionary *exampleOtherDict = nil;
     VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"19365" token:@"6731F71BE4B0187458389512" email:@"zhikang@163.com" language:@"cn" otherParams:nil];
     VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];
-    UIViewController *viewController = [builder buildSdkWithParams: vocaiModel];
+    UINavigationController *viewController = [builder buildSdkNavigationControllerWithParams:vocaiModel navigationColor:[UIColor orangeColor] title:@"@嗯来"];
     builder.sdkViewWillAppearDelegate = self;
+    
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
 }

@@ -38,11 +38,8 @@
     VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"19365" token:@"6731F71BE4B0187458389512" email:@"zhikang@163.com" language:@"cn" otherParams:nil];
     VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];
     UIViewController *viewController = [builder buildSdkWithParams: vocaiModel];
-    CustomNavigationController * customNav = [[CustomNavigationController alloc] initWithRootViewController:viewController];
     builder.sdkViewWillAppearDelegate = self;
-    viewController.navigationItem.title = @"导航栏2";
-    self.navigationController.navigationBar.backgroundColor = [UIColor grayColor];
-    [self.navigationController pushViewController:viewController animated:true];
+    [self.navigationController pushViewController:[builder buildSdkNavigationControllerWithParams:vocaiModel navigationColor:[UIColor orangeColor] title:@"@川普"] animated:true];
 }
 
 @end

@@ -19,7 +19,7 @@
     ChatWebViewController *webVC = [[ChatWebViewController alloc] initWithParameter:params];
     webVC.viewDelegate = self;
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController: webVC];
-    nav.title = title;
+    webVC.navigationItem.title = title;
     nav.navigationBar.backgroundColor = navigationColor;
     return nav;
 }
