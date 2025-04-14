@@ -7,5 +7,5 @@ target 'PodDemoApp' do
   use_frameworks!
 
   # 添加你需要的依赖库，这里以AFNetworking为例
-  pod 'VocLiveChatFramework', '~> 1.1.9'
+  pod 'VocLiveChatFramework', '~> 1.2.0'
 end

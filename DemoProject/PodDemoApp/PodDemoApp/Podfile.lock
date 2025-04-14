@@ -1,16 +1,16 @@
 PODS:
-  - VocLiveChatFramework (1.1.9)
+  - VocLiveChatFramework (1.2.0)
 
 DEPENDENCIES:
-  - VocLiveChatFramework (~> 1.1.9)
+  - VocLiveChatFramework (~> 1.2.0)
 
 SPEC REPOS:
   trunk:
     - VocLiveChatFramework
 
 SPEC CHECKSUMS:
-  VocLiveChatFramework: fdb164167fa892e871a50c9e35fe3d385feae24f
+  VocLiveChatFramework: a3864e27ca80b4252c8cf547453418848ebe0539
 
-PODFILE CHECKSUM: a868df776382f01e4da280538e9ecacd217fb88b
+PODFILE CHECKSUM: 68e0fd63e766b219466a28a53492e017888e5127
 
 COCOAPODS: 1.16.2

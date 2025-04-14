@@ -25,7 +25,7 @@
     NSDictionary *exampleOtherDict = nil;
     VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"19365" token:@"6731F71BE4B0187458389512" email:@"zhikang@163.com" language:@"cn" otherParams:nil];
     VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];
-    UINavigationController *viewController = [builder buildSdkNavigationControllerWithParams:vocaiModel navigationColor:[UIColor blackColor] title:@"@嗯来"];
+    UINavigationController *viewController = [builder buildSdkNavigationControllerWithParams:vocaiModel navigationColor:[UIColor orangeColor] title:@"@嗯来"];
     builder.sdkViewWillAppearDelegate = self;
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
