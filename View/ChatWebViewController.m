@@ -157,7 +157,23 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
                     [self openCamera];
                 } else {
                     // 模拟调用显示无权限 Toast 的方法
-                    [self showNoPermissionToastOnView:self.view message:@"没有摄像头权限, 请到设置中心打开"];
+                    [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+                        if (granted) {
+                            // 任务完成后回到主线程更新UI
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                 // 更新UI或执行其他必须在主线程的操作
+                                [self openCamera];
+                             });
+                            // 继续进行需要摄像头的操作
+                        } else {
+                            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                                // 后台任务...
+                                dispatch_async(dispatch_get_main_queue(), ^{
+                                    [self showNoPermissionToastOnView:self.view message:@"没有摄像头权限, 请到设置中心打开"];
+                                });
+                            });
+                        }
+                    }];
                 }
             }
             if ([selectedOption isEqualToString: videoString]){
@@ -166,7 +182,23 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
                     [self startVideoRecording];
                 } else {
                     // 模拟调用显示无权限 Toast 的方法
-                    [self showNoPermissionToastOnView:self.view message:@"没有摄像头权限, 请到设置中心打开"];
+                    [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+                        if (granted) {
+                            // 任务完成后回到主线程更新UI
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                 // 更新UI或执行其他必须在主线程的操作
+                                [self startVideoRecording];
+                             });
+                            // 继续进行需要摄像头的操作
+                        } else {
+                            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                                // 后台任务...
+                                dispatch_async(dispatch_get_main_queue(), ^{
+                                    [self showNoPermissionToastOnView:self.view message:@"没有摄像头权限, 请到设置中心打开"];
+                                });
+                            });
+                        }
+                    }];
                 }
             }
             
