@@ -11,7 +11,7 @@
 
 + (NSString *)getStringForKey:(NSString *)key withLanguage:(NSString *)language {
     // 读取JSON文件
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"language" ofType:@"json"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Localizable" ofType:@"json"];
     if (!filePath) {
         NSLog(@"未找到JSON文件");
         return nil;
