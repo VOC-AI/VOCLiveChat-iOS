@@ -12,10 +12,16 @@
 + (NSString *)getStringForKey:(NSString *)key withLanguage:(NSString *)language {
     // 读取JSON文件
     // 获取当前 framework 的 bundle
-    NSBundle *frameworkBundle = [NSBundle bundleForClass:[self class]];
-
-    NSString *filePath = [frameworkBundle pathForResource:@"Localizable" ofType:@"json"];
     NSString* defaultLang = @"en";
+    NSBundle *frameworkBundle = [NSBundle bundleForClass:[self class]];
+    NSString *filePath = [frameworkBundle pathForResource:@"Localizable" ofType:@"json"];
+
+    if(!filePath) {
+        NSString *bundlePath = [frameworkBundle pathForResource:@"VocLiveChatFramework" ofType:@"bundle"];
+        NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
+        filePath = [bundle pathForResource:@"Localizable" ofType:@"json"];
+    }
+
     if (!filePath) {
         NSLog(@"Localizable.json file not found.");
         return nil;
