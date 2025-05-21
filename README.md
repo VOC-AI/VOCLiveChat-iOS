@@ -25,8 +25,8 @@ end
 导入框架内头文件：
 
 ```
-#import <VocalWebcomponent/VocaiChatModel.h>
-#import <VocalWebcomponent/VocaiSdkBuilder.h>
+#import <VocLiveChatFramework/VocaiChatModel.h>
+#import <VocLiveChatFramework/VocaiSdkBuilder.h>
 ```
 
 将仓库里面的图片和语言配置拖到项目里面去：
@@ -36,7 +36,7 @@ end
 
 ```
 NSDictionary *exampleOtherDict = nil;
-VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"19365" token:@"6731F71BE4B0187458389512" email:@"zhikang@163.com" language:@"cn" otherParams:nil];
+VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"19365" token:@"6731F71BE4B0187458389512" email:@"zhikang@163.com" language:@"cn" otherParams:exampleOtherDict];
 VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];
 UIViewController *viewController = [builder buildSdkWithParams: vocaiModel];
 ```
