@@ -17,7 +17,7 @@
     NSString *filePath = [frameworkBundle pathForResource:@"Localizable" ofType:@"json"];
     NSString* defaultLang = @"en";
     if (!filePath) {
-        NSLog(@"未找到语言包JSON文件, [[NSBundle mainBundle] pathForResource:@\"language\" ofType:@\"json\"]");
+        NSLog(@"Localizable.json file not found.");
         return nil;
     }
     NSData *data = [NSData dataWithContentsOfFile:filePath];
