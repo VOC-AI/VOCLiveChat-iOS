@@ -54,7 +54,6 @@
 		3F77DF452DDD89AB006DBB4C /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF302DDD89AB006DBB4C /* PDFDisplayView.h */; };
 		3F77DF462DDD89AB006DBB4C /* AVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF282DDD89AB006DBB4C /* AVCaptureViewController.h */; };
 		3F77DF472DDD89AB006DBB4C /* LanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF212DDD89AB006DBB4C /* LanguageTool.h */; };
-		3F77DF482DDD89AB006DBB4C /* VocalWebcomponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF352DDD89AB006DBB4C /* VocalWebcomponent.h */; };
 		3F77DF4D2DDD89AB006DBB4C /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F77DF042DDD89AB006DBB4C /* Localizable.json */; };
 		3F77DF4F2DDD89AB006DBB4C /* VocaiChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F77DF1D2DDD89AB006DBB4C /* VocaiChatModel.m */; };
 		3F77DF502DDD89AB006DBB4C /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F77DF312DDD89AB006DBB4C /* PDFDisplayView.m */; };
@@ -85,7 +84,6 @@
 		3F77DF6D2DDD89AB006DBB4C /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF302DDD89AB006DBB4C /* PDFDisplayView.h */; };
 		3F77DF6E2DDD89AB006DBB4C /* AVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF282DDD89AB006DBB4C /* AVCaptureViewController.h */; };
 		3F77DF6F2DDD89AB006DBB4C /* LanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF212DDD89AB006DBB4C /* LanguageTool.h */; };
-		3F77DF702DDD89AB006DBB4C /* VocalWebcomponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF352DDD89AB006DBB4C /* VocalWebcomponent.h */; };
 		3F77DF722DDD89AB006DBB4C /* VocaiChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F77DF1D2DDD89AB006DBB4C /* VocaiChatModel.m */; };
 		3F77DF732DDD89AB006DBB4C /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F77DF312DDD89AB006DBB4C /* PDFDisplayView.m */; };
 		3F77DF742DDD89AB006DBB4C /* ChatWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F77DF2B2DDD89AB006DBB4C /* ChatWebViewController.m */; };
@@ -128,7 +126,6 @@
 		3F77DF9A2DDD89AB006DBB4C /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF302DDD89AB006DBB4C /* PDFDisplayView.h */; };
 		3F77DF9B2DDD89AB006DBB4C /* AVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF282DDD89AB006DBB4C /* AVCaptureViewController.h */; };
 		3F77DF9C2DDD89AB006DBB4C /* LanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF212DDD89AB006DBB4C /* LanguageTool.h */; };
-		3F77DF9D2DDD89AB006DBB4C /* VocalWebcomponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF352DDD89AB006DBB4C /* VocalWebcomponent.h */; };
 		3F77DFA22DDD89AB006DBB4C /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F77DF042DDD89AB006DBB4C /* Localizable.json */; };
 		3F77DFA42DDD89AB006DBB4C /* VocaiChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F77DF1D2DDD89AB006DBB4C /* VocaiChatModel.m */; };
 		3F77DFA52DDD89AB006DBB4C /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F77DF312DDD89AB006DBB4C /* PDFDisplayView.m */; };
@@ -158,7 +155,6 @@
 		3F77DFBD2DDD89AB006DBB4C /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF302DDD89AB006DBB4C /* PDFDisplayView.h */; };
 		3F77DFBE2DDD89AB006DBB4C /* AVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF282DDD89AB006DBB4C /* AVCaptureViewController.h */; };
 		3F77DFBF2DDD89AB006DBB4C /* LanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF212DDD89AB006DBB4C /* LanguageTool.h */; };
-		3F77DFC02DDD89AB006DBB4C /* VocalWebcomponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF352DDD89AB006DBB4C /* VocalWebcomponent.h */; };
 		3F77DFC52DDD89AB006DBB4C /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F77DF042DDD89AB006DBB4C /* Localizable.json */; };
 		3F77DFC62DDD89AB006DBB4C /* VocaiChatModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF1C2DDD89AB006DBB4C /* VocaiChatModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F77DFC72DDD89AB006DBB4C /* ChatWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF2A2DDD89AB006DBB4C /* ChatWebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -174,7 +170,6 @@
 		3F77DFD12DDD89AB006DBB4C /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF302DDD89AB006DBB4C /* PDFDisplayView.h */; };
 		3F77DFD22DDD89AB006DBB4C /* AVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF282DDD89AB006DBB4C /* AVCaptureViewController.h */; };
 		3F77DFD32DDD89AB006DBB4C /* LanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF212DDD89AB006DBB4C /* LanguageTool.h */; };
-		3F77DFD42DDD89AB006DBB4C /* VocalWebcomponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF352DDD89AB006DBB4C /* VocalWebcomponent.h */; };
 		3F77DFD62DDD89AB006DBB4C /* VocaiChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F77DF1D2DDD89AB006DBB4C /* VocaiChatModel.m */; };
 		3F77DFD72DDD89AB006DBB4C /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F77DF312DDD89AB006DBB4C /* PDFDisplayView.m */; };
 		3F77DFD82DDD89AB006DBB4C /* ChatWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F77DF2B2DDD89AB006DBB4C /* ChatWebViewController.m */; };
@@ -219,7 +214,6 @@
 		3F77E0082DDD89AB006DBB4C /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF302DDD89AB006DBB4C /* PDFDisplayView.h */; };
 		3F77E0092DDD89AB006DBB4C /* AVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF282DDD89AB006DBB4C /* AVCaptureViewController.h */; };
 		3F77E00A2DDD89AB006DBB4C /* LanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF212DDD89AB006DBB4C /* LanguageTool.h */; };
-		3F77E00B2DDD89AB006DBB4C /* VocalWebcomponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF352DDD89AB006DBB4C /* VocalWebcomponent.h */; };
 		3F77E00C2DDD89AB006DBB4C /* VocaiChatModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF1C2DDD89AB006DBB4C /* VocaiChatModel.h */; };
 		3F77E00D2DDD89AB006DBB4C /* ChatWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF2A2DDD89AB006DBB4C /* ChatWebViewController.h */; };
 		3F77E00E2DDD89AB006DBB4C /* VocaiSdkBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF322DDD89AB006DBB4C /* VocaiSdkBuilder.h */; };
@@ -234,7 +228,6 @@
 		3F77E0172DDD89AB006DBB4C /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF302DDD89AB006DBB4C /* PDFDisplayView.h */; };
 		3F77E0182DDD89AB006DBB4C /* AVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF282DDD89AB006DBB4C /* AVCaptureViewController.h */; };
 		3F77E0192DDD89AB006DBB4C /* LanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF212DDD89AB006DBB4C /* LanguageTool.h */; };
-		3F77E01A2DDD89AB006DBB4C /* VocalWebcomponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F77DF352DDD89AB006DBB4C /* VocalWebcomponent.h */; };
 		3F77E01F2DDD89AB006DBB4C /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F77DF042DDD89AB006DBB4C /* Localizable.json */; };
 		3F77E0212DDD89AB006DBB4C /* VocaiChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F77DF1D2DDD89AB006DBB4C /* VocaiChatModel.m */; };
 		3F77E0222DDD89AB006DBB4C /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F77DF312DDD89AB006DBB4C /* PDFDisplayView.m */; };
@@ -511,7 +504,6 @@
 		3F77DF312DDD89AB006DBB4C /* PDFDisplayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFDisplayView.m; sourceTree = "<group>"; };
 		3F77DF322DDD89AB006DBB4C /* VocaiSdkBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VocaiSdkBuilder.h; sourceTree = "<group>"; };
 		3F77DF332DDD89AB006DBB4C /* VocaiSdkBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VocaiSdkBuilder.m; sourceTree = "<group>"; };
-		3F77DF352DDD89AB006DBB4C /* VocalWebcomponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VocalWebcomponent.h; sourceTree = "<group>"; };
 		4036AD561259F58D92A41832D20EF707 /* EXPMatchers+beTruthy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beTruthy.m"; path = "Expecta/Matchers/EXPMatchers+beTruthy.m"; sourceTree = "<group>"; };
 		4138A0A13FF7F7B73435E87E54C56C18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		41DD008B1C8CCDB66E9DB3DD2858D513 /* SPTCompiledExample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTCompiledExample.h; path = Specta/Specta/SPTCompiledExample.h; sourceTree = "<group>"; };
@@ -898,14 +890,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		3F77DF362DDD89AB006DBB4C /* VocalWebcomponent */ = {
-			isa = PBXGroup;
-			children = (
-				3F77DF352DDD89AB006DBB4C /* VocalWebcomponent.h */,
-			);
-			path = VocalWebcomponent;
-			sourceTree = "<group>";
-		};
 		3F77DF392DDD89AB006DBB4C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -913,7 +897,6 @@
 				3F77DF1E2DDD89AB006DBB4C /* Params */,
 				3F77DF272DDD89AB006DBB4C /* Tool */,
 				3F77DF342DDD89AB006DBB4C /* View */,
-				3F77DF362DDD89AB006DBB4C /* VocalWebcomponent */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1227,7 +1210,6 @@
 				3F77DFBD2DDD89AB006DBB4C /* PDFDisplayView.h in Headers */,
 				3F77DFBE2DDD89AB006DBB4C /* AVCaptureViewController.h in Headers */,
 				3F77DFBF2DDD89AB006DBB4C /* LanguageTool.h in Headers */,
-				3F77DFC02DDD89AB006DBB4C /* VocalWebcomponent.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1255,7 +1237,6 @@
 				3F77E0082DDD89AB006DBB4C /* PDFDisplayView.h in Headers */,
 				3F77E0092DDD89AB006DBB4C /* AVCaptureViewController.h in Headers */,
 				3F77E00A2DDD89AB006DBB4C /* LanguageTool.h in Headers */,
-				3F77E00B2DDD89AB006DBB4C /* VocalWebcomponent.h in Headers */,
 				4405B4E5A75EB0E4BF4BA9758C0B2FEF /* SPTCompiledExample.h in Headers */,
 				D48EA902743141712A9B91DBC47F1AEC /* SPTExample.h in Headers */,
 				A8D37078CD4F605A7EC12BA0D9091171 /* SPTExampleGroup.h in Headers */,
@@ -1287,7 +1268,6 @@
 				3F77DF452DDD89AB006DBB4C /* PDFDisplayView.h in Headers */,
 				3F77DF462DDD89AB006DBB4C /* AVCaptureViewController.h in Headers */,
 				3F77DF472DDD89AB006DBB4C /* LanguageTool.h in Headers */,
-				3F77DF482DDD89AB006DBB4C /* VocalWebcomponent.h in Headers */,
 				A070787F25B1FE1600AB6DD8226EA2DD /* Pods-VocLiveChatFramework_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1310,7 +1290,6 @@
 				3F77DF6D2DDD89AB006DBB4C /* PDFDisplayView.h in Headers */,
 				3F77DF6E2DDD89AB006DBB4C /* AVCaptureViewController.h in Headers */,
 				3F77DF6F2DDD89AB006DBB4C /* LanguageTool.h in Headers */,
-				3F77DF702DDD89AB006DBB4C /* VocalWebcomponent.h in Headers */,
 				F286B17F56DF04571F7AFFA3EC1CABA7 /* Pods-VocLiveChatFramework_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1338,7 +1317,6 @@
 				3F77DF9A2DDD89AB006DBB4C /* PDFDisplayView.h in Headers */,
 				3F77DF9B2DDD89AB006DBB4C /* AVCaptureViewController.h in Headers */,
 				3F77DF9C2DDD89AB006DBB4C /* LanguageTool.h in Headers */,
-				3F77DF9D2DDD89AB006DBB4C /* VocalWebcomponent.h in Headers */,
 				2D0B5003D351B029E936DE6AEEA19322 /* UIImage+Compare.h in Headers */,
 				73C1CB493981D1B91D7F03D73185E7A6 /* UIImage+Diff.h in Headers */,
 				D63F2508C82BD8DF54B2E8DCDF955013 /* UIImage+Snapshot.h in Headers */,
@@ -1363,7 +1341,6 @@
 				3F77E0172DDD89AB006DBB4C /* PDFDisplayView.h in Headers */,
 				3F77E0182DDD89AB006DBB4C /* AVCaptureViewController.h in Headers */,
 				3F77E0192DDD89AB006DBB4C /* LanguageTool.h in Headers */,
-				3F77E01A2DDD89AB006DBB4C /* VocalWebcomponent.h in Headers */,
 				F90B38F219C25D02A0F4F89A69272910 /* Expecta+Snapshots-umbrella.h in Headers */,
 				852E3A98FF249B217FB55B8D4E6A70C4 /* ExpectaObject+FBSnapshotTest.h in Headers */,
 				0A58DB87B4A15B7D61EB5B42CAC9BDA4 /* EXPMatchers+FBSnapshotTest.h in Headers */,
@@ -1388,7 +1365,6 @@
 				3F77DFD12DDD89AB006DBB4C /* PDFDisplayView.h in Headers */,
 				3F77DFD22DDD89AB006DBB4C /* AVCaptureViewController.h in Headers */,
 				3F77DFD32DDD89AB006DBB4C /* LanguageTool.h in Headers */,
-				3F77DFD42DDD89AB006DBB4C /* VocalWebcomponent.h in Headers */,
 				79E76BBE31A4A2416CFBD7A673EA61BE /* VocLiveChatFramework-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
