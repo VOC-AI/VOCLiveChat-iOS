@@ -169,7 +169,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
                             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                                 // 后台任务...
                                 dispatch_async(dispatch_get_main_queue(), ^{
-                                    [self showNoPermissionToastOnView:self.view message:@"没有摄像头权限, 请到设置中心打开"];
+                                    [self showNoPermissionToastOnView:self.view message:@"No camera permission. Please go to the Settings Center to enable it."];
                                 });
                             });
                         }
@@ -194,7 +194,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
                             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                                 // 后台任务...
                                 dispatch_async(dispatch_get_main_queue(), ^{
-                                    [self showNoPermissionToastOnView:self.view message:@"没有摄像头权限, 请到设置中心打开"];
+                                    [self showNoPermissionToastOnView:self.view message:@"No camera permission. Please go to the Settings Center to enable it."];
                                 });
                             });
                         }
@@ -370,7 +370,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
                                     withParams:dict
                                       progress:^(NSProgress *uploadProgress) {
                                              // 处理上传进度
-                                             NSLog(@"上传进度: %.2f%%", uploadProgress.fractionCompleted * 100);
+                                             NSLog(@"Upload progress: %.2f%%", uploadProgress.fractionCompleted * 100);
                                          }
                                        completion:^(BOOL success, NSString * _Nullable message, NSDictionary * _Nullable response) {
                                            if (success) {
