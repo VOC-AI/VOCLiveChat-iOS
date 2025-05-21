@@ -30,14 +30,14 @@
     NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     if (error) {
         NSLog(@"Failed to parse JSON: %@", error.localizedDescription);
-        return defaultLang;
+        return nil;
     }
     
     // 获取 entities 数组
     NSArray *entities = jsonDict[@"entities"];
     if (!entities) {
         NSLog(@"No 'entities' array found in JSON.");
-        return defaultLang;
+        return nil;
     }
     
     // 遍历 entities 数组，查找匹配的语言
