@@ -24,6 +24,12 @@
     return nav;
 }
 
+- (void)vocaiViewControllerWillAppear:(UIViewController *)viewController animated:(BOOL)animated {
+    if (self.sdkViewWillAppearDelegate != nil) {
+        [self.sdkViewWillAppearDelegate vocaiSdkViewControllerWillAppear:viewController animated:animated];
+    }
+}
+
 - (void)vocalViewControllerWillAppear:(UIViewController *)viewController animated:(BOOL)animated {
     if (self.sdkViewWillAppearDelegate != nil) {
         [self.sdkViewWillAppearDelegate vocalSdkViewControllerWillAppear:viewController animated:animated];

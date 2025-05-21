@@ -15,7 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol VocaiSdkBuilderViewControllerLifecycleDelegate <NSObject>
 @optional
-- (void)vocalSdkViewControllerWillAppear:(UIViewController *)viewController animated:(BOOL)animated;
+- (void)vocalSdkViewControllerWillAppear:(UIViewController *)viewController animated:(BOOL)animated __attribute__((deprecated("Use vocaiSdkViewControllerWillAppear: instead")))
+NS_DEPRECATED_IOS(1.0.0, 0.0.0, "vocaiViewControllerWillAppear:", "This method name has a typo. Use vocaiSdkViewControllerWillAppear: instead");
+@optional
+- (void)vocaiSdkViewControllerWillAppear:(UIViewController *)viewController animated:(BOOL)animated;
+
 @end
 
 @interface VocaiSdkBuilder : NSObject <VocalViewControllerLifecycleDelegate>

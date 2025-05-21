@@ -24,7 +24,7 @@ end
 
 导入框架内头文件：
 
-```
+```objective-c
 #import <VocLiveChatFramework/VocaiChatModel.h>
 #import <VocLiveChatFramework/VocaiSdkBuilder.h>
 ```
@@ -34,7 +34,7 @@ end
 
 构建初始化模型:
 
-```
+```objective-c
 NSDictionary *exampleOtherDict = nil;
 VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"19365" token:@"6731F71BE4B0187458389512" email:@"zhikang@163.com" language:@"cn" otherParams:exampleOtherDict];
 VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];
@@ -43,20 +43,31 @@ UIViewController *viewController = [builder buildSdkWithParams: vocaiModel];
 
 如果要监听视图声明周期的ViewWillAppear: 则遵循下面的协议， 设置好代理
 
-```
+```objective-c
    <VocaiSdkBuilderViewControllerLifecycleDelegate>
     builder.sdkViewWillAppearDelegate = self;
 ```
 
 然后在对应的代理方法：
 
-```
-- (void)vocalSdkViewControllerWillAppear:(UIViewController *)viewController animated:(BOOL)animated{
+```objective-c
+- (void)vocaiSdkViewControllerWillAppear:(UIViewController *)viewController animated:(BOOL)animated{
 ```
 
 可以拿到对应的视图控制器。该代理在对应的控制器ViewWillAppear的时候调用。
 初始化模型以及调用返回的
 
-```
+```objective-c
 ViewController [VocaiSdkBuilder buildSdkWithParams: vocaiModel];
+```
+
+### Trouble shooting
+
+1. 附件点击相机时发生崩溃，需要编辑工程的 plist 文件，增加如下选项
+
+```xml
+  <key>NSCameraUsageDescription</key>
+  <string>Please grant camera permission.</string>
+  <key>NSPhotoLibraryUsageDescription</key>
+  <string>Please grant gallery permission.</string>
 ```

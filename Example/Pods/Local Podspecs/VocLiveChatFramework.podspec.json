@@ -1,22 +1,27 @@
 {
   "name": "VocLiveChatFramework",
-  "version": "0.1.0",
-  "summary": "A short description of VocLiveChatFramework.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/6587734/VocLiveChatFramework",
+  "version": "1.3.5",
+  "summary": "VOC AI LiveChat iOS SDK",
+  "description": "VOC AI LiveChat iOS SDK",
+  "homepage": "https://github.com/VOC-AI/VOCLiveChat-iOS.git",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "6587734": "anti2moron@gmail.com"
+    "Your Name": "anti2moron@gmail.com"
   },
   "source": {
-    "git": "https://github.com/6587734/VocLiveChatFramework.git",
-    "tag": "0.1.0"
+    "git": "git@github.com:VOC-AI/VOCLiveChat-iOS.git",
+    "tag": "1.3.5"
   },
   "platforms": {
     "ios": "10.0"
   },
-  "source_files": "VocLiveChatFramework/Classes/**/*"
+  "source_files": "VocLiveChatFramework/Classes/**/*",
+  "resource_bundles": {
+    "VocLiveChatFramework": [
+      "VocLiveChatFramework/Assets/*"
+    ]
+  }
 }

@@ -216,7 +216,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
     // 判断相机可不可用
     BOOL isCamera = [UIImagePickerController isCameraDeviceAvailable: UIImagePickerControllerCameraDeviceFront];
     if (!isCamera) {
-        NSLog(@"没有摄像头");
+        NSLog(@"No camera available");
         return;
     }
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
@@ -240,7 +240,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
           // 弹出相册选择界面
           [self presentViewController:self.imagePickerController animated:YES completion:nil];
       } else {
-          NSLog(@"设备不支持打开相册");
+          NSLog(@"No gallery available");
       }
 }
 
@@ -254,7 +254,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
         picker.delegate = self;
         [self presentViewController:picker animated:YES completion:nil];
     } else {
-        NSLog(@"设备不支持视频拍摄");
+        NSLog(@"Video not supported");
     }
 }
 
@@ -264,7 +264,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
     if ([message.name isEqualToString:@"VOCLivechatMessageHandler"]) {
            // 获取前端传递过来的数据
            id data = message.body;
-           NSLog(@"接收到前端传递的数据: %@", data);
+           NSLog(@"Data received: %@", data);
             if ([data isKindOfClass:[NSDictionary class]]) {
                 WebCallBackModel *callBackModel = [self convertDictionaryToModel:data];
                 
@@ -278,14 +278,14 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
              }
            
            // 模拟处理数据
-           NSString *responseData = @"这是原生代码处理后的响应数据";
+           NSString *responseData = @"";
             // 调用前端的回调函数
            NSString *jsCallback = [NSString stringWithFormat:@"frontendCallback('%@')", responseData];
            [self.webView evaluateJavaScript:jsCallback completionHandler:^(id result, NSError * _Nullable error) {
                if (error) {
-                   NSLog(@"执行 JavaScript 回调函数出错: %@", error.localizedDescription);
+                   NSLog(@"Eval JavaScript callback error: %@", error.localizedDescription);
                } else {
-                   NSLog(@"执行 JavaScript 回调函数成功，结果: %@", result);
+                   NSLog(@"Eval JavaScript callback success，result: %@", result);
                }
            }];
        }
@@ -386,7 +386,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
                                                    self.uploaFileType = fileType;
                                                }
                                            } else {
-                                               NSLog(@"上传失败: %@", message);
+                                               NSLog(@"Upload media error: %@", message);
                                            }
                                        }];
 }
@@ -463,7 +463,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
             
             [self uploadFile:data fileName: self.fileName uploadFiledType: 1];
         } else {
-            NSLog(@"读取文件失败: %@", error.localizedDescription);
+            NSLog(@"Reading documenet error: %@", error.localizedDescription);
         }
     }
 }
@@ -479,7 +479,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
     NSError *error;
     NSData *videoData = [NSData dataWithContentsOfURL:videoURL options:NSDataReadingMappedIfSafe error:&error];
     if (error) {
-        NSLog(@"读取本地视频文件失败: %@", error.localizedDescription);
+        NSLog(@"Reading local video error: %@", error.localizedDescription);
         return nil;
     }
     return videoData;
@@ -501,7 +501,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
           
       } failure:^(NSError * _Nullable error) {
           // 处理请求失败的情况
-          NSLog(@"请求失败，错误: %@", error.localizedDescription);
+          NSLog(@"Request error: %@", error.localizedDescription);
       }];
 }
 
