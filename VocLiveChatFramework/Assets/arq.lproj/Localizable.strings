@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  abc
+
+  Created by 刘志康 on 2025/3/3.
+  
+*/
+"key_take_photo": "Ota kuva",
+"key_take_video": "Video",
+"key_choose_from_gallery": "Galleria",
+"key_choose_from_file": "Tiedosto"

@@ -1,0 +1,22 @@
+{
+  "name": "VocLiveChatFramework",
+  "version": "0.1.0",
+  "summary": "A short description of VocLiveChatFramework.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/6587734/VocLiveChatFramework",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "6587734": "anti2moron@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/6587734/VocLiveChatFramework.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "VocLiveChatFramework/Classes/**/*"
+}

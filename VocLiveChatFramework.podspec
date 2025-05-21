@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VocLiveChatFramework'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of VocLiveChatFramework.'
+  s.version          = '1.2.2'
+  s.summary          = 'VOC AI LiveChat iOS SDK'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,14 +18,14 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+VOC AI LiveChat iOS SDK
                        DESC
 
-  s.homepage         = 'https://github.com/6587734/VocLiveChatFramework'
+  s.homepage         = 'https://github.com/VOC-AI/VOCLiveChat-iOS.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { '6587734' => 'anti2moron@gmail.com' }
-  s.source           = { :git => 'https://github.com/6587734/VocLiveChatFramework.git', :tag => s.version.to_s }
+  s.author           = { 'Your Name' => 'anti2moron@gmail.com' }
+  s.source           = { :git => 'https://github.com/VOC-AI/VOCLiveChat-iOS.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
@@ -36,7 +36,7 @@ TODO: Add long description of the pod here.
   #   'VocLiveChatFramework' => ['VocLiveChatFramework/Assets/*.png']
   # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

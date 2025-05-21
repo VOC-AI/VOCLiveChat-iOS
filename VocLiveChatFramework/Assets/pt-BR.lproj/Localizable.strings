@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  abc
+
+  Created by 刘志康 on 2025/3/3.
+  
+*/
+"key_take_photo" = "Tirar uma foto";
+"key_take_video"= "Vídeo";
+"key_choose_from_gallery" = "Galeria";
+"key_choose_from_file" = "Arquivo";
