@@ -14,6 +14,22 @@
     // 获取当前 framework 的 bundle
     NSString* defaultLang = @"en";
     NSBundle *frameworkBundle = [NSBundle bundleForClass:[self class]];
+    NSDictionary* dict = @{
+        @"en-US": @"en",
+        @"zh-CN":@"cn",
+        @"ja-JP":@"jp",
+        @"fr-FR":@"fr",
+        @"de-DE":@"de",
+        @"pt-PT":@"pt",
+        @"es-ES":@"es",
+        @"":@"ja",
+        @"ar":@"ar",
+    };
+    NSString* normalizedLang = dict[language];
+    if(!normalizedLang) {
+        normalizedLang = language;
+    }
+    
     NSString *filePath = [frameworkBundle pathForResource:@"Localizable" ofType:@"json"];
 
     if(!filePath) {
@@ -49,7 +65,7 @@
     // 遍历 entities 数组，查找匹配的语言
     for (NSDictionary *entity in entities) {
         NSString *entityLanguage = entity[@"language"];
-        if ([entityLanguage isEqualToString:language]) {
+        if ([entityLanguage isEqualToString:normalizedLang]) {
             NSDictionary *strings = entity[@"strings"];
             if (strings) {
                 return strings[key];

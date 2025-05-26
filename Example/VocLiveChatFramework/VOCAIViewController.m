@@ -22,7 +22,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     NSDictionary *exampleOtherDict = nil;
-    VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"19365" token:@"6731F71BE4B0187458389512" email:@"zhikang@163.com" language:@"cn" otherParams:nil];
+    VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"19365" token:@"6731F71BE4B0187458389512" email:@"zhikang@163.com" language:@"en-US" otherParams:nil];
     VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];
     UIViewController *viewController = [builder buildSdkWithParams: vocaiModel];
     [self.view addSubview:viewController.view];
