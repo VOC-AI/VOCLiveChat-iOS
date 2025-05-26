@@ -23,10 +23,10 @@
 
 // 定义文件上传类型
 typedef NS_ENUM(NSInteger, UploaFileType) {
-    Pic,
-    File,
-    Video,
-};
+    UploadFileTypePic = 0,
+    UploadFileTypeFile = 1,
+    UploadFileTypeVideo = 2,
+} NS_SWIFT_NAME(UploadFileType);
 // 定义屏幕宽度宏
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 // 定义屏幕高度宏
@@ -42,6 +42,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
 @property (nonatomic, strong) PollingRequestTool *pollingTool;
 @property (nonatomic, assign) UploaFileType uploaFileType; ///  只用于上传失败的时候记录上传文件类型
 @property (nonatomic, strong) PDFDisplayView *pdfDisplayView;
+@property (nonatomic, copy) NSString *uploadFileMeta;
 
 @end
 
@@ -93,7 +94,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     if (self.viewDelegate != nil) {
-        [self.viewDelegate vocalViewControllerWillAppear:self animated:animated];
+        [self.viewDelegate vocaiViewControllerWillAppear:self animated:animated];
     }
 }
 
@@ -338,17 +339,17 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)uploadFile: (NSData *) fileData fileName:(NSString *)fileName uploadFiledType: (UploaFileType) uploaFileType {
-    
+- (void)uploadFile: (NSData *) fileData fileName:(NSString *)fileName uploadFiledType: (UploaFileType) uploadFileType {
+    self.uploaFileType = uploadFileType;
     NSString *fileType = @"";
-    switch (uploaFileType) {
-        case Pic:
+    switch (uploadFileType) {
+        case UploadFileTypePic:
             fileType = @"image/jpeg";
             break;
-        case File:
+        case UploadFileTypeFile:
             fileType = @"application/pdf";
             break;
-        case Video:
+        case UploadFileTypeVideo:
             fileType = @"video/x-msvideo";
             break;
         default:
@@ -356,68 +357,68 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
     }
 
     // 上传的 URL
-
-    
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     [dict setValue:self.vocaiChatParams.botId forKey:@"botId"];
     [dict setValue:self.vocaiChatParams.chatId forKey:@"chatId"];
     [dict setValue:[NSString stringWithFormat: @"{\"uid\":\"%@\",\"type\":\"EMAIL\"}", self.vocaiChatParams.email] forKey:@"contact"];
     // 调用上传方法
-    [[ImageUploader sharedUploader] uploadFile:fileData
-                                      fileName:fileName
-                                      fileType:fileType
-                                         toURL: @"https://apps.voc.ai/api_v2/intelli/resource/upload/lead"
-                                    withParams:dict
+    [[ImageUploader sharedUploader] uploadFile: fileData
+                                      fileName: fileName
+                                      fileType: fileType
+                                      toURL: @"https://apps.voc.ai/api_v2/intelli/resource/upload/lead"
+                                      withParams: dict
                                       progress:^(NSProgress *uploadProgress) {
                                              // 处理上传进度
                                              NSLog(@"Upload progress: %.2f%%", uploadProgress.fractionCompleted * 100);
                                          }
-                                       completion:^(BOOL success, NSString * _Nullable message, NSDictionary * _Nullable response) {
+                                      completion:^(BOOL success, NSString * _Nullable message, NSDictionary * _Nullable response) {
                                            if (success) {
                                                NSString * url = response[@"url"];
                                                NSString *jobId = response[@"jobId"];
                                                if (isStringEmptyOrNil(jobId)) { /// 第一次传成功 不需要轮询
-                                                   [self refreshWebViewWithUploadFiledType:uploaFileType toUrl:url];
+                                                   [self refreshWebViewWithUploadFiledType:uploadFileType toUrl:url];
                                                } else { /// 第一次上传没有成功 需要轮询
                                                    NSString *urlString = [NSString stringWithFormat:@"https://apps.voc.ai/api_v2/intelli/resource/status?jobId=%@",
                                                                           jobId];
                                                    NSURL *url = [NSURL URLWithString: urlString];
                                                    [self startPollingWithUrl: url];
-                                                   self.uploaFileType = fileType;
+                                                   self.uploadFileMeta = fileType;
                                                }
                                            } else {
                                                NSLog(@"Upload media error: %@", message);
                                            }
-                                       }];
+                                    }];
 }
 
 
+/**
+  * submit result back to webview.
+ */
 - (void)refreshWebViewWithUploadFiledType: (UploaFileType) uploaFileType toUrl: (NSString*)url {
-    
-    if (uploaFileType == 0) { // 刷新上传图片
+    if (uploaFileType == UploadFileTypePic) { // Picture
         dispatch_async(dispatch_get_main_queue(), ^{
             NSDictionary *urlDict = @{@"url": url,
                                       @"reserveId": self.randomNumber};
-            NSString *imageUrl111 = [NSString stringWithFormat:@"handleRecieveImage('%@', %@)", url, [self jsonStringFromDictionary:urlDict]];
-            [self.webView evaluateJavaScript: imageUrl111 completionHandler:nil];
+            NSString *imageUrl = [NSString stringWithFormat:@"handleRecieveImage('%@', %@)", url, [self jsonStringFromDictionary:urlDict]];
+            [self.webView evaluateJavaScript: imageUrl completionHandler:nil];
          });
     }
     
-    if (uploaFileType == 1) { // 刷新上传文件
+    if (uploaFileType == UploadFileTypeFile) { // File
         dispatch_async(dispatch_get_main_queue(), ^{
             NSDictionary *dict =  @{@"reserveId": self.randomNumber,
                                     @"filename": self.fileName};
             NSString *fileUrl = [NSString stringWithFormat:@"handleRecieveFile('%@',%@)", url, [self jsonStringFromDictionary:dict]];
-            [self.webView evaluateJavaScript: fileUrl completionHandler:nil];
+            [self.webView evaluateJavaScript:fileUrl completionHandler:nil];
          });
     }
     
-    if (uploaFileType == 2) {
+    if (uploaFileType == UploadFileTypeVideo) { // Video
         dispatch_async(dispatch_get_main_queue(), ^{
             NSDictionary *urlDict = @{@"url": url,
                                       @"reserveId": self.randomNumber};
-            NSString *imageUrl111 = [NSString stringWithFormat:@"handleRecieveVideo('%@', %@)", url, [self jsonStringFromDictionary:urlDict]];
-            [self.webView evaluateJavaScript: imageUrl111 completionHandler:nil];
+            NSString *videoUrl = [NSString stringWithFormat:@"handleRecieveVideo('%@', %@)", url, [self jsonStringFromDictionary:urlDict]];
+            [self.webView evaluateJavaScript: videoUrl completionHandler:nil];
          });
     }
 }
@@ -445,7 +446,11 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
 - (void)openFilePicker {
     UIDocumentPickerViewController *documentPicker = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:@[@"com.adobe.pdf"] inMode:UIDocumentPickerModeImport];
     documentPicker.delegate = self;
-    documentPicker.allowsMultipleSelection = NO;
+    if (@available(iOS 11.0, *)) {
+        documentPicker.allowsMultipleSelection = NO;
+    } else {
+        // Fallback on earlier versions
+    }
     [self presentViewController:documentPicker animated:YES completion:nil];
 }
 
@@ -497,8 +502,12 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
           // 处理请求成功的结果
           
           NSString * url = response[@"url"];
-          [self refreshWebViewWithUploadFiledType: self.uploaFileType toUrl:url];
-          
+          NSString * status = response[@"status"];
+          BOOL finished = [response[@"finished"] boolValue];
+          if ([status isEqualToString:@"COMPLETE"] && finished) {
+              [self refreshWebViewWithUploadFiledType: self.uploaFileType toUrl:url];
+              [self.pollingTool stopPolling];
+          }
       } failure:^(NSError * _Nullable error) {
           // 处理请求失败的情况
           NSLog(@"Request error: %@", error.localizedDescription);
