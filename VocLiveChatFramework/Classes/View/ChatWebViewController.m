@@ -22,11 +22,11 @@
 #import <objc/runtime.h>
 
 // 定义文件上传类型
-typedef NS_ENUM(NSInteger, UploaFileType) {
+typedef NS_ENUM(NSInteger, UploadFileType) {
     UploadFileTypePic = 0,
     UploadFileTypeFile = 1,
     UploadFileTypeVideo = 2,
-} NS_SWIFT_NAME(UploadFileType);
+} NS_SWIFT_NAME(UploaddFileType);
 // 定义屏幕宽度宏
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 // 定义屏幕高度宏
@@ -40,7 +40,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
 @property (nonatomic, copy) NSString *randomNumber; // 用于让前端展示loading以及移除loading
 @property (nonatomic, copy) NSString *fileName;
 @property (nonatomic, strong) PollingRequestTool *pollingTool;
-@property (nonatomic, assign) UploaFileType uploaFileType; ///  只用于上传失败的时候记录上传文件类型
+@property (nonatomic, assign) UploadFileType uploadFileType; ///  只用于上传失败的时候记录上传文件类型
 @property (nonatomic, strong) PDFDisplayView *pdfDisplayView;
 @property (nonatomic, copy) NSString *uploadFileMeta;
 
@@ -77,17 +77,14 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
     [self setWebViewAnchor];
     // 设置要加载的URL   这里的ID是botId
     
-    NSString *urlString = [NSString stringWithFormat:
-                           @"https://apps.voc.ai/live-chat?id=%@&token=%@&disableFileInputModal=true&lang=%@&email=%@&",
+    NSString *urlString = [NSString stringWithFormat: [self getApiWithPathname:@"/live-chat?id=%@&token=%@&disableFileInputModal=true&lang=%@&email=%@&"],
                            self.vocaiChatParams.botId,
                            self.vocaiChatParams.token,
                            self.vocaiChatParams.language,
                            self.vocaiChatParams.email];
     NSString *componentUrlString = [urlString stringByAppendingString: [self dictionaryToQueryString:self.vocaiChatParams.otherParams]];
     NSURL *url = [NSURL URLWithString: componentUrlString];
-      NSURLRequest *request = [NSURLRequest requestWithURL: url];
-     // 添加消息处理脚本，这里的 @"messageHandler" 是前端调用的标识
-    
+    NSURLRequest *request = [NSURLRequest requestWithURL: url];
     [self.webView loadRequest:request];
 }
 
@@ -104,17 +101,17 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
        NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:self.webView
                                                                         attribute:NSLayoutAttributeTop
                                                                         relatedBy:NSLayoutRelationEqual
-                                                                           toItem:self.view.safeAreaLayoutGuide
+                                                                        toItem:self.view.safeAreaLayoutGuide
                                                                         attribute:NSLayoutAttributeTop
-                                                                       multiplier:1.0
+                                                                        multiplier:1.0
                                                                          constant:0];
        NSLayoutConstraint *leadingConstraint = [NSLayoutConstraint constraintWithItem:self.webView
-                                                                             attribute:NSLayoutAttributeLeading
-                                                                             relatedBy:NSLayoutRelationEqual
-                                                                                toItem:self.view.safeAreaLayoutGuide
-                                                                             attribute:NSLayoutAttributeLeading
+                                                                            attribute:NSLayoutAttributeLeading
+                                                                            relatedBy:NSLayoutRelationEqual
+                                                                            toItem:self.view.safeAreaLayoutGuide
+                                                                            attribute:NSLayoutAttributeLeading
                                                                             multiplier:1.0
-                                                                              constant:0];
+                                                                            constant:0];
        NSLayoutConstraint *trailingConstraint = [NSLayoutConstraint constraintWithItem:self.webView
                                                                               attribute:NSLayoutAttributeTrailing
                                                                               relatedBy:NSLayoutRelationEqual
@@ -143,15 +140,15 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
 }
 
 -(void)showPickView {
-    CustomOptionsView *optionsView = [[CustomOptionsView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) language:self.vocaiChatParams.language];
+    CustomOptionsView *optionsView = [[CustomOptionsView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) language:self.language];
     
     optionsView.language = self.vocaiChatParams.language;
         optionsView.optionSelectedBlock = ^(NSString *selectedOption) {
             
-            NSString *videoString = [LanguageTool getStringForKey:@"key_take_video" withLanguage:self.vocaiChatParams.language];
-            NSString *galleryString = [LanguageTool getStringForKey:@"key_choose_from_gallery" withLanguage:self.vocaiChatParams.language];
-            NSString *fileString = [LanguageTool getStringForKey:@"key_choose_from_file" withLanguage:self.vocaiChatParams.language];
-            NSString *takePhotoString = [LanguageTool getStringForKey:@"key_take_photo" withLanguage:self.vocaiChatParams.language];
+            NSString *videoString = [LanguageTool getStringForKey:@"key_take_video" withLanguage:self.language];
+            NSString *galleryString = [LanguageTool getStringForKey:@"key_choose_from_gallery" withLanguage:self.language];
+            NSString *fileString = [LanguageTool getStringForKey:@"key_choose_from_file" withLanguage:self.language];
+            NSString *takePhotoString = [LanguageTool getStringForKey:@"key_take_photo" withLanguage:self.language];
             if ([selectedOption isEqualToString: takePhotoString]){
                 BOOL isAuthorized = hasCameraPermission();
                 if (isAuthorized) {
@@ -167,10 +164,11 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
                              });
                             // 继续进行需要摄像头的操作
                         } else {
+                            NSString* noPermissionHint = [LanguageTool getStringForKey: @"key_nocamera_permission" withLanguage:self.language];
                             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                                 // 后台任务...
                                 dispatch_async(dispatch_get_main_queue(), ^{
-                                    [self showNoPermissionToastOnView:self.view message:@"No camera permission. Please go to the Settings Center to enable it."];
+                                    [self showNoPermissionToastOnView:self.view message:noPermissionHint];
                                 });
                             });
                         }
@@ -192,6 +190,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
                              });
                             // 继续进行需要摄像头的操作
                         } else {
+                            NSString* noPermissionHint = [LanguageTool getStringForKey: @"key_nocamera_permission" withLanguage:self.language];
                             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                                 // 后台任务...
                                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -211,6 +210,13 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
             }
         };
     [optionsView showInWindow];
+}
+
+- (NSString*) language {
+    if(!self.vocaiChatParams) {
+        return @"en";
+    }
+    return self.vocaiChatParams.language;
 }
 
 - (void)openCamera {
@@ -294,7 +300,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
 
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-    NSLog(@"Web page loaded successfully");
+    NSLog(@"[VOC.AI] chat loaded successfully.");
 }
 
 //MARK: 图片选择器代理
@@ -339,8 +345,17 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)uploadFile: (NSData *) fileData fileName:(NSString *)fileName uploadFiledType: (UploaFileType) uploadFileType {
-    self.uploaFileType = uploadFileType;
+- (NSUInteger) maxUploadFileSize {
+    NSUInteger defaultMaxSize = 50 * 1024 * 1024; // maximum 50MB
+    NSUInteger value = self.vocaiChatParams.maxUploadFileSize;
+    if(value == 0) {
+        return defaultMaxSize;
+    }
+    return value;
+}
+
+- (void)uploadFile: (NSData *) fileData fileName:(NSString *)fileName uploadFiledType: (UploadFileType) uploadFileType {
+    self.uploadFileType = uploadFileType;
     NSString *fileType = @"";
     switch (uploadFileType) {
         case UploadFileTypePic:
@@ -355,7 +370,17 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
         default:
             break;
     }
-
+    if (fileData.length > self.maxUploadFileSize) {
+        NSUInteger maxMbSize = (NSUInteger)(self.maxUploadFileSize / (1024.0 * 1024.0));
+        NSUInteger mbSize = (NSUInteger)(fileData.length / (1024.0 * 1024.0));
+        NSLog(@"Uploaded file exceeds maximum filesize (%@MB): %@ MB", @(maxMbSize), @(mbSize));
+        NSString* exceedFileSize = [LanguageTool getStringForKey:@"key_media_limit_exceed" withLanguage:self.language];
+        NSString* actualHint = [NSString stringWithFormat:exceedFileSize, @(mbSize)];
+        [self handleUploadFileError:uploadFileType errorMessage:actualHint];
+        return;
+    } else {
+        NSLog(@"Uploaded file data size: %lu KB", (unsigned long)(fileData.length / 1024));
+    }
     // 上传的 URL
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     [dict setValue:self.vocaiChatParams.botId forKey:@"botId"];
@@ -365,7 +390,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
     [[ImageUploader sharedUploader] uploadFile: fileData
                                       fileName: fileName
                                       fileType: fileType
-                                      toURL: @"https://apps.voc.ai/api_v2/intelli/resource/upload/lead"
+                                      toURL: [self getApiWithPathname:@"/api_v2/intelli/resource/upload/lead"]
                                       withParams: dict
                                       progress:^(NSProgress *uploadProgress) {
                                              // 处理上传进度
@@ -373,12 +398,17 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
                                          }
                                       completion:^(BOOL success, NSString * _Nullable message, NSDictionary * _Nullable response) {
                                            if (success) {
-                                               NSString * url = response[@"url"];
+                                               NSNumber *status = response[@"status"];
+                                               NSString *url = response[@"url"];
                                                NSString *jobId = response[@"jobId"];
+                                               if ([status longValue] / 100 != 2) {
+                                                   [self handleUploadFileError:self.uploadFileType errorMessage:@"Upload failed."];
+                                                   return;
+                                               }
                                                if (isStringEmptyOrNil(jobId)) { /// 第一次传成功 不需要轮询
                                                    [self refreshWebViewWithUploadFiledType:uploadFileType toUrl:url];
                                                } else { /// 第一次上传没有成功 需要轮询
-                                                   NSString *urlString = [NSString stringWithFormat:@"https://apps.voc.ai/api_v2/intelli/resource/status?jobId=%@",
+                                                   NSString *urlString = [NSString stringWithFormat: [self getApiWithPathname:@"/api_v2/intelli/resource/status?jobId=%@"],
                                                                           jobId];
                                                    NSURL *url = [NSURL URLWithString: urlString];
                                                    [self startPollingWithUrl: url];
@@ -391,11 +421,30 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
 }
 
 
+-(NSString*) apiHost {
+    VOCLiveChatEnv env = self.vocaiChatParams.env;
+    if(env == VOCLiveChatEnvStaging) {
+        return @"https://apps-staging.voc.ai";
+    }
+    return @"https://apps.voc.ai";
+}
+
+-(NSString*) getApiWithPathname:pathname {
+    return [NSString stringWithFormat:@"%@%@", self.apiHost,pathname];
+}
+
+- (void) handleUploadFileError: (UploadFileType)uploadFileType errorMessage: (NSString*)message  {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSString *invokeJSCode = [NSString stringWithFormat:@"if(typeof handleUploadError==='function') { handleUploadError('%@', '%@', '%@'); }", @"UploadError", self.randomNumber, message];
+        [self.webView evaluateJavaScript:invokeJSCode completionHandler:nil];
+     });
+}
+
 /**
   * submit result back to webview.
  */
-- (void)refreshWebViewWithUploadFiledType: (UploaFileType) uploaFileType toUrl: (NSString*)url {
-    if (uploaFileType == UploadFileTypePic) { // Picture
+- (void)refreshWebViewWithUploadFiledType: (UploadFileType)uploadFileType toUrl: (NSString*)url {
+    if (uploadFileType == UploadFileTypePic) { // Picture
         dispatch_async(dispatch_get_main_queue(), ^{
             NSDictionary *urlDict = @{@"url": url,
                                       @"reserveId": self.randomNumber};
@@ -404,7 +453,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
          });
     }
     
-    if (uploaFileType == UploadFileTypeFile) { // File
+    if (uploadFileType == UploadFileTypeFile) { // File
         dispatch_async(dispatch_get_main_queue(), ^{
             NSDictionary *dict =  @{@"reserveId": self.randomNumber,
                                     @"filename": self.fileName};
@@ -413,7 +462,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
          });
     }
     
-    if (uploaFileType == UploadFileTypeVideo) { // Video
+    if (uploadFileType == UploadFileTypeVideo) { // Video
         dispatch_async(dispatch_get_main_queue(), ^{
             NSDictionary *urlDict = @{@"url": url,
                                       @"reserveId": self.randomNumber};
@@ -478,7 +527,6 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
-
 // 本地视频URL转NSData
 - (NSData *)convertLocalVideoURLToData:(NSURL *)videoURL {
     NSError *error;
@@ -489,7 +537,6 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
     }
     return videoData;
 }
-
 
 - (void)startPollingWithUrl:(NSURL *)url {
     // 创建轮询请求工具类实例
@@ -505,7 +552,7 @@ typedef NS_ENUM(NSInteger, UploaFileType) {
           NSString * status = response[@"status"];
           BOOL finished = [response[@"finished"] boolValue];
           if ([status isEqualToString:@"COMPLETE"] && finished) {
-              [self refreshWebViewWithUploadFiledType: self.uploaFileType toUrl:url];
+              [self refreshWebViewWithUploadFiledType: self.uploadFileType toUrl:url];
               [self.pollingTool stopPolling];
           }
       } failure:^(NSError * _Nullable error) {
@@ -548,8 +595,7 @@ BOOL isStringEmptyOrNil(NSString *string) {
 }
 
 - (void)PDFDisplayViewDidClose:(PDFDisplayView *)view {
-    NSLog(@"PDF 显示视图已关闭");
-    // 可以在这里添加其他关闭后的处理逻辑
+    NSLog(@"PDF view closed.");
 }
 
 -(NSString *)dictionaryToQueryString:(NSDictionary *)dictionary {
@@ -580,6 +626,9 @@ BOOL hasCameraPermission(void) {
     toastLabel.layer.cornerRadius = 5;
     toastLabel.clipsToBounds = YES;
     toastLabel.font = [UIFont systemFontOfSize:14];
+    toastLabel.frame = CGRectMake(20, 100, 300, 0);
+    toastLabel.numberOfLines = 0;
+    toastLabel.lineBreakMode = NSLineBreakByWordWrapping;
     [toastLabel sizeToFit];
     toastLabel.frame = CGRectMake((view.bounds.size.width - toastLabel.bounds.size.width) / 2,
                                   view.bounds.size.height - 100,
@@ -591,7 +640,7 @@ BOOL hasCameraPermission(void) {
     [UIView animateWithDuration:0.2 animations:^{
         toastLabel.alpha = 1;
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.2 delay:2.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [UIView animateWithDuration:0.2 delay:3.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
             toastLabel.alpha = 0;
         } completion:^(BOOL finished) {
             [toastLabel removeFromSuperview];

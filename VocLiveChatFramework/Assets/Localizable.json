@@ -7,7 +7,9 @@
         "key_take_video": "Video",
         "key_choose_from_gallery": "Gallery",
         "key_choose_from_file": "File",
-        "key_cancel": "Cancel"
+        "key_cancel": "Cancel",
+        "key_nocamera_permission": "No camera permission. Please go to the Settings Center to enable it.",
+        "key_media_limit_exceed": "Maximum file size(%@) exceeded."
       }
     },
     {
@@ -17,7 +19,9 @@
         "key_take_video": "视频",
         "key_choose_from_gallery": "相册",
         "key_choose_from_file": "文件",
-        "key_cancel": "取消"
+        "key_cancel": "取消",
+        "key_nocamera_permission": "无摄像头权限，请前往设置中心开启。",
+        "key_media_limit_exceed": "超出最大文件大小（%@）。"
       }
     },
     {
@@ -27,7 +31,9 @@
         "key_take_video": "ビデオ",
         "key_choose_from_gallery": "ギャラリーから選ぶ",
         "key_choose_from_file": "ファイルから選ぶ",
-        "key_cancel": "キャンセル"
+        "key_cancel": "キャンセル",
+        "key_nocamera_permission": "カメラの権限がありません。設定センターで有効にしてください。",
+        "key_media_limit_exceed": "最大ファイルサイズ（%@）を超えました。"
       }
     },
     {
@@ -37,7 +43,9 @@
         "key_take_video": "Vidéo",
         "key_choose_from_gallery": "Galerie",
         "key_choose_from_file": "Fichier",
-        "key_cancel": "Annuler"
+        "key_cancel": "Annuler",
+        "key_nocamera_permission": "Aucune autorisation de caméra. Veuillez l'activer dans les paramètres.",
+        "key_media_limit_exceed": "Taille maximale du fichier (%@) dépassée."
       }
     },
     {
@@ -47,7 +55,9 @@
         "key_take_video": "Video",
         "key_choose_from_gallery": "Galerie auswählen",
         "key_choose_from_file": "Datei auswählen",
-        "key_cancel": "Abbrechen"
+        "key_cancel": "Abbrechen",
+        "key_nocamera_permission": "Keine Kameraberechtigung. Bitte in den Einstellungen aktivieren.",
+        "key_media_limit_exceed": "Maximale Dateigröße (%@) überschritten."
       }
     },
     {
@@ -57,7 +67,9 @@
         "key_take_video": "Vídeo",
         "key_choose_from_gallery": "Galeria",
         "key_choose_from_file": "Arquivo",
-        "key_cancel": "Cancelar"
+        "key_cancel": "Cancelar",
+        "key_nocamera_permission": "Sem permissão para a câmera. Vá para as configurações para ativar.",
+        "key_media_limit_exceed": "Tamanho máximo do arquivo (%@) excedido."
       }
     },
     {
@@ -67,7 +79,9 @@
         "key_take_video": "Video",
         "key_choose_from_gallery": "Galería",
         "key_choose_from_file": "Archivo",
-        "key_cancel": "Cancelar"
+        "key_cancel": "Cancelar",
+        "key_nocamera_permission": "Sin permiso de cámara. Ve a Configuración para habilitarlo.",
+        "key_media_limit_exceed": "Tamaño máximo de archivo (%@) excedido."
       }
     },
     {
@@ -77,7 +91,9 @@
         "key_take_video": "ビデオ",
         "key_choose_from_gallery": "ギャラリーから選ぶ",
         "key_choose_from_file": "ファイルから選ぶ",
-        "key_cancel": "キャンセル"
+        "key_cancel": "キャンセル",
+        "key_nocamera_permission": "カメラの権限がありません。設定センターで有効にしてください。",
+        "key_media_limit_exceed": "最大ファイルサイズ（%@）を超えました。"
       }
     },
     {
@@ -87,7 +103,9 @@
         "key_take_video": "تسجيل فيديو",
         "key_choose_from_gallery": "من المعرض",
         "key_choose_from_file": "من الملف",
-        "key_cancel": "إلغاء"
+        "key_cancel": "إلغاء",
+        "key_nocamera_permission": "لا يوجد إذن للكاميرا. يرجى تفعيله من مركز الإعدادات.",
+        "key_media_limit_exceed": "تم تجاوز الحد الأقصى لحجم الملف (%@)."
       }
     },
     {
@@ -97,7 +115,9 @@
         "key_take_video": "Video",
         "key_choose_from_gallery": "Galeri",
         "key_choose_from_file": "File",
-        "key_cancel": "Batal"
+        "key_cancel": "Batal",
+        "key_nocamera_permission": "Tidak ada izin kamera. Buka Pengaturan untuk mengaktifkannya.",
+        "key_media_limit_exceed": "Ukuran file maksimum (%@) terlampaui."
       }
     },
     {
@@ -107,7 +127,9 @@
         "key_take_video": "Video",
         "key_choose_from_gallery": "Galleria",
         "key_choose_from_file": "Tiedosto",
-        "key_cancel": "Peruuta"
+        "key_cancel": "Peruuta",
+        "key_nocamera_permission": "Ei kameran käyttöoikeutta. Siirry asetuksiin ottaaksesi sen käyttöön.",
+        "key_media_limit_exceed": "Tiedoston enimmäiskoko (%@) ylitetty."
       }
     },
     {
@@ -117,7 +139,9 @@
         "key_take_video": "Video",
         "key_choose_from_gallery": "Galleria",
         "key_choose_from_file": "File",
-        "key_cancel": "Annulla"
+        "key_cancel": "Annulla",
+        "key_nocamera_permission": "Nessun permesso per la fotocamera. Vai alle impostazioni per abilitarlo.",
+        "key_media_limit_exceed": "Dimensione massima del file (%@) superata."
       }
     },
     {
@@ -127,7 +151,9 @@
         "key_take_video": "Wideo",
         "key_choose_from_gallery": "Galeria",
         "key_choose_from_file": "Plik",
-        "key_cancel": "Anuluj"
+        "key_cancel": "Anuluj",
+        "key_nocamera_permission": "Brak uprawnień do aparatu. Przejdź do ustawień, aby je włączyć.",
+        "key_media_limit_exceed": "Przekroczono maksymalny rozmiar pliku (%@)."
       }
     }
   ]

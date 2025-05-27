@@ -19,16 +19,22 @@ NSString *NSStringFromVOCLiveChatLinkOpenType(VOCLiveChatLinkOpenType type);
 // VOCLiveChatSystemLang 枚举
 typedef NS_ENUM(NSUInteger, VOCLiveChatSystemLang) {
     VOCLiveChatSystemLangEnglish = 0,
-    VOCLiveChatSystemLangChinese,
-    VOCLiveChatSystemLangJapanese,
-    VOCLiveChatSystemLangFrench,
-    VOCLiveChatSystemLangGerman,
-    VOCLiveChatSystemLangSpanish,
-    VOCLiveChatSystemLangPortuguese,
-    VOCLiveChatSystemLangArabic,
-    VOCLiveChatSystemLangPhilippines,
-    VOCLiveChatSystemLangIndonesian
-};
+    VOCLiveChatSystemLangChinese = 1,
+    VOCLiveChatSystemLangJapanese = 2,
+    VOCLiveChatSystemLangFrench = 3,
+    VOCLiveChatSystemLangGerman = 4,
+    VOCLiveChatSystemLangSpanish = 5,
+    VOCLiveChatSystemLangPortuguese = 6,
+    VOCLiveChatSystemLangArabic = 7,
+    VOCLiveChatSystemLangPhilippines = 8,
+    VOCLiveChatSystemLangIndonesian = 9
+} NS_SWIFT_NAME(VOCLiveChatSystemLang);
+
+// VOCLiveChatSystemLang 枚举
+typedef NS_ENUM(NSUInteger, VOCLiveChatEnv) {
+    VOCLiveChatEnvProd = 0,
+    VOCLiveChatEnvStaging = 1,
+} NS_SWIFT_NAME(VOCLiveChatEnv);
 
 // 定义一个方法将枚举值转换为对应的字符串
 NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang);
@@ -46,21 +52,21 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang);
 // 属性
 @property (nonatomic, strong) NSString *chatId;
 @property (nonatomic, strong) NSString *token;
-@property (nonatomic, strong, nullable) NSString *email;
-@property (nonatomic, strong, nullable) NSString *brand;
-@property (nonatomic, strong) NSString *botId;
-@property (nonatomic, strong, nullable) NSString *country;
-@property (nonatomic, strong, nullable) NSString *language;
-//@property (nonatomic, assign, nullable) VOCLiveChatSystemLang lang;
+@property (nonatomic, copy, nullable) NSString *email;
+@property (nonatomic, copy, nullable) NSString *brand;
+@property (nonatomic, copy) NSString *botId;
+@property (nonatomic, copy, nullable) NSString *country;
+@property (nonatomic, copy, nullable) NSString *language;
 @property (nonatomic, assign) BOOL noHeader;
 @property (nonatomic, assign) BOOL noBrand;
 @property (nonatomic, assign) BOOL encrypt;
 @property (nonatomic, assign) BOOL isTest;
+@property (nonatomic, assign) NSUInteger maxUploadFileSize;
 @property (nonatomic, assign) VOCLiveChatLinkOpenType openLinkType;
 @property (nonatomic, strong) NSString *skill_id;
 @property (nonatomic, strong) NSString *channelid;
 @property (nonatomic, strong) NSDictionary<NSString *, NSString *> *otherParams;
-
+@property (nonatomic, assign) VOCLiveChatEnv env;
 @end
 
 NS_ASSUME_NONNULL_END
