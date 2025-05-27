@@ -22,7 +22,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     NSDictionary *exampleOtherDict = nil;
-    VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"499" token:@"66D806CAE4B05062935CCFD0" email:@"anti2moron@gmail.com" language:@"zh-Hant-HK" otherParams:nil];
+    VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"499" token:@"66D806CAE4B05062935CCFD0" email:@"anti2moron@gmail.com" language:@"fr-FR" otherParams:nil];
     vocaiModel.userId = @"123123";
     vocaiModel.env = VOCLiveChatEnvStaging;
     VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];

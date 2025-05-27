@@ -63,7 +63,7 @@
         }
     }
     
-    NSLog(@"No matching language found for %@. Using 'en'", language);
+    NSLog(@"No matching language found for %@. Using system default '%@'", language, defaultLang);
     
     for (NSDictionary *entity in entities) {
         NSString *entityLanguage = entity[@"language"];
@@ -76,6 +76,18 @@
         }
     }
     
+    NSLog(@"No matching language found for %@. Using system default 'en'", language);
+    
+    for (NSDictionary *entity in entities) {
+        NSString *entityLanguage = entity[@"language"];
+        if ([entityLanguage isEqualToString:@"en"]) {
+            NSDictionary *strings = entity[@"strings"];
+            if (strings) {
+                return strings[key];
+            }
+            break;
+        }
+    }
     return nil;
 }
 
@@ -117,8 +129,8 @@
         };
     });
     NSString* tar = dict[lang];
-    if(!tar) {
-        return @"en";
+    if (!tar) {
+        return lang;
     }
     return tar;
 }
