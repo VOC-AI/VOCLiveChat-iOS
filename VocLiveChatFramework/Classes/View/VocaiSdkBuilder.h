@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "VocaiChatModel.h"
+#import <VocLiveChatFramework/VocaiChatModel.h>
 #import <VocLiveChatFramework/ChatWebViewController.h>
 
 NS_ASSUME_NONNULL_BEGIN

@@ -5,13 +5,13 @@
 //  Created by 刘志康 on 2025/2/24.
 //
 
-#import "NetworkTool.h"
+#import "VocaiNetworkTool.h"
 
-@implementation NetworkTool
+@implementation VocaiNetworkTool
 
 // 单例实现
 + (instancetype)sharedInstance {
-    static NetworkTool *instance = nil;
+    static VocaiNetworkTool *instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[self alloc] init];
@@ -23,15 +23,15 @@
 - (void)requestWithMethod:(RequestMethod)method
                   URLString:(NSString *)URLString
                  parameters:(NSDictionary *)parameters
-                    success:(SuccessBlock)success
-                    failure:(FailureBlock)failure {
+                    success:(VocaiNetworkSuccessBlock)success
+                    failure:(VocaiNetworkFailureBlock)failure {
     // 创建URL对象
     NSURL *url = [NSURL URLWithString:URLString];
     // 创建可变的请求对象
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 
     // 根据请求方法设置HTTP方法和处理参数
-    if (method == RequestMethodGET) {
+    if (method == VocaiRequestMethodGET) {
         request.HTTPMethod = @"GET";
         // 处理GET请求的参数
         if (parameters.count > 0) {
@@ -45,7 +45,7 @@
             NSString *fullURLString = [NSString stringWithFormat:@"%@?%@", URLString, paramString];
             request.URL = [NSURL URLWithString:fullURLString];
         }
-    } else if (method == RequestMethodPOST) {
+    } else if (method == VocaiRequestMethodPOST) {
         request.HTTPMethod = @"POST";
         // 处理POST请求的参数
         if (parameters.count > 0) {

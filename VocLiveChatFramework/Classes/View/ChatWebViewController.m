@@ -8,19 +8,19 @@
 #import "ChatWebViewController.h"
 #import <WebKit/WebKit.h>
 #import "CustomOptionsView.h"
-#import "ImageUploader.h"
+#import "VocaiImageUploader.h"
 #import "UserModel.h"
 #import "WebCallBackModel.h"
 #import "AVCaptureViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
-#import "RandomStringGenerator.h"
-#import "PollingRequestTool.h"
+#import "VocaiRandomStringGenerator.h"
+#import "VocaiPollingRequestTool.h"
 #import "VocaiChatModel.h"
-#import "LanguageTool.h"
+#import "VocaiLanguageTool.h"
 #import "PDFDisplayView.h"
 #import <AVFoundation/AVFoundation.h>
 #import <objc/runtime.h>
-#import "ApiTool.h"
+#import "VocaiApiTool.h"
 
 // 定义文件上传类型
 typedef NS_ENUM(NSInteger, UploadFileType) {
@@ -41,7 +41,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
 @property (nonatomic, strong) UIDocumentPickerViewController *documentPicker;
 @property (nonatomic, copy) NSString *randomNumber; // 用于让前端展示loading以及移除loading
 @property (nonatomic, copy) NSString *fileName;
-@property (nonatomic, strong) PollingRequestTool *pollingTool;
+@property (nonatomic, strong) VocaiPollingRequestTool *pollingTool;
 @property (nonatomic, assign) UploadFileType uploadFileType; ///  只用于上传失败的时候记录上传文件类型
 @property (nonatomic, strong) PDFDisplayView *pdfDisplayView;
 @property (nonatomic, copy) NSString *uploadFileMeta;
@@ -155,10 +155,10 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
     optionsView.language = self.vocaiChatParams.language;
         optionsView.optionSelectedBlock = ^(NSString *selectedOption) {
             
-            NSString *videoString = [LanguageTool getStringForKey:@"key_take_video" withLanguage:self.language];
-            NSString *galleryString = [LanguageTool getStringForKey:@"key_choose_from_gallery" withLanguage:self.language];
-            NSString *fileString = [LanguageTool getStringForKey:@"key_choose_from_file" withLanguage:self.language];
-            NSString *takePhotoString = [LanguageTool getStringForKey:@"key_take_photo" withLanguage:self.language];
+            NSString *videoString = [VocaiLanguageTool getStringForKey:@"key_take_video" withLanguage:self.language];
+            NSString *galleryString = [VocaiLanguageTool getStringForKey:@"key_choose_from_gallery" withLanguage:self.language];
+            NSString *fileString = [VocaiLanguageTool getStringForKey:@"key_choose_from_file" withLanguage:self.language];
+            NSString *takePhotoString = [VocaiLanguageTool getStringForKey:@"key_take_photo" withLanguage:self.language];
             if ([selectedOption isEqualToString: takePhotoString]){
                 BOOL isAuthorized = hasCameraPermission();
                 if (isAuthorized) {
@@ -174,7 +174,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
                              });
                             // 继续进行需要摄像头的操作
                         } else {
-                            NSString* noPermissionHint = [LanguageTool getStringForKey: @"key_nocamera_permission" withLanguage:self.language];
+                            NSString* noPermissionHint = [VocaiLanguageTool getStringForKey: @"key_nocamera_permission" withLanguage:self.language];
                             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                                 // 后台任务...
                                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -200,7 +200,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
                              });
                             // 继续进行需要摄像头的操作
                         } else {
-                            NSString* noPermissionHint = [LanguageTool getStringForKey: @"key_nocamera_permission" withLanguage:self.language];
+                            NSString* noPermissionHint = [VocaiLanguageTool getStringForKey: @"key_nocamera_permission" withLanguage:self.language];
                             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                                 // 后台任务...
                                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -328,7 +328,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
         
         // 在这里可以对选择的图片进行处理，例如显示在 UIImageView 上
         NSData *imageData = UIImageJPEGRepresentation(selectedImage, 0.8);
-        self.randomNumber = [RandomStringGenerator randomStringWithLength:8];
+        self.randomNumber = [VocaiRandomStringGenerator randomStringWithLength:8];
         NSString *lastJs = [NSString stringWithFormat:@"handleRecieveImageLoading('%@')", self.randomNumber];
         [self.webView evaluateJavaScript: lastJs completionHandler: nil];
         self.fileName = fileName;
@@ -337,7 +337,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
     } else if ([mediaType isEqualToString:(NSString *)kUTTypeMovie]) { //  返回了拍摄的视频
         NSURL *videoURL = info[UIImagePickerControllerMediaURL];
         NSData *videoData = [self convertLocalVideoURLToData:videoURL];
-        self.randomNumber = [RandomStringGenerator randomStringWithLength:8];
+        self.randomNumber = [VocaiRandomStringGenerator randomStringWithLength:8];
         NSString *lastJs = [NSString stringWithFormat:@"handleRecieveVideoLoading('%@')", self.randomNumber];
         [self.webView evaluateJavaScript: lastJs completionHandler: nil];
         self.fileName = videoURL.lastPathComponent;
@@ -384,7 +384,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
         NSUInteger maxMbSize = (NSUInteger)(self.maxUploadFileSize / (1024.0 * 1024.0));
         NSUInteger mbSize = (NSUInteger)(fileData.length / (1024.0 * 1024.0));
         NSLog(@"Uploaded file exceeds maximum filesize (%@MB): %@ MB", @(maxMbSize), @(mbSize));
-        NSString* exceedFileSize = [LanguageTool getStringForKey:@"key_media_limit_exceed" withLanguage:self.language];
+        NSString* exceedFileSize = [VocaiLanguageTool getStringForKey:@"key_media_limit_exceed" withLanguage:self.language];
         NSString* actualHint = [NSString stringWithFormat:exceedFileSize, @(mbSize)];
         [self handleUploadFileError:uploadFileType errorMessage:actualHint];
         return;
@@ -397,7 +397,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
     [dict setValue:self.vocaiChatParams.chatId forKey:@"chatId"];
     [dict setValue:[NSString stringWithFormat: @"{\"uid\":\"%@\",\"type\":\"EMAIL\"}", self.vocaiChatParams.email] forKey:@"contact"];
     // 调用上传方法
-    [[ImageUploader sharedUploader] uploadFile: fileData
+    [[VocaiImageUploader sharedUploader] uploadFile: fileData
                                       fileName: fileName
                                       fileType: fileType
                                       toURL: [self getApiWithPathname:@"/api_v2/intelli/resource/upload/lead"]
@@ -517,7 +517,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
         NSError *error;
         NSData *data = [NSData dataWithContentsOfURL:selectedURL options:0 error:&error];
         if (data) {
-            self.randomNumber = [RandomStringGenerator randomStringWithLength:8];
+            self.randomNumber = [VocaiRandomStringGenerator randomStringWithLength:8];
             NSString *js = [NSString stringWithFormat:@"handleRecieveFileLoading('%@')", self.randomNumber];
             self.fileName = selectedURL.lastPathComponent;
             [self.webView evaluateJavaScript: js completionHandler: nil];
@@ -547,7 +547,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
 
 - (void)startPollingWithUrl:(NSURL *)url {
     // 创建轮询请求工具类实例
-      self.pollingTool = [[PollingRequestTool alloc] init];
+      self.pollingTool = [[VocaiPollingRequestTool alloc] init];
       
       // 要请求的 URL
       

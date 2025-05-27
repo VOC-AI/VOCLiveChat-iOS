@@ -5,9 +5,9 @@
 //  Created by 刘志康 on 2025/3/4.
 //
 
-#import "LanguageTool.h"
+#import "VocaiLanguageTool.h"
 
-@implementation LanguageTool
+@implementation VocaiLanguageTool
 
 + (NSString *)getStringForKey:(NSString *)key withLanguage:(NSString *)language {
     // 读取JSON文件

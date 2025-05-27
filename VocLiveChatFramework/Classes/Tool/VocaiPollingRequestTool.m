@@ -5,9 +5,9 @@
 //  Created by 刘志康 on 2025/3/2.
 //
 
-#import "PollingRequestTool.h"
+#import "VocaiPollingRequestTool.h"
 
-@interface PollingRequestTool ()
+@interface VocaiPollingRequestTool ()
 
 @property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic, strong) dispatch_source_t timer;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation PollingRequestTool
+@implementation VocaiPollingRequestTool
 
 - (instancetype)init {
     self = [super init];

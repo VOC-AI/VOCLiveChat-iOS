@@ -11,7 +11,7 @@
 typedef void (^PollingSuccessBlock)(NSData * _Nullable data, NSDictionary * _Nullable response);
 typedef void (^PollingFailureBlock)(NSError * _Nullable error);
 
-@interface PollingRequestTool : NSObject
+@interface VocaiPollingRequestTool : NSObject
 
 // 启动轮询请求
 - (void)startPollingWithURL:(NSURL *)url interval:(NSTimeInterval)interval success:(PollingSuccessBlock)success failure:(PollingFailureBlock)failure;

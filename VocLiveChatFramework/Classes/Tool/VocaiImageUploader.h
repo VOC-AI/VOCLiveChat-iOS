@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 
 // 定义上传完成的回调块
-typedef void(^UploadCompletionBlock)(BOOL success, NSString * _Nullable message, NSDictionary * _Nullable response);
+typedef void(^VocaiImageUploadCompletionBlock)(BOOL success, NSString * _Nullable message, NSDictionary * _Nullable response);
 
 // 定义上传进度的回调块
-typedef void(^UploadProgressBlock)(NSProgress *uploadProgress);
+typedef void(^VocaiImageUploadProgressBlock)(NSProgress *uploadProgress);
 
-@interface ImageUploader : NSObject
+@interface VocaiImageUploader : NSObject
 
 // 单例方法
 + (instancetype)sharedUploader;
@@ -33,7 +33,7 @@ typedef void(^UploadProgressBlock)(NSProgress *uploadProgress);
           fileType: (NSString *)fileType
             toURL:(NSString *)urlString
          withParams:(NSDictionary *)params
-           progress:(UploadProgressBlock)progressBlock
-        completion:(UploadCompletionBlock)completionBlock;
+           progress:(VocaiImageUploadProgressBlock)progressBlock
+        completion:(VocaiImageUploadCompletionBlock)completionBlock;
 
 @end

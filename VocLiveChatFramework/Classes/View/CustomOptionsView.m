@@ -5,7 +5,7 @@
 //  Created by 刘志康 on 2025/2/26.
 //
 #import "CustomOptionsView.h"
-#import "LanguageTool.h"
+#import "VocaiLanguageTool.h"
 // 定义屏幕宽度宏
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 // 定义屏幕高度宏
@@ -36,11 +36,11 @@
         self.whiteBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
         self.whiteBgView.backgroundColor = [UIColor whiteColor];
         [self addSubview: self.whiteBgView];
-        NSString *videoString = [LanguageTool getStringForKey:@"key_take_video" withLanguage:self.language];
-        NSString *galleryString = [LanguageTool getStringForKey:@"key_choose_from_gallery" withLanguage:self.language];
-        NSString *fileString = [LanguageTool getStringForKey:@"key_choose_from_file" withLanguage:self.language];
-        NSString *takePhotoString = [LanguageTool getStringForKey:@"key_take_photo" withLanguage:self.language];
-        NSString *cancelString = [LanguageTool getStringForKey:@"key_cancel" withLanguage:self.language];
+        NSString *videoString = [VocaiLanguageTool getStringForKey:@"key_take_video" withLanguage:self.language];
+        NSString *galleryString = [VocaiLanguageTool getStringForKey:@"key_choose_from_gallery" withLanguage:self.language];
+        NSString *fileString = [VocaiLanguageTool getStringForKey:@"key_choose_from_file" withLanguage:self.language];
+        NSString *takePhotoString = [VocaiLanguageTool getStringForKey:@"key_take_photo" withLanguage:self.language];
+        NSString *cancelString = [VocaiLanguageTool getStringForKey:@"key_cancel" withLanguage:self.language];
         
         self.optionTitles = @[videoString, galleryString, fileString, takePhotoString];
         

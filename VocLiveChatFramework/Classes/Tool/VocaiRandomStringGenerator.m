@@ -5,9 +5,9 @@
 //  Created by 刘志康 on 2025/3/1.
 //
 
-#import "RandomStringGenerator.h"
+#import "VocaiRandomStringGenerator.h"
 
-@implementation RandomStringGenerator
+@implementation VocaiRandomStringGenerator
 
 + (NSString *)randomStringWithLength:(NSUInteger)length {
     NSString *letters = @"0123456789";

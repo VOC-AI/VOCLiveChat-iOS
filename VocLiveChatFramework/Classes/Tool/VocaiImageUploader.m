@@ -5,17 +5,17 @@
 //  Created by 刘志康 on 2025/2/25.
 //
 
-#import "ImageUploader.h"
+#import "VocaiImageUploader.h"
 
-@interface ImageUploader ()
+@interface VocaiImageUploader ()
 
 @end
 
-@implementation ImageUploader
+@implementation VocaiImageUploader
 
 // 单例实现
 + (instancetype)sharedUploader {
-    static ImageUploader *sharedInstance = nil;
+    static VocaiImageUploader *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[self alloc] init];
@@ -28,8 +28,8 @@
           fileType: (NSString *)fileType
             toURL:(NSString *)urlString
          withParams:(NSDictionary * _Nullable)params
-           progress:(UploadProgressBlock)progressBlock
-         completion:(UploadCompletionBlock)completionBlock {
+           progress:(VocaiImageUploadProgressBlock)progressBlock
+         completion:(VocaiImageUploadCompletionBlock)completionBlock {
     // 检查 URL 字符串是否有效
     NSURL *url = [NSURL URLWithString:urlString];
     if (!url) {

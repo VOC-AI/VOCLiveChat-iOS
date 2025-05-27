@@ -5,7 +5,7 @@
 //  Created by Boyuan Gao on 2025/5/27.
 //
 #import <Foundation/Foundation.h>
-#import "VocaiChatModel.h"
+#import <VocLiveChatFramework/VocaiChatModel.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -5,9 +5,9 @@
 //  Created by Boyuan Gao on 2025/5/27.
 //
 
-#import "MessageCenter.h"
-#import "ApiTool.h"
-#import "NetworkTool.h"
+#import "VocaiMessageCenter.h"
+#import "VocaiApiTool.h"
+#import "VocaiNetworkTool.h"
 #import "VocaiChatModel.h"
 
 @interface VocaiMessageCenter()
@@ -37,7 +37,7 @@
 
 -(void) getUnreadMessageCountWithChatId:(NSString*)chatId withCallback:(SuccessBlock)callback {
     NSString* url = [self.apiTool getApiWithPathname:@"/livechat/unread"];
-    [[NetworkTool sharedInstance] requestWithMethod:RequestMethodPOST URLString:url parameters:@{@"chatId":chatId} success:^(id responseObject) {
+    [[VocaiNetworkTool sharedInstance] requestWithMethod:VocaiRequestMethodPOST URLString:url parameters:@{@"chatId":chatId} success:^(id responseObject) {
         NSLog(responseObject);
     } failure:^(NSError *error) {
         // ignore

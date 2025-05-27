@@ -5,7 +5,7 @@
 //  Created by Boyuan Gao on 2025/5/27.
 //
 
-#import "ApiTool.h"
+#import "VocaiApiTool.h"
 #import <VocLiveChatFramework/VocaiChatModel.h>
 
 @interface VocaiApiTool()

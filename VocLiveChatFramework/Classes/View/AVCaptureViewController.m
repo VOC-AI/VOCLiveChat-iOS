@@ -7,7 +7,7 @@
 
 #import "AVCaptureViewController.h"
 #import <AVFoundation/AVFoundation.h>
-#import "ImageUploader.h"
+#import "VocaiImageUploader.h"
 
 @interface AVCaptureViewController () <AVCaptureFileOutputRecordingDelegate>
 

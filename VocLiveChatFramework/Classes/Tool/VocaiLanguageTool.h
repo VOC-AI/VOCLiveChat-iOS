@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LanguageTool : NSObject
+@interface VocaiLanguageTool : NSObject
 + (NSString *)getStringForKey:(NSString *)key withLanguage:(NSString *)language;
 @end
 
