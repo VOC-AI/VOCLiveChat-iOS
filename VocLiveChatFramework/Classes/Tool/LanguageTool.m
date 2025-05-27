@@ -17,12 +17,12 @@
     NSDictionary* dict = @{
         @"en-US": @"en",
         @"zh-CN":@"cn",
-        @"ja-JP":@"jp",
+        @"ja-JP":@"ja",
         @"fr-FR":@"fr",
         @"de-DE":@"de",
         @"pt-PT":@"pt",
         @"es-ES":@"es",
-        @"":@"ja",
+        @"jp":@"ja",
         @"ar":@"ar",
     };
     NSString* normalizedLang = dict[language];
