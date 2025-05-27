@@ -15,6 +15,7 @@
 #import "VocaiChatModel.h"
 #import "ChatWebViewController.h"
 #import "VocaiSdkBuilder.h"
+#import "VocaiMessageCenter.h"
 
 FOUNDATION_EXPORT double VocLiveChatFrameworkVersionNumber;
 FOUNDATION_EXPORT const unsigned char VocLiveChatFrameworkVersionString[];
