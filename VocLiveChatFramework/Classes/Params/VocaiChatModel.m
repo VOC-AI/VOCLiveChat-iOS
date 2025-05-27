@@ -133,6 +133,7 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
     copy.channelid = [self.channelid copyWithZone:zone];
     copy.otherParams = [self.otherParams copyWithZone:zone];
     copy.userId = [self.userId copyWithZone:zone];
+    copy.uploadFileTypes = [self.uploadFileTypes copyWithZone:zone];
     return copy;
 }
 

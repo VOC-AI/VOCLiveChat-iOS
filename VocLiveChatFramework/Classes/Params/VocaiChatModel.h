@@ -69,6 +69,7 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang);
 @property (nonatomic, strong) NSString *skill_id;
 @property (nonatomic, strong) NSString *channelid;
 @property (nonatomic, strong) NSDictionary<NSString *, NSString *> *otherParams;
+@property (nonatomic, strong) NSArray<NSString *> * uploadFileTypes;
 @property (nonatomic, assign) VOCLiveChatEnv env;
 @property (nonatomic, copy, nullable) NSString *userId;
 @property (nonatomic, assign) BOOL enableLog;

@@ -346,7 +346,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
         NSString *lastJs = [NSString stringWithFormat:@"handleRecieveImageLoading('%@')", self.randomNumber];
         [self.webView evaluateJavaScript: lastJs completionHandler: nil];
         self.fileName = fileName;
-        [self uploadFile:imageData fileName:fileName uploadFiledType:0];
+        [self uploadFile:imageData fileName:fileName uploadFiledType:UploadFileTypePic];
         
     } else if ([mediaType isEqualToString:(NSString *)kUTTypeMovie]) { //  返回了拍摄的视频
         NSURL *videoURL = info[UIImagePickerControllerMediaURL];
@@ -355,7 +355,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
         NSString *lastJs = [NSString stringWithFormat:@"handleRecieveVideoLoading('%@')", self.randomNumber];
         [self.webView evaluateJavaScript: lastJs completionHandler: nil];
         self.fileName = videoURL.lastPathComponent;
-        [self uploadFile: videoData fileName: videoURL.lastPathComponent uploadFiledType: 2];
+        [self uploadFile: videoData fileName: videoURL.lastPathComponent uploadFiledType: UploadFileTypeVideo];
     }
     
     // 关闭图片选择器
@@ -514,7 +514,14 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
 }
 //MARK: 文件选择器
 - (void)openFilePicker {
-    UIDocumentPickerViewController *documentPicker = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:@[@"com.adobe.pdf"] inMode:UIDocumentPickerModeImport];
+    NSArray<NSString*>* fileTypes = @[
+        @"com.adobe.pdf",
+        @"com.pkware.zip-archive", // ZIP
+    ];
+    if(self.vocaiChatParams.uploadFileTypes) {
+        fileTypes = [self.vocaiChatParams.uploadFileTypes copy];
+    }
+    UIDocumentPickerViewController *documentPicker = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:fileTypes inMode:UIDocumentPickerModeImport];
     documentPicker.delegate = self;
     if (@available(iOS 11.0, *)) {
         documentPicker.allowsMultipleSelection = NO;
@@ -536,7 +543,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
             self.fileName = selectedURL.lastPathComponent;
             [self.webView evaluateJavaScript: js completionHandler: nil];
             
-            [self uploadFile:data fileName: self.fileName uploadFiledType: 1];
+            [self uploadFile:data fileName: self.fileName uploadFiledType:UploadFileTypeFile];
         } else {
             [self.logger log:@"Reading documenet error: %@", error.localizedDescription];
         }
