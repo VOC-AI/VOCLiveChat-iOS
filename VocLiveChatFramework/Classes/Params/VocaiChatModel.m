@@ -7,6 +7,7 @@
 
 
 #import "VocaiChatModel.h"
+#import "VocaiLanguageTool.h"
 
 // VOCLiveChatLinkOpenType 枚举转换为字符串的实现
 NSString *NSStringFromVOCLiveChatLinkOpenType(VOCLiveChatLinkOpenType type) {
@@ -54,7 +55,7 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
     if (self) {
         self.token = token;
         self.botId = botId;
-        self.language = @"en-US";
+        self.language = [self normalizeLanguage: [VocaiLanguageTool defaultLang]];
         self.otherParams = otherParams;
     }
     return self;
@@ -66,7 +67,11 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
     if (self) {
         self.token = token;
         self.botId = botId;
-        self.language = language;
+        if(language) {
+            self.language = [self normalizeLanguage: language];
+        } else {
+            self.language = [self normalizeLanguage: [VocaiLanguageTool defaultLang]];
+        }
         self.otherParams = otherParams;
     }
     return self;
@@ -80,7 +85,11 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
         self.token = token;
         self.email = email;
         self.botId = botId;
-        self.language = language;
+        if(language) {
+            self.language = [self normalizeLanguage: language];
+        } else {
+            self.language = [self normalizeLanguage: [VocaiLanguageTool defaultLang]];
+        }
         self.otherParams = otherParams;
     }
     return self;
@@ -93,7 +102,11 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
         self.token = token;
         self.email = email;
         self.botId = botId;
-        self.language = language;
+        if(language) {
+            self.language = [self normalizeLanguage: language];
+        } else {
+            self.language = [self normalizeLanguage: [VocaiLanguageTool defaultLang]];
+        }
         self.otherParams = otherParams;
     }
     return self;
@@ -101,10 +114,12 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
 
 
 - (instancetype)copyWithZone:(NSZone *)zone {
-    // 创建新实例（使用与原对象相同的类，支持子类）
     VocaiChatModel *copy = [[[self class] allocWithZone:zone] init];
-    
-    // 复制属性值（深拷贝 vs 浅拷贝需根据需求选择）
+    copy.noHeader = self.noHeader;
+    copy.noBrand = self.noBrand;
+    copy.encrypt = self.encrypt;
+    copy.isTest = self.isTest;
+    copy.env = self.env;
     copy.chatId = [self.chatId copyWithZone:zone];
     copy.token = [self.token copyWithZone:zone];
     copy.email = [self.email copyWithZone:zone];
@@ -112,17 +127,27 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
     copy.botId = [self.botId copyWithZone:zone];
     copy.country = [self.country copyWithZone:zone];
     copy.language = [self.language copyWithZone:zone];
-    copy.noHeader = self.noHeader;
-    copy.noBrand = self.noBrand;
-    copy.encrypt = self.encrypt;
-    copy.isTest = self.isTest;
     copy.maxUploadFileSize = self.maxUploadFileSize;
     copy.openLinkType = self.openLinkType;
     copy.skill_id = [self.skill_id copyWithZone:zone];
     copy.channelid = [self.channelid copyWithZone:zone];
     copy.otherParams = [self.otherParams copyWithZone:zone];
-    copy.env = self.env;
+    copy.userId = [self.userId copyWithZone:zone];
     return copy;
+}
+
+-(NSString*) normalizeLanguage:(NSString*) language {
+    NSDictionary* dict = @{
+        @"ko": @"ko-KR",
+        @"zh-Hans": @"zh-CN",
+        @"zh-Hant-HK":@"zh-HK",
+        @"zh-Hant-TW":@"zh-TW",
+    };
+    NSString* ret = dict[language];
+    if(!ret) {
+        return language;
+    }
+    return ret;
 }
 
 @end

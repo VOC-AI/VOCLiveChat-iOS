@@ -12,20 +12,9 @@
 + (NSString *)getStringForKey:(NSString *)key withLanguage:(NSString *)language {
     // 读取JSON文件
     // 获取当前 framework 的 bundle
-    NSString* defaultLang = @"en";
+    NSString* defaultLang = [self normalizeForSDK:[self defaultLang]];
     NSBundle *frameworkBundle = [NSBundle bundleForClass:[self class]];
-    NSDictionary* dict = @{
-        @"en-US": @"en",
-        @"zh-CN":@"cn",
-        @"ja-JP":@"ja",
-        @"fr-FR":@"fr",
-        @"de-DE":@"de",
-        @"pt-PT":@"pt",
-        @"es-ES":@"es",
-        @"jp":@"ja",
-        @"ar":@"ar",
-    };
-    NSString* normalizedLang = dict[language];
+    NSString* normalizedLang = [self normalizeForSDK:language];
     if(!normalizedLang) {
         normalizedLang = language;
     }
@@ -89,4 +78,49 @@
     
     return nil;
 }
+
++(NSString*) defaultLang {
+    // 获取应用首选语言（与界面显示语言一致）
+    NSArray *preferredLanguages = [NSBundle mainBundle].preferredLocalizations;
+    if (preferredLanguages.count > 0) {
+        return [preferredLanguages firstObject];
+    }
+    
+    // 回退到系统语言
+    NSString* systemLang = [[NSLocale preferredLanguages] firstObject];
+    if (!systemLang) {
+        return @"en-US";
+    }
+    return systemLang;
+}
+
+
++(NSString*) normalizeForSDK:(NSString*)lang {
+    static NSDictionary* dict;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        dict = @{
+            @"en-US": @"en",
+            @"zh-CN":@"cn",
+            @"ja-JP":@"ja",
+            @"fr-FR":@"fr",
+            @"de-DE":@"de",
+            @"pt-PT":@"pt",
+            @"es-ES":@"es",
+            @"ko-KR":@"ko",
+            @"it-IT":@"it",
+            @"zh-Hant":@"zh-hk",
+            @"zh-Hant-HK":@"zh-hk",
+            @"zh-Hant-TW":@"zh-hk",
+            @"jp":@"ja",
+            @"ar":@"ar",
+        };
+    });
+    NSString* tar = dict[lang];
+    if(!tar) {
+        return @"en";
+    }
+    return tar;
+}
+
 @end

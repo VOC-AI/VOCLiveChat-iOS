@@ -70,6 +70,7 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang);
 @property (nonatomic, strong) NSString *channelid;
 @property (nonatomic, strong) NSDictionary<NSString *, NSString *> *otherParams;
 @property (nonatomic, assign) VOCLiveChatEnv env;
+@property (nonatomic, copy, nullable) NSString *userId;
 @end
 
 NS_ASSUME_NONNULL_END

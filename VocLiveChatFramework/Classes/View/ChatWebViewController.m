@@ -51,6 +51,14 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
 // 在视图控制器的实现文件中初始化 WKWebView
 @implementation ChatWebViewController
 
+- (NSString *)encodeURIComponent: (NSString*) str {
+    // 创建允许的字符集（字母、数字、点、短横线、下划线、波浪线）
+    NSCharacterSet *allowedCharacters = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~"];
+    
+    // 对字符串进行编码
+    return [str stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacters];
+}
+
 - (instancetype)initWithParameter:(VocaiChatModel *)parameter {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
@@ -80,11 +88,13 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
     [self setWebViewAnchor];
     // 设置要加载的URL   这里的ID是botId
     
-    NSString *urlString = [NSString stringWithFormat: [self getApiWithPathname:@"/live-chat?id=%@&token=%@&disableFileInputModal=true&lang=%@&email=%@&"],
-                           self.vocaiChatParams.botId,
-                           self.vocaiChatParams.token,
-                           self.language,
-                           self.email];
+    NSString *urlString = [NSString stringWithFormat: [self getApiWithPathname:@"/live-chat?id=%@&token=%@&disableFileInputModal=true&lang=%@&email=%@&userId=%@&"],
+                           [self encodeURIComponent: self.vocaiChatParams.botId],
+                           [self encodeURIComponent: self.vocaiChatParams.token],
+                           [self encodeURIComponent: self.language],
+                           [self encodeURIComponent: self.email],
+                           [self encodeURIComponent: self.vocaiChatParams.userId]
+    ];
     NSString *componentUrlString = [urlString stringByAppendingString: [self dictionaryToQueryString:self.vocaiChatParams.otherParams]];
     NSURL *url = [NSURL URLWithString: componentUrlString];
     NSURLRequest *request = [NSURLRequest requestWithURL: url];
@@ -204,7 +214,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
                             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                                 // 后台任务...
                                 dispatch_async(dispatch_get_main_queue(), ^{
-                                    [self showNoPermissionToastOnView:self.view message:@"No camera permission. Please go to the Settings Center to enable it."];
+                                    [self showNoPermissionToastOnView:self.view message:noPermissionHint];
                                 });
                             });
                         }
