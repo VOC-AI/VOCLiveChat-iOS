@@ -16,13 +16,11 @@
 		0B2B8259D041C105865C634B1FC08C1F /* FBSnapshotTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D9E506424CA1615456597BFFC36A61 /* FBSnapshotTestController.m */; };
 		0C118C0B26DB7AC928BAD64DC9DDED84 /* EXPMatchers+endWith.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EE87F7213E48CFE9B4B41448280C281 /* EXPMatchers+endWith.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0E20ED05C2725C2427D75800ADA6DF12 /* SPTExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEEAD0DA889C257A0A105B8A594D0BE /* SPTExample.m */; };
-		0FDD470B67FD37C9BF24BACCB17D5513 /* RandomStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = DB29A76AF5095A2DF6A78D8C8F623C16 /* RandomStringGenerator.m */; };
 		105D4591E8BE30F2BD70F853D4D5C40D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26BC96F34E43FA0A3AE93B3C2C4595E5 /* XCTest.framework */; };
 		136CC1AB5D2124118E850DC21BD591B5 /* EXPMatchers+beGreaterThanOrEqualTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 373732A9C739AA9A65AD168D7988901D /* EXPMatchers+beGreaterThanOrEqualTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		16018D4538AE750B703AE0E6603A4530 /* EXPMatchers+beInstanceOf.h in Headers */ = {isa = PBXBuildFile; fileRef = F79CAB0765C4FFD53DB9E44387201CD2 /* EXPMatchers+beInstanceOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		188E90D078A049DF0DCEF6C4B740347E /* EXPMatchers+beginWith.h in Headers */ = {isa = PBXBuildFile; fileRef = 80CAAE325A74FE5DA7E710191BC2F53B /* EXPMatchers+beginWith.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A43286B5406470FF821567E8513AAE2 /* EXPMatchers+beginWith.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D3545A01262C6D92DF5D83E71971DF /* EXPMatchers+beginWith.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		1B48E1ADE220FE4FB6FD748D81FE2A50 /* PollingRequestTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3681BD70656BCE4FE227AAC03716DFFB /* PollingRequestTool.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		1EA0FCCB78245BD2C182CF846B3E6751 /* EXPMatchers+beInTheRangeOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AB65B36803C06E3FCE87BE4E9030529 /* EXPMatchers+beInTheRangeOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		208133EE2C10CF99B527654E31B2BB35 /* EXPMatchers+beTruthy.h in Headers */ = {isa = PBXBuildFile; fileRef = BD3E006894002C83D989E90A5E9330F2 /* EXPMatchers+beTruthy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		232BC9642A27E4C49F31280398ABF3C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4138A0A13FF7F7B73435E87E54C56C18 /* UIKit.framework */; };
@@ -39,15 +37,193 @@
 		2EBE4C64D0D66550C21C3A7FD7F99D9D /* EXPMatchers+beInstanceOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C58E05B3119F0C2929E9E4EBE15F232 /* EXPMatchers+beInstanceOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3055B23EB828906352FB08A8F83799D0 /* UIImage+Compare.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A0E011AFFDA3021348B51AF9B5116 /* UIImage+Compare.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		3494B23890013E23ED8653E500C24064 /* SPTSharedExampleGroups.h in Headers */ = {isa = PBXBuildFile; fileRef = 24A29238FAD1F0001AEC71F6750C425B /* SPTSharedExampleGroups.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		34D40191B1EB7BE4500136C498689F43 /* LanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 893867F90BB4CEE2A0BCA2CA3927DA6B /* LanguageTool.m */; };
 		380F6E4B3F7E5EA4D79843BA767E183E /* UIApplication+StrictKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A80F86945A31D125D731C058878E6F /* UIApplication+StrictKeyWindow.m */; };
 		388186EEF217626CA1E2C36767769147 /* ExpectaObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F788FE00F7A604ED357B9D966B94A8 /* ExpectaObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		38B7944E5B5CDB1073BF0296844E53A9 /* EXPMatchers+raise.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D462091B0B297DA65FD3F10937EFB1A /* EXPMatchers+raise.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		39498453DD8D75361262CA68893E5F68 /* AVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88999F514B6614A2ED8A92E88466DA2F /* AVCaptureViewController.m */; };
 		397E30E502F1D61B281784E64B472E8F /* Expecta-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FD6BF42F46FC94FDB5AD2C7B2BDF43E /* Expecta-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BCB9575F1C3AAA5916A68513B672D97 /* SpectaUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 9441A311708D639B846E38C432211FAF /* SpectaUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C4BCCB15317300EE21CF929E2FB3B14 /* EXPMatchers+raise.h in Headers */ = {isa = PBXBuildFile; fileRef = 108488F285A773A3BCE052B9350CD6CD /* EXPMatchers+raise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E2E95DC803B093E2DED5D6E3319EF13 /* EXPMatcherHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1004F3B0D7B836E2BE433BDE8AAEA723 /* EXPMatcherHelpers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3FD6EBF52DE5A2240077EE45 /* RandomStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE82DE5A2240077EE45 /* RandomStringGenerator.m */; };
+		3FD6EBF62DE5A2240077EE45 /* ImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDE2DE5A2240077EE45 /* ImageUploader.m */; };
+		3FD6EBF72DE5A2240077EE45 /* NetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE42DE5A2240077EE45 /* NetworkTool.m */; };
+		3FD6EBF82DE5A2240077EE45 /* ChatWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBED2DE5A2240077EE45 /* ChatWebViewController.m */; };
+		3FD6EBF92DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */; };
+		3FD6EBFA2DE5A2240077EE45 /* MessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE22DE5A2240077EE45 /* MessageCenter.m */; };
+		3FD6EBFB2DE5A2240077EE45 /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */; };
+		3FD6EBFC2DE5A2240077EE45 /* ApiTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDC2DE5A2240077EE45 /* ApiTool.m */; };
+		3FD6EBFD2DE5A2240077EE45 /* AVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEB2DE5A2240077EE45 /* AVCaptureViewController.m */; };
+		3FD6EBFE2DE5A2240077EE45 /* CustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* CustomOptionsView.m */; };
+		3FD6EBFF2DE5A2240077EE45 /* LanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE02DE5A2240077EE45 /* LanguageTool.m */; };
+		3FD6EC002DE5A2240077EE45 /* PollingRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE62DE5A2240077EE45 /* PollingRequestTool.m */; };
+		3FD6EC012DE5A2240077EE45 /* RandomStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE82DE5A2240077EE45 /* RandomStringGenerator.m */; };
+		3FD6EC022DE5A2240077EE45 /* ImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDE2DE5A2240077EE45 /* ImageUploader.m */; };
+		3FD6EC032DE5A2240077EE45 /* NetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE42DE5A2240077EE45 /* NetworkTool.m */; };
+		3FD6EC042DE5A2240077EE45 /* ChatWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBED2DE5A2240077EE45 /* ChatWebViewController.m */; };
+		3FD6EC052DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */; };
+		3FD6EC062DE5A2240077EE45 /* MessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE22DE5A2240077EE45 /* MessageCenter.m */; };
+		3FD6EC072DE5A2240077EE45 /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */; };
+		3FD6EC082DE5A2240077EE45 /* ApiTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDC2DE5A2240077EE45 /* ApiTool.m */; };
+		3FD6EC092DE5A2240077EE45 /* AVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEB2DE5A2240077EE45 /* AVCaptureViewController.m */; };
+		3FD6EC0A2DE5A2240077EE45 /* CustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* CustomOptionsView.m */; };
+		3FD6EC0B2DE5A2240077EE45 /* LanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE02DE5A2240077EE45 /* LanguageTool.m */; };
+		3FD6EC0C2DE5A2240077EE45 /* PollingRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE62DE5A2240077EE45 /* PollingRequestTool.m */; };
+		3FD6EC0D2DE5A2240077EE45 /* NetworkTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE32DE5A2240077EE45 /* NetworkTool.h */; };
+		3FD6EC0E2DE5A2240077EE45 /* MessageCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE12DE5A2240077EE45 /* MessageCenter.h */; };
+		3FD6EC0F2DE5A2240077EE45 /* ImageUploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDD2DE5A2240077EE45 /* ImageUploader.h */; };
+		3FD6EC102DE5A2240077EE45 /* PollingRequestTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE52DE5A2240077EE45 /* PollingRequestTool.h */; };
+		3FD6EC112DE5A2240077EE45 /* CustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* CustomOptionsView.h */; };
+		3FD6EC122DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF22DE5A2240077EE45 /* VocaiSdkBuilder.h */; };
+		3FD6EC132DE5A2240077EE45 /* AVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEA2DE5A2240077EE45 /* AVCaptureViewController.h */; };
+		3FD6EC142DE5A2240077EE45 /* ChatWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEC2DE5A2240077EE45 /* ChatWebViewController.h */; };
+		3FD6EC152DE5A2240077EE45 /* LanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDF2DE5A2240077EE45 /* LanguageTool.h */; };
+		3FD6EC162DE5A2240077EE45 /* RandomStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE72DE5A2240077EE45 /* RandomStringGenerator.h */; };
+		3FD6EC172DE5A2240077EE45 /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* PDFDisplayView.h */; };
+		3FD6EC182DE5A2240077EE45 /* ApiTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDB2DE5A2240077EE45 /* ApiTool.h */; };
+		3FD6EC192DE5A2240077EE45 /* RandomStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE82DE5A2240077EE45 /* RandomStringGenerator.m */; };
+		3FD6EC1A2DE5A2240077EE45 /* ImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDE2DE5A2240077EE45 /* ImageUploader.m */; };
+		3FD6EC1B2DE5A2240077EE45 /* NetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE42DE5A2240077EE45 /* NetworkTool.m */; };
+		3FD6EC1C2DE5A2240077EE45 /* ChatWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBED2DE5A2240077EE45 /* ChatWebViewController.m */; };
+		3FD6EC1D2DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */; };
+		3FD6EC1E2DE5A2240077EE45 /* MessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE22DE5A2240077EE45 /* MessageCenter.m */; };
+		3FD6EC1F2DE5A2240077EE45 /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */; };
+		3FD6EC202DE5A2240077EE45 /* ApiTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDC2DE5A2240077EE45 /* ApiTool.m */; };
+		3FD6EC212DE5A2240077EE45 /* AVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEB2DE5A2240077EE45 /* AVCaptureViewController.m */; };
+		3FD6EC222DE5A2240077EE45 /* CustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* CustomOptionsView.m */; };
+		3FD6EC232DE5A2240077EE45 /* LanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE02DE5A2240077EE45 /* LanguageTool.m */; };
+		3FD6EC242DE5A2240077EE45 /* PollingRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE62DE5A2240077EE45 /* PollingRequestTool.m */; };
+		3FD6EC252DE5A2240077EE45 /* NetworkTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE32DE5A2240077EE45 /* NetworkTool.h */; };
+		3FD6EC262DE5A2240077EE45 /* MessageCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE12DE5A2240077EE45 /* MessageCenter.h */; };
+		3FD6EC272DE5A2240077EE45 /* ImageUploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDD2DE5A2240077EE45 /* ImageUploader.h */; };
+		3FD6EC282DE5A2240077EE45 /* PollingRequestTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE52DE5A2240077EE45 /* PollingRequestTool.h */; };
+		3FD6EC292DE5A2240077EE45 /* CustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* CustomOptionsView.h */; };
+		3FD6EC2A2DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF22DE5A2240077EE45 /* VocaiSdkBuilder.h */; };
+		3FD6EC2B2DE5A2240077EE45 /* AVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEA2DE5A2240077EE45 /* AVCaptureViewController.h */; };
+		3FD6EC2C2DE5A2240077EE45 /* ChatWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEC2DE5A2240077EE45 /* ChatWebViewController.h */; };
+		3FD6EC2D2DE5A2240077EE45 /* LanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDF2DE5A2240077EE45 /* LanguageTool.h */; };
+		3FD6EC2E2DE5A2240077EE45 /* RandomStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE72DE5A2240077EE45 /* RandomStringGenerator.h */; };
+		3FD6EC2F2DE5A2240077EE45 /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* PDFDisplayView.h */; };
+		3FD6EC302DE5A2240077EE45 /* ApiTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDB2DE5A2240077EE45 /* ApiTool.h */; };
+		3FD6EC312DE5A2240077EE45 /* NetworkTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE32DE5A2240077EE45 /* NetworkTool.h */; };
+		3FD6EC322DE5A2240077EE45 /* MessageCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE12DE5A2240077EE45 /* MessageCenter.h */; };
+		3FD6EC332DE5A2240077EE45 /* ImageUploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDD2DE5A2240077EE45 /* ImageUploader.h */; };
+		3FD6EC342DE5A2240077EE45 /* PollingRequestTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE52DE5A2240077EE45 /* PollingRequestTool.h */; };
+		3FD6EC352DE5A2240077EE45 /* CustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* CustomOptionsView.h */; };
+		3FD6EC362DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF22DE5A2240077EE45 /* VocaiSdkBuilder.h */; };
+		3FD6EC372DE5A2240077EE45 /* AVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEA2DE5A2240077EE45 /* AVCaptureViewController.h */; };
+		3FD6EC382DE5A2240077EE45 /* ChatWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEC2DE5A2240077EE45 /* ChatWebViewController.h */; };
+		3FD6EC392DE5A2240077EE45 /* LanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDF2DE5A2240077EE45 /* LanguageTool.h */; };
+		3FD6EC3A2DE5A2240077EE45 /* RandomStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE72DE5A2240077EE45 /* RandomStringGenerator.h */; };
+		3FD6EC3B2DE5A2240077EE45 /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* PDFDisplayView.h */; };
+		3FD6EC3C2DE5A2240077EE45 /* ApiTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDB2DE5A2240077EE45 /* ApiTool.h */; };
+		3FD6EC3D2DE5A2240077EE45 /* RandomStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE82DE5A2240077EE45 /* RandomStringGenerator.m */; };
+		3FD6EC3E2DE5A2240077EE45 /* ImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDE2DE5A2240077EE45 /* ImageUploader.m */; };
+		3FD6EC3F2DE5A2240077EE45 /* NetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE42DE5A2240077EE45 /* NetworkTool.m */; };
+		3FD6EC402DE5A2240077EE45 /* ChatWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBED2DE5A2240077EE45 /* ChatWebViewController.m */; };
+		3FD6EC412DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */; };
+		3FD6EC422DE5A2240077EE45 /* MessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE22DE5A2240077EE45 /* MessageCenter.m */; };
+		3FD6EC432DE5A2240077EE45 /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */; };
+		3FD6EC442DE5A2240077EE45 /* ApiTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDC2DE5A2240077EE45 /* ApiTool.m */; };
+		3FD6EC452DE5A2240077EE45 /* AVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEB2DE5A2240077EE45 /* AVCaptureViewController.m */; };
+		3FD6EC462DE5A2240077EE45 /* CustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* CustomOptionsView.m */; };
+		3FD6EC472DE5A2240077EE45 /* LanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE02DE5A2240077EE45 /* LanguageTool.m */; };
+		3FD6EC482DE5A2240077EE45 /* PollingRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE62DE5A2240077EE45 /* PollingRequestTool.m */; };
+		3FD6EC492DE5A2240077EE45 /* NetworkTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE32DE5A2240077EE45 /* NetworkTool.h */; };
+		3FD6EC4A2DE5A2240077EE45 /* MessageCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE12DE5A2240077EE45 /* MessageCenter.h */; };
+		3FD6EC4B2DE5A2240077EE45 /* ImageUploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDD2DE5A2240077EE45 /* ImageUploader.h */; };
+		3FD6EC4C2DE5A2240077EE45 /* PollingRequestTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE52DE5A2240077EE45 /* PollingRequestTool.h */; };
+		3FD6EC4D2DE5A2240077EE45 /* CustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* CustomOptionsView.h */; };
+		3FD6EC4E2DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF22DE5A2240077EE45 /* VocaiSdkBuilder.h */; };
+		3FD6EC4F2DE5A2240077EE45 /* AVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEA2DE5A2240077EE45 /* AVCaptureViewController.h */; };
+		3FD6EC502DE5A2240077EE45 /* ChatWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEC2DE5A2240077EE45 /* ChatWebViewController.h */; };
+		3FD6EC512DE5A2240077EE45 /* LanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDF2DE5A2240077EE45 /* LanguageTool.h */; };
+		3FD6EC522DE5A2240077EE45 /* RandomStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE72DE5A2240077EE45 /* RandomStringGenerator.h */; };
+		3FD6EC532DE5A2240077EE45 /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* PDFDisplayView.h */; };
+		3FD6EC542DE5A2240077EE45 /* ApiTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDB2DE5A2240077EE45 /* ApiTool.h */; };
+		3FD6EC552DE5A2240077EE45 /* RandomStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE82DE5A2240077EE45 /* RandomStringGenerator.m */; };
+		3FD6EC562DE5A2240077EE45 /* ImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDE2DE5A2240077EE45 /* ImageUploader.m */; };
+		3FD6EC572DE5A2240077EE45 /* NetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE42DE5A2240077EE45 /* NetworkTool.m */; };
+		3FD6EC582DE5A2240077EE45 /* ChatWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBED2DE5A2240077EE45 /* ChatWebViewController.m */; };
+		3FD6EC592DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */; };
+		3FD6EC5A2DE5A2240077EE45 /* MessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE22DE5A2240077EE45 /* MessageCenter.m */; };
+		3FD6EC5B2DE5A2240077EE45 /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */; };
+		3FD6EC5C2DE5A2240077EE45 /* ApiTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDC2DE5A2240077EE45 /* ApiTool.m */; };
+		3FD6EC5D2DE5A2240077EE45 /* AVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEB2DE5A2240077EE45 /* AVCaptureViewController.m */; };
+		3FD6EC5E2DE5A2240077EE45 /* CustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* CustomOptionsView.m */; };
+		3FD6EC5F2DE5A2240077EE45 /* LanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE02DE5A2240077EE45 /* LanguageTool.m */; };
+		3FD6EC602DE5A2240077EE45 /* PollingRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE62DE5A2240077EE45 /* PollingRequestTool.m */; };
+		3FD6EC612DE5A2240077EE45 /* NetworkTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE32DE5A2240077EE45 /* NetworkTool.h */; };
+		3FD6EC622DE5A2240077EE45 /* MessageCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE12DE5A2240077EE45 /* MessageCenter.h */; };
+		3FD6EC632DE5A2240077EE45 /* ImageUploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDD2DE5A2240077EE45 /* ImageUploader.h */; };
+		3FD6EC642DE5A2240077EE45 /* PollingRequestTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE52DE5A2240077EE45 /* PollingRequestTool.h */; };
+		3FD6EC652DE5A2240077EE45 /* CustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* CustomOptionsView.h */; };
+		3FD6EC662DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF22DE5A2240077EE45 /* VocaiSdkBuilder.h */; };
+		3FD6EC672DE5A2240077EE45 /* AVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEA2DE5A2240077EE45 /* AVCaptureViewController.h */; };
+		3FD6EC682DE5A2240077EE45 /* ChatWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEC2DE5A2240077EE45 /* ChatWebViewController.h */; };
+		3FD6EC692DE5A2240077EE45 /* LanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDF2DE5A2240077EE45 /* LanguageTool.h */; };
+		3FD6EC6A2DE5A2240077EE45 /* RandomStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE72DE5A2240077EE45 /* RandomStringGenerator.h */; };
+		3FD6EC6B2DE5A2240077EE45 /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* PDFDisplayView.h */; };
+		3FD6EC6C2DE5A2240077EE45 /* ApiTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDB2DE5A2240077EE45 /* ApiTool.h */; };
+		3FD6EC6D2DE5A2240077EE45 /* RandomStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE82DE5A2240077EE45 /* RandomStringGenerator.m */; };
+		3FD6EC6E2DE5A2240077EE45 /* ImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDE2DE5A2240077EE45 /* ImageUploader.m */; };
+		3FD6EC6F2DE5A2240077EE45 /* NetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE42DE5A2240077EE45 /* NetworkTool.m */; };
+		3FD6EC702DE5A2240077EE45 /* ChatWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBED2DE5A2240077EE45 /* ChatWebViewController.m */; };
+		3FD6EC712DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */; };
+		3FD6EC722DE5A2240077EE45 /* MessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE22DE5A2240077EE45 /* MessageCenter.m */; };
+		3FD6EC732DE5A2240077EE45 /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */; };
+		3FD6EC742DE5A2240077EE45 /* ApiTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDC2DE5A2240077EE45 /* ApiTool.m */; };
+		3FD6EC752DE5A2240077EE45 /* AVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEB2DE5A2240077EE45 /* AVCaptureViewController.m */; };
+		3FD6EC762DE5A2240077EE45 /* CustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* CustomOptionsView.m */; };
+		3FD6EC772DE5A2240077EE45 /* LanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE02DE5A2240077EE45 /* LanguageTool.m */; };
+		3FD6EC782DE5A2240077EE45 /* PollingRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE62DE5A2240077EE45 /* PollingRequestTool.m */; };
+		3FD6EC792DE5A2240077EE45 /* NetworkTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE32DE5A2240077EE45 /* NetworkTool.h */; };
+		3FD6EC7A2DE5A2240077EE45 /* MessageCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE12DE5A2240077EE45 /* MessageCenter.h */; };
+		3FD6EC7B2DE5A2240077EE45 /* ImageUploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDD2DE5A2240077EE45 /* ImageUploader.h */; };
+		3FD6EC7C2DE5A2240077EE45 /* PollingRequestTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE52DE5A2240077EE45 /* PollingRequestTool.h */; };
+		3FD6EC7D2DE5A2240077EE45 /* CustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* CustomOptionsView.h */; };
+		3FD6EC7E2DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF22DE5A2240077EE45 /* VocaiSdkBuilder.h */; };
+		3FD6EC7F2DE5A2240077EE45 /* AVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEA2DE5A2240077EE45 /* AVCaptureViewController.h */; };
+		3FD6EC802DE5A2240077EE45 /* ChatWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEC2DE5A2240077EE45 /* ChatWebViewController.h */; };
+		3FD6EC812DE5A2240077EE45 /* LanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDF2DE5A2240077EE45 /* LanguageTool.h */; };
+		3FD6EC822DE5A2240077EE45 /* RandomStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE72DE5A2240077EE45 /* RandomStringGenerator.h */; };
+		3FD6EC832DE5A2240077EE45 /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* PDFDisplayView.h */; };
+		3FD6EC842DE5A2240077EE45 /* ApiTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDB2DE5A2240077EE45 /* ApiTool.h */; };
+		3FD6EC852DE5A2240077EE45 /* RandomStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE82DE5A2240077EE45 /* RandomStringGenerator.m */; };
+		3FD6EC862DE5A2240077EE45 /* ImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDE2DE5A2240077EE45 /* ImageUploader.m */; };
+		3FD6EC872DE5A2240077EE45 /* NetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE42DE5A2240077EE45 /* NetworkTool.m */; };
+		3FD6EC882DE5A2240077EE45 /* ChatWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBED2DE5A2240077EE45 /* ChatWebViewController.m */; };
+		3FD6EC892DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */; };
+		3FD6EC8A2DE5A2240077EE45 /* MessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE22DE5A2240077EE45 /* MessageCenter.m */; };
+		3FD6EC8B2DE5A2240077EE45 /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */; };
+		3FD6EC8C2DE5A2240077EE45 /* ApiTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDC2DE5A2240077EE45 /* ApiTool.m */; };
+		3FD6EC8D2DE5A2240077EE45 /* AVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEB2DE5A2240077EE45 /* AVCaptureViewController.m */; };
+		3FD6EC8E2DE5A2240077EE45 /* CustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* CustomOptionsView.m */; };
+		3FD6EC8F2DE5A2240077EE45 /* LanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE02DE5A2240077EE45 /* LanguageTool.m */; };
+		3FD6EC902DE5A2240077EE45 /* PollingRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE62DE5A2240077EE45 /* PollingRequestTool.m */; };
+		3FD6EC912DE5A2240077EE45 /* RandomStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE82DE5A2240077EE45 /* RandomStringGenerator.m */; };
+		3FD6EC922DE5A2240077EE45 /* ImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDE2DE5A2240077EE45 /* ImageUploader.m */; };
+		3FD6EC932DE5A2240077EE45 /* NetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE42DE5A2240077EE45 /* NetworkTool.m */; };
+		3FD6EC942DE5A2240077EE45 /* ChatWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBED2DE5A2240077EE45 /* ChatWebViewController.m */; };
+		3FD6EC952DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */; };
+		3FD6EC962DE5A2240077EE45 /* MessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE22DE5A2240077EE45 /* MessageCenter.m */; };
+		3FD6EC972DE5A2240077EE45 /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */; };
+		3FD6EC982DE5A2240077EE45 /* ApiTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDC2DE5A2240077EE45 /* ApiTool.m */; };
+		3FD6EC992DE5A2240077EE45 /* AVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEB2DE5A2240077EE45 /* AVCaptureViewController.m */; };
+		3FD6EC9A2DE5A2240077EE45 /* CustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* CustomOptionsView.m */; };
+		3FD6EC9B2DE5A2240077EE45 /* LanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE02DE5A2240077EE45 /* LanguageTool.m */; };
+		3FD6EC9C2DE5A2240077EE45 /* PollingRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE62DE5A2240077EE45 /* PollingRequestTool.m */; };
+		3FD6EC9D2DE5A2240077EE45 /* NetworkTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE32DE5A2240077EE45 /* NetworkTool.h */; };
+		3FD6EC9E2DE5A2240077EE45 /* MessageCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE12DE5A2240077EE45 /* MessageCenter.h */; };
+		3FD6EC9F2DE5A2240077EE45 /* ImageUploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDD2DE5A2240077EE45 /* ImageUploader.h */; };
+		3FD6ECA02DE5A2240077EE45 /* PollingRequestTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE52DE5A2240077EE45 /* PollingRequestTool.h */; };
+		3FD6ECA12DE5A2240077EE45 /* CustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* CustomOptionsView.h */; };
+		3FD6ECA22DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF22DE5A2240077EE45 /* VocaiSdkBuilder.h */; };
+		3FD6ECA32DE5A2240077EE45 /* AVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEA2DE5A2240077EE45 /* AVCaptureViewController.h */; };
+		3FD6ECA42DE5A2240077EE45 /* ChatWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEC2DE5A2240077EE45 /* ChatWebViewController.h */; };
+		3FD6ECA52DE5A2240077EE45 /* LanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDF2DE5A2240077EE45 /* LanguageTool.h */; };
+		3FD6ECA62DE5A2240077EE45 /* RandomStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE72DE5A2240077EE45 /* RandomStringGenerator.h */; };
+		3FD6ECA72DE5A2240077EE45 /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* PDFDisplayView.h */; };
+		3FD6ECA82DE5A2240077EE45 /* ApiTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDB2DE5A2240077EE45 /* ApiTool.h */; };
 		40080F575ABB87CDCB9D4805EE582EEC /* Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = 019A89DA7820B809D45D2D192CD027E5 /* Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4056CAF940B4848E4707BBBF6FBCBAD8 /* SPTExampleGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 2567178B0ABBEB28AA767A839F7320DB /* SPTExampleGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		409B8F0B99F08EB0D4E1E6B7962279BE /* UIImage+Snapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = E19D7F91877074DF27F99640EC532352 /* UIImage+Snapshot.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -59,7 +235,6 @@
 		48F7B8EDFFA349E940F9A12570099B70 /* EXPMatchers+beCloseTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C1E2E20A714678635E90E0295083E8 /* EXPMatchers+beCloseTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4984A86DDCB00ABF182E4BD8159D0C81 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692D29656528FA94A71ECFB8FEB6DC0B /* Foundation.framework */; };
 		4C24330516EE1B4ED7AD85D1F07DA3D8 /* EXPMatchers+endWith.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF75EC5B1F56E3EFE66CC368FBB703A /* EXPMatchers+endWith.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		4F622B7A31E99DE83B9BB0542B4E0FF4 /* CustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BDAA66B74E560E194B7321C6A06AB5 /* CustomOptionsView.m */; };
 		504D560F1F6B8EB5834A3F9B6A6E695B /* EXPMatchers+beLessThanOrEqualTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 9392407C48D3EE80025186936C70627F /* EXPMatchers+beLessThanOrEqualTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5061691D481F7C48E755A2BC0BB4977C /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC605582B51A6F35AA5FB8F3DA20E99 /* SwiftSupport.swift */; };
 		5211CD6E34CB8B067251FC70E47923DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692D29656528FA94A71ECFB8FEB6DC0B /* Foundation.framework */; };
@@ -76,14 +251,12 @@
 		64618C119DD372AA7156E4C81F77BF55 /* EXPMatchers.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BF4C9FFB0A78AC6EDF88B9D1F647C94 /* EXPMatchers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		64C5F389DE0FC7369E95217494EB561F /* UIImage+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F11FEE558B5B0DAA7277EB1FAF6F4 /* UIImage+Compare.m */; };
 		66CE653C29AB0F0B8338A7ACA17B68EC /* WebCallBackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D908D3DBCF49C684EBC9A589BF765F1C /* WebCallBackModel.m */; };
-		69C914E32C7EF9AD9418425B60950B1C /* VocaiSdkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 845E895A1086421F7E6A66ACCB9B2822 /* VocaiSdkBuilder.m */; };
 		6ACBAB7981C7E257408E7A452D46E411 /* Expecta+Snapshots-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1777B70242B4B8026431EAFA590292B0 /* Expecta+Snapshots-dummy.m */; };
 		6B2D110C46B23B51DDFC00946FB3704B /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B594F2110D4A4D91F3A7393B967F2B /* UserModel.m */; };
 		715863D2142BBE7E82A921288FA959D4 /* Pods-VocLiveChatFramework_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA6F960670C924C0805842220087FC /* Pods-VocLiveChatFramework_Example-dummy.m */; };
 		72FBF7CAF88A7DBEB7526E1888F8083C /* SPTCompiledExample.h in Headers */ = {isa = PBXBuildFile; fileRef = 41DD008B1C8CCDB66E9DB3DD2858D513 /* SPTCompiledExample.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		737ED601E8B3C584A19050D8F4F32855 /* VocaiChatModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 97407830D82548C320B2627701B8690C /* VocaiChatModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		760790EB6DD7048B08A7F02CBBC01E23 /* Specta-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C2C47770A2B7F56356D78B6BC2A100B0 /* Specta-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		77B6523C452004CD2C9C7A4ECEAE743F /* ChatWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 03CAA25CFE09BA9E32FCAEE4CA5B7077 /* ChatWebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7843336BE345C5EEA5A3A431003D3C1E /* EXPMatchers+beLessThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = E211486FA028D3EB7AF012E4C31E4BFE /* EXPMatchers+beLessThanOrEqualTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7AA1FAAA10C0EB13C377E19402A151B1 /* InitialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97547020C00A8EFDB520515469D78C3E /* InitialModel.m */; };
 		7E22DB972AD7FCD02F4687EB0D99F30F /* SpectaDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = F43A2D90FC5B1BDA79F155B94C2461CF /* SpectaDSL.m */; };
@@ -97,21 +270,14 @@
 		8A58E1FFB52D0B785D55D1787E226DD4 /* EXPFloatTuple.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E0B2A4326A6771BE138C8CE16707F8A /* EXPFloatTuple.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B402D4FD77FC80E56FDF0150BB68B66 /* EXPDoubleTuple.h in Headers */ = {isa = PBXBuildFile; fileRef = 38720083382F2C125695F1626B7EC020 /* EXPDoubleTuple.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CC5B7C80144C1D60803B275111DD3C9 /* ExpectaSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = B72C72E36DD0F7A361119C6A3ADEAFD5 /* ExpectaSupport.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		92937B5ED2884F84FE33EB0DF66DC443 /* ChatWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C4F67248F263CDE50B1D91518CBC2 /* ChatWebViewController.m */; };
 		9560053588FF0AB7160FF770DB56B982 /* EXPMatchers+contain.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB53AA433A01014DA105EFCF5D5EEDA /* EXPMatchers+contain.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		95E0AFA084410DB23139C3BA868D1747 /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67292EC2B5A64C7AFCBE25B8A37A5B27 /* PDFDisplayView.m */; };
 		964DF667C1EFDF34AC75BF399D8ACEFC /* ExpectaSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A90E86082A6B8E5EDE6EA22FD21EB73 /* ExpectaSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		966199968B3425BC86147266B74D4570 /* ImageUploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 93EA8C8385B3D5B8765833051F85FC6D /* ImageUploader.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		9C8F9EE6CDBF24624431B4B2F8C47C11 /* NetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C67D53939F517400FBC54C54F83547 /* NetworkTool.m */; };
-		9E4A36DFC04E6BD6CBE93A5D7F3FFECD /* LanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 33D0B28FEBE0FD59E3C30C94388AB237 /* LanguageTool.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A070787F25B1FE1600AB6DD8226EA2DD /* Pods-VocLiveChatFramework_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 630C155244BD8E6FF41290E3C1C0F686 /* Pods-VocLiveChatFramework_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2EE54BACD56B923E6B2439FCAF46CE2 /* SPTCallSite.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3775741B1E1FF31F13FCA7C0CD488B /* SPTCallSite.m */; };
 		A48C284BEE216AB8CAAC5D7F4632E7E8 /* XCTestCase+Specta.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B785871406A850B0A1E5ACC0D46F00 /* XCTestCase+Specta.m */; };
 		A650077802C47576CA11186CA96327CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692D29656528FA94A71ECFB8FEB6DC0B /* Foundation.framework */; };
 		A6A6AA6173FEA1225733D1F6888F5BE0 /* WebCallBackModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A80495A3F55179DAC16DD122D14A40C /* WebCallBackModel.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A7984D16FCEBCFBBB5C9A0515B9397B8 /* EXPMatchers+beCloseTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 8936C7A225FA6637A65642D5E63D94EF /* EXPMatchers+beCloseTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A7C073C2E86C148AB984C242C6465A5B /* CustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = F2D905A80F2B085F9260BAC32CAB3435 /* CustomOptionsView.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		A807ED329102D8C869D1BD1F208D15E7 /* NetworkTool.h in Headers */ = {isa = PBXBuildFile; fileRef = B077A84C45AA0AFDFFD82F1897DCF4AC /* NetworkTool.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		AA7A809622B0728B833AE292A178A480 /* EXPMatchers+beKindOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291A8EC5593038EAD6122C7DB6BF576 /* EXPMatchers+beKindOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AF36B0254E2305DC753DB81F8D6F1651 /* VocLiveChatFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D3157ADD912BCFBA0497E18860CACA22 /* VocLiveChatFramework-dummy.m */; };
 		AF3CEA141C25BFE8B5129F5B3F5367BA /* UIApplication+StrictKeyWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = F2562E42CC03567292CE055CC33D5EA5 /* UIApplication+StrictKeyWindow.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -122,12 +288,10 @@
 		B3F7A438127DD9E7137F58A9167CAD47 /* EXPMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A1FA6D557A9C3E538CA3D357176CD434 /* EXPMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5E66E313ADCAE0EE66E81CABA6AAC01 /* EXPMatchers+beSubclassOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B8691970DF71E7128EF551E8B60B1D /* EXPMatchers+beSubclassOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6053715E6D183F4A1B2BBE6B7FCA923 /* SPTTestSuite.h in Headers */ = {isa = PBXBuildFile; fileRef = 46F26604AD4A38EF911B54B74ECABFC5 /* SPTTestSuite.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B857FFE29FF768E22C8D181C19FCE519 /* PollingRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E74C1F1816FC073D8C746425A3084D52 /* PollingRequestTool.m */; };
 		B8E73EAAD6EAB0D5C2BDE393D4129823 /* FBSnapshotTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6111F071CD75E6A47B379243C38F59CC /* FBSnapshotTestCase.m */; };
 		B90E5073717DFB375F0E75EC01238C44 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692D29656528FA94A71ECFB8FEB6DC0B /* Foundation.framework */; };
 		BB031523FECB849FB0C7D46FE893C955 /* EXPMatchers+match.m in Sources */ = {isa = PBXBuildFile; fileRef = E224127079617AF4A8E6130FD9E4BACC /* EXPMatchers+match.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BB111E578CC6CECA23E5AB282D30845D /* EXPMatchers+beTruthy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4036AD561259F58D92A41832D20EF707 /* EXPMatchers+beTruthy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		BB5F0FE6B72CA6CCA20813D925463256 /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = E3511AAE1548033E780D7E0EE3D7AB58 /* PDFDisplayView.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		BC14AF96A6E0EB02CAB7613E48A7659F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26BC96F34E43FA0A3AE93B3C2C4595E5 /* XCTest.framework */; };
 		C03C8F5FE7EB66675E3B7F85AA974D97 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26BC96F34E43FA0A3AE93B3C2C4595E5 /* XCTest.framework */; };
 		C13D2F6F72FAD6F17BE42BC77ECCAB7B /* EXPMatcherHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = A598027CD01655638D7ECD3FC6B311F8 /* EXPMatcherHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -139,7 +303,6 @@
 		CCACDE1DD1D09D3B66F2E34F81918C6F /* EXPMatchers+beNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 174709D9B6F02218DE554547920C87F8 /* EXPMatchers+beNil.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CCD6ED425E4B40909763B4FD0E40DBCD /* UIImage+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E2E386E91A8252E7E0FD3C63CCC521 /* UIImage+Snapshot.m */; };
 		CD944DDFF4161DE687C9764C6216AA65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692D29656528FA94A71ECFB8FEB6DC0B /* Foundation.framework */; };
-		CE2699362AF16E4CF11817B984DDEF09 /* RandomStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = D46AAB239E3C27258461E0E897A5D0E3 /* RandomStringGenerator.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		D22B019FA8B204DBA269344C6A9B7AB4 /* EXPMatchers+raiseWithReason.h in Headers */ = {isa = PBXBuildFile; fileRef = CBB0AA05F69F82B5C626D6D3D17ED704 /* EXPMatchers+raiseWithReason.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D328A5E8AF37279CFAFE53CCDA223802 /* Specta-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE4596C95132D5FC84194E5D046DEE3 /* Specta-dummy.m */; };
 		D3C846F8E884515E1C43F10049698B6A /* EXPMatchers+haveCountOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B8DD78259BED4CFAF0B52086B1EE41 /* EXPMatchers+haveCountOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -159,7 +322,6 @@
 		E1E77D6D5AB4158AB8403C24C6E9AB1B /* XCTestCase+Specta.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B9FA53099A1DDA106AAF2A4E7053ABE /* XCTestCase+Specta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E30827F8521DF61FAEAC2D5971D6F763 /* FBSnapshotTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = B27768910D2C1161F4A5C8536DA18BEE /* FBSnapshotTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E3DACFAF45457ACF68ECD29F9861ADA8 /* EXPMatchers+haveCountOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B587F705BFFCCBD0E65FA3DAF35FA1D /* EXPMatchers+haveCountOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E5237178FDA56CE0ADC534BCB32063FD /* ImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = E9555E39F7519689AA1B18C269FF69C8 /* ImageUploader.m */; };
 		E525AADDECBB8CD91F5019755DAB9212 /* EXPMatchers+conformTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 587824262CA4D103C60B03629B19F525 /* EXPMatchers+conformTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E5F452782A72DAEE27B291B9A701C8A9 /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 106BDFB98234EAD3B5F1E56BFECEAEF3 /* Localizable.json */; };
 		E66C952D75345928AAEB0A66BE6FC5D7 /* SpectaUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EBA4AE1B627D6EF48B55B54BD3B8F78 /* SpectaUtility.m */; };
@@ -172,14 +334,12 @@
 		EEF975FF4A1C7534532877EDE56C68CE /* ExpectaObject+FBSnapshotTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AC81CDCDA674C72343F33170829E3264 /* ExpectaObject+FBSnapshotTest.m */; };
 		F1370A0DB019FCDCE0077D1E64B549A2 /* EXPMatchers+beSubclassOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FD94701D253E5E17E8081D8A5AF0DD /* EXPMatchers+beSubclassOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F286B17F56DF04571F7AFFA3EC1CABA7 /* Pods-VocLiveChatFramework_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5658B959BCBB4B117D616DAA18FAAD64 /* Pods-VocLiveChatFramework_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F5AEA6AD25F3332152094F53352BB0C4 /* VocaiSdkBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F063AF9E9F2067CC7E5BF0A39F273FB /* VocaiSdkBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F7BA9BB49FEE10C6CA25DFFA696FEA21 /* SpectaTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BEB660D20F2DBECD7A04C393C603A4 /* SpectaTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F7DC2FC45F91CF648D885B248035A419 /* NSValue+Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D751F0FE311D6E3A04E42DD62F0946C /* NSValue+Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8B32A34F7FD111CCC0F65220FC2761C /* EXPDoubleTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE712118916A6FAD1200C110E308E2D /* EXPDoubleTuple.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F90B38F219C25D02A0F4F89A69272910 /* Expecta+Snapshots-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CC0FF38A317BE32E8ADBEDF6ECCFFD7D /* Expecta+Snapshots-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F98ED7688ECEBA58477D1AE4D01C04A2 /* Expecta-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCDD127923D81FCC10FA3EC547194B7 /* Expecta-dummy.m */; };
 		F9B11A84D8AF6B6C71CB2CBB34B3883D /* EXPDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 4395BCC8DF29BC2DA1BD8A74CC645618 /* EXPDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FA0E98C69C4126A5F5E88EA2F3A2DC03 /* AVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EA84401E04AF1BE111CD56C516C5378 /* AVCaptureViewController.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		FC10AE60B73949F45902C2133EBDB02E /* EXPExpect.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D149F19268987F119A11C546B7EFE0 /* EXPExpect.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
@@ -260,7 +420,6 @@
 		019A89DA7820B809D45D2D192CD027E5 /* Expecta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Expecta.h; path = Expecta/Expecta.h; sourceTree = "<group>"; };
 		01B785871406A850B0A1E5ACC0D46F00 /* XCTestCase+Specta.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestCase+Specta.m"; path = "Specta/Specta/XCTestCase+Specta.m"; sourceTree = "<group>"; };
 		037F5CF6DD82B4B454527CB4C0B46851 /* NSValue+Expecta.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValue+Expecta.m"; path = "Expecta/NSValue+Expecta.m"; sourceTree = "<group>"; };
-		03CAA25CFE09BA9E32FCAEE4CA5B7077 /* ChatWebViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ChatWebViewController.h; sourceTree = "<group>"; };
 		04A8A352A49C202CE83D4821B83B92F5 /* InitialModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = InitialModel.h; sourceTree = "<group>"; };
 		05CCE4A0FB9469CEBA3B88CDBD53C21D /* VocLiveChatFramework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VocLiveChatFramework-prefix.pch"; sourceTree = "<group>"; };
 		06666E1B7886921A10F9772C2AA3560C /* Pods-VocLiveChatFramework_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VocLiveChatFramework_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -270,7 +429,6 @@
 		0CD89A979FC7A714CC700B149E2A29BC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0DCB1F1FEFF1912C34FF5908A938C18D /* Pods-VocLiveChatFramework_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VocLiveChatFramework_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		0DD6FF7766CC0E6A8CC6E4C5FF10CC21 /* FBSnapshotTestCase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FBSnapshotTestCase-dummy.m"; sourceTree = "<group>"; };
-		0F063AF9E9F2067CC7E5BF0A39F273FB /* VocaiSdkBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VocaiSdkBuilder.h; sourceTree = "<group>"; };
 		1004F3B0D7B836E2BE433BDE8AAEA723 /* EXPMatcherHelpers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPMatcherHelpers.m; path = Expecta/Matchers/EXPMatcherHelpers.m; sourceTree = "<group>"; };
 		106BDFB98234EAD3B5F1E56BFECEAEF3 /* Localizable.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = Localizable.json; path = VocLiveChatFramework/Assets/Localizable.json; sourceTree = "<group>"; };
 		108488F285A773A3BCE052B9350CD6CD /* EXPMatchers+raise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+raise.h"; path = "Expecta/Matchers/EXPMatchers+raise.h"; sourceTree = "<group>"; };
@@ -304,9 +462,7 @@
 		302A1A7AE71CE97E30BAF1A02677154B /* Pods-VocLiveChatFramework_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VocLiveChatFramework_Example.modulemap"; sourceTree = "<group>"; };
 		30A583A28600B6024E142CEE3AC34642 /* EXPMatchers+equal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+equal.h"; path = "Expecta/Matchers/EXPMatchers+equal.h"; sourceTree = "<group>"; };
 		32D3545A01262C6D92DF5D83E71971DF /* EXPMatchers+beginWith.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beginWith.m"; path = "Expecta/Matchers/EXPMatchers+beginWith.m"; sourceTree = "<group>"; };
-		33D0B28FEBE0FD59E3C30C94388AB237 /* LanguageTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LanguageTool.h; sourceTree = "<group>"; };
 		3562C5ECD9797B3E0E89C611AF22EA92 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		3681BD70656BCE4FE227AAC03716DFFB /* PollingRequestTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PollingRequestTool.h; sourceTree = "<group>"; };
 		373732A9C739AA9A65AD168D7988901D /* EXPMatchers+beGreaterThanOrEqualTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beGreaterThanOrEqualTo.h"; path = "Expecta/Matchers/EXPMatchers+beGreaterThanOrEqualTo.h"; sourceTree = "<group>"; };
 		37EF16E017F7EF88AAC9B3A4F3523388 /* NSObject+Expecta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+Expecta.h"; path = "Expecta/NSObject+Expecta.h"; sourceTree = "<group>"; };
 		38720083382F2C125695F1626B7EC020 /* EXPDoubleTuple.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPDoubleTuple.h; path = Expecta/EXPDoubleTuple.h; sourceTree = "<group>"; };
@@ -317,6 +473,30 @@
 		3D462091B0B297DA65FD3F10937EFB1A /* EXPMatchers+raise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+raise.m"; path = "Expecta/Matchers/EXPMatchers+raise.m"; sourceTree = "<group>"; };
 		3E0B2A4326A6771BE138C8CE16707F8A /* EXPFloatTuple.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPFloatTuple.h; path = Expecta/EXPFloatTuple.h; sourceTree = "<group>"; };
 		3E19264E9A59681F2EDB4F7295CF72E8 /* VocLiveChatFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VocLiveChatFramework-umbrella.h"; sourceTree = "<group>"; };
+		3FD6EBDB2DE5A2240077EE45 /* ApiTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApiTool.h; sourceTree = "<group>"; };
+		3FD6EBDC2DE5A2240077EE45 /* ApiTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApiTool.m; sourceTree = "<group>"; };
+		3FD6EBDD2DE5A2240077EE45 /* ImageUploader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageUploader.h; sourceTree = "<group>"; };
+		3FD6EBDE2DE5A2240077EE45 /* ImageUploader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageUploader.m; sourceTree = "<group>"; };
+		3FD6EBDF2DE5A2240077EE45 /* LanguageTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LanguageTool.h; sourceTree = "<group>"; };
+		3FD6EBE02DE5A2240077EE45 /* LanguageTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LanguageTool.m; sourceTree = "<group>"; };
+		3FD6EBE12DE5A2240077EE45 /* MessageCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageCenter.h; sourceTree = "<group>"; };
+		3FD6EBE22DE5A2240077EE45 /* MessageCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageCenter.m; sourceTree = "<group>"; };
+		3FD6EBE32DE5A2240077EE45 /* NetworkTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkTool.h; sourceTree = "<group>"; };
+		3FD6EBE42DE5A2240077EE45 /* NetworkTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkTool.m; sourceTree = "<group>"; };
+		3FD6EBE52DE5A2240077EE45 /* PollingRequestTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PollingRequestTool.h; sourceTree = "<group>"; };
+		3FD6EBE62DE5A2240077EE45 /* PollingRequestTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PollingRequestTool.m; sourceTree = "<group>"; };
+		3FD6EBE72DE5A2240077EE45 /* RandomStringGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RandomStringGenerator.h; sourceTree = "<group>"; };
+		3FD6EBE82DE5A2240077EE45 /* RandomStringGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RandomStringGenerator.m; sourceTree = "<group>"; };
+		3FD6EBEA2DE5A2240077EE45 /* AVCaptureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVCaptureViewController.h; sourceTree = "<group>"; };
+		3FD6EBEB2DE5A2240077EE45 /* AVCaptureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVCaptureViewController.m; sourceTree = "<group>"; };
+		3FD6EBEC2DE5A2240077EE45 /* ChatWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatWebViewController.h; sourceTree = "<group>"; };
+		3FD6EBED2DE5A2240077EE45 /* ChatWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatWebViewController.m; sourceTree = "<group>"; };
+		3FD6EBEE2DE5A2240077EE45 /* CustomOptionsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomOptionsView.h; sourceTree = "<group>"; };
+		3FD6EBEF2DE5A2240077EE45 /* CustomOptionsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomOptionsView.m; sourceTree = "<group>"; };
+		3FD6EBF02DE5A2240077EE45 /* PDFDisplayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFDisplayView.h; sourceTree = "<group>"; };
+		3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFDisplayView.m; sourceTree = "<group>"; };
+		3FD6EBF22DE5A2240077EE45 /* VocaiSdkBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VocaiSdkBuilder.h; sourceTree = "<group>"; };
+		3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VocaiSdkBuilder.m; sourceTree = "<group>"; };
 		4036AD561259F58D92A41832D20EF707 /* EXPMatchers+beTruthy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beTruthy.m"; path = "Expecta/Matchers/EXPMatchers+beTruthy.m"; sourceTree = "<group>"; };
 		4138A0A13FF7F7B73435E87E54C56C18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		41DD008B1C8CCDB66E9DB3DD2858D513 /* SPTCompiledExample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTCompiledExample.h; path = Specta/Specta/SPTCompiledExample.h; sourceTree = "<group>"; };
@@ -347,16 +527,13 @@
 		6111F071CD75E6A47B379243C38F59CC /* FBSnapshotTestCase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCase.m; path = FBSnapshotTestCase/FBSnapshotTestCase.m; sourceTree = "<group>"; };
 		630C155244BD8E6FF41290E3C1C0F686 /* Pods-VocLiveChatFramework_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VocLiveChatFramework_Example-umbrella.h"; sourceTree = "<group>"; };
 		63E2E386E91A8252E7E0FD3C63CCC521 /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
-		67292EC2B5A64C7AFCBE25B8A37A5B27 /* PDFDisplayView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDFDisplayView.m; sourceTree = "<group>"; };
 		683E127F8E684ACB97CB3C693168AF47 /* Pods-VocLiveChatFramework_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VocLiveChatFramework_Example.release.xcconfig"; sourceTree = "<group>"; };
-		68C67D53939F517400FBC54C54F83547 /* NetworkTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NetworkTool.m; sourceTree = "<group>"; };
 		68CF04724CA903AB4C0A24042AB5E6BC /* Pods-VocLiveChatFramework_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VocLiveChatFramework_Tests.modulemap"; sourceTree = "<group>"; };
 		692D29656528FA94A71ECFB8FEB6DC0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		698F11FEE558B5B0DAA7277EB1FAF6F4 /* UIImage+Compare.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Compare.m"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.m"; sourceTree = "<group>"; };
 		6B001334591D963A69814E7EAC41981A /* Pods-VocLiveChatFramework_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VocLiveChatFramework_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		6B145BBA4F94616C1D8E9D363373601A /* SPTCompiledExample.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTCompiledExample.m; path = Specta/Specta/SPTCompiledExample.m; sourceTree = "<group>"; };
 		6B9FA53099A1DDA106AAF2A4E7053ABE /* XCTestCase+Specta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "XCTestCase+Specta.h"; path = "Specta/Specta/XCTestCase+Specta.h"; sourceTree = "<group>"; };
-		6EA84401E04AF1BE111CD56C516C5378 /* AVCaptureViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVCaptureViewController.h; sourceTree = "<group>"; };
 		6EE87F7213E48CFE9B4B41448280C281 /* EXPMatchers+endWith.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+endWith.h"; path = "Expecta/Matchers/EXPMatchers+endWith.h"; sourceTree = "<group>"; };
 		6F8DD5EECCB60C0E08BD32324A8E8649 /* Expecta+Snapshots-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Expecta+Snapshots-Info.plist"; sourceTree = "<group>"; };
 		6FCDD127923D81FCC10FA3EC547194B7 /* Expecta-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Expecta-dummy.m"; sourceTree = "<group>"; };
@@ -371,16 +548,13 @@
 		83A7607745AAE8CBDAC36E7E1E1C7108 /* UIImage+Diff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Diff.h"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.h"; sourceTree = "<group>"; };
 		844E3A0A31E744A3756CBD5E91ECC3DD /* Specta-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Specta-Info.plist"; sourceTree = "<group>"; };
 		845CB33B040BF7AC02F61EB3E1DF7C44 /* Specta-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Specta-prefix.pch"; sourceTree = "<group>"; };
-		845E895A1086421F7E6A66ACCB9B2822 /* VocaiSdkBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = VocaiSdkBuilder.m; sourceTree = "<group>"; };
 		8571C50A479E6AD3DDAF259F00A0F942 /* FBSnapshotTestCase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FBSnapshotTestCase.modulemap; sourceTree = "<group>"; };
 		85B594F2110D4A4D91F3A7393B967F2B /* UserModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		85FD94701D253E5E17E8081D8A5AF0DD /* EXPMatchers+beSubclassOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beSubclassOf.m"; path = "Expecta/Matchers/EXPMatchers+beSubclassOf.m"; sourceTree = "<group>"; };
 		86D41974EB467839557D216FF65F0FED /* EXPMatchers+beGreaterThan.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beGreaterThan.h"; path = "Expecta/Matchers/EXPMatchers+beGreaterThan.h"; sourceTree = "<group>"; };
 		877834322FA508FA93591923AE248986 /* EXPMatchers+beGreaterThan.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beGreaterThan.m"; path = "Expecta/Matchers/EXPMatchers+beGreaterThan.m"; sourceTree = "<group>"; };
 		8794D436AF7CD02C352F33E8756DA6AA /* ExpectaObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ExpectaObject.m; path = Expecta/ExpectaObject.m; sourceTree = "<group>"; };
-		88999F514B6614A2ED8A92E88466DA2F /* AVCaptureViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AVCaptureViewController.m; sourceTree = "<group>"; };
 		8936C7A225FA6637A65642D5E63D94EF /* EXPMatchers+beCloseTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beCloseTo.h"; path = "Expecta/Matchers/EXPMatchers+beCloseTo.h"; sourceTree = "<group>"; };
-		893867F90BB4CEE2A0BCA2CA3927DA6B /* LanguageTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LanguageTool.m; sourceTree = "<group>"; };
 		89968AF95973507DBFD9E27410FD60FC /* VocLiveChatFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = VocLiveChatFramework.release.xcconfig; sourceTree = "<group>"; };
 		8A7A530A25E944000D1441926C865F4E /* Pods-VocLiveChatFramework_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VocLiveChatFramework_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		8A90E86082A6B8E5EDE6EA22FD21EB73 /* ExpectaSupport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ExpectaSupport.h; path = Expecta/ExpectaSupport.h; sourceTree = "<group>"; };
@@ -392,7 +566,6 @@
 		8EBA4AE1B627D6EF48B55B54BD3B8F78 /* SpectaUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SpectaUtility.m; path = Specta/Specta/SpectaUtility.m; sourceTree = "<group>"; };
 		932012295DBE9940094FF147CF412A27 /* EXPMatchers+respondTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+respondTo.m"; path = "Expecta/Matchers/EXPMatchers+respondTo.m"; sourceTree = "<group>"; };
 		9392407C48D3EE80025186936C70627F /* EXPMatchers+beLessThanOrEqualTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beLessThanOrEqualTo.h"; path = "Expecta/Matchers/EXPMatchers+beLessThanOrEqualTo.h"; sourceTree = "<group>"; };
-		93EA8C8385B3D5B8765833051F85FC6D /* ImageUploader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ImageUploader.h; sourceTree = "<group>"; };
 		9441A311708D639B846E38C432211FAF /* SpectaUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SpectaUtility.h; path = Specta/Specta/SpectaUtility.h; sourceTree = "<group>"; };
 		9685F6F1DB9CF1394BD80F9DC81C6F38 /* SPTExample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTExample.h; path = Specta/Specta/SPTExample.h; sourceTree = "<group>"; };
 		97407830D82548C320B2627701B8690C /* VocaiChatModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VocaiChatModel.h; sourceTree = "<group>"; };
@@ -416,7 +589,6 @@
 		ADB8A0F0B2B83940D30D63AF2BDBA119 /* EXPBlockDefinedMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPBlockDefinedMatcher.m; path = Expecta/EXPBlockDefinedMatcher.m; sourceTree = "<group>"; };
 		AEC5881C4C1CE00283750026BB52345F /* EXPMatchers+postNotification.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+postNotification.m"; path = "Expecta/Matchers/EXPMatchers+postNotification.m"; sourceTree = "<group>"; };
 		AEE712118916A6FAD1200C110E308E2D /* EXPDoubleTuple.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPDoubleTuple.m; path = Expecta/EXPDoubleTuple.m; sourceTree = "<group>"; };
-		B077A84C45AA0AFDFFD82F1897DCF4AC /* NetworkTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NetworkTool.h; sourceTree = "<group>"; };
 		B10AD69D3EABACF47DD9770036AC6CE4 /* Pods-VocLiveChatFramework_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VocLiveChatFramework_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B27768910D2C1161F4A5C8536DA18BEE /* FBSnapshotTestCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCase.h; path = FBSnapshotTestCase/FBSnapshotTestCase.h; sourceTree = "<group>"; };
 		B396735C9A59DFE0022AE5BBBBF42E67 /* Pods_VocLiveChatFramework_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VocLiveChatFramework_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -428,7 +600,6 @@
 		BFAB25872F12EB130044DEBAE455D7F5 /* VocLiveChatFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = VocLiveChatFramework.debug.xcconfig; sourceTree = "<group>"; };
 		BFD3EC8E06F318F7ABB5A05C6DAADA34 /* VocLiveChatFramework-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "VocLiveChatFramework-Info.plist"; sourceTree = "<group>"; };
 		C0E7514AB1F341A616CDFFEB60AE2C49 /* EXPMatchers+match.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+match.h"; path = "Expecta/Matchers/EXPMatchers+match.h"; sourceTree = "<group>"; };
-		C2BDAA66B74E560E194B7321C6A06AB5 /* CustomOptionsView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CustomOptionsView.m; sourceTree = "<group>"; };
 		C2C47770A2B7F56356D78B6BC2A100B0 /* Specta-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Specta-umbrella.h"; sourceTree = "<group>"; };
 		C4230741943C64927EC644AF561F2F4C /* SPTTestSuite.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTTestSuite.m; path = Specta/Specta/SPTTestSuite.m; sourceTree = "<group>"; };
 		C4D9E506424CA1615456597BFFC36A61 /* FBSnapshotTestController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestController.m; path = FBSnapshotTestCase/FBSnapshotTestController.m; sourceTree = "<group>"; };
@@ -436,7 +607,6 @@
 		C55CDFBB5E7EC2757FD3661C53214A47 /* SPTSpec.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTSpec.m; path = Specta/Specta/SPTSpec.m; sourceTree = "<group>"; };
 		C7D149F19268987F119A11C546B7EFE0 /* EXPExpect.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPExpect.m; path = Expecta/EXPExpect.m; sourceTree = "<group>"; };
 		CA44038502C345C3307BB4A6D049D339 /* Pods-VocLiveChatFramework_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VocLiveChatFramework_Example-frameworks.sh"; sourceTree = "<group>"; };
-		CA6C4F67248F263CDE50B1D91518CBC2 /* ChatWebViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ChatWebViewController.m; sourceTree = "<group>"; };
 		CBB0AA05F69F82B5C626D6D3D17ED704 /* EXPMatchers+raiseWithReason.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+raiseWithReason.h"; path = "Expecta/Matchers/EXPMatchers+raiseWithReason.h"; sourceTree = "<group>"; };
 		CBF013EE264D088C0697458EC1BA0379 /* EXPMatchers+raiseWithReason.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+raiseWithReason.m"; path = "Expecta/Matchers/EXPMatchers+raiseWithReason.m"; sourceTree = "<group>"; };
 		CC0FF38A317BE32E8ADBEDF6ECCFFD7D /* Expecta+Snapshots-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Expecta+Snapshots-umbrella.h"; sourceTree = "<group>"; };
@@ -445,9 +615,7 @@
 		CCF75EC5B1F56E3EFE66CC368FBB703A /* EXPMatchers+endWith.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+endWith.m"; path = "Expecta/Matchers/EXPMatchers+endWith.m"; sourceTree = "<group>"; };
 		CF2696A7AE1A69AC012F9A6ABBF9FD3F /* FBSnapshotTestCase-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FBSnapshotTestCase-Info.plist"; sourceTree = "<group>"; };
 		D3157ADD912BCFBA0497E18860CACA22 /* VocLiveChatFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "VocLiveChatFramework-dummy.m"; sourceTree = "<group>"; };
-		D46AAB239E3C27258461E0E897A5D0E3 /* RandomStringGenerator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RandomStringGenerator.h; sourceTree = "<group>"; };
 		D908D3DBCF49C684EBC9A589BF765F1C /* WebCallBackModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = WebCallBackModel.m; sourceTree = "<group>"; };
-		DB29A76AF5095A2DF6A78D8C8F623C16 /* RandomStringGenerator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RandomStringGenerator.m; sourceTree = "<group>"; };
 		DC0C329E0C2B9EC458C20A17D1E8A134 /* EXPBlockDefinedMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPBlockDefinedMatcher.h; path = Expecta/EXPBlockDefinedMatcher.h; sourceTree = "<group>"; };
 		DC28FE68C592231935910CDC0C2334F1 /* EXPMatchers+conformTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+conformTo.h"; path = "Expecta/Matchers/EXPMatchers+conformTo.h"; sourceTree = "<group>"; };
 		DDE4596C95132D5FC84194E5D046DEE3 /* Specta-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Specta-dummy.m"; sourceTree = "<group>"; };
@@ -457,15 +625,11 @@
 		E211486FA028D3EB7AF012E4C31E4BFE /* EXPMatchers+beLessThanOrEqualTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beLessThanOrEqualTo.m"; path = "Expecta/Matchers/EXPMatchers+beLessThanOrEqualTo.m"; sourceTree = "<group>"; };
 		E224127079617AF4A8E6130FD9E4BACC /* EXPMatchers+match.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+match.m"; path = "Expecta/Matchers/EXPMatchers+match.m"; sourceTree = "<group>"; };
 		E24EDE5CCA30A9FB48E62A3912BF270E /* VocLiveChatFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VocLiveChatFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3511AAE1548033E780D7E0EE3D7AB58 /* PDFDisplayView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDFDisplayView.h; sourceTree = "<group>"; };
-		E74C1F1816FC073D8C746425A3084D52 /* PollingRequestTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PollingRequestTool.m; sourceTree = "<group>"; };
-		E9555E39F7519689AA1B18C269FF69C8 /* ImageUploader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ImageUploader.m; sourceTree = "<group>"; };
 		EC323D63B5318F092C04883622073F5F /* Specta.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Specta.modulemap; sourceTree = "<group>"; };
 		EDECAAC618CF03CB116A38282EB972B1 /* ExpectaObject+FBSnapshotTest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ExpectaObject+FBSnapshotTest.h"; sourceTree = "<group>"; };
 		F0245DF7148A7072C0E79CF80FA8DB43 /* FBSnapshotTestController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestController.h; path = FBSnapshotTestCase/FBSnapshotTestController.h; sourceTree = "<group>"; };
 		F094E0D0E122398BEE05F02377D96CC1 /* SPTExampleGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTExampleGroup.m; path = Specta/Specta/SPTExampleGroup.m; sourceTree = "<group>"; };
 		F2562E42CC03567292CE055CC33D5EA5 /* UIApplication+StrictKeyWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+StrictKeyWindow.h"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.h"; sourceTree = "<group>"; };
-		F2D905A80F2B085F9260BAC32CAB3435 /* CustomOptionsView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CustomOptionsView.h; sourceTree = "<group>"; };
 		F323BE9CCBD74D21580F57285BADF0E8 /* EXPMatchers+beLessThan.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beLessThan.m"; path = "Expecta/Matchers/EXPMatchers+beLessThan.m"; sourceTree = "<group>"; };
 		F3985C42E3C08E22344BBE0BDC73FD0A /* UserModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		F43A2D90FC5B1BDA79F155B94C2461CF /* SpectaDSL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SpectaDSL.m; path = Specta/Specta/SpectaDSL.m; sourceTree = "<group>"; };
@@ -571,26 +735,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		04A6C5CCBE85C9C715B9C415316378FD /* View */ = {
-			isa = PBXGroup;
-			children = (
-				6EA84401E04AF1BE111CD56C516C5378 /* AVCaptureViewController.h */,
-				88999F514B6614A2ED8A92E88466DA2F /* AVCaptureViewController.m */,
-				03CAA25CFE09BA9E32FCAEE4CA5B7077 /* ChatWebViewController.h */,
-				CA6C4F67248F263CDE50B1D91518CBC2 /* ChatWebViewController.m */,
-				F2D905A80F2B085F9260BAC32CAB3435 /* CustomOptionsView.h */,
-				C2BDAA66B74E560E194B7321C6A06AB5 /* CustomOptionsView.m */,
-				B077A84C45AA0AFDFFD82F1897DCF4AC /* NetworkTool.h */,
-				68C67D53939F517400FBC54C54F83547 /* NetworkTool.m */,
-				E3511AAE1548033E780D7E0EE3D7AB58 /* PDFDisplayView.h */,
-				67292EC2B5A64C7AFCBE25B8A37A5B27 /* PDFDisplayView.m */,
-				0F063AF9E9F2067CC7E5BF0A39F273FB /* VocaiSdkBuilder.h */,
-				845E895A1086421F7E6A66ACCB9B2822 /* VocaiSdkBuilder.m */,
-			);
-			name = View;
-			path = VocLiveChatFramework/Classes/View;
-			sourceTree = "<group>";
-		};
 		0F23D28A4444D894C38CEF515383653C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -674,6 +818,46 @@
 				E738DC32C3121C22993AC2E91FA74DEE /* Pods-VocLiveChatFramework_Tests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		3FD6EBE92DE5A2240077EE45 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				3FD6EBDB2DE5A2240077EE45 /* ApiTool.h */,
+				3FD6EBDC2DE5A2240077EE45 /* ApiTool.m */,
+				3FD6EBDD2DE5A2240077EE45 /* ImageUploader.h */,
+				3FD6EBDE2DE5A2240077EE45 /* ImageUploader.m */,
+				3FD6EBDF2DE5A2240077EE45 /* LanguageTool.h */,
+				3FD6EBE02DE5A2240077EE45 /* LanguageTool.m */,
+				3FD6EBE12DE5A2240077EE45 /* MessageCenter.h */,
+				3FD6EBE22DE5A2240077EE45 /* MessageCenter.m */,
+				3FD6EBE32DE5A2240077EE45 /* NetworkTool.h */,
+				3FD6EBE42DE5A2240077EE45 /* NetworkTool.m */,
+				3FD6EBE52DE5A2240077EE45 /* PollingRequestTool.h */,
+				3FD6EBE62DE5A2240077EE45 /* PollingRequestTool.m */,
+				3FD6EBE72DE5A2240077EE45 /* RandomStringGenerator.h */,
+				3FD6EBE82DE5A2240077EE45 /* RandomStringGenerator.m */,
+			);
+			name = Tool;
+			path = VocLiveChatFramework/Classes/Tool;
+			sourceTree = "<group>";
+		};
+		3FD6EBF42DE5A2240077EE45 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3FD6EBEA2DE5A2240077EE45 /* AVCaptureViewController.h */,
+				3FD6EBEB2DE5A2240077EE45 /* AVCaptureViewController.m */,
+				3FD6EBEC2DE5A2240077EE45 /* ChatWebViewController.h */,
+				3FD6EBED2DE5A2240077EE45 /* ChatWebViewController.m */,
+				3FD6EBEE2DE5A2240077EE45 /* CustomOptionsView.h */,
+				3FD6EBEF2DE5A2240077EE45 /* CustomOptionsView.m */,
+				3FD6EBF02DE5A2240077EE45 /* PDFDisplayView.h */,
+				3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */,
+				3FD6EBF22DE5A2240077EE45 /* VocaiSdkBuilder.h */,
+				3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */,
+			);
+			name = View;
+			path = VocLiveChatFramework/Classes/View;
 			sourceTree = "<group>";
 		};
 		6B44D4A3F50491B994BBC906F19913FD /* Model */ = {
@@ -863,13 +1047,13 @@
 		A9A1D0942C21E23D9E12869624934CA8 /* VocLiveChatFramework */ = {
 			isa = PBXGroup;
 			children = (
+				3FD6EBE92DE5A2240077EE45 /* Tool */,
+				3FD6EBF42DE5A2240077EE45 /* View */,
 				106BDFB98234EAD3B5F1E56BFECEAEF3 /* Localizable.json */,
 				6B44D4A3F50491B994BBC906F19913FD /* Model */,
 				6C865688DFE6517C5B366239E15D5F96 /* Params */,
 				12A274C05EF37D23B29DBB8708B7A09C /* Pod */,
 				C67D6DDD36874700FEF204448C6DEA7D /* Support Files */,
-				F834CA42504751DA07D06025F2E4CDAC /* Tool */,
-				04A6C5CCBE85C9C715B9C415316378FD /* View */,
 			);
 			name = VocLiveChatFramework;
 			path = ../..;
@@ -966,22 +1150,6 @@
 			path = "../Target Support Files/FBSnapshotTestCase";
 			sourceTree = "<group>";
 		};
-		F834CA42504751DA07D06025F2E4CDAC /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				93EA8C8385B3D5B8765833051F85FC6D /* ImageUploader.h */,
-				E9555E39F7519689AA1B18C269FF69C8 /* ImageUploader.m */,
-				33D0B28FEBE0FD59E3C30C94388AB237 /* LanguageTool.h */,
-				893867F90BB4CEE2A0BCA2CA3927DA6B /* LanguageTool.m */,
-				3681BD70656BCE4FE227AAC03716DFFB /* PollingRequestTool.h */,
-				E74C1F1816FC073D8C746425A3084D52 /* PollingRequestTool.m */,
-				D46AAB239E3C27258461E0E897A5D0E3 /* RandomStringGenerator.h */,
-				DB29A76AF5095A2DF6A78D8C8F623C16 /* RandomStringGenerator.m */,
-			);
-			name = Tool;
-			path = VocLiveChatFramework/Classes/Tool;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1021,6 +1189,18 @@
 				0C118C0B26DB7AC928BAD64DC9DDED84 /* EXPMatchers+endWith.h in Headers */,
 				E86191783F85F75C1A02497CBA8BC0A1 /* EXPMatchers+equal.h in Headers */,
 				E3DACFAF45457ACF68ECD29F9861ADA8 /* EXPMatchers+haveCountOf.h in Headers */,
+				3FD6EC792DE5A2240077EE45 /* NetworkTool.h in Headers */,
+				3FD6EC7A2DE5A2240077EE45 /* MessageCenter.h in Headers */,
+				3FD6EC7B2DE5A2240077EE45 /* ImageUploader.h in Headers */,
+				3FD6EC7C2DE5A2240077EE45 /* PollingRequestTool.h in Headers */,
+				3FD6EC7D2DE5A2240077EE45 /* CustomOptionsView.h in Headers */,
+				3FD6EC7E2DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
+				3FD6EC7F2DE5A2240077EE45 /* AVCaptureViewController.h in Headers */,
+				3FD6EC802DE5A2240077EE45 /* ChatWebViewController.h in Headers */,
+				3FD6EC812DE5A2240077EE45 /* LanguageTool.h in Headers */,
+				3FD6EC822DE5A2240077EE45 /* RandomStringGenerator.h in Headers */,
+				3FD6EC832DE5A2240077EE45 /* PDFDisplayView.h in Headers */,
+				3FD6EC842DE5A2240077EE45 /* ApiTool.h in Headers */,
 				26624BFAD48BCCFB28241872DBD12B70 /* EXPMatchers+match.h in Headers */,
 				273B99CB582E0EB46D675A2A90D72E3E /* EXPMatchers+postNotification.h in Headers */,
 				3C4BCCB15317300EE21CF929E2FB3B14 /* EXPMatchers+raise.h in Headers */,
@@ -1036,6 +1216,18 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD6EC252DE5A2240077EE45 /* NetworkTool.h in Headers */,
+				3FD6EC262DE5A2240077EE45 /* MessageCenter.h in Headers */,
+				3FD6EC272DE5A2240077EE45 /* ImageUploader.h in Headers */,
+				3FD6EC282DE5A2240077EE45 /* PollingRequestTool.h in Headers */,
+				3FD6EC292DE5A2240077EE45 /* CustomOptionsView.h in Headers */,
+				3FD6EC2A2DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
+				3FD6EC2B2DE5A2240077EE45 /* AVCaptureViewController.h in Headers */,
+				3FD6EC2C2DE5A2240077EE45 /* ChatWebViewController.h in Headers */,
+				3FD6EC2D2DE5A2240077EE45 /* LanguageTool.h in Headers */,
+				3FD6EC2E2DE5A2240077EE45 /* RandomStringGenerator.h in Headers */,
+				3FD6EC2F2DE5A2240077EE45 /* PDFDisplayView.h in Headers */,
+				3FD6EC302DE5A2240077EE45 /* ApiTool.h in Headers */,
 				A070787F25B1FE1600AB6DD8226EA2DD /* Pods-VocLiveChatFramework_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1051,6 +1243,18 @@
 				AF3CEA141C25BFE8B5129F5B3F5367BA /* UIApplication+StrictKeyWindow.h in Headers */,
 				3055B23EB828906352FB08A8F83799D0 /* UIImage+Compare.h in Headers */,
 				04709B09ADB58F96CF1E94A0418D71C0 /* UIImage+Diff.h in Headers */,
+				3FD6EC0D2DE5A2240077EE45 /* NetworkTool.h in Headers */,
+				3FD6EC0E2DE5A2240077EE45 /* MessageCenter.h in Headers */,
+				3FD6EC0F2DE5A2240077EE45 /* ImageUploader.h in Headers */,
+				3FD6EC102DE5A2240077EE45 /* PollingRequestTool.h in Headers */,
+				3FD6EC112DE5A2240077EE45 /* CustomOptionsView.h in Headers */,
+				3FD6EC122DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
+				3FD6EC132DE5A2240077EE45 /* AVCaptureViewController.h in Headers */,
+				3FD6EC142DE5A2240077EE45 /* ChatWebViewController.h in Headers */,
+				3FD6EC152DE5A2240077EE45 /* LanguageTool.h in Headers */,
+				3FD6EC162DE5A2240077EE45 /* RandomStringGenerator.h in Headers */,
+				3FD6EC172DE5A2240077EE45 /* PDFDisplayView.h in Headers */,
+				3FD6EC182DE5A2240077EE45 /* ApiTool.h in Headers */,
 				409B8F0B99F08EB0D4E1E6B7962279BE /* UIImage+Snapshot.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1059,6 +1263,18 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD6EC612DE5A2240077EE45 /* NetworkTool.h in Headers */,
+				3FD6EC622DE5A2240077EE45 /* MessageCenter.h in Headers */,
+				3FD6EC632DE5A2240077EE45 /* ImageUploader.h in Headers */,
+				3FD6EC642DE5A2240077EE45 /* PollingRequestTool.h in Headers */,
+				3FD6EC652DE5A2240077EE45 /* CustomOptionsView.h in Headers */,
+				3FD6EC662DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
+				3FD6EC672DE5A2240077EE45 /* AVCaptureViewController.h in Headers */,
+				3FD6EC682DE5A2240077EE45 /* ChatWebViewController.h in Headers */,
+				3FD6EC692DE5A2240077EE45 /* LanguageTool.h in Headers */,
+				3FD6EC6A2DE5A2240077EE45 /* RandomStringGenerator.h in Headers */,
+				3FD6EC6B2DE5A2240077EE45 /* PDFDisplayView.h in Headers */,
+				3FD6EC6C2DE5A2240077EE45 /* ApiTool.h in Headers */,
 				F286B17F56DF04571F7AFFA3EC1CABA7 /* Pods-VocLiveChatFramework_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1069,6 +1285,18 @@
 			files = (
 				F90B38F219C25D02A0F4F89A69272910 /* Expecta+Snapshots-umbrella.h in Headers */,
 				852E3A98FF249B217FB55B8D4E6A70C4 /* ExpectaObject+FBSnapshotTest.h in Headers */,
+				3FD6EC492DE5A2240077EE45 /* NetworkTool.h in Headers */,
+				3FD6EC4A2DE5A2240077EE45 /* MessageCenter.h in Headers */,
+				3FD6EC4B2DE5A2240077EE45 /* ImageUploader.h in Headers */,
+				3FD6EC4C2DE5A2240077EE45 /* PollingRequestTool.h in Headers */,
+				3FD6EC4D2DE5A2240077EE45 /* CustomOptionsView.h in Headers */,
+				3FD6EC4E2DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
+				3FD6EC4F2DE5A2240077EE45 /* AVCaptureViewController.h in Headers */,
+				3FD6EC502DE5A2240077EE45 /* ChatWebViewController.h in Headers */,
+				3FD6EC512DE5A2240077EE45 /* LanguageTool.h in Headers */,
+				3FD6EC522DE5A2240077EE45 /* RandomStringGenerator.h in Headers */,
+				3FD6EC532DE5A2240077EE45 /* PDFDisplayView.h in Headers */,
+				3FD6EC542DE5A2240077EE45 /* ApiTool.h in Headers */,
 				0A58DB87B4A15B7D61EB5B42CAC9BDA4 /* EXPMatchers+FBSnapshotTest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1077,21 +1305,23 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77B6523C452004CD2C9C7A4ECEAE743F /* ChatWebViewController.h in Headers */,
 				24D9EA42BDAA9282D798AFB45046CFDB /* UserModel.h in Headers */,
 				84AACB294C2D1137776DA892EEE4B0B3 /* InitialModel.h in Headers */,
 				737ED601E8B3C584A19050D8F4F32855 /* VocaiChatModel.h in Headers */,
-				F5AEA6AD25F3332152094F53352BB0C4 /* VocaiSdkBuilder.h in Headers */,
 				D56FE5C38502BC3665B217194FFB06EB /* VocLiveChatFramework-umbrella.h in Headers */,
-				1B48E1ADE220FE4FB6FD748D81FE2A50 /* PollingRequestTool.h in Headers */,
-				BB5F0FE6B72CA6CCA20813D925463256 /* PDFDisplayView.h in Headers */,
-				A7C073C2E86C148AB984C242C6465A5B /* CustomOptionsView.h in Headers */,
-				CE2699362AF16E4CF11817B984DDEF09 /* RandomStringGenerator.h in Headers */,
-				FA0E98C69C4126A5F5E88EA2F3A2DC03 /* AVCaptureViewController.h in Headers */,
+				3FD6EC312DE5A2240077EE45 /* NetworkTool.h in Headers */,
+				3FD6EC322DE5A2240077EE45 /* MessageCenter.h in Headers */,
+				3FD6EC332DE5A2240077EE45 /* ImageUploader.h in Headers */,
+				3FD6EC342DE5A2240077EE45 /* PollingRequestTool.h in Headers */,
+				3FD6EC352DE5A2240077EE45 /* CustomOptionsView.h in Headers */,
+				3FD6EC362DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
+				3FD6EC372DE5A2240077EE45 /* AVCaptureViewController.h in Headers */,
+				3FD6EC382DE5A2240077EE45 /* ChatWebViewController.h in Headers */,
+				3FD6EC392DE5A2240077EE45 /* LanguageTool.h in Headers */,
+				3FD6EC3A2DE5A2240077EE45 /* RandomStringGenerator.h in Headers */,
+				3FD6EC3B2DE5A2240077EE45 /* PDFDisplayView.h in Headers */,
+				3FD6EC3C2DE5A2240077EE45 /* ApiTool.h in Headers */,
 				A6A6AA6173FEA1225733D1F6888F5BE0 /* WebCallBackModel.h in Headers */,
-				9E4A36DFC04E6BD6CBE93A5D7F3FFECD /* LanguageTool.h in Headers */,
-				966199968B3425BC86147266B74D4570 /* ImageUploader.h in Headers */,
-				A807ED329102D8C869D1BD1F208D15E7 /* NetworkTool.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1101,6 +1331,18 @@
 			files = (
 				DE763D78DE67CE22FB9A72A0D80D2606 /* Specta.h in Headers */,
 				760790EB6DD7048B08A7F02CBBC01E23 /* Specta-umbrella.h in Headers */,
+				3FD6EC9D2DE5A2240077EE45 /* NetworkTool.h in Headers */,
+				3FD6EC9E2DE5A2240077EE45 /* MessageCenter.h in Headers */,
+				3FD6EC9F2DE5A2240077EE45 /* ImageUploader.h in Headers */,
+				3FD6ECA02DE5A2240077EE45 /* PollingRequestTool.h in Headers */,
+				3FD6ECA12DE5A2240077EE45 /* CustomOptionsView.h in Headers */,
+				3FD6ECA22DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
+				3FD6ECA32DE5A2240077EE45 /* AVCaptureViewController.h in Headers */,
+				3FD6ECA42DE5A2240077EE45 /* ChatWebViewController.h in Headers */,
+				3FD6ECA52DE5A2240077EE45 /* LanguageTool.h in Headers */,
+				3FD6ECA62DE5A2240077EE45 /* RandomStringGenerator.h in Headers */,
+				3FD6ECA72DE5A2240077EE45 /* PDFDisplayView.h in Headers */,
+				3FD6ECA82DE5A2240077EE45 /* ApiTool.h in Headers */,
 				DD58BB38D980B2B476BFB99DAD0013ED /* SpectaDSL.h in Headers */,
 				F7BA9BB49FEE10C6CA25DFFA696FEA21 /* SpectaTypes.h in Headers */,
 				3BCB9575F1C3AAA5916A68513B672D97 /* SpectaUtility.h in Headers */,
@@ -1376,6 +1618,18 @@
 			files = (
 				D328A5E8AF37279CFAFE53CCDA223802 /* Specta-dummy.m in Sources */,
 				7E22DB972AD7FCD02F4687EB0D99F30F /* SpectaDSL.m in Sources */,
+				3FD6EC912DE5A2240077EE45 /* RandomStringGenerator.m in Sources */,
+				3FD6EC922DE5A2240077EE45 /* ImageUploader.m in Sources */,
+				3FD6EC932DE5A2240077EE45 /* NetworkTool.m in Sources */,
+				3FD6EC942DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
+				3FD6EC952DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
+				3FD6EC962DE5A2240077EE45 /* MessageCenter.m in Sources */,
+				3FD6EC972DE5A2240077EE45 /* PDFDisplayView.m in Sources */,
+				3FD6EC982DE5A2240077EE45 /* ApiTool.m in Sources */,
+				3FD6EC992DE5A2240077EE45 /* AVCaptureViewController.m in Sources */,
+				3FD6EC9A2DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
+				3FD6EC9B2DE5A2240077EE45 /* LanguageTool.m in Sources */,
+				3FD6EC9C2DE5A2240077EE45 /* PollingRequestTool.m in Sources */,
 				E66C952D75345928AAEB0A66BE6FC5D7 /* SpectaUtility.m in Sources */,
 				A2EE54BACD56B923E6B2439FCAF46CE2 /* SPTCallSite.m in Sources */,
 				051AEF6F312B6D690834E7DB05180E4B /* SPTCompiledExample.m in Sources */,
@@ -1392,6 +1646,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD6EBF52DE5A2240077EE45 /* RandomStringGenerator.m in Sources */,
+				3FD6EBF62DE5A2240077EE45 /* ImageUploader.m in Sources */,
+				3FD6EBF72DE5A2240077EE45 /* NetworkTool.m in Sources */,
+				3FD6EBF82DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
+				3FD6EBF92DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
+				3FD6EBFA2DE5A2240077EE45 /* MessageCenter.m in Sources */,
+				3FD6EBFB2DE5A2240077EE45 /* PDFDisplayView.m in Sources */,
+				3FD6EBFC2DE5A2240077EE45 /* ApiTool.m in Sources */,
+				3FD6EBFD2DE5A2240077EE45 /* AVCaptureViewController.m in Sources */,
+				3FD6EBFE2DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
+				3FD6EBFF2DE5A2240077EE45 /* LanguageTool.m in Sources */,
+				3FD6EC002DE5A2240077EE45 /* PollingRequestTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1405,6 +1671,18 @@
 				0B2B8259D041C105865C634B1FC08C1F /* FBSnapshotTestController.m in Sources */,
 				5061691D481F7C48E755A2BC0BB4977C /* SwiftSupport.swift in Sources */,
 				380F6E4B3F7E5EA4D79843BA767E183E /* UIApplication+StrictKeyWindow.m in Sources */,
+				3FD6EC012DE5A2240077EE45 /* RandomStringGenerator.m in Sources */,
+				3FD6EC022DE5A2240077EE45 /* ImageUploader.m in Sources */,
+				3FD6EC032DE5A2240077EE45 /* NetworkTool.m in Sources */,
+				3FD6EC042DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
+				3FD6EC052DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
+				3FD6EC062DE5A2240077EE45 /* MessageCenter.m in Sources */,
+				3FD6EC072DE5A2240077EE45 /* PDFDisplayView.m in Sources */,
+				3FD6EC082DE5A2240077EE45 /* ApiTool.m in Sources */,
+				3FD6EC092DE5A2240077EE45 /* AVCaptureViewController.m in Sources */,
+				3FD6EC0A2DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
+				3FD6EC0B2DE5A2240077EE45 /* LanguageTool.m in Sources */,
+				3FD6EC0C2DE5A2240077EE45 /* PollingRequestTool.m in Sources */,
 				64C5F389DE0FC7369E95217494EB561F /* UIImage+Compare.m in Sources */,
 				E7B7E76C25EA0A4691743AF3C256EA7A /* UIImage+Diff.m in Sources */,
 				CCD6ED425E4B40909763B4FD0E40DBCD /* UIImage+Snapshot.m in Sources */,
@@ -1417,6 +1695,18 @@
 			files = (
 				6ACBAB7981C7E257408E7A452D46E411 /* Expecta+Snapshots-dummy.m in Sources */,
 				EEF975FF4A1C7534532877EDE56C68CE /* ExpectaObject+FBSnapshotTest.m in Sources */,
+				3FD6EC552DE5A2240077EE45 /* RandomStringGenerator.m in Sources */,
+				3FD6EC562DE5A2240077EE45 /* ImageUploader.m in Sources */,
+				3FD6EC572DE5A2240077EE45 /* NetworkTool.m in Sources */,
+				3FD6EC582DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
+				3FD6EC592DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
+				3FD6EC5A2DE5A2240077EE45 /* MessageCenter.m in Sources */,
+				3FD6EC5B2DE5A2240077EE45 /* PDFDisplayView.m in Sources */,
+				3FD6EC5C2DE5A2240077EE45 /* ApiTool.m in Sources */,
+				3FD6EC5D2DE5A2240077EE45 /* AVCaptureViewController.m in Sources */,
+				3FD6EC5E2DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
+				3FD6EC5F2DE5A2240077EE45 /* LanguageTool.m in Sources */,
+				3FD6EC602DE5A2240077EE45 /* PollingRequestTool.m in Sources */,
 				2C8296EEF1C05BA808C028E89BAC669B /* EXPMatchers+FBSnapshotTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1425,6 +1715,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD6EC192DE5A2240077EE45 /* RandomStringGenerator.m in Sources */,
+				3FD6EC1A2DE5A2240077EE45 /* ImageUploader.m in Sources */,
+				3FD6EC1B2DE5A2240077EE45 /* NetworkTool.m in Sources */,
+				3FD6EC1C2DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
+				3FD6EC1D2DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
+				3FD6EC1E2DE5A2240077EE45 /* MessageCenter.m in Sources */,
+				3FD6EC1F2DE5A2240077EE45 /* PDFDisplayView.m in Sources */,
+				3FD6EC202DE5A2240077EE45 /* ApiTool.m in Sources */,
+				3FD6EC212DE5A2240077EE45 /* AVCaptureViewController.m in Sources */,
+				3FD6EC222DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
+				3FD6EC232DE5A2240077EE45 /* LanguageTool.m in Sources */,
+				3FD6EC242DE5A2240077EE45 /* PollingRequestTool.m in Sources */,
 				715863D2142BBE7E82A921288FA959D4 /* Pods-VocLiveChatFramework_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1433,6 +1735,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD6EC6D2DE5A2240077EE45 /* RandomStringGenerator.m in Sources */,
+				3FD6EC6E2DE5A2240077EE45 /* ImageUploader.m in Sources */,
+				3FD6EC6F2DE5A2240077EE45 /* NetworkTool.m in Sources */,
+				3FD6EC702DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
+				3FD6EC712DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
+				3FD6EC722DE5A2240077EE45 /* MessageCenter.m in Sources */,
+				3FD6EC732DE5A2240077EE45 /* PDFDisplayView.m in Sources */,
+				3FD6EC742DE5A2240077EE45 /* ApiTool.m in Sources */,
+				3FD6EC752DE5A2240077EE45 /* AVCaptureViewController.m in Sources */,
+				3FD6EC762DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
+				3FD6EC772DE5A2240077EE45 /* LanguageTool.m in Sources */,
+				3FD6EC782DE5A2240077EE45 /* PollingRequestTool.m in Sources */,
 				7E7AE86AB508898840C07045A10D86AD /* Pods-VocLiveChatFramework_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1441,19 +1755,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39498453DD8D75361262CA68893E5F68 /* AVCaptureViewController.m in Sources */,
-				92937B5ED2884F84FE33EB0DF66DC443 /* ChatWebViewController.m in Sources */,
-				4F622B7A31E99DE83B9BB0542B4E0FF4 /* CustomOptionsView.m in Sources */,
-				E5237178FDA56CE0ADC534BCB32063FD /* ImageUploader.m in Sources */,
 				7AA1FAAA10C0EB13C377E19402A151B1 /* InitialModel.m in Sources */,
-				34D40191B1EB7BE4500136C498689F43 /* LanguageTool.m in Sources */,
-				9C8F9EE6CDBF24624431B4B2F8C47C11 /* NetworkTool.m in Sources */,
-				95E0AFA084410DB23139C3BA868D1747 /* PDFDisplayView.m in Sources */,
-				B857FFE29FF768E22C8D181C19FCE519 /* PollingRequestTool.m in Sources */,
-				0FDD470B67FD37C9BF24BACCB17D5513 /* RandomStringGenerator.m in Sources */,
 				6B2D110C46B23B51DDFC00946FB3704B /* UserModel.m in Sources */,
+				3FD6EC3D2DE5A2240077EE45 /* RandomStringGenerator.m in Sources */,
+				3FD6EC3E2DE5A2240077EE45 /* ImageUploader.m in Sources */,
+				3FD6EC3F2DE5A2240077EE45 /* NetworkTool.m in Sources */,
+				3FD6EC402DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
+				3FD6EC412DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
+				3FD6EC422DE5A2240077EE45 /* MessageCenter.m in Sources */,
+				3FD6EC432DE5A2240077EE45 /* PDFDisplayView.m in Sources */,
+				3FD6EC442DE5A2240077EE45 /* ApiTool.m in Sources */,
+				3FD6EC452DE5A2240077EE45 /* AVCaptureViewController.m in Sources */,
+				3FD6EC462DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
+				3FD6EC472DE5A2240077EE45 /* LanguageTool.m in Sources */,
+				3FD6EC482DE5A2240077EE45 /* PollingRequestTool.m in Sources */,
 				5AEF91899E658597D29D8214820FDD20 /* VocaiChatModel.m in Sources */,
-				69C914E32C7EF9AD9418425B60950B1C /* VocaiSdkBuilder.m in Sources */,
 				AF36B0254E2305DC753DB81F8D6F1651 /* VocLiveChatFramework-dummy.m in Sources */,
 				66CE653C29AB0F0B8338A7ACA17B68EC /* WebCallBackModel.m in Sources */,
 			);
@@ -1489,6 +1805,18 @@
 				E525AADDECBB8CD91F5019755DAB9212 /* EXPMatchers+conformTo.m in Sources */,
 				9560053588FF0AB7160FF770DB56B982 /* EXPMatchers+contain.m in Sources */,
 				4C24330516EE1B4ED7AD85D1F07DA3D8 /* EXPMatchers+endWith.m in Sources */,
+				3FD6EC852DE5A2240077EE45 /* RandomStringGenerator.m in Sources */,
+				3FD6EC862DE5A2240077EE45 /* ImageUploader.m in Sources */,
+				3FD6EC872DE5A2240077EE45 /* NetworkTool.m in Sources */,
+				3FD6EC882DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
+				3FD6EC892DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
+				3FD6EC8A2DE5A2240077EE45 /* MessageCenter.m in Sources */,
+				3FD6EC8B2DE5A2240077EE45 /* PDFDisplayView.m in Sources */,
+				3FD6EC8C2DE5A2240077EE45 /* ApiTool.m in Sources */,
+				3FD6EC8D2DE5A2240077EE45 /* AVCaptureViewController.m in Sources */,
+				3FD6EC8E2DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
+				3FD6EC8F2DE5A2240077EE45 /* LanguageTool.m in Sources */,
+				3FD6EC902DE5A2240077EE45 /* PollingRequestTool.m in Sources */,
 				86443C8A32ADB769B8985FBD68F4B99C /* EXPMatchers+equal.m in Sources */,
 				D3C846F8E884515E1C43F10049698B6A /* EXPMatchers+haveCountOf.m in Sources */,
 				BB031523FECB849FB0C7D46FE893C955 /* EXPMatchers+match.m in Sources */,

@@ -20,6 +20,7 @@
 #import "PDFDisplayView.h"
 #import <AVFoundation/AVFoundation.h>
 #import <objc/runtime.h>
+#import "ApiTool.h"
 
 // 定义文件上传类型
 typedef NS_ENUM(NSInteger, UploadFileType) {
@@ -34,6 +35,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
 
 @interface ChatWebViewController ()<WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate, PDFDisplayViewDelegate>
 @property (nonatomic, strong) VocaiChatModel *vocaiChatParams;
+@property (nonatomic, strong) VocaiApiTool* apiTool;
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;
 @property (nonatomic, strong) UIDocumentPickerViewController *documentPicker;
@@ -53,6 +55,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         self.vocaiChatParams = parameter;
+        self.apiTool = [[VocaiApiTool alloc] initWithParams:parameter];
     }
     return self;
 }
@@ -408,7 +411,8 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
                                                NSNumber *status = response[@"status"];
                                                NSString *url = response[@"url"];
                                                NSString *jobId = response[@"jobId"];
-                                               if ([status longValue] / 100 != 2) {
+                                               // If succeeded, status will be nil, otherwise judge its http status code.
+                                               if (status && [status longValue] / 100 != 2) {
                                                    [self handleUploadFileError:self.uploadFileType errorMessage:@"Upload failed."];
                                                    return;
                                                }
@@ -429,15 +433,11 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
 
 
 -(NSString*) apiHost {
-    VOCLiveChatEnv env = self.vocaiChatParams.env;
-    if(env == VOCLiveChatEnvStaging) {
-        return @"https://apps-staging.voc.ai";
-    }
-    return @"https://apps.voc.ai";
+    return self.apiTool.apiHost;
 }
 
 -(NSString*) getApiWithPathname:pathname {
-    return [NSString stringWithFormat:@"%@%@", self.apiHost,pathname];
+    return [self.apiTool getApiWithPathname:pathname];
 }
 
 - (void) handleUploadFileError: (UploadFileType)uploadFileType errorMessage: (NSString*)message  {
