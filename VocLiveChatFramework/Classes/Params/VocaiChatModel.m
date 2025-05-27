@@ -49,6 +49,30 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
 @implementation VocaiChatModel
 
 // 初始化方法
+- (instancetype)initWithBotId:(NSString *)botId token:(NSString *)token otherParams:(NSDictionary *)otherParams {
+    self = [super init];
+    if (self) {
+        self.token = token;
+        self.botId = botId;
+        self.language = @"en-US";
+        self.otherParams = otherParams;
+    }
+    return self;
+}
+
+// 初始化方法
+- (instancetype)initWithBotId:(NSString *)botId token:(NSString *)token language:(NSString*)language otherParams:(NSDictionary *)otherParams {
+    self = [super init];
+    if (self) {
+        self.token = token;
+        self.botId = botId;
+        self.language = language;
+        self.otherParams = otherParams;
+    }
+    return self;
+}
+
+// 初始化方法
 - (instancetype)initWithBotId:(NSString *)botId chatId:(NSString *)chatId token:(NSString *)token email:(NSString *)email language:(NSString*)language otherParams:(NSDictionary *)otherParams {
     self = [super init];
     if (self) {

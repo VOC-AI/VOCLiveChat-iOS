@@ -80,8 +80,8 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
     NSString *urlString = [NSString stringWithFormat: [self getApiWithPathname:@"/live-chat?id=%@&token=%@&disableFileInputModal=true&lang=%@&email=%@&"],
                            self.vocaiChatParams.botId,
                            self.vocaiChatParams.token,
-                           self.vocaiChatParams.language,
-                           self.vocaiChatParams.email];
+                           self.language,
+                           self.email];
     NSString *componentUrlString = [urlString stringByAppendingString: [self dictionaryToQueryString:self.vocaiChatParams.otherParams]];
     NSURL *url = [NSURL URLWithString: componentUrlString];
     NSURLRequest *request = [NSURLRequest requestWithURL: url];
@@ -93,6 +93,13 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
     if (self.viewDelegate != nil) {
         [self.viewDelegate vocaiViewControllerWillAppear:self animated:animated];
     }
+}
+
+- (NSString*) email {
+    if(isStringEmptyOrNil(self.vocaiChatParams.email)) {
+        return @"";
+    }
+    return self.vocaiChatParams.email;
 }
 
 - (void)setWebViewAnchor {
