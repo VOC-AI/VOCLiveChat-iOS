@@ -21,6 +21,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <objc/runtime.h>
 #import "VocaiApiTool.h"
+#import "VocaiLogger.h"
 
 // 定义文件上传类型
 typedef NS_ENUM(NSInteger, UploadFileType) {
@@ -45,6 +46,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
 @property (nonatomic, assign) UploadFileType uploadFileType; ///  只用于上传失败的时候记录上传文件类型
 @property (nonatomic, strong) PDFDisplayView *pdfDisplayView;
 @property (nonatomic, copy) NSString *uploadFileMeta;
+@property (nonatomic, strong) VocaiLogger *logger;
 
 @end
 
@@ -64,6 +66,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
     if (self) {
         self.vocaiChatParams = parameter;
         self.apiTool = [[VocaiApiTool alloc] initWithParams:parameter];
+        self.logger = [[VocaiLogger alloc] initWithParams:parameter];
     }
     return self;
 }
@@ -243,7 +246,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
     // 判断相机可不可用
     BOOL isCamera = [UIImagePickerController isCameraDeviceAvailable: UIImagePickerControllerCameraDeviceFront];
     if (!isCamera) {
-        NSLog(@"No camera available");
+        [self.logger log:@"No camera available"];
         return;
     }
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
@@ -267,7 +270,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
           // 弹出相册选择界面
           [self presentViewController:self.imagePickerController animated:YES completion:nil];
       } else {
-          NSLog(@"No gallery available");
+          [self.logger log: @"No gallery available"];
       }
 }
 
@@ -281,7 +284,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
         picker.delegate = self;
         [self presentViewController:picker animated:YES completion:nil];
     } else {
-        NSLog(@"Video not supported");
+        [self.logger log: @"Video not supported"];
     }
 }
 
@@ -289,38 +292,39 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
 
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
     if ([message.name isEqualToString:@"VOCLivechatMessageHandler"]) {
-           // 获取前端传递过来的数据
-           id data = message.body;
-           NSLog(@"Data received: %@", data);
-            if ([data isKindOfClass:[NSDictionary class]]) {
-                WebCallBackModel *callBackModel = [self convertDictionaryToModel:data];
-                
-                if ([callBackModel.type isEqualToString: @"Livechat_Input_File"]) {
-                    [self showPickView];
-                }
-                            
-                if ([callBackModel.type isEqualToString: @"Livechat_Click_File"]) {
-                    [self displayPdfViewWithUrl:callBackModel.data.url];
-                }
-             }
-           
-           // 模拟处理数据
-           NSString *responseData = @"";
-            // 调用前端的回调函数
-           NSString *jsCallback = [NSString stringWithFormat:@"frontendCallback('%@')", responseData];
-           [self.webView evaluateJavaScript:jsCallback completionHandler:^(id result, NSError * _Nullable error) {
-               if (error) {
-                   NSLog(@"Eval JavaScript callback error: %@", error.localizedDescription);
-               } else {
-                   NSLog(@"Eval JavaScript callback success，result: %@", result);
-               }
-           }];
-       }
+        // 获取前端传递过来的数据
+        id data = message.body;
+        [self.logger log: @"Data received: %@", data];
+        
+        if ([data isKindOfClass:[NSDictionary class]]) {
+            WebCallBackModel *callBackModel = [self convertDictionaryToModel:data];
+            
+            if ([callBackModel.type isEqualToString: @"Livechat_Input_File"]) {
+                [self showPickView];
+            }
+                        
+            if ([callBackModel.type isEqualToString: @"Livechat_Click_File"]) {
+                [self displayPdfViewWithUrl:callBackModel.data.url];
+            }
+         }
+        
+        // 模拟处理数据
+        NSString *responseData = @"";
+         // 调用前端的回调函数
+        NSString *jsCallback = [NSString stringWithFormat:@"frontendCallback('%@')", responseData];
+        [self.webView evaluateJavaScript:jsCallback completionHandler:^(id result, NSError * _Nullable error) {
+            if (error) {
+                [self.logger log:@"Eval JavaScript callback error: %@", error.localizedDescription];
+            } else {
+                [self.logger log:@"Eval JavaScript callback success，result: %@", result];
+            }
+        }];
+    }
 }
 
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-    NSLog(@"[VOC.AI] chat loaded successfully.");
+    [self.logger log:@"[VOC.AI] chat loaded successfully."];
 }
 
 //MARK: 图片选择器代理
@@ -393,13 +397,13 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
     if (fileData.length > self.maxUploadFileSize) {
         NSUInteger maxMbSize = (NSUInteger)(self.maxUploadFileSize / (1024.0 * 1024.0));
         NSUInteger mbSize = (NSUInteger)(fileData.length / (1024.0 * 1024.0));
-        NSLog(@"Uploaded file exceeds maximum filesize (%@MB): %@ MB", @(maxMbSize), @(mbSize));
+        [self.logger log:@"Uploaded file exceeds maximum filesize (%@MB): %@ MB", @(maxMbSize), @(mbSize)];
         NSString* exceedFileSize = [VocaiLanguageTool getStringForKey:@"key_media_limit_exceed" withLanguage:self.language];
         NSString* actualHint = [NSString stringWithFormat:exceedFileSize, @(mbSize)];
         [self handleUploadFileError:uploadFileType errorMessage:actualHint];
         return;
     } else {
-        NSLog(@"Uploaded file data size: %lu KB", (unsigned long)(fileData.length / 1024));
+        [self.logger log:@"Uploaded file data size: %lu KB", (unsigned long)(fileData.length / 1024)];
     }
     // 上传的 URL
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
@@ -414,7 +418,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
                                       withParams: dict
                                       progress:^(NSProgress *uploadProgress) {
                                              // 处理上传进度
-                                             NSLog(@"Upload progress: %.2f%%", uploadProgress.fractionCompleted * 100);
+                                             [self.logger log:@"Upload progress: %.2f%%", uploadProgress.fractionCompleted * 100];
                                          }
                                       completion:^(BOOL success, NSString * _Nullable message, NSDictionary * _Nullable response) {
                                            if (success) {
@@ -436,7 +440,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
                                                    self.uploadFileMeta = fileType;
                                                }
                                            } else {
-                                               NSLog(@"Upload media error: %@", message);
+                                               [self.logger log:@"Upload media error: %@", message];
                                            }
                                     }];
 }
@@ -534,7 +538,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
             
             [self uploadFile:data fileName: self.fileName uploadFiledType: 1];
         } else {
-            NSLog(@"Reading documenet error: %@", error.localizedDescription);
+            [self.logger log:@"Reading documenet error: %@", error.localizedDescription];
         }
     }
 }
@@ -549,7 +553,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
     NSError *error;
     NSData *videoData = [NSData dataWithContentsOfURL:videoURL options:NSDataReadingMappedIfSafe error:&error];
     if (error) {
-        NSLog(@"Reading local video error: %@", error.localizedDescription);
+        [self.logger log:@"Reading local video error: %@", error.localizedDescription];
         return nil;
     }
     return videoData;
@@ -574,7 +578,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
           }
       } failure:^(NSError * _Nullable error) {
           // 处理请求失败的情况
-          NSLog(@"Request error: %@", error.localizedDescription);
+          [self.logger log:@"Request error: %@", error.localizedDescription];
       }];
 }
 
@@ -596,7 +600,7 @@ BOOL isStringEmptyOrNil(NSString *string) {
                                                        options:NSJSONWritingPrettyPrinted
                                                          error:&error];
     if (error) {
-        NSLog(@"JSON serialization error: %@", error.localizedDescription);
+        [self.logger log:@"JSON serialization error: %@", error.localizedDescription];
         return nil;
     }
     // 将 JSON 数据转换为字符串
@@ -612,7 +616,7 @@ BOOL isStringEmptyOrNil(NSString *string) {
 }
 
 - (void)PDFDisplayViewDidClose:(PDFDisplayView *)view {
-    NSLog(@"PDF view closed.");
+    [self.logger log:@"PDF view closed."];
 }
 
 -(NSString *)dictionaryToQueryString:(NSDictionary *)dictionary {

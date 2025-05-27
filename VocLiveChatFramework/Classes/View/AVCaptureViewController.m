@@ -72,7 +72,7 @@
     self.recordButton = [UIButton buttonWithType:UIButtonTypeSystem];
     self.recordButton.frame = CGRectMake(100, 500, 200, 50);
     [self.recordButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.recordButton setTitle:@"开始录制" forState:UIControlStateNormal];
+    [self.recordButton setTitle:@"Start Recording" forState:UIControlStateNormal];
     [self.recordButton addTarget:self action:@selector(toggleRecording) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.recordButton];
 }
@@ -80,14 +80,14 @@
 - (void)toggleRecording {
     if ([self.movieFileOutput isRecording]) {
         [self.movieFileOutput stopRecording];
-        [self.recordButton setTitle:@"开始录制" forState:UIControlStateNormal];
+        [self.recordButton setTitle:@"Start Recording" forState:UIControlStateNormal];
     } else {
         // 获取视频保存路径
         NSString *outputPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"output.mp4"];
         NSURL *outputURL = [NSURL fileURLWithPath:outputPath];
         // 开始录制
         [self.movieFileOutput startRecordingToOutputFileURL:outputURL recordingDelegate:self];
-        [self.recordButton setTitle:@"停止录制" forState:UIControlStateNormal];
+        [self.recordButton setTitle:@"Stop Recording" forState:UIControlStateNormal];
     }
 }
 
@@ -112,7 +112,7 @@
     NSError *error;
     NSData *videoData = [NSData dataWithContentsOfURL:videoURL options:NSDataReadingMappedIfSafe error:&error];
     if (error) {
-        NSLog(@"读取本地视频文件失败: %@", error.localizedDescription);
+        NSLog(@"Read local video file error: %@", error.localizedDescription);
         return nil;
     }
     return videoData;

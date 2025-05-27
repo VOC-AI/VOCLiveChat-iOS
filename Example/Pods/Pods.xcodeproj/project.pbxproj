@@ -224,6 +224,21 @@
 		3FD6ECA62DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE72DE5A2240077EE45 /* VocaiRandomStringGenerator.h */; };
 		3FD6ECA72DE5A2240077EE45 /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* PDFDisplayView.h */; };
 		3FD6ECA82DE5A2240077EE45 /* VocaiApiTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDB2DE5A2240077EE45 /* VocaiApiTool.h */; };
+		3FF280C82DE5E04700258FCB /* VocaiLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FF280C72DE5E04300258FCB /* VocaiLogger.h */; };
+		3FF280C92DE5E04700258FCB /* VocaiLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FF280C72DE5E04300258FCB /* VocaiLogger.h */; };
+		3FF280CA2DE5E04700258FCB /* VocaiLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FF280C72DE5E04300258FCB /* VocaiLogger.h */; };
+		3FF280CB2DE5E04700258FCB /* VocaiLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FF280C72DE5E04300258FCB /* VocaiLogger.h */; };
+		3FF280CC2DE5E04700258FCB /* VocaiLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FF280C72DE5E04300258FCB /* VocaiLogger.h */; };
+		3FF280CD2DE5E04700258FCB /* VocaiLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FF280C72DE5E04300258FCB /* VocaiLogger.h */; };
+		3FF280CE2DE5E04700258FCB /* VocaiLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FF280C72DE5E04300258FCB /* VocaiLogger.h */; };
+		3FF280D02DE5E04E00258FCB /* VocaiLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF280CF2DE5E04A00258FCB /* VocaiLogger.m */; };
+		3FF280D12DE5E04E00258FCB /* VocaiLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF280CF2DE5E04A00258FCB /* VocaiLogger.m */; };
+		3FF280D22DE5E04E00258FCB /* VocaiLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF280CF2DE5E04A00258FCB /* VocaiLogger.m */; };
+		3FF280D32DE5E04E00258FCB /* VocaiLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF280CF2DE5E04A00258FCB /* VocaiLogger.m */; };
+		3FF280D42DE5E04E00258FCB /* VocaiLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF280CF2DE5E04A00258FCB /* VocaiLogger.m */; };
+		3FF280D52DE5E04E00258FCB /* VocaiLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF280CF2DE5E04A00258FCB /* VocaiLogger.m */; };
+		3FF280D62DE5E04E00258FCB /* VocaiLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF280CF2DE5E04A00258FCB /* VocaiLogger.m */; };
+		3FF280D72DE5E04E00258FCB /* VocaiLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF280CF2DE5E04A00258FCB /* VocaiLogger.m */; };
 		40080F575ABB87CDCB9D4805EE582EEC /* Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = 019A89DA7820B809D45D2D192CD027E5 /* Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4056CAF940B4848E4707BBBF6FBCBAD8 /* SPTExampleGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 2567178B0ABBEB28AA767A839F7320DB /* SPTExampleGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		409B8F0B99F08EB0D4E1E6B7962279BE /* UIImage+Snapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = E19D7F91877074DF27F99640EC532352 /* UIImage+Snapshot.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -497,6 +512,8 @@
 		3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFDisplayView.m; sourceTree = "<group>"; };
 		3FD6EBF22DE5A2240077EE45 /* VocaiSdkBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VocaiSdkBuilder.h; sourceTree = "<group>"; };
 		3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VocaiSdkBuilder.m; sourceTree = "<group>"; };
+		3FF280C72DE5E04300258FCB /* VocaiLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VocaiLogger.h; sourceTree = "<group>"; };
+		3FF280CF2DE5E04A00258FCB /* VocaiLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VocaiLogger.m; sourceTree = "<group>"; };
 		4036AD561259F58D92A41832D20EF707 /* EXPMatchers+beTruthy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beTruthy.m"; path = "Expecta/Matchers/EXPMatchers+beTruthy.m"; sourceTree = "<group>"; };
 		4138A0A13FF7F7B73435E87E54C56C18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		41DD008B1C8CCDB66E9DB3DD2858D513 /* SPTCompiledExample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTCompiledExample.h; path = Specta/Specta/SPTCompiledExample.h; sourceTree = "<group>"; };
@@ -823,6 +840,8 @@
 		3FD6EBE92DE5A2240077EE45 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				3FF280C72DE5E04300258FCB /* VocaiLogger.h */,
+				3FF280CF2DE5E04A00258FCB /* VocaiLogger.m */,
 				3FD6EBDB2DE5A2240077EE45 /* VocaiApiTool.h */,
 				3FD6EBDC2DE5A2240077EE45 /* VocaiApiTool.m */,
 				3FD6EBDD2DE5A2240077EE45 /* VocaiImageUploader.h */,
@@ -1179,6 +1198,7 @@
 				1EA0FCCB78245BD2C182CF846B3E6751 /* EXPMatchers+beInTheRangeOf.h in Headers */,
 				C36ACD3ABC723E1B0ED60A02CC3FD309 /* EXPMatchers+beKindOf.h in Headers */,
 				E14C92DE9E1C5F39773DF5D5732E4F77 /* EXPMatchers+beLessThan.h in Headers */,
+				3FF280CD2DE5E04700258FCB /* VocaiLogger.h in Headers */,
 				504D560F1F6B8EB5834A3F9B6A6E695B /* EXPMatchers+beLessThanOrEqualTo.h in Headers */,
 				2C12465A7F70CF000296297E3F9D9B6A /* EXPMatchers+beNil.h in Headers */,
 				B5E66E313ADCAE0EE66E81CABA6AAC01 /* EXPMatchers+beSubclassOf.h in Headers */,
@@ -1217,6 +1237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FD6EC252DE5A2240077EE45 /* VocaiNetworkTool.h in Headers */,
+				3FF280CC2DE5E04700258FCB /* VocaiLogger.h in Headers */,
 				3FD6EC262DE5A2240077EE45 /* VocaiMessageCenter.h in Headers */,
 				3FD6EC272DE5A2240077EE45 /* VocaiImageUploader.h in Headers */,
 				3FD6EC282DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */,
@@ -1251,6 +1272,7 @@
 				3FD6EC122DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
 				3FD6EC132DE5A2240077EE45 /* AVCaptureViewController.h in Headers */,
 				3FD6EC142DE5A2240077EE45 /* ChatWebViewController.h in Headers */,
+				3FF280CE2DE5E04700258FCB /* VocaiLogger.h in Headers */,
 				3FD6EC152DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */,
 				3FD6EC162DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */,
 				3FD6EC172DE5A2240077EE45 /* PDFDisplayView.h in Headers */,
@@ -1264,6 +1286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FD6EC612DE5A2240077EE45 /* VocaiNetworkTool.h in Headers */,
+				3FF280C82DE5E04700258FCB /* VocaiLogger.h in Headers */,
 				3FD6EC622DE5A2240077EE45 /* VocaiMessageCenter.h in Headers */,
 				3FD6EC632DE5A2240077EE45 /* VocaiImageUploader.h in Headers */,
 				3FD6EC642DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */,
@@ -1288,6 +1311,7 @@
 				3FD6EC492DE5A2240077EE45 /* VocaiNetworkTool.h in Headers */,
 				3FD6EC4A2DE5A2240077EE45 /* VocaiMessageCenter.h in Headers */,
 				3FD6EC4B2DE5A2240077EE45 /* VocaiImageUploader.h in Headers */,
+				3FF280C92DE5E04700258FCB /* VocaiLogger.h in Headers */,
 				3FD6EC4C2DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */,
 				3FD6EC4D2DE5A2240077EE45 /* CustomOptionsView.h in Headers */,
 				3FD6EC4E2DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
@@ -1320,6 +1344,7 @@
 				3FD6EC372DE5A2240077EE45 /* AVCaptureViewController.h in Headers */,
 				3FD6EC392DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */,
 				3FD6EC3A2DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */,
+				3FF280CB2DE5E04700258FCB /* VocaiLogger.h in Headers */,
 				3FD6EC3B2DE5A2240077EE45 /* PDFDisplayView.h in Headers */,
 				3FD6EC3C2DE5A2240077EE45 /* VocaiApiTool.h in Headers */,
 			);
@@ -1334,6 +1359,7 @@
 				3FD6EC9D2DE5A2240077EE45 /* VocaiNetworkTool.h in Headers */,
 				3FD6EC9E2DE5A2240077EE45 /* VocaiMessageCenter.h in Headers */,
 				3FD6EC9F2DE5A2240077EE45 /* VocaiImageUploader.h in Headers */,
+				3FF280CA2DE5E04700258FCB /* VocaiLogger.h in Headers */,
 				3FD6ECA02DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */,
 				3FD6ECA12DE5A2240077EE45 /* CustomOptionsView.h in Headers */,
 				3FD6ECA22DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
@@ -1634,6 +1660,7 @@
 				A2EE54BACD56B923E6B2439FCAF46CE2 /* SPTCallSite.m in Sources */,
 				051AEF6F312B6D690834E7DB05180E4B /* SPTCompiledExample.m in Sources */,
 				0E20ED05C2725C2427D75800ADA6DF12 /* SPTExample.m in Sources */,
+				3FF280D32DE5E04E00258FCB /* VocaiLogger.m in Sources */,
 				42E8C4D4B300C5F42A04D640874D8070 /* SPTExampleGroup.m in Sources */,
 				5FB8F15C18F3D1E16D574CBDD6F63863 /* SPTSharedExampleGroups.m in Sources */,
 				ECFDB1723BAADA5FB15FCD05B6577E06 /* SPTSpec.m in Sources */,
@@ -1658,6 +1685,7 @@
 				3FD6EBFE2DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
 				3FD6EBFF2DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */,
 				3FD6EC002DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */,
+				3FF280D22DE5E04E00258FCB /* VocaiLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1675,6 +1703,7 @@
 				3FD6EC022DE5A2240077EE45 /* VocaiImageUploader.m in Sources */,
 				3FD6EC032DE5A2240077EE45 /* VocaiNetworkTool.m in Sources */,
 				3FD6EC042DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
+				3FF280D02DE5E04E00258FCB /* VocaiLogger.m in Sources */,
 				3FD6EC052DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
 				3FD6EC062DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */,
 				3FD6EC072DE5A2240077EE45 /* PDFDisplayView.m in Sources */,
@@ -1703,6 +1732,7 @@
 				3FD6EC5A2DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */,
 				3FD6EC5B2DE5A2240077EE45 /* PDFDisplayView.m in Sources */,
 				3FD6EC5C2DE5A2240077EE45 /* VocaiApiTool.m in Sources */,
+				3FF280D52DE5E04E00258FCB /* VocaiLogger.m in Sources */,
 				3FD6EC5D2DE5A2240077EE45 /* AVCaptureViewController.m in Sources */,
 				3FD6EC5E2DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
 				3FD6EC5F2DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */,
@@ -1717,6 +1747,7 @@
 			files = (
 				3FD6EC192DE5A2240077EE45 /* VocaiRandomStringGenerator.m in Sources */,
 				3FD6EC1A2DE5A2240077EE45 /* VocaiImageUploader.m in Sources */,
+				3FF280D72DE5E04E00258FCB /* VocaiLogger.m in Sources */,
 				3FD6EC1B2DE5A2240077EE45 /* VocaiNetworkTool.m in Sources */,
 				3FD6EC1C2DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
 				3FD6EC1D2DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
@@ -1737,6 +1768,7 @@
 			files = (
 				3FD6EC6D2DE5A2240077EE45 /* VocaiRandomStringGenerator.m in Sources */,
 				3FD6EC6E2DE5A2240077EE45 /* VocaiImageUploader.m in Sources */,
+				3FF280D42DE5E04E00258FCB /* VocaiLogger.m in Sources */,
 				3FD6EC6F2DE5A2240077EE45 /* VocaiNetworkTool.m in Sources */,
 				3FD6EC702DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
 				3FD6EC712DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
@@ -1767,6 +1799,7 @@
 				3FD6EC442DE5A2240077EE45 /* VocaiApiTool.m in Sources */,
 				3FD6EC452DE5A2240077EE45 /* AVCaptureViewController.m in Sources */,
 				3FD6EC462DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
+				3FF280D62DE5E04E00258FCB /* VocaiLogger.m in Sources */,
 				3FD6EC472DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */,
 				3FD6EC482DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */,
 				5AEF91899E658597D29D8214820FDD20 /* VocaiChatModel.m in Sources */,
@@ -1821,6 +1854,7 @@
 				D3C846F8E884515E1C43F10049698B6A /* EXPMatchers+haveCountOf.m in Sources */,
 				BB031523FECB849FB0C7D46FE893C955 /* EXPMatchers+match.m in Sources */,
 				0762A1BF7F0303179819D66A73A13A53 /* EXPMatchers+postNotification.m in Sources */,
+				3FF280D12DE5E04E00258FCB /* VocaiLogger.m in Sources */,
 				38B7944E5B5CDB1073BF0296844E53A9 /* EXPMatchers+raise.m in Sources */,
 				5B0E7991CA9F44AE2A0F6947348D5C80 /* EXPMatchers+raiseWithReason.m in Sources */,
 				DFA53098F205377C01A8965559B159AA /* EXPMatchers+respondTo.m in Sources */,

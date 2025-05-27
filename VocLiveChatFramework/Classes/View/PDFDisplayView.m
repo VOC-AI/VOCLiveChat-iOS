@@ -79,7 +79,7 @@
     });
     
     if (error) {
-        NSLog(@"下载 PDF 文件时出错: %@", error.localizedDescription);
+        NSLog(@"Download PDF error: %@", error.localizedDescription);
     } else {
         PDFDocument *pdfDocument = [[PDFDocument alloc] initWithData:self.downloadedData];
         if (pdfDocument) {

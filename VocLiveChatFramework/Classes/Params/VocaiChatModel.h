@@ -71,6 +71,7 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang);
 @property (nonatomic, strong) NSDictionary<NSString *, NSString *> *otherParams;
 @property (nonatomic, assign) VOCLiveChatEnv env;
 @property (nonatomic, copy, nullable) NSString *userId;
+@property (nonatomic, assign) BOOL enableLog;
 @end
 
 NS_ASSUME_NONNULL_END
