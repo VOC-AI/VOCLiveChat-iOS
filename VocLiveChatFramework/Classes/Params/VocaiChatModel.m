@@ -99,4 +99,30 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
     return self;
 }
 
+
+- (instancetype)copyWithZone:(NSZone *)zone {
+    // 创建新实例（使用与原对象相同的类，支持子类）
+    VocaiChatModel *copy = [[[self class] allocWithZone:zone] init];
+    
+    // 复制属性值（深拷贝 vs 浅拷贝需根据需求选择）
+    copy.chatId = [self.chatId copyWithZone:zone];
+    copy.token = [self.token copyWithZone:zone];
+    copy.email = [self.email copyWithZone:zone];
+    copy.brand = [self.brand copyWithZone:zone];
+    copy.botId = [self.botId copyWithZone:zone];
+    copy.country = [self.country copyWithZone:zone];
+    copy.language = [self.language copyWithZone:zone];
+    copy.noHeader = self.noHeader;
+    copy.noBrand = self.noBrand;
+    copy.encrypt = self.encrypt;
+    copy.isTest = self.isTest;
+    copy.maxUploadFileSize = self.maxUploadFileSize;
+    copy.openLinkType = self.openLinkType;
+    copy.skill_id = [self.skill_id copyWithZone:zone];
+    copy.channelid = [self.channelid copyWithZone:zone];
+    copy.otherParams = [self.otherParams copyWithZone:zone];
+    copy.env = self.env;
+    return copy;
+}
+
 @end
