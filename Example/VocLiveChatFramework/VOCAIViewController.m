@@ -24,6 +24,7 @@
     NSDictionary *exampleOtherDict = nil;
     VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"17188" token:@"66CDB326E4B03648C0BDF94E" email:@"anti2moron@gmail.com" language:@"fr-FR" otherParams:nil];
     vocaiModel.userId = @"123123";
+    vocaiModel.uploadFileTypes = @[@"public.data"];
 //    vocaiModel.env = VOCLiveChatEnvStaging;
     VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];
     UIViewController *viewController = [builder buildSdkWithParams: vocaiModel];

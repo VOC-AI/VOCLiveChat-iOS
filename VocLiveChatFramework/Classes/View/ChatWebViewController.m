@@ -304,7 +304,20 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
             }
                         
             if ([callBackModel.type isEqualToString: @"Livechat_Click_File"]) {
-                [self displayPdfViewWithUrl:callBackModel.data.url];
+                NSString* link = callBackModel.data.url;
+                @try {
+                    NSURL *url = [NSURL URLWithString:link];
+                    NSString *extension = [url.pathExtension lowercaseString];
+                    if ([extension isEqualToString:@"pdf"]) {
+                        [self displayPdfViewWithUrl:link];
+                    } else {
+                        if ([[UIApplication sharedApplication] canOpenURL:url]) {
+                            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+                        }
+                    }
+                } @catch(NSError* error) {
+                    [self.logger log:@"error", error.localizedDescription];
+                }
             }
          }
         
