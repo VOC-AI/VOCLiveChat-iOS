@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VocLiveChatFramework'
-  s.version          = '1.4.0'
+  s.version          = '1.4.1'
   s.summary          = 'VOC AI LiveChat iOS SDK'
 
 # This description is used to generate tags and improve search results.
