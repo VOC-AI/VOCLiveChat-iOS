@@ -412,7 +412,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
         NSUInteger mbSize = (NSUInteger)(fileData.length / (1024.0 * 1024.0));
         [self.logger log:@"Uploaded file exceeds maximum filesize (%@MB): %@ MB", @(maxMbSize), @(mbSize)];
         NSString* exceedFileSize = [VocaiLanguageTool getStringForKey:@"key_media_limit_exceed" withLanguage:self.language];
-        NSString* actualHint = [NSString stringWithFormat:exceedFileSize, @(mbSize)];
+        NSString* actualHint = [NSString stringWithFormat:exceedFileSize, @(maxMbSize)];
         [self handleUploadFileError:uploadFileType errorMessage:actualHint];
         return;
     } else {
