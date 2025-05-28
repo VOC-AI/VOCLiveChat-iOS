@@ -19,6 +19,52 @@ NSString *NSStringFromVOCLiveChatLinkOpenType(VOCLiveChatLinkOpenType type) {
     }
 }
 
+NSString *fixLang(NSString* str) {
+    NSDictionary *correctionMap = @{
+        @"ko": @"ko-KR",
+        @"zh-Hans": @"zh-CN",
+        @"zh-Hant-HK":@"zh-HK",
+        @"zh-Hant-TW":@"zh-TW",
+    };
+    if ([correctionMap objectForKey:str]) {
+        return [correctionMap objectForKey:str];
+    }
+    return nil;
+}
+
+NSString *fullyNormalizeLanguageCode(NSString *languageCode) {
+    
+    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:languageCode];
+    NSString *standardized = [locale localeIdentifier];
+    if(!standardized) {
+        standardized = languageCode;
+    }
+    
+    standardized = [standardized stringByReplacingOccurrencesOfString:@"_" withString:@"-"];
+    NSString* fixed = fixLang(standardized);
+    if(fixed) {
+        return fixed;
+    }
+    NSString *firstComponent = nil;
+    if (standardized != nil && [standardized length] > 0) {
+        NSArray *components = [standardized componentsSeparatedByString:@"-"];
+        if ([components count] > 0) {
+            firstComponent = [components objectAtIndex:0];
+        }
+    }
+    if(firstComponent) {
+        NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:firstComponent];
+        NSString *standardized2 = [locale localeIdentifier];
+        NSString *fix2 = fixLang(standardized2);
+        if(fix2) {
+            return fix2;
+        }
+        return standardized2;
+    }
+    return standardized;
+}
+
+
 // VOCLiveChatSystemLang 枚举转换为字符串的实现
 NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
     switch (lang) {
@@ -138,17 +184,7 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
 }
 
 -(NSString*) normalizeLanguage:(NSString*) language {
-    NSDictionary* dict = @{
-        @"ko": @"ko-KR",
-        @"zh-Hans": @"zh-CN",
-        @"zh-Hant-HK":@"zh-HK",
-        @"zh-Hant-TW":@"zh-TW",
-    };
-    NSString* ret = dict[language];
-    if(!ret) {
-        return language;
-    }
-    return ret;
+    return fullyNormalizeLanguageCode(language);
 }
 
 @end

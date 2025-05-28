@@ -469,7 +469,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
 
 - (void) handleUploadFileError: (UploadFileType)uploadFileType errorMessage: (NSString*)message  {
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSString *invokeJSCode = [NSString stringWithFormat:@"if(typeof handleUploadError==='function') { handleUploadError('%@', '%@', '%@'); }", @"UploadError", self.randomNumber, message];
+        NSString *invokeJSCode = [NSString stringWithFormat:@"setTimeout(function() {if(typeof handleUploadError==='function') { handleUploadError('%@', '%@', '%@'); }},300)", @"UploadError", self.randomNumber, message];
         [self.webView evaluateJavaScript:invokeJSCode completionHandler:nil];
      });
 }
