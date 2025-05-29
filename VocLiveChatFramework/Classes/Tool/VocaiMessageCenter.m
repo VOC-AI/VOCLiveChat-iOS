@@ -9,64 +9,195 @@
 #import "VocaiApiTool.h"
 #import "VocaiNetworkTool.h"
 #import "VocaiChatModel.h"
+#import <objc/runtime.h>
+#import <objc/message.h>
 
-@interface VocaiMessageCenter()
+@interface VocaiMessageCenter ()
 
+@property (nonatomic, strong) NSHashTable<id<VocaiMessageCenterDelegate>> *observers;
+@property (nonatomic, strong) NSMutableDictionary<NSString *, NSNumber *> *unreadCountCache;
+@property (nonatomic, strong) NSMutableDictionary<NSString *, NSTimer *> *refreshTimers;
 @property (nonatomic, copy) VocaiChatModel* params;
 @property (nonatomic, strong) VocaiApiTool* apiTool;
-@property (nonatomic, copy) NSNumber* messageCount;
-@property (nonatomic, strong) dispatch_source_t timer;
-@property (nonatomic, strong) NSURL *requestURL;
-
-@property (nonatomic, copy) SuccessBlock successBlock;
 
 @end
 
-
 @implementation VocaiMessageCenter
 
--(instancetype) initWithParams: (VocaiChatModel*) model {
+
+-(void) setParams: (VocaiChatModel*) model {
+    self.params = [model copy];
+    self.apiTool = [[VocaiApiTool alloc] initWithParams: model];
+}
+
++ (instancetype)sharedInstance {
+    static VocaiMessageCenter *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
+}
+
+-(NSTimeInterval) refreshInterval {
+    if (self.params.messageCountFetchInterval) {
+        return self.params.messageCountFetchInterval;
+    }
+    return 30.0;
+}
+
+- (instancetype)init {
     self = [super init];
     if (self) {
-        self.params = [model copy];
-        self.apiTool = [[VocaiApiTool alloc] initWithParams: model];
-        self.messageCount = @0;
+        _observers = [NSHashTable weakObjectsHashTable];
+        _unreadCountCache = [NSMutableDictionary dictionary];
+        _refreshTimers = [NSMutableDictionary dictionary];
     }
     return self;
 }
 
--(void) getUnreadMessageCountWithChatId:(NSString*)chatId withCallback:(SuccessBlock)callback {
-    NSString* url = [self.apiTool getApiWithPathname:@"/livechat/unread"];
-    [[VocaiNetworkTool sharedInstance] requestWithMethod:VocaiRequestMethodPOST URLString:url parameters:@{@"chatId":chatId} success:^(id responseObject) {
-        NSLog(responseObject);
-    } failure:^(NSError *error) {
-        // ignore
-    }];
+- (void)setApiTool:(id)apiTool {
+    _apiTool = apiTool;
 }
 
-- (void)startPollingWithURL:(NSURL *)url interval:(NSTimeInterval)interval success:(SuccessBlock)success {
-    self.requestURL = url;
-    self.successBlock = success;
-    
-    // 创建 GCD 定时器
-    self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
-    dispatch_source_set_timer(self.timer, dispatch_time(DISPATCH_TIME_NOW, 0), interval * NSEC_PER_SEC, 0 * NSEC_PER_SEC);
-    
-    // 设置定时器回调
-    __weak typeof(self) weakSelf = self;
-    dispatch_source_set_event_handler(self.timer, ^{
-//        [weakSelf getUnreadMessageCountWithChatId];
-    });
-    
-    // 启动定时器
-    dispatch_resume(self.timer);
-}
-
-- (void)stopPolling {
-    if (self.timer) {
-        dispatch_source_cancel(self.timer);
-        self.timer = nil;
+- (void)addObserver:(id<VocaiMessageCenterDelegate>)observer {
+    if (observer && ![self.observers containsObject:observer]) {
+        [self.observers addObject:observer];
     }
+}
+
+- (void)removeObserver:(id<VocaiMessageCenterDelegate>)observer {
+    if (observer) {
+        [self.observers removeObject:observer];
+    }
+}
+
+- (void)fetchUnreadCountForChatId:(NSString *)chatId {
+    if (!chatId || !self.apiTool) {
+        NSError *error = [NSError errorWithDomain:@"MessageCenterErrorDomain" code:1001 userInfo:@{NSLocalizedDescriptionKey: @"Invalid chatId or apiTool"}];
+        [self notifyFailureForChatId:chatId error:error];
+        return;
+    }
+    
+    NSString* url = [self.apiTool getApiWithPathname:@"/livechat/unread"];
+    Class networkToolClass = NSClassFromString(@"VocaiNetworkTool");
+    
+    if (!networkToolClass) {
+        NSError *error = [NSError errorWithDomain:@"MessageCenterErrorDomain" code:1002 userInfo:@{NSLocalizedDescriptionKey: @"VocaiNetworkTool not found"}];
+        [self notifyFailureForChatId:chatId error:error];
+        return;
+    }
+    
+    // 获取单例实例
+    SEL sharedInstanceSelector = NSSelectorFromString(@"sharedInstance");
+    id networkTool = ((id (*)(id, SEL))objc_msgSend)(networkToolClass, sharedInstanceSelector);
+    
+    if (!networkTool) {
+        NSError *error = [NSError errorWithDomain:@"MessageCenterErrorDomain" code:1003 userInfo:@{NSLocalizedDescriptionKey: @"Failed to get VocaiNetworkTool instance"}];
+        [self notifyFailureForChatId:chatId error:error];
+        return;
+    }
+    
+    SEL requestSelector = NSSelectorFromString(@"requestWithMethod:URLString:parameters:success:failure:");
+    NSInteger method = 1; // VocaiRequestMethodPOST
+    
+    // 定义闭包类型
+    typedef void (^SuccessBlock)(id responseObject);
+    typedef void (^FailureBlock)(NSError *error);
+    
+    // 创建请求闭包
+    SuccessBlock successBlock = ^(id responseObject) {
+        NSInteger count = [self parseUnreadCountFromResponse:responseObject];
+        [self.unreadCountCache setObject:@(count) forKey:chatId];
+        [self notifyObserversWithCount:count forChatId:chatId];
+    };
+    
+    FailureBlock failureBlock = ^(NSError *error) {
+        [self notifyFailureForChatId:chatId error:error];
+    };
+    
+    // 使用显式类型转换调用消息
+    ((void (*)(id, SEL, NSInteger, NSString *, NSDictionary *, SuccessBlock, FailureBlock))objc_msgSend)(
+        networkTool,
+        requestSelector,
+        method,
+        url,
+        @{@"chatId": chatId},
+        successBlock,
+        failureBlock
+    );
+}
+
+
+- (NSInteger)parseUnreadCountFromResponse:(id)responseObject {
+    if ([responseObject isKindOfClass:[NSDictionary class]]) {
+        id countValue = [responseObject objectForKey:@"count"];
+        if ([countValue isKindOfClass:[NSNumber class]]) {
+            return [countValue integerValue];
+        } else if ([countValue isKindOfClass:[NSString class]]) {
+            return [countValue integerValue];
+        }
+    }
+    return 0;
+}
+
+- (void)notifyObserversWithCount:(NSInteger)count forChatId:(NSString *)chatId {
+    for (id<VocaiMessageCenterDelegate> observer in self.observers) {
+        if ([observer respondsToSelector:@selector(messageCenter:didReceiveUnreadCount:forChatId:)]) {
+            [observer messageCenter:self didReceiveUnreadCount:count forChatId:chatId];
+        }
+    }
+}
+
+- (void)notifyFailureForChatId:(NSString *)chatId error:(NSError *)error {
+    for (id<VocaiMessageCenterDelegate> observer in self.observers) {
+        if ([observer respondsToSelector:@selector(messageCenter:failedToFetchUnreadCountForChatId:withError:)]) {
+            [observer messageCenter:self failedToFetchUnreadCountForChatId:chatId withError:error];
+        }
+    }
+}
+
+- (void)postUnreadCount:(NSInteger)count forChatId:(NSString *)chatId {
+    [self.unreadCountCache setObject:@(count) forKey:chatId];
+    [self notifyObserversWithCount:count forChatId:chatId];
+}
+
+#pragma mark - 自动刷新
+
+- (void)startAutoRefreshForChatId:(NSString *)chatId {
+    if (!chatId || self.refreshTimers[chatId]) {
+        return;
+    }
+    
+    __weak typeof(self) weakSelf = self;
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:self.refreshInterval repeats:YES block:^(NSTimer * _Nonnull timer) {
+        [weakSelf fetchUnreadCountForChatId:chatId];
+    }];
+    
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    self.refreshTimers[chatId] = timer;
+    
+    // 立即触发一次
+    [self fetchUnreadCountForChatId:chatId];
+}
+
+- (void)stopAutoRefreshForChatId:(NSString *)chatId {
+    NSTimer *timer = self.refreshTimers[chatId];
+    if (timer) {
+        [timer invalidate];
+        [self.refreshTimers removeObjectForKey:chatId];
+    }
+}
+
+- (void)stopAllAutoRefresh {
+    [self.refreshTimers.allValues enumerateObjectsUsingBlock:^(__kindof NSTimer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj invalidate];
+    }];
+    [self.refreshTimers removeAllObjects];
+}
+
+- (void)dealloc {
+    [self stopAllAutoRefresh];
 }
 
 @end

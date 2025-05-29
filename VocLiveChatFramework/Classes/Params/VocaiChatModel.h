@@ -64,6 +64,7 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang);
 @property (nonatomic, assign) BOOL noBrand;
 @property (nonatomic, assign) BOOL encrypt;
 @property (nonatomic, assign) BOOL isTest;
+@property (nonatomic, assign) NSTimeInterval messageCountFetchInterval;
 @property (nonatomic, assign) NSUInteger maxUploadFileSize;
 @property (nonatomic, assign) VOCLiveChatLinkOpenType openLinkType;
 @property (nonatomic, strong) NSString *skill_id;

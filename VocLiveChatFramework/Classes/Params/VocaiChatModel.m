@@ -104,6 +104,7 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
         self.language = [self normalizeLanguage: [VocaiLanguageTool defaultLang]];
         self.otherParams = otherParams;
     }
+    NSLog(@"[VOC.AI]Language: %@", self.language);
     return self;
 }
 
@@ -120,6 +121,7 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
         }
         self.otherParams = otherParams;
     }
+    NSLog(@"[VOC.AI]Language: %@", self.language);
     return self;
 }
 
@@ -138,6 +140,7 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
         }
         self.otherParams = otherParams;
     }
+    NSLog(@"[VOC.AI]Language: %@", self.language);
     return self;
 }
 
@@ -155,6 +158,7 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
         }
         self.otherParams = otherParams;
     }
+    NSLog(@"[VOC.AI]Language: %@", self.language);
     return self;
 }
 
