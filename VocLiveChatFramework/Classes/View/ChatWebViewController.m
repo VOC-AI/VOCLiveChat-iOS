@@ -287,7 +287,32 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
         case PHAuthorizationStatusLimited:
             if (@available(iOS 14, *)) {
 //                [self handleLimitedAccess];
-                [self openAlbum];
+                
+                NSMutableArray<UIImage *> *images = [NSMutableArray array];
+                //获取可访问的图片配置选项
+                PHFetchOptions *option = [[PHFetchOptions alloc] init];
+                //根据图片的创建时间升序排序返回
+                option.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
+                //获取类型为image的资源
+                PHFetchResult *result = [PHAsset fetchAssetsWithMediaType:PHAssetMediaTypeImage options:option];
+                 //遍历出每个PHAsset资源对象
+                [result enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    PHAsset *asset = (PHAsset *)obj;
+                    //将PHAsset解析为image的配置选项
+                    PHImageRequestOptions *requestOptions = [[PHImageRequestOptions alloc] init];
+                    //图像缩放模式
+                    requestOptions.resizeMode = PHImageRequestOptionsResizeModeExact;
+                    //图片质量
+                    requestOptions.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
+                    //PHImageManager解析图片
+                    [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:PHImageManagerMaximumSize contentMode:PHImageContentModeDefault options:requestOptions resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+                        NSLog(@"图片 %@",result);
+                        //在这里可以自定义一个显示可访问相册资源的viewController.
+                        [images addObject:result];
+                    }];
+                }];
+                
+                [self openAlbumWithImages: images];
             } else {
                 [self performPhotoLibraryOperations];
             }
@@ -408,15 +433,20 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
     [self openAlbum];
 }
 
-
 - (void)openAlbum {
+    // 检查设备是否支持打开相册
+    return [self openAlbumWithImages:nil];
+}
+
+
+- (void)openAlbumWithImages:(NSArray<UIImage*>*)images {
     // 检查设备是否支持打开相册
     
     if (@available(iOS 14, *)) {
         PHPickerConfiguration *config = [[PHPickerConfiguration alloc] init];
-//        config.selectionLimit = 1;
-//        config.filter = [PHPickerFilter anyFilterMatchingSubfilters:@[[PHPickerFilter imagesFilter], [PHPickerFilter videosFilter]]];
-
+        config.preferredAssetRepresentationMode = PHPickerConfigurationAssetRepresentationModeCurrent;
+        config.selectionLimit = 1;
+        config.filter = [PHPickerFilter anyFilterMatchingSubfilters:@[[PHPickerFilter imagesFilter], [PHPickerFilter videosFilter]]];
         PHPickerViewController *pickerViewController = [[PHPickerViewController alloc] initWithConfiguration:config];
         pickerViewController.delegate = self;
         [self presentViewController:pickerViewController animated:YES completion:nil];
