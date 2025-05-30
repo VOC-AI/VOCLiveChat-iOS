@@ -17,7 +17,7 @@
 @property (nonatomic, strong) NSHashTable<id<VocaiMessageCenterDelegate>> *observers;
 @property (nonatomic, strong) NSMutableDictionary<NSString *, NSNumber *> *unreadCountCache;
 @property (nonatomic, strong) NSMutableDictionary<NSString *, NSTimer *> *refreshTimers;
-@property (nonatomic, copy) VocaiChatModel* params;
+@property (nonatomic, strong) VocaiChatModel* params;
 @property (nonatomic, strong) VocaiApiTool* apiTool;
 
 @end

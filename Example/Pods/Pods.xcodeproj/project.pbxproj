@@ -44,6 +44,8 @@
 		3BCB9575F1C3AAA5916A68513B672D97 /* SpectaUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 9441A311708D639B846E38C432211FAF /* SpectaUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C4BCCB15317300EE21CF929E2FB3B14 /* EXPMatchers+raise.h in Headers */ = {isa = PBXBuildFile; fileRef = 108488F285A773A3BCE052B9350CD6CD /* EXPMatchers+raise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E2E95DC803B093E2DED5D6E3319EF13 /* EXPMatcherHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1004F3B0D7B836E2BE433BDE8AAEA723 /* EXPMatcherHelpers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3F10C4402DE96A7F00390A42 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B594F2110D4A4D91F3A7393B967F2B /* UserModel.m */; };
+		3F10C4412DE96A8600390A42 /* WebCallBackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D908D3DBCF49C684EBC9A589BF765F1C /* WebCallBackModel.m */; };
 		3FD6EBF52DE5A2240077EE45 /* VocaiRandomStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE82DE5A2240077EE45 /* VocaiRandomStringGenerator.m */; };
 		3FD6EBF62DE5A2240077EE45 /* VocaiImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDE2DE5A2240077EE45 /* VocaiImageUploader.m */; };
 		3FD6EBF72DE5A2240077EE45 /* VocaiNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE42DE5A2240077EE45 /* VocaiNetworkTool.m */; };
@@ -1673,6 +1675,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F10C4412DE96A8600390A42 /* WebCallBackModel.m in Sources */,
+				3F10C4402DE96A7F00390A42 /* UserModel.m in Sources */,
 				3FD6EBF52DE5A2240077EE45 /* VocaiRandomStringGenerator.m in Sources */,
 				3FD6EBF62DE5A2240077EE45 /* VocaiImageUploader.m in Sources */,
 				3FD6EBF72DE5A2240077EE45 /* VocaiNetworkTool.m in Sources */,

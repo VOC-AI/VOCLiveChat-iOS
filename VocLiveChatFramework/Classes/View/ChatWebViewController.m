@@ -22,6 +22,8 @@
 #import <objc/runtime.h>
 #import "VocaiApiTool.h"
 #import "VocaiLogger.h"
+#import <Photos/Photos.h>
+#import <PhotosUI/PhotosUI.h>
 
 // 定义文件上传类型
 typedef NS_ENUM(NSInteger, UploadFileType) {
@@ -34,7 +36,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
 // 定义屏幕高度宏
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
-@interface ChatWebViewController ()<WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate, PDFDisplayViewDelegate>
+@interface ChatWebViewController ()<WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate, PDFDisplayViewDelegate, PHPickerViewControllerDelegate>
 @property (nonatomic, strong) VocaiChatModel *vocaiChatParams;
 @property (nonatomic, strong) VocaiApiTool* apiTool;
 @property (nonatomic, strong) WKWebView *webView;
@@ -226,7 +228,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
             }
             
             if ([selectedOption isEqualToString: galleryString]){
-                [self openAlbum];
+                [self checkPhotoLibraryPermissions];
             }
             if ([selectedOption isEqualToString: fileString]){
                 [self openFilePicker];
@@ -256,8 +258,169 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
+
+
+- (void)checkPhotoLibraryPermissions {
+    PHAuthorizationStatus status;
+    
+    // iOS 14+ 使用更精确的访问级别检查
+    if (@available(iOS 14, *)) {
+        status = [PHPhotoLibrary authorizationStatusForAccessLevel:PHAccessLevelReadWrite];
+    } else {
+        status = [PHPhotoLibrary authorizationStatus];
+    }
+    
+    switch (status) {
+        case PHAuthorizationStatusAuthorized:
+            [self performPhotoLibraryOperations];
+            break;
+            
+        case PHAuthorizationStatusNotDetermined:
+            [self requestPhotoLibraryAccess];
+            break;
+            
+        case PHAuthorizationStatusDenied:
+        case PHAuthorizationStatusRestricted:
+            [self showPermissionAlert];
+            break;
+            
+        case PHAuthorizationStatusLimited:
+            if (@available(iOS 14, *)) {
+//                [self handleLimitedAccess];
+                [self openAlbum];
+            } else {
+                [self performPhotoLibraryOperations];
+            }
+            break;
+    }
+}
+
+- (void)requestPhotoLibraryAccess {
+    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (status == PHAuthorizationStatusAuthorized) {
+                [self performPhotoLibraryOperations];
+            } else {
+                [self showPermissionAlert];
+            }
+        });
+    }];
+}
+
+
+- (UIViewController *)getTopMostViewController {
+    UIWindow *keyWindow = UIApplication.sharedApplication.keyWindow;
+    if (!keyWindow) {
+        keyWindow = [UIApplication.sharedApplication.windows firstObject];
+    }
+    
+    UIViewController *vc = keyWindow.rootViewController;
+    while (vc.presentedViewController) {
+        vc = vc.presentedViewController;
+    }
+    
+    return vc;
+}
+
+- (void)handleLimitedAccess {
+    // 处理有限访问权限（iOS 14+）
+    if (@available(iOS 14, *)) {
+        [PHPhotoLibrary.sharedPhotoLibrary presentLimitedLibraryPickerFromViewController:self];
+    }
+}
+
+- (void)picker:(PHPickerViewController *)picker didFinishPicking:(NSArray<PHPickerResult *> *)results  API_AVAILABLE(ios(14)){
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    if (results.count > 0) {
+        PHPickerResult *result = results.firstObject;
+        
+        if([result.itemProvider hasItemConformingToTypeIdentifier:(NSString *)kUTTypeMovie]) {
+            [result.itemProvider loadItemForTypeIdentifier:(NSString *)kUTTypeMovie options:@{} completionHandler:^(__kindof id<NSSecureCoding>  _Nullable item, NSError * _Null_unspecified error) {
+                if (error) {
+                    NSLog(@"Error loading URL: %@", error);
+                    return;
+                }
+                
+                NSURL *videoURL = (NSURL *)item;
+                if (videoURL) {
+                    // Use the video URL here
+                    NSLog(@"Video URL: %@", videoURL);
+                    self.randomNumber = [VocaiRandomStringGenerator randomStringWithLength:8];
+                    NSData *videoData = [self convertLocalVideoURLToData:videoURL];
+                    NSString *lastJs = [NSString stringWithFormat:@"handleRecieveVideoLoading('%@')", self.randomNumber];
+                    [self.webView evaluateJavaScript: lastJs completionHandler: nil];
+                    self.fileName = videoURL.lastPathComponent;
+                    [self uploadFile: videoData fileName: videoURL.lastPathComponent uploadFiledType: UploadFileTypeVideo];
+                }
+            }];
+        }
+        // 检查是否有图片数据
+        if ([result.itemProvider canLoadObjectOfClass:[NSURL class]]) {
+            [result.itemProvider loadObjectOfClass:[NSURL class] completionHandler:^(id _Nullable object, NSError * _Nullable error) {
+                if (error) {
+                    NSLog(@"Error loading URL: %@", error);
+                    return;
+                }
+                
+                NSURL *videoURL = (NSURL *)object;
+                if (videoURL) {
+                    // Use the video URL here
+                    NSLog(@"Video URL: %@", videoURL);
+                }
+            }];
+        } else if ([result.itemProvider canLoadObjectOfClass:[UIImage class]]) {
+            [result.itemProvider loadObjectOfClass:[UIImage class] completionHandler:^(id<NSItemProviderReading>  _Nullable object, NSError * _Nullable error) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if ([object isKindOfClass:[UIImage class]]) {
+                        self.randomNumber = [VocaiRandomStringGenerator randomStringWithLength:8];
+                        UIImage *selectedImage = (UIImage *)object;
+                        // 在这里处理选中的图片
+                        NSString *lastJs = [NSString stringWithFormat:@"handleRecieveImageLoading('%@')", self.randomNumber];
+                        NSData *imageData = UIImageJPEGRepresentation(selectedImage, 0.8);
+                        [self.webView evaluateJavaScript: lastJs completionHandler: nil];
+                        self.fileName = self.randomNumber;
+                        [self uploadFile:imageData fileName:self.fileName uploadFiledType:UploadFileTypePic];
+
+                    } else {
+                        NSLog(@"Failed to load image: %@", error.localizedDescription);
+                    }
+                });
+            }];
+        }
+    }
+}
+
+- (void)showPermissionAlert {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:[VocaiLanguageTool getStringForKey:@"key_premission_request" withLanguage:self.vocaiChatParams.language]
+                                                                   message:[VocaiLanguageTool getStringForKey:@"key_setting_desc" withLanguage:self.vocaiChatParams.language]
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:[VocaiLanguageTool getStringForKey:@"key_cancel" withLanguage:self.vocaiChatParams.language] style:UIAlertActionStyleCancel handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:[VocaiLanguageTool getStringForKey:@"key_settings" withLanguage:self.vocaiChatParams.language] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
+    }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)performPhotoLibraryOperations {
+    [self openAlbum];
+}
+
+
 - (void)openAlbum {
     // 检查设备是否支持打开相册
+    
+    if (@available(iOS 14, *)) {
+        PHPickerConfiguration *config = [[PHPickerConfiguration alloc] init];
+//        config.selectionLimit = 1;
+//        config.filter = [PHPickerFilter anyFilterMatchingSubfilters:@[[PHPickerFilter imagesFilter], [PHPickerFilter videosFilter]]];
+
+        PHPickerViewController *pickerViewController = [[PHPickerViewController alloc] initWithConfiguration:config];
+        pickerViewController.delegate = self;
+        [self presentViewController:pickerViewController animated:YES completion:nil];
+    } else {
       if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
           // 创建 UIImagePickerController 实例
           self.imagePickerController = [[UIImagePickerController alloc] init];
@@ -268,10 +431,11 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
           // 允许选择视频和照片
           self.imagePickerController.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
           // 弹出相册选择界面
-          [self presentViewController:self.imagePickerController animated:YES completion:nil];
+          [[self getTopMostViewController] presentViewController:self.imagePickerController animated:YES completion:nil];
       } else {
           [self.logger log: @"No gallery available"];
       }
+    }
 }
 
 

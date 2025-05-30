@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>PHPhotoLibraryPreventAutomaticLimitedAccessAlert</key>
+    <string></string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>应用需要访问您的相册以选择/保存照片</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>应用需要保存照片到您的相册</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>

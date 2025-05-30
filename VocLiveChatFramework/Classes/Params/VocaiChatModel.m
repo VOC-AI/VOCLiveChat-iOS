@@ -20,14 +20,21 @@ NSString *NSStringFromVOCLiveChatLinkOpenType(VOCLiveChatLinkOpenType type) {
 }
 
 NSString *fixLang(NSString* str) {
+    NSString *lang = str;
+    NSArray *components = [str componentsSeparatedByString:@"-"];
+    if ([components count] > 2) {
+        NSArray *slicedComponents = [components subarrayWithRange:NSMakeRange(0, 2)];
+        lang = [slicedComponents componentsJoinedByString:@"-"];
+    }
     NSDictionary *correctionMap = @{
         @"ko": @"ko-KR",
         @"zh-Hans": @"zh-CN",
+        @"zh-Hant":@"zh-HK",
         @"zh-Hant-HK":@"zh-HK",
         @"zh-Hant-TW":@"zh-TW",
     };
-    if ([correctionMap objectForKey:str]) {
-        return [correctionMap objectForKey:str];
+    if ([correctionMap objectForKey:lang]) {
+        return [correctionMap objectForKey:lang];
     }
     return nil;
 }
@@ -133,7 +140,7 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
         self.token = token;
         self.email = email;
         self.botId = botId;
-        if(language) {
+        if (language) {
             self.language = [self normalizeLanguage: language];
         } else {
             self.language = [self normalizeLanguage: [VocaiLanguageTool defaultLang]];
@@ -165,25 +172,27 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
 
 - (instancetype)copyWithZone:(NSZone *)zone {
     VocaiChatModel *copy = [[[self class] allocWithZone:zone] init];
-    copy.noHeader = self.noHeader;
-    copy.noBrand = self.noBrand;
-    copy.encrypt = self.encrypt;
-    copy.isTest = self.isTest;
-    copy.env = self.env;
-    copy.chatId = [self.chatId copyWithZone:zone];
-    copy.token = [self.token copyWithZone:zone];
-    copy.email = [self.email copyWithZone:zone];
-    copy.brand = [self.brand copyWithZone:zone];
-    copy.botId = [self.botId copyWithZone:zone];
-    copy.country = [self.country copyWithZone:zone];
-    copy.language = [self.language copyWithZone:zone];
-    copy.maxUploadFileSize = self.maxUploadFileSize;
-    copy.openLinkType = self.openLinkType;
-    copy.skill_id = [self.skill_id copyWithZone:zone];
-    copy.channelid = [self.channelid copyWithZone:zone];
-    copy.otherParams = [self.otherParams copyWithZone:zone];
-    copy.userId = [self.userId copyWithZone:zone];
-    copy.uploadFileTypes = [self.uploadFileTypes copyWithZone:zone];
+    if(copy) {
+        copy.noHeader = self.noHeader;
+        copy.noBrand = self.noBrand;
+        copy.encrypt = self.encrypt;
+        copy.isTest = self.isTest;
+        copy.env = self.env;
+        copy.chatId = [self.chatId copyWithZone:zone];
+        copy.token = [self.token copyWithZone:zone];
+        copy.email = [self.email copyWithZone:zone];
+        copy.brand = [self.brand copyWithZone:zone];
+        copy.botId = [self.botId copyWithZone:zone];
+        copy.country = [self.country copyWithZone:zone];
+        copy.language = [self.language copyWithZone:zone];
+        copy.maxUploadFileSize = self.maxUploadFileSize;
+        copy.openLinkType = self.openLinkType;
+        copy.skill_id = [self.skill_id copyWithZone:zone];
+        copy.channelid = [self.channelid copyWithZone:zone];
+        copy.otherParams = [self.otherParams copyWithZone:zone];
+        copy.userId = [self.userId copyWithZone:zone];
+        copy.uploadFileTypes = [self.uploadFileTypes copyWithZone:zone];
+    }
     return copy;
 }
 

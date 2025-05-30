@@ -121,6 +121,7 @@
             @"es-ES":@"es",
             @"ko-KR":@"ko",
             @"it-IT":@"it",
+            @"zh": @"cn",
             @"zh-Hant":@"zh-hk",
             @"zh-Hant-HK":@"zh-hk",
             @"zh-Hant-TW":@"zh-hk",

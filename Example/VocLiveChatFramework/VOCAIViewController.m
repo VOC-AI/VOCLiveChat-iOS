@@ -21,16 +21,17 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
+    NSString* str = [NSLocale preferredLanguages][0];
+    NSLog(@"%@", str);
     NSDictionary *exampleOtherDict = nil;
-    VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"17188" token:@"66CDB326E4B03648C0BDF94E" email:@"anti2moron@gmail.com" language:@"zh-Hans-HK" otherParams:nil];
+    VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"17188" token:@"66CDB326E4B03648C0BDF94E" email:@"anti2moron@gmail.com" language:str otherParams:nil];
     vocaiModel.userId = @"123123";
     vocaiModel.uploadFileTypes = @[@"public.data"];
-    vocaiModel.env = VOCLiveChatEnvStaging;
+//    vocaiModel.env = VOCLiveChatEnvStaging;
     VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];
-    VocaiMessageCenter *center = [VocaiMessageCenter sharedInstance];
-    [center setParams:vocaiModel];
-    [center addObserver:self];
+//    VocaiMessageCenter *center = [VocaiMessageCenter sharedInstance];
+//    [center addObserver:self];
+//    [center setParams:vocaiModel];
     UIViewController *viewController = [builder buildSdkWithParams: vocaiModel];
     [self.view addSubview:viewController.view];
     viewController.view.frame = self.view.frame;

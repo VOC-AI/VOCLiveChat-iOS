@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F10C43D2DE961CD00390A42 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F10C43C2DE961CD00390A42 /* PhotosUI.framework */; };
+		3F10C43F2DE961D400390A42 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F10C43E2DE961D400390A42 /* Photos.framework */; };
 		3F27FA172DDDCCEC0067E16D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		3F77E02F2DDD9524006DBB4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		59A76EDE13C234B166923550 /* Pods_VocLiveChatFramework_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3545FDAE1DAADB9A2E8B927D /* Pods_VocLiveChatFramework_Example.framework */; };
@@ -36,6 +38,8 @@
 /* Begin PBXFileReference section */
 		0A65D930584A62604F2B9627 /* Pods-VocLiveChatFramework_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VocLiveChatFramework_Tests.debug.xcconfig"; path = "Target Support Files/Pods-VocLiveChatFramework_Tests/Pods-VocLiveChatFramework_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3545FDAE1DAADB9A2E8B927D /* Pods_VocLiveChatFramework_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VocLiveChatFramework_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F10C43C2DE961CD00390A42 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		3F10C43E2DE961D400390A42 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		6003F58A195388D20070C39A /* VocLiveChatFramework_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VocLiveChatFramework_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -72,9 +76,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
+				3F10C43D2DE961CD00390A42 /* PhotosUI.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
 				59A76EDE13C234B166923550 /* Pods_VocLiveChatFramework_Example.framework in Frameworks */,
+				3F10C43F2DE961D400390A42 /* Photos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +133,8 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F10C43E2DE961D400390A42 /* Photos.framework */,
+				3F10C43C2DE961CD00390A42 /* PhotosUI.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
@@ -245,6 +253,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = 6587734;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = C5B8G7C5FD;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -513,6 +524,7 @@
 			baseConfigurationReference = D08765E48049B3304BF1597A /* Pods-VocLiveChatFramework_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C5B8G7C5FD;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocLiveChatFramework/VocLiveChatFramework-Prefix.pch";
 				INFOPLIST_FILE = "VocLiveChatFramework/VocLiveChatFramework-Info.plist";
@@ -531,6 +543,7 @@
 			baseConfigurationReference = E32F681D42DD7458F732A240 /* Pods-VocLiveChatFramework_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C5B8G7C5FD;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocLiveChatFramework/VocLiveChatFramework-Prefix.pch";
 				INFOPLIST_FILE = "VocLiveChatFramework/VocLiveChatFramework-Info.plist";
