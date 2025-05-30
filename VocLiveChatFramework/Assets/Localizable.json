@@ -149,6 +149,81 @@
         "key_nocamera_permission": "カメラの権限がありません。設定センターで有効にしてください。",
         "key_media_limit_exceed": "最大ファイルサイズ（%@）を超えました。"
       }
+    },
+    {
+      "language": "ar",
+      "strings": {
+        "key_take_photo": "أخذ صورة",
+        "key_take_video": "فيديو",
+        "key_choose_from_gallery": "المجلة",
+        "key_choose_from_file": "ملف",
+        "key_cancel": "إلغاء",
+        "key_settings": "الإعدادات",
+        "key_setting_desc": "الرجاء منح التطبيق إذن للوصول إلى مكتبة الال_PHOTO في الإعدادات.",
+        "key_premission_request": "طلب إذن",
+        "key_nocamera_permission": "ليس لديك إذن الكاميرا. الرجاء الذهاب إلى مركز الإعدادات للتمكين.",
+        "key_media_limit_exceed": "تمت превышения الحد الأقصى ل حجم الملف (%@)."
+      }
+    },
+    {
+      "language": "id",
+      "strings": {
+        "key_take_photo": "Ambil Foto",
+        "key_take_video": "Video",
+        "key_choose_from_gallery": "Galeri",
+        "key_choose_from_file": "File",
+        "key_cancel": "Batalkan",
+        "key_settings": "Pengaturan",
+        "key_setting_desc": "Mohon berikan izin aplikasi untuk mengakses perpustakaan foto di Pengaturan.",
+        "key_premission_request": "Permintaan Izin",
+        "key_nocamera_permission": "Tidak ada izin kamera. Silakan pergi ke Pusat Pengaturan untuk mengaktifkannya.",
+        "key_media_limit_exceed": "Ukuran file maksimum (%@) melebihi batas."
+      }
+    },
+    {
+      "language": "fi",
+      "strings": {
+        "key_take_photo": "Ota kuva",
+        "key_take_video": "Video",
+        "key_choose_from_gallery": "Galleria",
+        "key_choose_from_file": "Tiedosto",
+        "key_cancel": "Peruuta",
+        "key_settings": "Asetukset",
+        "key_setting_desc": "Anna sovellukselle oikeus käyttää kuvakotaaasetuksissa.",
+        "key_premission_request": "Oikeuspyyntö",
+        "key_nocamera_permission": "Kamera-oikeutta ei ole. Ota asetuksista käyttöön.",
+        "key_media_limit_exceed": "Ylitetty tiedoston maksimikoko (%@)."
+      }
+    },
+    {
+      "language": "it",
+      "strings": {
+        "key_take_photo": "Scattare foto",
+        "key_take_video": "Video",
+        "key_choose_from_gallery": "Galleria",
+        "key_choose_from_file": "File",
+        "key_cancel": "Annulla",
+        "key_settings": "Impostazioni",
+        "key_setting_desc": "Concedi all'applicazione l'autorizzazione ad accedere alla libreria foto nelle impostazioni.",
+        "key_premission_request": "Richiesta'autorizzazione",
+        "key_nocamera_permission": "Nessuna autorizzazione per la fotocamera. Vai nella centro impostazioni per attivarla.",
+        "key_media_limit_exceed": "Dimensione massima file superata (%@)."
+      }
+    },
+    {
+      "language": "pl",
+      "strings": {
+        "key_take_photo": "Zrób zdjęcie",
+        "key_take_video": "Wideo",
+        "key_choose_from_gallery": "Galeria",
+        "key_choose_from_file": "Plik",
+        "key_cancel": "Anuluj",
+        "key_settings": "Ustawienia",
+        "key_setting_desc": "Wybierz w ustawieniach uprawnienia aplikacji do dostępu do biblioteki zdjęć.",
+        "key_premission_request": "Prośba o uprawnienie",
+        "key_nocamera_permission": "Brak uprawnień do kamery. Przejdź do centrum ustawień, aby włączyć je.",
+        "key_media_limit_exceed": "Przekroczono maksymalny rozmiar pliku (%@)."
+      }
     }
   ]
 }
