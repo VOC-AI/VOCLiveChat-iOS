@@ -9,6 +9,7 @@
 #import "VocaiApiTool.h"
 #import "VocaiNetworkTool.h"
 #import "VocaiChatModel.h"
+#import "VocaiNetworkTool.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 
@@ -26,7 +27,7 @@
 
 
 -(void) setParams: (VocaiChatModel*) model {
-    self.params = [model copy];
+    _params = [model copy];
     self.apiTool = [[VocaiApiTool alloc] initWithParams: model];
 }
 
@@ -79,53 +80,19 @@
         return;
     }
     
-    NSString* url = [self.apiTool getApiWithPathname:@"/livechat/unread"];
-    Class networkToolClass = NSClassFromString(@"VocaiNetworkTool");
-    
-    if (!networkToolClass) {
-        NSError *error = [NSError errorWithDomain:@"MessageCenterErrorDomain" code:1002 userInfo:@{NSLocalizedDescriptionKey: @"VocaiNetworkTool not found"}];
-        [self notifyFailureForChatId:chatId error:error];
-        return;
-    }
+    NSString* url = [self.apiTool getApiWithPathname:@"/api_v2/intelli/livechat/unread"];
     
     // 获取单例实例
-    SEL sharedInstanceSelector = NSSelectorFromString(@"sharedInstance");
-    id networkTool = ((id (*)(id, SEL))objc_msgSend)(networkToolClass, sharedInstanceSelector);
-    
-    if (!networkTool) {
-        NSError *error = [NSError errorWithDomain:@"MessageCenterErrorDomain" code:1003 userInfo:@{NSLocalizedDescriptionKey: @"Failed to get VocaiNetworkTool instance"}];
-        [self notifyFailureForChatId:chatId error:error];
-        return;
-    }
-    
-    SEL requestSelector = NSSelectorFromString(@"requestWithMethod:URLString:parameters:success:failure:");
-    NSInteger method = 1; // VocaiRequestMethodPOST
-    
-    // 定义闭包类型
-    typedef void (^SuccessBlock)(id responseObject);
-    typedef void (^FailureBlock)(NSError *error);
-    
-    // 创建请求闭包
-    SuccessBlock successBlock = ^(id responseObject) {
+    VocaiNetworkTool* networkTool = [VocaiNetworkTool sharedInstance];
+
+    [networkTool requestWithMethod:VocaiRequestMethodPOST URLString:url parameters:
+     @{@"chatId": chatId} success:^(id responseObject) {
         NSInteger count = [self parseUnreadCountFromResponse:responseObject];
         [self.unreadCountCache setObject:@(count) forKey:chatId];
         [self notifyObserversWithCount:count forChatId:chatId];
-    };
-    
-    FailureBlock failureBlock = ^(NSError *error) {
+    } failure:^(NSError *error) {
         [self notifyFailureForChatId:chatId error:error];
-    };
-    
-    // 使用显式类型转换调用消息
-    ((void (*)(id, SEL, NSInteger, NSString *, NSDictionary *, SuccessBlock, FailureBlock))objc_msgSend)(
-        networkTool,
-        requestSelector,
-        method,
-        url,
-        @{@"chatId": chatId},
-        successBlock,
-        failureBlock
-    );
+    }];
 }
 
 
