@@ -55,11 +55,6 @@
     });
 }
 
-- (void)messageCenter:(id)center failedToFetchUnreadCountForChatId:(NSString *)chatId withError:(NSError *)error {
-    // 处理错误
-    NSLog(@"获取未读消息数失败 - ChatID: %@, 错误: %@", chatId, error.localizedDescription);
-}
-
 - (void)dealloc {
     // 移除观察者
     [[VocaiMessageCenter sharedInstance] removeObserver:self];
