@@ -74,22 +74,23 @@
 }
 
 - (void)fetchUnreadCountForChatId:(NSString *)chatId {
-    if (!chatId || !self.apiTool) {
-        NSError *error = [NSError errorWithDomain:@"MessageCenterErrorDomain" code:1001 userInfo:@{NSLocalizedDescriptionKey: @"Invalid chatId or apiTool"}];
-        [self notifyFailureForChatId:chatId error:error];
-        return;
-    }
-    
     NSString* url = [self.apiTool getApiWithPathname:@"/api_v2/intelli/livechat/unread"];
     
     // 获取单例实例
     VocaiNetworkTool* networkTool = [VocaiNetworkTool sharedInstance];
 
-    [networkTool requestWithMethod:VocaiRequestMethodPOST URLString:url parameters:
-     @{@"chatId": chatId} success:^(id responseObject) {
+    NSString* cId = chatId;
+    if(!chatId) {
+        cId = @"0";
+    }
+    NSDictionary* params = chatId ? @{@"chatId": chatId} : nil;
+    [networkTool requestWithMethod:VocaiRequestMethodPOST URLString:url parameters:params
+     success:^(id responseObject) {
         NSInteger count = [self parseUnreadCountFromResponse:responseObject];
-        [self.unreadCountCache setObject:@(count) forKey:chatId];
-        [self notifyObserversWithCount:count forChatId:chatId];
+        [self.unreadCountCache setObject:@(count) forKey:cId];
+        if ([self.unreadCountCache[cId] integerValue] != count) {
+            [self notifyObserversWithCount:count forChatId:chatId];
+        }
     } failure:^(NSError *error) {
         [self notifyFailureForChatId:chatId error:error];
     }];
@@ -125,14 +126,27 @@
 }
 
 - (void)postUnreadCount:(NSInteger)count forChatId:(NSString *)chatId {
-    [self.unreadCountCache setObject:@(count) forKey:chatId];
+    NSNumber* n = @(count);
+    NSString* key = chatId;
+    if (!chatId) {
+        chatId = @"0";
+    }
+    [self.unreadCountCache setObject:n forKey:key];
     [self notifyObserversWithCount:count forChatId:chatId];
 }
 
 #pragma mark - 自动刷新
 
-- (void)startAutoRefreshForChatId:(NSString *)chatId {
-    if (!chatId || self.refreshTimers[chatId]) {
+-(void) startAutoRefresh {
+    [self startAutoRefreshForChatId:nil];
+}
+
+- (void)startAutoRefreshForChatId:(NSString *) chatId {
+    NSString* key = chatId;
+    if(!key) {
+        key = @"0";
+    }
+    if (self.refreshTimers[key]) {
         return;
     }
     
@@ -142,17 +156,21 @@
     }];
     
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
-    self.refreshTimers[chatId] = timer;
+    self.refreshTimers[key] = timer;
     
     // 立即触发一次
     [self fetchUnreadCountForChatId:chatId];
 }
 
 - (void)stopAutoRefreshForChatId:(NSString *)chatId {
-    NSTimer *timer = self.refreshTimers[chatId];
+    NSString* key = chatId;
+    if(!key) {
+        key = @"0";
+    }
+    NSTimer *timer = self.refreshTimers[key];
     if (timer) {
         [timer invalidate];
-        [self.refreshTimers removeObjectForKey:chatId];
+        [self.refreshTimers removeObjectForKey:key];
     }
 }
 

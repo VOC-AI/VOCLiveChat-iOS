@@ -32,7 +32,7 @@
     VocaiMessageCenter *center = [VocaiMessageCenter sharedInstance];
     [center setParams:vocaiModel];
     [center addObserver:self];
-    [center startAutoRefreshForChatId:@""];
+    [center startAutoRefreshForChatId:nil];
     UIViewController *viewController = [builder buildSdkWithParams: vocaiModel];
     [self.view addSubview:viewController.view];
     viewController.view.frame = self.view.frame;
@@ -60,7 +60,7 @@
     [[VocaiMessageCenter sharedInstance] removeObserver:self];
     
     // 停止自动刷新（如果之前启动过）
-    [[VocaiMessageCenter sharedInstance] stopAutoRefreshForChatId:@""];
+    [[VocaiMessageCenter sharedInstance] stopAllAutoRefresh];
 }
 
 @end

@@ -306,7 +306,6 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
                     requestOptions.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
                     //PHImageManager解析图片
                     [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:PHImageManagerMaximumSize contentMode:PHImageContentModeDefault options:requestOptions resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-                        NSLog(@"图片 %@",result);
                         //在这里可以自定义一个显示可访问相册资源的viewController.
                         [images addObject:result];
                     }];
