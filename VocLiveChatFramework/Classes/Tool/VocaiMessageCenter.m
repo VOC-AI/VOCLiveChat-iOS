@@ -74,7 +74,8 @@
 }
 
 - (void)fetchUnreadCountForChatId:(NSString *)chatId {
-    NSString* url = [self.apiTool getApiWithPathname:@"/api_v2/intelli/livechat/unread"];
+    NSString* formatUrl = [NSString stringWithFormat:@"/api_v2/intelli/livechat/%@/unread",self.params.botId];
+    NSString* url = [self.apiTool getApiWithPathname:formatUrl];
     
     // 获取单例实例
     VocaiNetworkTool* networkTool = [VocaiNetworkTool sharedInstance];
@@ -83,7 +84,7 @@
     if(!chatId) {
         cId = @"0";
     }
-    NSDictionary* params = chatId ? @{@"chatId": chatId} : nil;
+    NSDictionary* params = chatId ? @{@"chatId": chatId} : @{@"chatId":@""};
     [networkTool requestWithMethod:VocaiRequestMethodPOST URLString:url parameters:params
      success:^(id responseObject) {
         NSInteger count = [self parseUnreadCountFromResponse:responseObject];
