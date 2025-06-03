@@ -25,14 +25,13 @@
     NSLog(@"%@", str);
     NSDictionary *exampleOtherDict = nil;
     VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"499" token:@"66D806CAE4B05062935CCFD0" email:@"anti2moron@gmail.com" language:str otherParams:nil];
-    vocaiModel.userId = @"123123";
     vocaiModel.uploadFileTypes = @[@"public.data"];
     vocaiModel.env = VOCLiveChatEnvStaging;
     VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];
     VocaiMessageCenter *center = [VocaiMessageCenter sharedInstance];
     [center setParams:vocaiModel];
     [center addObserver:self];
-    [center startAutoRefreshForChatId:nil];
+    [center startAutoRefresh];
     UIViewController *viewController = [builder buildSdkWithParams: vocaiModel];
     [self.view addSubview:viewController.view];
     viewController.view.frame = self.view.frame;
@@ -47,11 +46,10 @@
 
 
 // 实现代理方法
-- (void)messageCenter:(id)center didReceiveUnreadCount:(NSInteger)count forChatId:(NSString *)chatId {
+- (void)messageCenter:(id)center didHaveNewMessage:(BOOL)hasNewMessage forChatId:(nonnull NSString *)chatId {
     // 更新UI或执行其他操作
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSString* log = [NSString stringWithFormat:@"未读消息: %ld", (long)count];
-        NSLog(@"%@", log);
+        NSLog(@"%@ -- %@", @"New Message Received", @(hasNewMessage));
     });
 }
 

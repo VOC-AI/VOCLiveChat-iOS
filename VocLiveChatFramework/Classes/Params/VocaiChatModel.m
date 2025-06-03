@@ -8,6 +8,7 @@
 
 #import "VocaiChatModel.h"
 #import "VocaiLanguageTool.h"
+#import "VocaiRandomStringGenerator.h"
 
 // VOCLiveChatLinkOpenType 枚举转换为字符串的实现
 NSString *NSStringFromVOCLiveChatLinkOpenType(VOCLiveChatLinkOpenType type) {
@@ -110,6 +111,7 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
         self.botId = botId;
         self.language = [self normalizeLanguage: [VocaiLanguageTool defaultLang]];
         self.otherParams = otherParams;
+        self.userId = [VocaiRandomStringGenerator randomStringWithLength:8];
     }
     NSLog(@"[VOC.AI]Language: %@", self.language);
     return self;
@@ -127,6 +129,8 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
             self.language = [self normalizeLanguage: [VocaiLanguageTool defaultLang]];
         }
         self.otherParams = otherParams;
+        NSString* email = [otherParams objectForKey:@"email"];
+        self.userId = email ? email : [VocaiRandomStringGenerator randomStringWithLength:8];
     }
     NSLog(@"[VOC.AI]Language: %@", self.language);
     return self;
@@ -145,6 +149,7 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
         } else {
             self.language = [self normalizeLanguage: [VocaiLanguageTool defaultLang]];
         }
+        self.userId = email ? email : [VocaiRandomStringGenerator randomStringWithLength:8];
         self.otherParams = otherParams;
     }
     NSLog(@"[VOC.AI]Language: %@", self.language);
@@ -163,6 +168,7 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
         } else {
             self.language = [self normalizeLanguage: [VocaiLanguageTool defaultLang]];
         }
+        self.userId = email ? email : [VocaiRandomStringGenerator randomStringWithLength:8];
         self.otherParams = otherParams;
     }
     NSLog(@"[VOC.AI]Language: %@", self.language);
@@ -192,6 +198,7 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
         copy.otherParams = [self.otherParams copyWithZone:zone];
         copy.userId = [self.userId copyWithZone:zone];
         copy.uploadFileTypes = [self.uploadFileTypes copyWithZone:zone];
+        copy.userId = [self.userId copyWithZone:zone];
     }
     return copy;
 }

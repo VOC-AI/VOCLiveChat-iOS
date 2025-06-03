@@ -22,6 +22,7 @@
 #import <objc/runtime.h>
 #import "VocaiApiTool.h"
 #import "VocaiLogger.h"
+#import "VocaiMessageCenter.h"
 #import <Photos/Photos.h>
 #import <PhotosUI/PhotosUI.h>
 
@@ -108,8 +109,22 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    VocaiMessageCenter* center = [VocaiMessageCenter sharedInstance];
+    if (center) {
+        [center postUnreadStatus:NO forChatId:nil];
+        [center fetchUnreadCountForChatId:nil];
+    }
     if (self.viewDelegate != nil) {
         [self.viewDelegate vocaiViewControllerWillAppear:self animated:animated];
+    }
+}
+
+-(void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    VocaiMessageCenter* center = [VocaiMessageCenter sharedInstance];
+    if (center) {
+        [center postUnreadStatus:NO forChatId:nil];
+        [center fetchUnreadCountForChatId:nil];
     }
 }
 

@@ -84,56 +84,63 @@
     if(!chatId) {
         cId = @"0";
     }
-    NSDictionary* params = chatId ? @{@"chatId": chatId} : @{@"chatId":@""};
+    NSDictionary* params = chatId ? @{@"chatId": chatId} : @{@"userId": self.params.userId};
     [networkTool requestWithMethod:VocaiRequestMethodPOST URLString:url parameters:params
      success:^(id responseObject) {
-        NSInteger count = [self parseUnreadCountFromResponse:responseObject];
-        [self.unreadCountCache setObject:@(count) forKey:cId];
-        if ([self.unreadCountCache[cId] integerValue] != count) {
-            [self notifyObserversWithCount:count forChatId:chatId];
+        BOOL hasNewMessage = [self parseUnreadCountFromResponse:responseObject];
+        if ([self.unreadCountCache[cId] boolValue] != hasNewMessage) {
+            [self notifyObserversWithUnreadStatus:hasNewMessage forChatId:chatId];
+            [self.unreadCountCache setObject:@(hasNewMessage) forKey:cId];
         }
     } failure:^(NSError *error) {
-        [self notifyFailureForChatId:chatId error:error];
+//        [self notifyFailureForChatId:chatId error:error];
     }];
 }
 
 
 - (NSInteger)parseUnreadCountFromResponse:(id)responseObject {
+//    if ([responseObject isKindOfClass:[NSDictionary class]]) {
+//        id countValue = [responseObject objectForKey:@"count"];
+//        if ([countValue isKindOfClass:[NSNumber class]]) {
+//            return [countValue integerValue];
+//        } else if ([countValue isKindOfClass:[NSString class]]) {
+//            return [countValue integerValue];
+//        }
+//    }
     if ([responseObject isKindOfClass:[NSDictionary class]]) {
-        id countValue = [responseObject objectForKey:@"count"];
+        id countValue = [responseObject objectForKey:@"hasUnread"];
         if ([countValue isKindOfClass:[NSNumber class]]) {
-            return [countValue integerValue];
+            return [countValue boolValue];
         } else if ([countValue isKindOfClass:[NSString class]]) {
-            return [countValue integerValue];
+            return [countValue boolValue];
         }
     }
     return 0;
 }
 
-- (void)notifyObserversWithCount:(NSInteger)count forChatId:(NSString *)chatId {
+- (void)notifyObserversWithUnreadStatus:(BOOL)hasNewMessage forChatId:(NSString *)chatId {
     for (id<VocaiMessageCenterDelegate> observer in self.observers) {
-        if ([observer respondsToSelector:@selector(messageCenter:didReceiveUnreadCount:forChatId:)]) {
-            [observer messageCenter:self didReceiveUnreadCount:count forChatId:chatId];
+        if ([observer respondsToSelector:@selector(messageCenter:didHaveNewMessage:forChatId:)]) {
+            [observer messageCenter:self didHaveNewMessage:hasNewMessage forChatId:chatId];
         }
     }
 }
 
-- (void)notifyFailureForChatId:(NSString *)chatId error:(NSError *)error {
-    for (id<VocaiMessageCenterDelegate> observer in self.observers) {
-        if ([observer respondsToSelector:@selector(messageCenter:failedToFetchUnreadCountForChatId:withError:)]) {
-            [observer messageCenter:self failedToFetchUnreadCountForChatId:chatId withError:error];
-        }
-    }
-}
+//- (void)notifyFailureForChatId:(NSString *)chatId error:(NSError *)error {
+//    for (id<VocaiMessageCenterDelegate> observer in self.observers) {
+//        if ([observer respondsToSelector:@selector(messageCenter:failedToFetchUnreadCountForChatId:withError:)]) {
+//            [observer messageCenter:self failedToFetchUnreadCountForChatId:chatId withError:error];
+//        }
+//    }
+//}
 
-- (void)postUnreadCount:(NSInteger)count forChatId:(NSString *)chatId {
-    NSNumber* n = @(count);
+- (void)postUnreadStatus:(BOOL)hasNewMessage forChatId:(NSString *)chatId {
     NSString* key = chatId;
     if (!chatId) {
-        chatId = @"0";
+        key = @"0";
     }
-    [self.unreadCountCache setObject:n forKey:key];
-    [self notifyObserversWithCount:count forChatId:chatId];
+    [self.unreadCountCache setObject:@(hasNewMessage) forKey:key];
+    [self notifyObserversWithUnreadStatus:hasNewMessage forChatId:chatId];
 }
 
 #pragma mark - 自动刷新
@@ -142,7 +149,7 @@
     [self startAutoRefreshForChatId:nil];
 }
 
-- (void)startAutoRefreshForChatId:(NSString *) chatId {
+- (void)startAutoRefreshForChatId:(nullable NSString *) chatId {
     NSString* key = chatId;
     if(!key) {
         key = @"0";
@@ -163,7 +170,7 @@
     [self fetchUnreadCountForChatId:chatId];
 }
 
-- (void)stopAutoRefreshForChatId:(NSString *)chatId {
+- (void)stopAutoRefreshForChatId:(nullable NSString *)chatId {
     NSString* key = chatId;
     if(!key) {
         key = @"0";
