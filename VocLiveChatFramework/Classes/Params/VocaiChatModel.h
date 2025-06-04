@@ -45,14 +45,12 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang);
 - (instancetype)initWithBotId:(NSString *)botId token:(NSString *)token otherParams:(NSDictionary *)otherParams;
 - (instancetype)initWithBotId:(NSString *)botId token:(NSString *)token language:(NSString*)language otherParams:(NSDictionary *)otherParams;
 
-// 初始化方法1
 - (instancetype)initWithBotId:(NSString *)botId token:(NSString *)token  email:(NSString *)email language:(NSString*)language otherParams:(NSDictionary *)otherParams;
 
-// 初始化方法2
 - (instancetype)initWithBotId:(NSString *)botId chatId:(NSString *)chatId token:(NSString *)token email:(NSString *)email language:(NSString*)language otherParams:(NSDictionary *)otherParams;
 
+- (instancetype)initWithBotId:(NSString *)botId token:(NSString *)token  email:(NSString *)email language:(NSString*)language userId:(NSString*)userId otherParams:(NSDictionary *)otherParams;
 
-// 属性
 @property (nonatomic, strong) NSString *chatId;
 @property (nonatomic, strong) NSString *token;
 @property (nonatomic, copy, nullable) NSString *email;

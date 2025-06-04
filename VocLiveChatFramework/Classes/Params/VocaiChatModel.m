@@ -175,6 +175,28 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
     return self;
 }
 
+// 初始化方法
+- (instancetype)initWithBotId:(NSString *)botId token:(NSString *)token  email:(NSString *)email language:(NSString*)language userId:(NSString*)userId otherParams:(NSDictionary *)otherParams {
+    self = [super init];
+    if (self) {
+        self.token = token;
+        self.email = email;
+        self.botId = botId;
+        if(language) {
+            self.language = [self normalizeLanguage: language];
+        } else {
+            self.language = [self normalizeLanguage: [VocaiLanguageTool defaultLang]];
+        }
+        self.userId = userId;
+        if (!self.userId) {
+            self.userId = email ? email : [VocaiRandomStringGenerator randomStringWithLength:8];
+        }
+        self.otherParams = otherParams;
+    }
+    NSLog(@"[VOC.AI]Language: %@", self.language);
+    return self;
+}
+
 
 - (instancetype)copyWithZone:(NSZone *)zone {
     VocaiChatModel *copy = [[[self class] allocWithZone:zone] init];
