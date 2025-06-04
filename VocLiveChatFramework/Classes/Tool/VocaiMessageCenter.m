@@ -44,7 +44,7 @@
     if (self.params.messageCountFetchInterval) {
         return self.params.messageCountFetchInterval;
     }
-    return 30.0;
+    return 10.0;
 }
 
 - (instancetype)init {
