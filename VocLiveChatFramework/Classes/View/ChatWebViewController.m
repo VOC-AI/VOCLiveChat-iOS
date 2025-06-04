@@ -53,14 +53,11 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
 
 @end
 
-// 在视图控制器的实现文件中初始化 WKWebView
 @implementation ChatWebViewController
 
 - (NSString *)encodeURIComponent: (NSString*) str {
-    // 创建允许的字符集（字母、数字、点、短横线、下划线、波浪线）
     NSCharacterSet *allowedCharacters = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~"];
     
-    // 对字符串进行编码
     return [str stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacters];
 }
 
@@ -74,26 +71,18 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
     return self;
 }
 
+- (void) setParameter: (VocaiChatModel*)parameter {
+    self.vocaiChatParams = parameter;
+    self.apiTool = [[VocaiApiTool alloc] initWithParams:parameter];
+    self.logger = [[VocaiLogger alloc] initWithParams:parameter];
+    
+    [self loadPage];
+}
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self.view setBackgroundColor: [UIColor whiteColor]];
-    self.automaticallyAdjustsScrollViewInsets = YES;
-    // 创建 WKWebView 的配置对象
-    WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
-    [configuration.userContentController addScriptMessageHandler:self name:@"VOCLivechatMessageHandler"];
-    
-    // 创建 WKWebView 实例
-    
-    self.webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) configuration:configuration];
-    self.webView.UIDelegate = self;
-    self.webView.navigationDelegate = self;
-    
-    // 将 WKWebView 添加到视图中
-    [self.view addSubview:self.webView];
-    [self setWebViewAnchor];
-    // 设置要加载的URL   这里的ID是botId
-    
+- (void) loadPage {
+    if (!self.webView) {
+        return;
+    }
     NSString *urlString = [NSString stringWithFormat: [self getApiWithPathname:@"/live-chat?id=%@&token=%@&disableFileInputModal=true&lang=%@&email=%@&userId=%@&"],
                            [self encodeURIComponent: self.vocaiChatParams.botId],
                            [self encodeURIComponent: self.vocaiChatParams.token],
@@ -105,6 +94,22 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
     NSURL *url = [NSURL URLWithString: componentUrlString];
     NSURLRequest *request = [NSURLRequest requestWithURL: url];
     [self.webView loadRequest:request];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.view setBackgroundColor: [UIColor whiteColor]];
+    self.automaticallyAdjustsScrollViewInsets = YES;
+    WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
+    [configuration.userContentController addScriptMessageHandler:self name:@"VOCLivechatMessageHandler"];
+        
+    self.webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) configuration:configuration];
+    self.webView.UIDelegate = self;
+    self.webView.navigationDelegate = self;
+    
+    [self.view addSubview:self.webView];
+    [self setWebViewAnchor];
+    [self loadPage];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

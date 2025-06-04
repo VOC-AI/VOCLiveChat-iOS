@@ -23,4 +23,5 @@ NS_DEPRECATED_IOS(1.0.0, 0.0.0, "vocaiViewControllerWillAppear:", "This method n
 @interface ChatWebViewController : UIViewController
 @property (nonatomic, weak) id<VocalViewControllerLifecycleDelegate> viewDelegate;
 - (instancetype)initWithParameter:(VocaiChatModel *)parameter;
+- (void) setParameter: (VocaiChatModel*)parameter;
 @end

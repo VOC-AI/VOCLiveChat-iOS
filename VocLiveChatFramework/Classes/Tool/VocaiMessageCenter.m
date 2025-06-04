@@ -84,7 +84,7 @@
     if(!chatId) {
         cId = @"0";
     }
-    NSDictionary* params = chatId ? @{@"chatId": chatId} : @{@"userId": self.params.userId};
+    NSDictionary* params = @{@"userId": self.params.userId};
     [networkTool requestWithMethod:VocaiRequestMethodPOST URLString:url parameters:params
      success:^(id responseObject) {
         BOOL hasNewMessage = [self parseUnreadCountFromResponse:responseObject];
