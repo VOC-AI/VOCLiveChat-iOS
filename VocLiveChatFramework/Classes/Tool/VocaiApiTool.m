@@ -36,5 +36,12 @@
     return [NSString stringWithFormat:@"%@%@", self.apiHost,pathname];
 }
 
++ (NSArray<NSString *> *)availableHosts {
+    return @[
+        @"https://apps-staging.voc.ai",
+        @"https://apps.voc.ai",
+    ];
+}
+
 @end
 

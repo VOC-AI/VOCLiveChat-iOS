@@ -39,7 +39,7 @@
 }
 
 - (IBAction)popNoneLoginWithDeviceID:(id)sender {
-    VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];
+    VocaiSdkBuilder *builder = VocaiSdkBuilder.sharedInstance;
     VocaiChatModel* model = [self createModel];
     NSString *deviceId = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     NSLog(@"Device ID: %@", deviceId);
@@ -52,7 +52,7 @@
 }
 
 - (IBAction)popLoginWithUserID:(id)sender {
-    VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];
+    VocaiSdkBuilder *builder = VocaiSdkBuilder.sharedInstance;
     VocaiChatModel* model = [self createModel];
     model.userId = @"Some userId in your system";
     [VocaiMessageCenter.sharedInstance setParams:model];
@@ -60,6 +60,11 @@
     viewController.viewDelegate = self;
     viewController.title = @"Support Center";
     [self.navigationController pushViewController:viewController animated:YES];
+}
+
+- (IBAction)logoutAndClearChats:(id)sender {
+    VocaiChatModel* model = [self createModel];
+    [VocaiSdkBuilder.sharedInstance clearChatsForModel:model];
 }
 
 -(void)vocaiViewControllerWillAppear:(UIViewController *)viewController animated:(BOOL)animated {

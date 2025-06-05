@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4ag-gm-X3P">
-                                <rect key="frame" x="20" y="144" width="335" height="129.5"/>
+                                <rect key="frame" x="20" y="144" width="335" height="184"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8K-CC-kWJ">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="34.5"/>
@@ -52,8 +52,16 @@
                                             <action selector="popLoginWithUserID:" destination="U7M-K6-eZ6" eventType="touchUpInside" id="wvK-nv-F0m"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7h-uI-idL">
+                                        <rect key="frame" x="0.0" y="109" width="335" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Logout and Clear chats"/>
+                                        <connections>
+                                            <action selector="logoutAndClearChats:" destination="U7M-K6-eZ6" eventType="touchUpInside" id="vRr-Ww-b4z"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="displayLabel" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vj2-X7-zea">
-                                        <rect key="frame" x="0.0" y="109" width="335" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="163.5" width="335" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

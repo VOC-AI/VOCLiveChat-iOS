@@ -27,6 +27,10 @@ NS_DEPRECATED_IOS(1.0.0, 0.0.0, "vocaiViewControllerWillAppear:", "This method n
 @interface VocaiSdkBuilder : NSObject <VocalViewControllerLifecycleDelegate>
 @property (nonatomic, weak) id<VocaiSdkBuilderViewControllerLifecycleDelegate> sdkViewWillAppearDelegate;
 
++ (instancetype) sharedInstance;
+
+- (void) clearChatsForModel:(VocaiChatModel*)model;
+
 - (void)sdkViewWillAppear:(UIViewController *)viewController animated:(BOOL)animated;
 
 - (ChatWebViewController *)buildSdkWithParams: (VocaiChatModel *)params;

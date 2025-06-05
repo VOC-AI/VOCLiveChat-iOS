@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface VocaiApiTool : NSObject
 
 -(instancetype) initWithParams: (VocaiChatModel*)model;
++(NSArray<NSString*>*) availableHosts;
 -(NSString*) apiHost;
 -(NSString*) getApiWithPathname:pathname;
 
