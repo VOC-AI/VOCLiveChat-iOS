@@ -11,7 +11,7 @@
 #import <VocLiveChatFramework/VocaiChatModel.h>
 #import <VocLiveChatFramework/VocaiSdkBuilder.h>
 
-@interface VOCAIViewController ()<VocaiMessageCenterDelegate>
+@interface VOCAIViewController ()<VocaiMessageCenterDelegate, VocaiViewControllerLifecycleDelegate>
 
 @end
 
@@ -21,20 +21,49 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    NSString* str = [NSLocale preferredLanguages][0];
-    NSLog(@"%@", str);
-    NSDictionary *exampleOtherDict = nil;
-    VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"499" token:@"66D806CAE4B05062935CCFD0" email:@"anti2moron@gmail.com" language:str otherParams:nil];
-    vocaiModel.uploadFileTypes = @[@"public.data"];
-    vocaiModel.env = VOCLiveChatEnvStaging;
-    VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];
     VocaiMessageCenter *center = [VocaiMessageCenter sharedInstance];
-    [center setParams:vocaiModel];
+    VocaiChatModel* model = [self createModel];
+    [center setParams:model];
     [center addObserver:self];
     [center startAutoRefresh];
-    UIViewController *viewController = [builder buildSdkWithParams: vocaiModel];
-    [self.view addSubview:viewController.view];
-    viewController.view.frame = self.view.frame;
+}
+
+-(VocaiChatModel*)createModel {
+    NSString* str = [NSLocale preferredLanguages][0];
+    NSLog(@"%@", str);
+    VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"499" token:@"66D806CAE4B05062935CCFD0" email:@"anti2moron@gmail.com" language:str otherParams:nil];
+    vocaiModel.enableLog = YES;
+    vocaiModel.uploadFileTypes = @[@"public.data"];
+    vocaiModel.env = VOCLiveChatEnvStaging;
+    return vocaiModel;
+}
+
+- (IBAction)popNoneLoginWithDeviceID:(id)sender {
+    VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];
+    VocaiChatModel* model = [self createModel];
+    NSString *deviceId = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    NSLog(@"Device ID: %@", deviceId);
+    model.userId = deviceId;
+    [VocaiMessageCenter.sharedInstance setParams:model];
+    ChatWebViewController *viewController = [builder buildSdkWithParams: model];
+    viewController.viewDelegate = self;
+    viewController.title = @"Support Center";
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+- (IBAction)popLoginWithUserID:(id)sender {
+    VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];
+    VocaiChatModel* model = [self createModel];
+    model.userId = @"Some userId in your system";
+    [VocaiMessageCenter.sharedInstance setParams:model];
+    ChatWebViewController *viewController = [builder buildSdkWithParams: model];
+    viewController.viewDelegate = self;
+    viewController.title = @"Support Center";
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+-(void)vocaiViewControllerWillAppear:(UIViewController *)viewController animated:(BOOL)animated {
+    NSLog(@"View will Appear");
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,7 +78,9 @@
 - (void)messageCenter:(id)center didHaveNewMessage:(BOOL)hasNewMessage forChatId:(nonnull NSString *)chatId {
     // 更新UI或执行其他操作
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSLog(@"%@ -- %@", @"New Message Received", @(hasNewMessage));
+        NSString* text = [NSString stringWithFormat:@"%@ -- %@", @"Has Message?", @(hasNewMessage)];
+        NSLog(@"%@", text);
+        self.displayLabel.text = text;
     });
 }
 
@@ -59,6 +90,10 @@
     
     // 停止自动刷新（如果之前启动过）
     [[VocaiMessageCenter sharedInstance] stopAllAutoRefresh];
+}
+
+-(void) changeUser {
+    
 }
 
 @end

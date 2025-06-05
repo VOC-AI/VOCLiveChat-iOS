@@ -47,9 +47,9 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang);
 
 - (instancetype)initWithBotId:(NSString *)botId token:(NSString *)token  email:(NSString *)email language:(NSString*)language otherParams:(NSDictionary *)otherParams;
 
-- (instancetype)initWithBotId:(NSString *)botId chatId:(NSString *)chatId token:(NSString *)token email:(NSString *)email language:(NSString*)language otherParams:(NSDictionary *)otherParams;
+- (instancetype)initWithBotId:(NSString *)botId chatId:(NSString *)chatId token:(NSString *)token email:(NSString *)email language:(NSString*)language otherParams:(NSDictionary* )otherParams;
 
-- (instancetype)initWithBotId:(NSString *)botId token:(NSString *)token  email:(NSString *)email language:(NSString*)language userId:(NSString*)userId otherParams:(NSDictionary *)otherParams;
+- (instancetype)initWithBotId:(NSString *)botId token:(NSString *)token  email:(NSString *)email language:(NSString*)language userId:(NSString*)userId otherParams:(NSDictionary* )otherParams;
 
 @property (nonatomic, strong) NSString *chatId;
 @property (nonatomic, strong) NSString *token;

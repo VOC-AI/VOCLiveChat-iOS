@@ -88,7 +88,7 @@
     [networkTool requestWithMethod:VocaiRequestMethodPOST URLString:url parameters:params
      success:^(id responseObject) {
         BOOL hasNewMessage = [self parseUnreadCountFromResponse:responseObject];
-        if ([self.unreadCountCache[cId] boolValue] != hasNewMessage) {
+        if ((self.unreadCountCache[cId] && [self.unreadCountCache[cId] boolValue] != hasNewMessage) || !self.unreadCountCache[cId]) {
             [self notifyObserversWithUnreadStatus:hasNewMessage forChatId:chatId];
             [self.unreadCountCache setObject:@(hasNewMessage) forKey:cId];
         }

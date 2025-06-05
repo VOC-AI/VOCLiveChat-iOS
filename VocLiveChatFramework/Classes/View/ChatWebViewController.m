@@ -11,7 +11,7 @@
 #import "VocaiImageUploader.h"
 #import "UserModel.h"
 #import "WebCallBackModel.h"
-#import "AVCaptureViewController.h"
+#import "VocaiAVCaptureViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "VocaiRandomStringGenerator.h"
 #import "VocaiPollingRequestTool.h"
@@ -25,6 +25,8 @@
 #import "VocaiMessageCenter.h"
 #import <Photos/Photos.h>
 #import <PhotosUI/PhotosUI.h>
+#import "VocaiJSBridge.h"
+#import "VocaiNetworkTool.h"
 
 // 定义文件上传类型
 typedef NS_ENUM(NSInteger, UploadFileType) {
@@ -50,6 +52,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
 @property (nonatomic, strong) PDFDisplayView *pdfDisplayView;
 @property (nonatomic, copy) NSString *uploadFileMeta;
 @property (nonatomic, strong) VocaiLogger *logger;
+@property (nonatomic, strong) VocaiJSBridge *jsBridge;
 
 @end
 
@@ -75,7 +78,6 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
     self.vocaiChatParams = parameter;
     self.apiTool = [[VocaiApiTool alloc] initWithParams:parameter];
     self.logger = [[VocaiLogger alloc] initWithParams:parameter];
-    
     [self loadPage];
 }
 
@@ -90,6 +92,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
                            [self encodeURIComponent: self.email],
                            [self encodeURIComponent: self.vocaiChatParams.userId]
     ];
+    [self.logger log:@"URL: %@", urlString];
     NSString *componentUrlString = [urlString stringByAppendingString: [self dictionaryToQueryString:self.vocaiChatParams.otherParams]];
     NSURL *url = [NSURL URLWithString: componentUrlString];
     NSURLRequest *request = [NSURLRequest requestWithURL: url];
@@ -110,6 +113,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
     [self.view addSubview:self.webView];
     [self setWebViewAnchor];
     [self loadPage];
+    self.jsBridge = [[VocaiJSBridge alloc] initWithWebview:self.webView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -119,17 +123,34 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
         [center postUnreadStatus:NO forChatId:nil];
         [center fetchUnreadCountForChatId:nil];
     }
-    if (self.viewDelegate != nil) {
+    if (self.viewDelegate != nil && [self.viewDelegate respondsToSelector:@selector(vocaiViewControllerWillAppear:animated:)]) {
         [self.viewDelegate vocaiViewControllerWillAppear:self animated:animated];
     }
 }
 
--(void) viewWillDisappear:(BOOL)animated{
+- (void) viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     VocaiMessageCenter* center = [VocaiMessageCenter sharedInstance];
     if (center) {
         [center postUnreadStatus:NO forChatId:nil];
         [center fetchUnreadCountForChatId:nil];
+    }
+    if (self.viewDelegate != nil && [self.viewDelegate respondsToSelector:@selector(vocaiViewControllerWillDisappear:animated:)]) {
+        [self.viewDelegate vocaiViewControllerWillDisappear:self animated:animated];
+    }
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (self.viewDelegate != nil && [self.viewDelegate respondsToSelector:@selector(vocaiViewControllerDidAppear:animated:)]) {
+        [self.viewDelegate vocaiViewControllerDidAppear:self animated:animated];
+    }
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    if (self.viewDelegate != nil && [self.viewDelegate respondsToSelector:@selector(vocaiViewControllerDidDisappear:animated:)]) {
+        [self.viewDelegate vocaiViewControllerDidDisappear:self animated:animated];
     }
 }
 
@@ -141,37 +162,48 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
 }
 
 - (void)setWebViewAnchor {
-    // 设置约束
-       self.webView.translatesAutoresizingMaskIntoConstraints = NO;
-       NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:self.webView
-                                                                        attribute:NSLayoutAttributeTop
-                                                                        relatedBy:NSLayoutRelationEqual
-                                                                        toItem:self.view.safeAreaLayoutGuide
-                                                                        attribute:NSLayoutAttributeTop
-                                                                        multiplier:1.0
-                                                                         constant:0];
-       NSLayoutConstraint *leadingConstraint = [NSLayoutConstraint constraintWithItem:self.webView
-                                                                            attribute:NSLayoutAttributeLeading
-                                                                            relatedBy:NSLayoutRelationEqual
-                                                                            toItem:self.view.safeAreaLayoutGuide
-                                                                            attribute:NSLayoutAttributeLeading
-                                                                            multiplier:1.0
-                                                                            constant:0];
-       NSLayoutConstraint *trailingConstraint = [NSLayoutConstraint constraintWithItem:self.webView
-                                                                              attribute:NSLayoutAttributeTrailing
-                                                                              relatedBy:NSLayoutRelationEqual
-                                                                                 toItem:self.view.safeAreaLayoutGuide
-                                                                              attribute:NSLayoutAttributeTrailing
-                                                                             multiplier:1.0
-                                                                               constant:0];
-       NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self.webView
-                                                                            attribute:NSLayoutAttributeBottom
-                                                                            relatedBy:NSLayoutRelationEqual
-                                                                               toItem:self.view
-                                                                            attribute:NSLayoutAttributeBottom
-                                                                           multiplier:1.0
-                                                                             constant:0];
-       [NSLayoutConstraint activateConstraints:@[topConstraint, leadingConstraint, trailingConstraint, bottomConstraint]];
+    self.webView.translatesAutoresizingMaskIntoConstraints = NO;
+    NSLayoutConstraint *topConstraint, *leadingConstraint, *trailingConstraint;
+    id guide = nil;
+
+    if (@available(iOS 11.0, *)) {
+        guide = self.view.safeAreaLayoutGuide;
+    } else {
+        guide = self.view;
+    }
+
+    topConstraint = [NSLayoutConstraint constraintWithItem:self.webView
+                                                  attribute:NSLayoutAttributeTop
+                                                  relatedBy:NSLayoutRelationEqual
+                                                     toItem:guide
+                                                  attribute:NSLayoutAttributeTop
+                                                 multiplier:1.0
+                                                   constant:0];
+
+    leadingConstraint = [NSLayoutConstraint constraintWithItem:self.webView
+                                                     attribute:NSLayoutAttributeLeading
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:guide
+                                                     attribute:NSLayoutAttributeLeading
+                                                    multiplier:1.0
+                                                      constant:0];
+
+    trailingConstraint = [NSLayoutConstraint constraintWithItem:self.webView
+                                                      attribute:NSLayoutAttributeTrailing
+                                                      relatedBy:NSLayoutRelationEqual
+                                                         toItem:guide
+                                                      attribute:NSLayoutAttributeTrailing
+                                                     multiplier:1.0
+                                                       constant:0];
+
+    NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self.webView
+                                                                                attribute:NSLayoutAttributeBottom
+                                                                                relatedBy:NSLayoutRelationEqual
+                                                                                   toItem:self.view
+                                                                                attribute:NSLayoutAttributeBottom
+                                                                               multiplier:1.0
+                                                                                 constant:0];
+   [NSLayoutConstraint activateConstraints:@[topConstraint, leadingConstraint, trailingConstraint, bottomConstraint]];
 }
 
 
@@ -182,6 +214,8 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
     [self.webView stopLoading];
     [self.webView removeFromSuperview];
     self.webView = nil;
+    self.apiTool = nil;
+    self.jsBridge = nil;
 }
 
 -(void)showPickView {
@@ -533,18 +567,6 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
                 }
             }
          }
-        
-        // 模拟处理数据
-        NSString *responseData = @"";
-         // 调用前端的回调函数
-        NSString *jsCallback = [NSString stringWithFormat:@"frontendCallback('%@')", responseData];
-        [self.webView evaluateJavaScript:jsCallback completionHandler:^(id result, NSError * _Nullable error) {
-            if (error) {
-                [self.logger log:@"Eval JavaScript callback error: %@", error.localizedDescription];
-            } else {
-                [self.logger log:@"Eval JavaScript callback success，result: %@", result];
-            }
-        }];
     }
 }
 
@@ -898,6 +920,26 @@ BOOL hasCameraPermission(void) {
             toastLabel.alpha = 0;
         } completion:^(BOOL finished) {
             [toastLabel removeFromSuperview];
+        }];
+    }];
+}
+
+- (void) switchUser:(NSString*) userId {
+    NSString* botId = self.vocaiChatParams.botId;
+    self.vocaiChatParams.userId = userId;
+    [self.jsBridge switchUserId:userId];
+    [self.jsBridge getCurrentChatId:^(NSString * _Nullable chatId) {
+        if(!chatId) {
+            return;
+        }
+        NSString* url = [self.apiTool getApiWithPathname:@"/api_v2/intelli/livechat/commit"];
+        [[VocaiNetworkTool sharedInstance] requestWithMethod:VocaiRequestMethodPOST URLString:url parameters:@{
+            @"botId": botId,
+            @"chatId": chatId,
+        } success:^(id responseObject) {
+            ;
+        } failure:^(NSError *error) {
+            ;
         }];
     }];
 }

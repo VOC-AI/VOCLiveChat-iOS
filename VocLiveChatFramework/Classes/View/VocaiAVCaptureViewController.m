@@ -5,7 +5,7 @@
 //  Created by 刘志康 on 2025/2/26.
 //
 
-#import "AVCaptureViewController.h"
+#import "VocaiAVCaptureViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "VocaiImageUploader.h"
 

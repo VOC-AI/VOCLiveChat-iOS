@@ -9,10 +9,10 @@
 #import "ChatWebViewController.h"
 @implementation VocaiSdkBuilder
 
-- (UIViewController *)buildSdkWithParams: (VocaiChatModel *)params {
+- (ChatWebViewController *)buildSdkWithParams: (VocaiChatModel *)params {
     ChatWebViewController *webVC = [[ChatWebViewController alloc] initWithParameter:params];
     webVC.viewDelegate = self;
-    return  webVC;
+    return webVC;
 }
 
 - (UINavigationController *)buildSdkNavigationControllerWithParams: (VocaiChatModel *)params navigationColor: (UIColor *)navigationColor title:(NSString *)title{
@@ -27,12 +27,6 @@
 - (void)vocaiViewControllerWillAppear:(UIViewController *)viewController animated:(BOOL)animated {
     if (self.sdkViewWillAppearDelegate != nil) {
         [self.sdkViewWillAppearDelegate vocaiSdkViewControllerWillAppear:viewController animated:animated];
-    }
-}
-
-- (void)vocalViewControllerWillAppear:(UIViewController *)viewController animated:(BOOL)animated {
-    if (self.sdkViewWillAppearDelegate != nil) {
-        [self.sdkViewWillAppearDelegate vocalSdkViewControllerWillAppear:viewController animated:animated];
     }
 }
 

@@ -29,7 +29,7 @@ NS_DEPRECATED_IOS(1.0.0, 0.0.0, "vocaiViewControllerWillAppear:", "This method n
 
 - (void)sdkViewWillAppear:(UIViewController *)viewController animated:(BOOL)animated;
 
-- (UIViewController *)buildSdkWithParams: (VocaiChatModel *)params;
+- (ChatWebViewController *)buildSdkWithParams: (VocaiChatModel *)params;
 - (UINavigationController *)buildSdkNavigationControllerWithParams: (VocaiChatModel *)params navigationColor: (UIColor *)navigationColor title:(NSString *)title;
 
 @end
