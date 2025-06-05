@@ -46,6 +46,36 @@
 		3E2E95DC803B093E2DED5D6E3319EF13 /* EXPMatcherHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1004F3B0D7B836E2BE433BDE8AAEA723 /* EXPMatcherHelpers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3F10C4402DE96A7F00390A42 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B594F2110D4A4D91F3A7393B967F2B /* UserModel.m */; };
 		3F10C4412DE96A8600390A42 /* WebCallBackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D908D3DBCF49C684EBC9A589BF765F1C /* WebCallBackModel.m */; };
+		3FA502DA2DF09C15007345EE /* VocaiNotificationCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA502D92DF09C0E007345EE /* VocaiNotificationCenter.h */; };
+		3FA502DB2DF09C15007345EE /* VocaiNotificationCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA502D92DF09C0E007345EE /* VocaiNotificationCenter.h */; };
+		3FA502DC2DF09C15007345EE /* VocaiNotificationCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA502D92DF09C0E007345EE /* VocaiNotificationCenter.h */; };
+		3FA502DD2DF09C15007345EE /* VocaiNotificationCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA502D92DF09C0E007345EE /* VocaiNotificationCenter.h */; };
+		3FA502DE2DF09C15007345EE /* VocaiNotificationCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA502D92DF09C0E007345EE /* VocaiNotificationCenter.h */; };
+		3FA502DF2DF09C15007345EE /* VocaiNotificationCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA502D92DF09C0E007345EE /* VocaiNotificationCenter.h */; };
+		3FA502E02DF09C15007345EE /* VocaiNotificationCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA502D92DF09C0E007345EE /* VocaiNotificationCenter.h */; };
+		3FA502E22DF09C1F007345EE /* VocaiNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA502E12DF09C19007345EE /* VocaiNotificationCenter.m */; };
+		3FA502E32DF09C1F007345EE /* VocaiNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA502E12DF09C19007345EE /* VocaiNotificationCenter.m */; };
+		3FA502E42DF09C1F007345EE /* VocaiNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA502E12DF09C19007345EE /* VocaiNotificationCenter.m */; };
+		3FA502E52DF09C1F007345EE /* VocaiNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA502E12DF09C19007345EE /* VocaiNotificationCenter.m */; };
+		3FA502E62DF09C1F007345EE /* VocaiNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA502E12DF09C19007345EE /* VocaiNotificationCenter.m */; };
+		3FA502E72DF09C1F007345EE /* VocaiNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA502E12DF09C19007345EE /* VocaiNotificationCenter.m */; };
+		3FA502E82DF09C1F007345EE /* VocaiNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA502E12DF09C19007345EE /* VocaiNotificationCenter.m */; };
+		3FA502E92DF09C1F007345EE /* VocaiNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA502E12DF09C19007345EE /* VocaiNotificationCenter.m */; };
+		3FA502EB2DF09D07007345EE /* VocaiNotificationRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA502EA2DF09CFE007345EE /* VocaiNotificationRouter.h */; };
+		3FA502EC2DF09D07007345EE /* VocaiNotificationRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA502EA2DF09CFE007345EE /* VocaiNotificationRouter.h */; };
+		3FA502ED2DF09D07007345EE /* VocaiNotificationRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA502EA2DF09CFE007345EE /* VocaiNotificationRouter.h */; };
+		3FA502EE2DF09D07007345EE /* VocaiNotificationRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA502EA2DF09CFE007345EE /* VocaiNotificationRouter.h */; };
+		3FA502EF2DF09D07007345EE /* VocaiNotificationRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA502EA2DF09CFE007345EE /* VocaiNotificationRouter.h */; };
+		3FA502F02DF09D07007345EE /* VocaiNotificationRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA502EA2DF09CFE007345EE /* VocaiNotificationRouter.h */; };
+		3FA502F12DF09D07007345EE /* VocaiNotificationRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA502EA2DF09CFE007345EE /* VocaiNotificationRouter.h */; };
+		3FA502F32DF09D10007345EE /* VocaiNotificationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA502F22DF09D0A007345EE /* VocaiNotificationRouter.m */; };
+		3FA502F42DF09D10007345EE /* VocaiNotificationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA502F22DF09D0A007345EE /* VocaiNotificationRouter.m */; };
+		3FA502F52DF09D10007345EE /* VocaiNotificationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA502F22DF09D0A007345EE /* VocaiNotificationRouter.m */; };
+		3FA502F62DF09D10007345EE /* VocaiNotificationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA502F22DF09D0A007345EE /* VocaiNotificationRouter.m */; };
+		3FA502F72DF09D10007345EE /* VocaiNotificationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA502F22DF09D0A007345EE /* VocaiNotificationRouter.m */; };
+		3FA502F82DF09D10007345EE /* VocaiNotificationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA502F22DF09D0A007345EE /* VocaiNotificationRouter.m */; };
+		3FA502F92DF09D10007345EE /* VocaiNotificationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA502F22DF09D0A007345EE /* VocaiNotificationRouter.m */; };
+		3FA502FA2DF09D10007345EE /* VocaiNotificationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA502F22DF09D0A007345EE /* VocaiNotificationRouter.m */; };
 		3FD6EBF52DE5A2240077EE45 /* VocaiRandomStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE82DE5A2240077EE45 /* VocaiRandomStringGenerator.m */; };
 		3FD6EBF62DE5A2240077EE45 /* VocaiImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDE2DE5A2240077EE45 /* VocaiImageUploader.m */; };
 		3FD6EBF72DE5A2240077EE45 /* VocaiNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE42DE5A2240077EE45 /* VocaiNetworkTool.m */; };
@@ -490,6 +520,10 @@
 		3D462091B0B297DA65FD3F10937EFB1A /* EXPMatchers+raise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+raise.m"; path = "Expecta/Matchers/EXPMatchers+raise.m"; sourceTree = "<group>"; };
 		3E0B2A4326A6771BE138C8CE16707F8A /* EXPFloatTuple.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPFloatTuple.h; path = Expecta/EXPFloatTuple.h; sourceTree = "<group>"; };
 		3E19264E9A59681F2EDB4F7295CF72E8 /* VocLiveChatFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VocLiveChatFramework-umbrella.h"; sourceTree = "<group>"; };
+		3FA502D92DF09C0E007345EE /* VocaiNotificationCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VocaiNotificationCenter.h; sourceTree = "<group>"; };
+		3FA502E12DF09C19007345EE /* VocaiNotificationCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VocaiNotificationCenter.m; sourceTree = "<group>"; };
+		3FA502EA2DF09CFE007345EE /* VocaiNotificationRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VocaiNotificationRouter.h; sourceTree = "<group>"; };
+		3FA502F22DF09D0A007345EE /* VocaiNotificationRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VocaiNotificationRouter.m; sourceTree = "<group>"; };
 		3FD6EBDB2DE5A2240077EE45 /* VocaiApiTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VocaiApiTool.h; sourceTree = "<group>"; };
 		3FD6EBDC2DE5A2240077EE45 /* VocaiApiTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VocaiApiTool.m; sourceTree = "<group>"; };
 		3FD6EBDD2DE5A2240077EE45 /* VocaiImageUploader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VocaiImageUploader.h; sourceTree = "<group>"; };
@@ -842,6 +876,10 @@
 		3FD6EBE92DE5A2240077EE45 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				3FA502EA2DF09CFE007345EE /* VocaiNotificationRouter.h */,
+				3FA502F22DF09D0A007345EE /* VocaiNotificationRouter.m */,
+				3FA502D92DF09C0E007345EE /* VocaiNotificationCenter.h */,
+				3FA502E12DF09C19007345EE /* VocaiNotificationCenter.m */,
 				3FF280C72DE5E04300258FCB /* VocaiLogger.h */,
 				3FF280CF2DE5E04A00258FCB /* VocaiLogger.m */,
 				3FD6EBDB2DE5A2240077EE45 /* VocaiApiTool.h */,
@@ -1205,9 +1243,11 @@
 				2C12465A7F70CF000296297E3F9D9B6A /* EXPMatchers+beNil.h in Headers */,
 				B5E66E313ADCAE0EE66E81CABA6AAC01 /* EXPMatchers+beSubclassOf.h in Headers */,
 				B21A8305FC9DFB75545AF00C73F58400 /* EXPMatchers+beSupersetOf.h in Headers */,
+				3FA502DA2DF09C15007345EE /* VocaiNotificationCenter.h in Headers */,
 				208133EE2C10CF99B527654E31B2BB35 /* EXPMatchers+beTruthy.h in Headers */,
 				B3B010DD962B43242F16302962E7F24D /* EXPMatchers+conformTo.h in Headers */,
 				06A850BE3B9CFF54086BCC6121173F25 /* EXPMatchers+contain.h in Headers */,
+				3FA502F02DF09D07007345EE /* VocaiNotificationRouter.h in Headers */,
 				0C118C0B26DB7AC928BAD64DC9DDED84 /* EXPMatchers+endWith.h in Headers */,
 				E86191783F85F75C1A02497CBA8BC0A1 /* EXPMatchers+equal.h in Headers */,
 				E3DACFAF45457ACF68ECD29F9861ADA8 /* EXPMatchers+haveCountOf.h in Headers */,
@@ -1247,9 +1287,11 @@
 				3FD6EC2A2DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
 				3FD6EC2B2DE5A2240077EE45 /* AVCaptureViewController.h in Headers */,
 				3FD6EC2C2DE5A2240077EE45 /* ChatWebViewController.h in Headers */,
+				3FA502EB2DF09D07007345EE /* VocaiNotificationRouter.h in Headers */,
 				3FD6EC2D2DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */,
 				3FD6EC2E2DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */,
 				3FD6EC2F2DE5A2240077EE45 /* PDFDisplayView.h in Headers */,
+				3FA502DB2DF09C15007345EE /* VocaiNotificationCenter.h in Headers */,
 				3FD6EC302DE5A2240077EE45 /* VocaiApiTool.h in Headers */,
 				A070787F25B1FE1600AB6DD8226EA2DD /* Pods-VocLiveChatFramework_Example-umbrella.h in Headers */,
 			);
@@ -1263,6 +1305,7 @@
 				2E315D896B86F230575D83C2359F5C64 /* FBSnapshotTestCase-umbrella.h in Headers */,
 				CC2C8B9CA56ACDF8263C5D35520720B8 /* FBSnapshotTestCasePlatform.h in Headers */,
 				5582DBB42582B8C276992B4A8F539F02 /* FBSnapshotTestController.h in Headers */,
+				3FA502EC2DF09D07007345EE /* VocaiNotificationRouter.h in Headers */,
 				AF3CEA141C25BFE8B5129F5B3F5367BA /* UIApplication+StrictKeyWindow.h in Headers */,
 				3055B23EB828906352FB08A8F83799D0 /* UIImage+Compare.h in Headers */,
 				04709B09ADB58F96CF1E94A0418D71C0 /* UIImage+Diff.h in Headers */,
@@ -1270,6 +1313,7 @@
 				3FD6EC0E2DE5A2240077EE45 /* VocaiMessageCenter.h in Headers */,
 				3FD6EC0F2DE5A2240077EE45 /* VocaiImageUploader.h in Headers */,
 				3FD6EC102DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */,
+				3FA502E02DF09C15007345EE /* VocaiNotificationCenter.h in Headers */,
 				3FD6EC112DE5A2240077EE45 /* CustomOptionsView.h in Headers */,
 				3FD6EC122DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
 				3FD6EC132DE5A2240077EE45 /* AVCaptureViewController.h in Headers */,
@@ -1296,9 +1340,11 @@
 				3FD6EC662DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
 				3FD6EC672DE5A2240077EE45 /* AVCaptureViewController.h in Headers */,
 				3FD6EC682DE5A2240077EE45 /* ChatWebViewController.h in Headers */,
+				3FA502EF2DF09D07007345EE /* VocaiNotificationRouter.h in Headers */,
 				3FD6EC692DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */,
 				3FD6EC6A2DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */,
 				3FD6EC6B2DE5A2240077EE45 /* PDFDisplayView.h in Headers */,
+				3FA502DC2DF09C15007345EE /* VocaiNotificationCenter.h in Headers */,
 				3FD6EC6C2DE5A2240077EE45 /* VocaiApiTool.h in Headers */,
 				F286B17F56DF04571F7AFFA3EC1CABA7 /* Pods-VocLiveChatFramework_Tests-umbrella.h in Headers */,
 			);
@@ -1315,11 +1361,13 @@
 				3FD6EC4B2DE5A2240077EE45 /* VocaiImageUploader.h in Headers */,
 				3FF280C92DE5E04700258FCB /* VocaiLogger.h in Headers */,
 				3FD6EC4C2DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */,
+				3FA502EE2DF09D07007345EE /* VocaiNotificationRouter.h in Headers */,
 				3FD6EC4D2DE5A2240077EE45 /* CustomOptionsView.h in Headers */,
 				3FD6EC4E2DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
 				3FD6EC4F2DE5A2240077EE45 /* AVCaptureViewController.h in Headers */,
 				3FD6EC502DE5A2240077EE45 /* ChatWebViewController.h in Headers */,
 				3FD6EC512DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */,
+				3FA502DE2DF09C15007345EE /* VocaiNotificationCenter.h in Headers */,
 				3FD6EC522DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */,
 				3FD6EC532DE5A2240077EE45 /* PDFDisplayView.h in Headers */,
 				3FD6EC542DE5A2240077EE45 /* VocaiApiTool.h in Headers */,
@@ -1332,6 +1380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24D9EA42BDAA9282D798AFB45046CFDB /* UserModel.h in Headers */,
+				3FA502F12DF09D07007345EE /* VocaiNotificationRouter.h in Headers */,
 				84AACB294C2D1137776DA892EEE4B0B3 /* InitialModel.h in Headers */,
 				737ED601E8B3C584A19050D8F4F32855 /* VocaiChatModel.h in Headers */,
 				3FD6EC382DE5A2240077EE45 /* ChatWebViewController.h in Headers */,
@@ -1343,6 +1392,7 @@
 				3FD6EC332DE5A2240077EE45 /* VocaiImageUploader.h in Headers */,
 				3FD6EC342DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */,
 				3FD6EC352DE5A2240077EE45 /* CustomOptionsView.h in Headers */,
+				3FA502DD2DF09C15007345EE /* VocaiNotificationCenter.h in Headers */,
 				3FD6EC372DE5A2240077EE45 /* AVCaptureViewController.h in Headers */,
 				3FD6EC392DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */,
 				3FD6EC3A2DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */,
@@ -1361,6 +1411,7 @@
 				3FD6EC9D2DE5A2240077EE45 /* VocaiNetworkTool.h in Headers */,
 				3FD6EC9E2DE5A2240077EE45 /* VocaiMessageCenter.h in Headers */,
 				3FD6EC9F2DE5A2240077EE45 /* VocaiImageUploader.h in Headers */,
+				3FA502ED2DF09D07007345EE /* VocaiNotificationRouter.h in Headers */,
 				3FF280CA2DE5E04700258FCB /* VocaiLogger.h in Headers */,
 				3FD6ECA02DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */,
 				3FD6ECA12DE5A2240077EE45 /* CustomOptionsView.h in Headers */,
@@ -1383,6 +1434,7 @@
 				3494B23890013E23ED8653E500C24064 /* SPTSharedExampleGroups.h in Headers */,
 				DB94CB93BEE9A6A2AA408FEA4BC416DE /* SPTSpec.h in Headers */,
 				B6053715E6D183F4A1B2BBE6B7FCA923 /* SPTTestSuite.h in Headers */,
+				3FA502DF2DF09C15007345EE /* VocaiNotificationCenter.h in Headers */,
 				2BC67FF83ED5C3ED382EB6BE3ECF4AFE /* XCTest+Private.h in Headers */,
 				E1E77D6D5AB4158AB8403C24C6E9AB1B /* XCTestCase+Specta.h in Headers */,
 			);
@@ -1658,6 +1710,7 @@
 				3FD6EC9A2DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
 				3FD6EC9B2DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */,
 				3FD6EC9C2DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */,
+				3FA502F42DF09D10007345EE /* VocaiNotificationRouter.m in Sources */,
 				E66C952D75345928AAEB0A66BE6FC5D7 /* SpectaUtility.m in Sources */,
 				A2EE54BACD56B923E6B2439FCAF46CE2 /* SPTCallSite.m in Sources */,
 				051AEF6F312B6D690834E7DB05180E4B /* SPTCompiledExample.m in Sources */,
@@ -1666,6 +1719,7 @@
 				42E8C4D4B300C5F42A04D640874D8070 /* SPTExampleGroup.m in Sources */,
 				5FB8F15C18F3D1E16D574CBDD6F63863 /* SPTSharedExampleGroups.m in Sources */,
 				ECFDB1723BAADA5FB15FCD05B6577E06 /* SPTSpec.m in Sources */,
+				3FA502E92DF09C1F007345EE /* VocaiNotificationCenter.m in Sources */,
 				D801D579642727A3C7A05D5D87DF6770 /* SPTTestSuite.m in Sources */,
 				A48C284BEE216AB8CAAC5D7F4632E7E8 /* XCTestCase+Specta.m in Sources */,
 			);
@@ -1680,6 +1734,7 @@
 				3FD6EBF52DE5A2240077EE45 /* VocaiRandomStringGenerator.m in Sources */,
 				3FD6EBF62DE5A2240077EE45 /* VocaiImageUploader.m in Sources */,
 				3FD6EBF72DE5A2240077EE45 /* VocaiNetworkTool.m in Sources */,
+				3FA502FA2DF09D10007345EE /* VocaiNotificationRouter.m in Sources */,
 				3FD6EBF82DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
 				3FD6EBF92DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
 				3FD6EBFA2DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */,
@@ -1689,6 +1744,7 @@
 				3FD6EBFE2DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
 				3FD6EBFF2DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */,
 				3FD6EC002DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */,
+				3FA502E52DF09C1F007345EE /* VocaiNotificationCenter.m in Sources */,
 				3FF280D22DE5E04E00258FCB /* VocaiLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1704,6 +1760,7 @@
 				5061691D481F7C48E755A2BC0BB4977C /* SwiftSupport.swift in Sources */,
 				380F6E4B3F7E5EA4D79843BA767E183E /* UIApplication+StrictKeyWindow.m in Sources */,
 				3FD6EC012DE5A2240077EE45 /* VocaiRandomStringGenerator.m in Sources */,
+				3FA502E62DF09C1F007345EE /* VocaiNotificationCenter.m in Sources */,
 				3FD6EC022DE5A2240077EE45 /* VocaiImageUploader.m in Sources */,
 				3FD6EC032DE5A2240077EE45 /* VocaiNetworkTool.m in Sources */,
 				3FD6EC042DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
@@ -1718,6 +1775,7 @@
 				3FD6EC0C2DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */,
 				64C5F389DE0FC7369E95217494EB561F /* UIImage+Compare.m in Sources */,
 				E7B7E76C25EA0A4691743AF3C256EA7A /* UIImage+Diff.m in Sources */,
+				3FA502F82DF09D10007345EE /* VocaiNotificationRouter.m in Sources */,
 				CCD6ED425E4B40909763B4FD0E40DBCD /* UIImage+Snapshot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1730,12 +1788,14 @@
 				EEF975FF4A1C7534532877EDE56C68CE /* ExpectaObject+FBSnapshotTest.m in Sources */,
 				3FD6EC552DE5A2240077EE45 /* VocaiRandomStringGenerator.m in Sources */,
 				3FD6EC562DE5A2240077EE45 /* VocaiImageUploader.m in Sources */,
+				3FA502F52DF09D10007345EE /* VocaiNotificationRouter.m in Sources */,
 				3FD6EC572DE5A2240077EE45 /* VocaiNetworkTool.m in Sources */,
 				3FD6EC582DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
 				3FD6EC592DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
 				3FD6EC5A2DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */,
 				3FD6EC5B2DE5A2240077EE45 /* PDFDisplayView.m in Sources */,
 				3FD6EC5C2DE5A2240077EE45 /* VocaiApiTool.m in Sources */,
+				3FA502E22DF09C1F007345EE /* VocaiNotificationCenter.m in Sources */,
 				3FF280D52DE5E04E00258FCB /* VocaiLogger.m in Sources */,
 				3FD6EC5D2DE5A2240077EE45 /* AVCaptureViewController.m in Sources */,
 				3FD6EC5E2DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
@@ -1761,7 +1821,9 @@
 				3FD6EC212DE5A2240077EE45 /* AVCaptureViewController.m in Sources */,
 				3FD6EC222DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
 				3FD6EC232DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */,
+				3FA502E32DF09C1F007345EE /* VocaiNotificationCenter.m in Sources */,
 				3FD6EC242DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */,
+				3FA502F62DF09D10007345EE /* VocaiNotificationRouter.m in Sources */,
 				715863D2142BBE7E82A921288FA959D4 /* Pods-VocLiveChatFramework_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1782,7 +1844,9 @@
 				3FD6EC752DE5A2240077EE45 /* AVCaptureViewController.m in Sources */,
 				3FD6EC762DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
 				3FD6EC772DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */,
+				3FA502E42DF09C1F007345EE /* VocaiNotificationCenter.m in Sources */,
 				3FD6EC782DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */,
+				3FA502F32DF09D10007345EE /* VocaiNotificationRouter.m in Sources */,
 				7E7AE86AB508898840C07045A10D86AD /* Pods-VocLiveChatFramework_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1797,11 +1861,13 @@
 				3FD6EC3E2DE5A2240077EE45 /* VocaiImageUploader.m in Sources */,
 				3FD6EC3F2DE5A2240077EE45 /* VocaiNetworkTool.m in Sources */,
 				3FD6EC402DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
+				3FA502F92DF09D10007345EE /* VocaiNotificationRouter.m in Sources */,
 				3FD6EC412DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
 				3FD6EC422DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */,
 				3FD6EC432DE5A2240077EE45 /* PDFDisplayView.m in Sources */,
 				3FD6EC442DE5A2240077EE45 /* VocaiApiTool.m in Sources */,
 				3FD6EC452DE5A2240077EE45 /* AVCaptureViewController.m in Sources */,
+				3FA502E72DF09C1F007345EE /* VocaiNotificationCenter.m in Sources */,
 				3FD6EC462DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
 				3FF280D62DE5E04E00258FCB /* VocaiLogger.m in Sources */,
 				3FD6EC472DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */,
@@ -1845,6 +1911,7 @@
 				3FD6EC852DE5A2240077EE45 /* VocaiRandomStringGenerator.m in Sources */,
 				3FD6EC862DE5A2240077EE45 /* VocaiImageUploader.m in Sources */,
 				3FD6EC872DE5A2240077EE45 /* VocaiNetworkTool.m in Sources */,
+				3FA502E82DF09C1F007345EE /* VocaiNotificationCenter.m in Sources */,
 				3FD6EC882DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
 				3FD6EC892DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
 				3FD6EC8A2DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */,
@@ -1861,6 +1928,7 @@
 				3FF280D12DE5E04E00258FCB /* VocaiLogger.m in Sources */,
 				38B7944E5B5CDB1073BF0296844E53A9 /* EXPMatchers+raise.m in Sources */,
 				5B0E7991CA9F44AE2A0F6947348D5C80 /* EXPMatchers+raiseWithReason.m in Sources */,
+				3FA502F72DF09D10007345EE /* VocaiNotificationRouter.m in Sources */,
 				DFA53098F205377C01A8965559B159AA /* EXPMatchers+respondTo.m in Sources */,
 				4334A5A9363F8B97049D872767D2C2AD /* EXPUnsupportedObject.m in Sources */,
 				DBE8B19390B05FC3F3A913317CE72967 /* NSValue+Expecta.m in Sources */,
