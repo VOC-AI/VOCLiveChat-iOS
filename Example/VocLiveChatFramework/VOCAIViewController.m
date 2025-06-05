@@ -13,6 +13,8 @@
 
 @interface VOCAIViewController ()<VocaiMessageCenterDelegate, VocaiViewControllerLifecycleDelegate>
 
+@property(nonatomic, copy) VocaiChatModel* model;
+
 @end
 
 @implementation VOCAIViewController
@@ -23,6 +25,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     VocaiMessageCenter *center = [VocaiMessageCenter sharedInstance];
     VocaiChatModel* model = [self createModel];
+    self.model = model;
     [center setParams:model];
     [center addObserver:self];
     [center startAutoRefresh];
@@ -38,14 +41,17 @@
     return vocaiModel;
 }
 
+- (void)setModel:(VocaiChatModel *)model {
+    _model = [model copy];
+    [VocaiMessageCenter.sharedInstance setParams:_model];
+}
+
 - (IBAction)popNoneLoginWithDeviceID:(id)sender {
     VocaiSdkBuilder *builder = VocaiSdkBuilder.sharedInstance;
-    VocaiChatModel* model = [self createModel];
     NSString *deviceId = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     NSLog(@"Device ID: %@", deviceId);
-    model.userId = deviceId;
-    [VocaiMessageCenter.sharedInstance setParams:model];
-    ChatWebViewController *viewController = [builder buildSdkWithParams: model];
+    self.model.userId = deviceId;
+    ChatWebViewController *viewController = [builder buildSdkWithParams: self.model];
     viewController.viewDelegate = self;
     viewController.title = @"Support Center";
     [self.navigationController pushViewController:viewController animated:YES];
@@ -53,10 +59,8 @@
 
 - (IBAction)popLoginWithUserID:(id)sender {
     VocaiSdkBuilder *builder = VocaiSdkBuilder.sharedInstance;
-    VocaiChatModel* model = [self createModel];
-    model.userId = @"Some userId in your system";
-    [VocaiMessageCenter.sharedInstance setParams:model];
-    ChatWebViewController *viewController = [builder buildSdkWithParams: model];
+    self.model.userId = @"Some userId in your system";
+    ChatWebViewController *viewController = [builder buildSdkWithParams: self.model];
     viewController.viewDelegate = self;
     viewController.title = @"Support Center";
     [self.navigationController pushViewController:viewController animated:YES];

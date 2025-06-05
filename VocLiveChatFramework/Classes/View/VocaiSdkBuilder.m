@@ -36,9 +36,13 @@
 
 - (void) clearChatsForModel:(VocaiChatModel*)model {
     NSArray<NSString*>* hosts = [VocaiApiTool availableHosts];
+    NSString *prefix = @"https://";
     NSString* chatCookieKey = [NSString stringWithFormat:@"shulex_chatbot_list_%@",model.botId];
     for(NSInteger i = 0; i < hosts.count; i++) {
         NSString* host = [hosts objectAtIndex:i];
+        if ([host hasPrefix:prefix]) {
+            host = [host substringFromIndex:prefix.length];
+        }
         [self deleteCookieWithDomain:host key:chatCookieKey];
     }
 }
