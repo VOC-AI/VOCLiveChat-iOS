@@ -143,7 +143,7 @@
     [self notifyObserversWithUnreadStatus:hasNewMessage forChatId:chatId];
 }
 
-#pragma mark - 自动刷新
+#pragma mark - Auto Refresh
 
 -(void) startAutoRefresh {
     [self startAutoRefreshForChatId:nil];

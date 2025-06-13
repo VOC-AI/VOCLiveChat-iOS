@@ -10,8 +10,8 @@
 @implementation VocaiLanguageTool
 
 + (NSString *)getStringForKey:(NSString *)key withLanguage:(NSString *)language {
-    // 读取JSON文件
-    // 获取当前 framework 的 bundle
+    // Read JSON file
+    // Get current framework bundle
     NSString* defaultLang = [self normalizeForSDK:[self defaultLang]];
     NSBundle *frameworkBundle = [NSBundle bundleForClass:[self class]];
     NSString* normalizedLang = [self normalizeForSDK:language];

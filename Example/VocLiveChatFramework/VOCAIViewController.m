@@ -83,9 +83,9 @@
 
 
 
-// 实现代理方法
+// Implement delegate methods
 - (void)messageCenter:(id)center didHaveNewMessage:(BOOL)hasNewMessage forChatId:(nonnull NSString *)chatId {
-    // 更新UI或执行其他操作
+    // Update UI or perform other operations
     dispatch_async(dispatch_get_main_queue(), ^{
         NSString* text = [NSString stringWithFormat:@"%@ -- %@", @"Has Message?", @(hasNewMessage)];
         NSLog(@"%@", text);
@@ -94,10 +94,10 @@
 }
 
 - (void)dealloc {
-    // 移除观察者
+    // Remove observer
     [[VocaiMessageCenter sharedInstance] removeObserver:self];
     
-    // 停止自动刷新（如果之前启动过）
+    // Stop auto-refresh (if started previously)
     [[VocaiMessageCenter sharedInstance] stopAllAutoRefresh];
 }
 

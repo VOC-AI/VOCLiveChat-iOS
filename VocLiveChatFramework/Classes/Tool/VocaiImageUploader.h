@@ -8,15 +8,15 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-// 定义上传完成的回调块
+// Define upload completion callback block
 typedef void(^VocaiImageUploadCompletionBlock)(BOOL success, NSString * _Nullable message, NSDictionary * _Nullable response);
 
-// 定义上传进度的回调块
+// Define upload progress callback block
 typedef void(^VocaiImageUploadProgressBlock)(NSProgress *uploadProgress);
 
 @interface VocaiImageUploader : NSObject
 
-// 单例方法
+// Singleton method
 + (instancetype)sharedUploader;
 
 /**

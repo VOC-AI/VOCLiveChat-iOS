@@ -13,7 +13,7 @@
 
 @implementation VocaiImageUploader
 
-// 单例实现
+// Singleton implementation
 + (instancetype)sharedUploader {
     static VocaiImageUploader *sharedInstance = nil;
     static dispatch_once_t onceToken;
@@ -30,7 +30,7 @@
          withParams:(NSDictionary * _Nullable)params
            progress:(VocaiImageUploadProgressBlock)progressBlock
          completion:(VocaiImageUploadCompletionBlock)completionBlock {
-    // 检查 URL 字符串是否有效
+    // Validate URL string
     NSURL *url = [NSURL URLWithString:urlString];
     if (!url) {
         if (completionBlock) {
@@ -39,19 +39,19 @@
         return;
     }
     
-    // 创建请求
+    // Create request
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
     
-    // 设置请求头
+    // Set request headers
     NSString *boundary = @"---------------------------14737809831466499882746641449";
     NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
     [request setValue:contentType forHTTPHeaderField:@"Content-Type"];
     
-    // 构建请求体
+    // Build request body
     NSMutableData *body = [NSMutableData data];
     
-    // 添加可选参数
+    // Add optional parameters
     if (params) {
         for (NSString *key in params) {
             [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
