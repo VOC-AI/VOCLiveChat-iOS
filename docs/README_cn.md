@@ -1,12 +1,11 @@
-## Vocai SDK Integration Documentation
+## vocai sdk 接入文档
 
 ---
 
-### Integration via CocoaPods
+通过cocoaPods集成 
+参考如下：
 
-Refer to the following configuration:
-
-```ruby
+```
 platform :ios, '10.0'
 inhibit_all_warnings!
 target 'testProject' do
@@ -14,7 +13,11 @@ target 'testProject' do
 end
 ```
 
-### Import Framework Headers
+导入框架内头文件：
+
+### 支持版本
+
+iOS 10及以上
 
 ```objective-c
 #import <VocLiveChatFramework/VocaiChatModel.h>
@@ -22,45 +25,37 @@ end
 #import <VocLiveChatFramework/VocaiMessageCenter.h>
 ```
 
-### Supported Versions
+### 使用方式
 
-iOS 10 and above
-
-### Usage Instructions
-
-1. **Build Initialization Parameters**:
+1. 构建初始化参数:
 
 ```objective-c
 NSDictionary *exampleOtherDict = nil;
 VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"19365" token:@"6731F71BE4B0187458389512" email:@"zhikang@163.com" language:@"cn" otherParams:exampleOtherDict];
 VocaiSdkBuilder *builder = [[VocaiSdkBuilder alloc] init];
-UIViewController *viewController = [builder buildSdkWithParams:vocaiModel];
+UIViewController *viewController = [builder buildSdkWithParams: vocaiModel];
 ```
 
-2. **Initialize the Model and Call the Returned ViewController**:
+2. 初始化模型以及调用返回的
 
 ```objective-c
-ViewController [VocaiSdkBuilder buildSdkWithParams:vocaiModel];
+ViewController [VocaiSdkBuilder buildSdkWithParams: vocaiModel];
 ```
 
-3. **Listen to View Lifecycle Events (ViewWillAppear)**:
-
-Adopt the following protocol and set the delegate:
+3. 如果要监听视图生命周期的ViewWillAppear: 则遵循下面的协议， 设置好代理
 
 ```objective-c
 <VocaiSdkBuilderViewControllerLifecycleDelegate>
 builder.sdkViewWillAppearDelegate = self;
 ```
 
-Implement the corresponding delegate method:
+然后在对应的代理方法实现：
 
 ```objective-c
 - (void)vocaiSdkViewControllerWillAppear:(UIViewController *)viewController animated:(BOOL)animated;
 ```
 
-4. **Monitor Unread Message Status**:
-
-Pass parameters during view initialization and add observers. Ensure proper observer management to avoid memory leaks.
+4. 如果要监听当前是否有未读消息的状态，需要在初始化 view 时候传入对应的参数，并添加监听。注意需要控制监听、解除监听避免内存泄露
 
 ```objective-c
 - (void)viewDidLoad {
@@ -79,38 +74,41 @@ Pass parameters during view initialization and add observers. Ensure proper obse
     // Dispose of any resources that can be recreated.
 }
 
-// Implement delegate methods
+
+
+// 实现代理方法
 - (void)messageCenter:(id)center didHaveNewMessage:(BOOL)hasNewMessage forChatId:(nonnull NSString *)chatId {
-    // Update UI or perform other operations
+    // 更新UI或执行其他操作
     dispatch_async(dispatch_get_main_queue(), ^{
         NSLog(@"%@ -- %@", @"New Message Received", @(hasNewMessage));
     });
 }
 
 - (void)dealloc {
-    // Remove observer
+    // 移除观察者
     [[VocaiMessageCenter sharedInstance] removeObserver:self];
     
-    // Stop auto-refresh (if previously started)
+    // 停止自动刷新（如果之前启动过）
     [[VocaiMessageCenter sharedInstance] stopAllAutoRefresh];
 }
+
 ```
 
-5. **Control Link Opening Behavior**:
+5. 操控是否打开链接，以及重载链接具体的打开方式
 
-First, set the `viewDelegate` for the obtained `ChatViewController`:
+首先将获取到的 `ChatViewController` 设置 `viewDelegate`
 
 ```objective-c
-ChatWebViewController *viewController = [builder buildSdkWithParams:self.model];
+ChatWebViewController *viewController = [builder buildSdkWithParams: self.model];
 viewController.viewDelegate = self;
 ```
 
 ```objective-c
-- (BOOL)voaiShouldOpenURL:(NSURL*)url {
+- (BOOL) voaiShouldOpenURL:(NSURL*) url {
     return YES;
 }
 
-- (void)voaiNeedToOpenURLAction:(NSURL*)url {
+- (void) voaiNeedToOpenURLAction:(NSURL*) url {
     NSLog(@"Opening URL:\n%@", url);
     [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL status){
         NSLog(@"Done.");
@@ -118,31 +116,32 @@ viewController.viewDelegate = self;
 }
 ```
 
-### Troubleshooting
+### Trouble shooting
 
-1. **Crash When Tapping Camera for Attachments**:
-   Add the following entries to your project's `Info.plist`:
+1. 附件点击相机时发生崩溃，需要编辑工程的 plist 文件，增加如下选项
 
 ```xml
-<key>NSCameraUsageDescription</key>
-<string>Please grant camera permission.</string>
-<key>NSPhotoLibraryUsageDescription</key>
-<string>Please grant gallery permission.</string>
+  <key>NSCameraUsageDescription</key>
+  <string>Please grant camera permission.</string>
+  <key>NSPhotoLibraryUsageDescription</key>
+  <string>Please grant gallery permission.</string>
 ```
 
-2. **Unable to Fetch Podspec**:
-   Modify the reference in your `Podfile`:
+2. 包拉不到怎么办？改下 Podfile 里的引用方式
 
 ```ruby
 pod 'VocLiveChatFramework', :git => 'git@github.com:VOC-AI/VOCLiveChat-iOS.git', :tag => '1.5.8'
 ```
 
-3. **Post-Installation Error**:
-   If you encounter the following error:
-   ![Screenshot 2025-03-25 09 55 47](https://github.com/user-attachments/assets/aebe0dba-4d79-4598-9891-d77f11212631)
-   
-   Navigate to the following settings:
-   ![41742867705_ pic](https://github.com/user-attachments/assets/0a6d22e3-b235-4d8c-aaf5-007c0c43d0c4)
 
-4. **LiveChat Functionality Issues**:
-   Ensure `botId` and `botToken` are correctly configured according to [backend settings](https://apps.voc.ai/chatbot).
+3. 安装好之后如果有如下报错
+
+![截屏2025-03-25 09 55 47](https://github.com/user-attachments/assets/aebe0dba-4d79-4598-9891-d77f11212631)
+
+需要到这里设置：
+
+![41742867705_ pic](https://github.com/user-attachments/assets/0a6d22e3-b235-4d8c-aaf5-007c0c43d0c4)
+
+4. LiveChat 功能异常怎么解决？
+
+botId 和 botToken 的传入应该取决于 [后台配置](https://apps.voc.ai/chatbot)
