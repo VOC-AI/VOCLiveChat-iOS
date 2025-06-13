@@ -951,6 +951,20 @@ BOOL hasCameraPermission(void) {
     return YES;
 }
 
+-(void) openURL:(NSURL*)url {
+    if (self.viewDelegate && [self.viewDelegate respondsToSelector:@selector(voaiNeedToOpenURLAction:)]) {
+        [self.viewDelegate voaiNeedToOpenURLAction:url];
+    } else {
+        
+        if (@available(iOS 10, *)) {
+            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success){
+            }];
+        } else {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    }
+}
+
 -(void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(WK_SWIFT_UI_ACTOR void (^)(WKNavigationActionPolicy))decisionHandler {
     NSURL* url = navigationAction.request.URL;
     if (!url) {
@@ -962,23 +976,29 @@ BOOL hasCameraPermission(void) {
     }
     BOOL shouldOpen = [self shouldOpenURL:url];
     if (shouldOpen) {
-        if (self.viewDelegate && [self.viewDelegate respondsToSelector:@selector(voaiNeedToOpenURLAction:)]) {
-            [self.viewDelegate voaiNeedToOpenURLAction:url];
-        } else {
-            
-            if (@available(iOS 10, *)) {
-                [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success){
-                }];
-            } else {
-                [[UIApplication sharedApplication] openURL:url];
-            }
-        }
+        [self openURL:url];
         decisionHandler(WKNavigationActionPolicyAllow);
     } else {
         decisionHandler(WKNavigationActionPolicyCancel);
     }
 }
 
+- (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
+    
+    if (navigationAction.targetFrame && navigationAction.targetFrame.isMainFrame) {
+        return nil;
+    }
+    
+    NSURL *url = navigationAction.request.URL;
+    if (url) {
+        if([self shouldOpenURL:url]) {
+            [self openURL:url];
+        }
+        return nil;
+    }
+    
+    return nil;
+}
 
 
 @end
