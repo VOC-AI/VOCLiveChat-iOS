@@ -94,6 +94,28 @@ builder.sdkViewWillAppearDelegate = self;
 
 ```
 
+5. 操控是否打开链接，以及重载链接具体的打开方式
+
+首先将获取到的 `ChatViewController` 设置 `viewDelegate`
+
+```objective-c
+ChatWebViewController *viewController = [builder buildSdkWithParams: self.model];
+viewController.viewDelegate = self;
+```
+
+```objective-c
+- (BOOL) voaiShouldOpenURL:(NSURL*) url {
+    return YES;
+}
+
+- (void) voaiNeedToOpenURLAction:(NSURL*) url {
+    NSLog(@"Opening URL:\n%@", url);
+    [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL status){
+        NSLog(@"Done.");
+    }];
+}
+```
+
 ### Trouble shooting
 
 1. 附件点击相机时发生崩溃，需要编辑工程的 plist 文件，增加如下选项
