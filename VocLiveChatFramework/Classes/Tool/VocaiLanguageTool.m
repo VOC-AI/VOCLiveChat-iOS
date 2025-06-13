@@ -2,7 +2,7 @@
 //  LanguageTool.m
 //  abc
 //
-//  Created by 刘志康 on 2025/3/4.
+//  Created by VOC.AI on 2025/3/4.
 //
 
 #import "VocaiLanguageTool.h"
@@ -44,14 +44,14 @@
         return nil;
     }
     
-    // 获取 entities 数组
+    // Get entities array
     NSArray *entities = jsonDict[@"entities"];
     if (!entities) {
         NSLog(@"No 'entities' array found in JSON.");
         return nil;
     }
     
-    // 遍历 entities 数组，查找匹配的语言
+    // Traverse entities array to find matching language
     for (NSDictionary *entity in entities) {
         NSString *entityLanguage = entity[@"language"];
         if ([entityLanguage isEqualToString:normalizedLang]) {
@@ -92,7 +92,7 @@
 }
 
 +(NSString*) defaultLang {
-    // 获取应用首选语言（与界面显示语言一致）
+    // Get app preferred language (matches UI display language)
     NSArray *preferredLanguages = [NSBundle mainBundle].preferredLocalizations;
     if (preferredLanguages.count > 0) {
         return [preferredLanguages firstObject];

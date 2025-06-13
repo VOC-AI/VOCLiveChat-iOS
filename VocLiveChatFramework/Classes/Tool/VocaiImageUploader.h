@@ -2,7 +2,7 @@
 //  ImageUploader.h
 //  abc
 //
-//  Created by 刘志康 on 2025/2/25.
+//  Created by VOC.AI on 2025/2/25.
 //
 
 #import <Foundation/Foundation.h>
@@ -20,13 +20,15 @@ typedef void(^VocaiImageUploadProgressBlock)(NSProgress *uploadProgress);
 + (instancetype)sharedUploader;
 
 /**
- 上传图片的方法
+  Upload file method
 
- @param image 要上传的图片
- @param urlString 上传的 URL 字符串
- @param params 可选的参数
- @param progressBlock 上传进度回调
- @param completionBlock 上传完成回调
+ @param fileData File data to upload
+ @param fileName Name of the file
+ @param fileType Type of the file
+ @param urlString Upload URL string
+ @param params Optional parameters
+ @param progressBlock Upload progress callback
+ @param completionBlock Upload completion callback
  */
 - (void)uploadFile:(NSData *)fileData
           fileName:(NSString *)fileName

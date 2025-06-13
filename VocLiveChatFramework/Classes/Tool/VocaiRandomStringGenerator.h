@@ -2,7 +2,7 @@
 //  RandomStringGenerator.h
 //  abc
 //
-//  Created by 刘志康 on 2025/3/1.
+//  Created by VOC.AI on 2025/3/1.
 //
 
 #import <Foundation/Foundation.h>

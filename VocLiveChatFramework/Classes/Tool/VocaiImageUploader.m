@@ -2,7 +2,7 @@
 //  ImageUploader.m
 //  abc
 //
-//  Created by 刘志康 on 2025/2/25.
+//  Created by VOC.AI on 2025/2/25.
 //
 
 #import "VocaiImageUploader.h"
@@ -34,7 +34,7 @@
     NSURL *url = [NSURL URLWithString:urlString];
     if (!url) {
         if (completionBlock) {
-            completionBlock(NO, @"无效的 URL", nil);
+            completionBlock(NO, @"Invalid URL", nil);
         }
         return;
     }
@@ -71,7 +71,7 @@
     
     [request setHTTPBody:body];
     
-    // 创建会话
+    // Create session
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionUploadTask *uploadTask = [session uploadTaskWithRequest:request fromData:body completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (completionBlock) {
@@ -83,7 +83,7 @@
                 if (jsonError) {
                     completionBlock(NO, @"解析响应数据失败", nil);
                 } else {
-                    completionBlock(YES, @"上传成功", responseDict);
+                    completionBlock(YES, @"Upload successful", responseDict);
                 }
             }
         }

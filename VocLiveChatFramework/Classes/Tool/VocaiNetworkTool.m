@@ -2,14 +2,14 @@
 //  NetworkTool.m
 //  abc
 //
-//  Created by 刘志康 on 2025/2/24.
+//  Created by VOC.AI on 2025/2/24.
 //
 
 #import "VocaiNetworkTool.h"
 
 @implementation VocaiNetworkTool
 
-// 单例实现
+// Singleton implementation
 + (instancetype)sharedInstance {
     static VocaiNetworkTool *instance = nil;
     static dispatch_once_t onceToken;
@@ -19,7 +19,7 @@
     return instance;
 }
 
-// 发起网络请求的方法实现
+// Network request method implementation
 - (void)requestWithMethod:(RequestMethod)method
                   URLString:(NSString *)URLString
                  parameters:(NSDictionary *)parameters

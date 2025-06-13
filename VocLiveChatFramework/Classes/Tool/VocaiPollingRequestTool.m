@@ -2,7 +2,7 @@
 //  PollingRequestTool.m
 //  abc
 //
-//  Created by 刘志康 on 2025/3/2.
+//  Created by VOC.AI on 2025/3/2.
 //
 
 #import "VocaiPollingRequestTool.h"

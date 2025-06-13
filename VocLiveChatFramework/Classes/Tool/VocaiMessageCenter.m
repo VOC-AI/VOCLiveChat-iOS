@@ -2,7 +2,7 @@
 //  MessageCenter.m
 //  Pods
 //
-//  Created by Boyuan Gao on 2025/5/27.
+//  Created by VOC.AI on 2025/5/27.
 //
 
 #import "VocaiMessageCenter.h"
@@ -77,7 +77,7 @@
     NSString* formatUrl = [NSString stringWithFormat:@"/api_v2/intelli/livechat/%@/unread",self.params.botId];
     NSString* url = [self.apiTool getApiWithPathname:formatUrl];
     
-    // 获取单例实例
+    // Get singleton instance
     VocaiNetworkTool* networkTool = [VocaiNetworkTool sharedInstance];
 
     NSString* cId = chatId;
@@ -166,7 +166,7 @@
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
     self.refreshTimers[key] = timer;
     
-    // 立即触发一次
+    // Trigger immediately once
     [self fetchUnreadCountForChatId:chatId];
 }
 
