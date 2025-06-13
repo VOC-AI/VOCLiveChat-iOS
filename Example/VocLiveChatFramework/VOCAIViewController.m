@@ -10,6 +10,7 @@
 #import <VocLiveChatFramework/VocaiMessageCenter.h>
 #import <VocLiveChatFramework/VocaiChatModel.h>
 #import <VocLiveChatFramework/VocaiSdkBuilder.h>
+#import <WebKit/WebKit.h>
 
 @interface VOCAIViewController ()<VocaiMessageCenterDelegate, VocaiViewControllerLifecycleDelegate>
 
@@ -34,10 +35,9 @@
 -(VocaiChatModel*)createModel {
     NSString* str = [NSLocale preferredLanguages][0];
     NSLog(@"%@", str);
-    VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"499" token:@"66D806CAE4B05062935CCFD0" email:@"anti2moron@gmail.com" language:str otherParams:nil];
+    VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"23029" token:@"684958ECE4B0FDB1BCAF63DE" email:@"anti2moron@gmail.com" language:str otherParams:nil];
     vocaiModel.enableLog = YES;
     vocaiModel.uploadFileTypes = @[@"public.data"];
-    vocaiModel.env = VOCLiveChatEnvStaging;
     return vocaiModel;
 }
 
@@ -103,6 +103,18 @@
 
 -(void) changeUser {
     
+}
+
+
+- (BOOL) voaiShouldOpenURL:(NSURL*) url {
+    return YES;
+}
+
+- (void) voaiNeedToOpenURLAction:(NSURL*) url {
+    NSLog(@"Opening URL:\n%@", url);
+    [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL status){
+        NSLog(@"Done.");
+    }];
 }
 
 @end

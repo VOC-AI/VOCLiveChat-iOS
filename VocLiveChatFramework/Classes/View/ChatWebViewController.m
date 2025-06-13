@@ -944,4 +944,41 @@ BOOL hasCameraPermission(void) {
     }];
 }
 
+-(BOOL) shouldOpenURL:(NSURL*)url {
+    if (self.viewDelegate && [self.viewDelegate respondsToSelector:@selector(voaiShouldOpenURL:)]) {
+        return [self.viewDelegate voaiShouldOpenURL:url];
+    }
+    return YES;
+}
+
+-(void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(WK_SWIFT_UI_ACTOR void (^)(WKNavigationActionPolicy))decisionHandler {
+    NSURL* url = navigationAction.request.URL;
+    if (!url) {
+        return;
+    }
+    if ([url isEqual:self.webView.URL]) {
+        decisionHandler(WKNavigationActionPolicyAllow);
+        return;
+    }
+    BOOL shouldOpen = [self shouldOpenURL:url];
+    if (shouldOpen) {
+        if (self.viewDelegate && [self.viewDelegate respondsToSelector:@selector(voaiNeedToOpenURLAction:)]) {
+            [self.viewDelegate voaiNeedToOpenURLAction:url];
+        } else {
+            
+            if (@available(iOS 10, *)) {
+                [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success){
+                }];
+            } else {
+                [[UIApplication sharedApplication] openURL:url];
+            }
+        }
+        decisionHandler(WKNavigationActionPolicyAllow);
+    } else {
+        decisionHandler(WKNavigationActionPolicyCancel);
+    }
+}
+
+
+
 @end

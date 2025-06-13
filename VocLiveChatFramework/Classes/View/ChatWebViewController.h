@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <VocLiveChatFramework/VocaiChatModel.h>
+#import "VocaiChatModel.h"
 
 @protocol VocaiViewControllerLifecycleDelegate <NSObject>
 @optional
@@ -20,6 +20,11 @@
 @optional
 - (void)vocaiViewControllerDidDisappear:(UIViewController *)viewController animated:(BOOL)animated;
 
+@optional
+- (BOOL) voaiShouldOpenURL:(NSURL*) url;
+
+@optional
+- (void) voaiNeedToOpenURLAction:(NSURL*) url;
 
 @optional
 - (void)vocalViewControllerWillAppear:(UIViewController *)viewController animated:(BOOL)animated __attribute__((deprecated("Use vocaiViewControllerWillAppear: instead")))
