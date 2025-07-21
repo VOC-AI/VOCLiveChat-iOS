@@ -129,7 +129,7 @@
 		3FD6EC362DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF22DE5A2240077EE45 /* VocaiSdkBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FD6EC372DE5A2240077EE45 /* VocaiAVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEA2DE5A2240077EE45 /* VocaiAVCaptureViewController.h */; };
 		3FD6EC382DE5A2240077EE45 /* ChatWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEC2DE5A2240077EE45 /* ChatWebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3FD6EC392DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDF2DE5A2240077EE45 /* VocaiLanguageTool.h */; };
+		3FD6EC392DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDF2DE5A2240077EE45 /* VocaiLanguageTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FD6EC3A2DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE72DE5A2240077EE45 /* VocaiRandomStringGenerator.h */; };
 		3FD6EC3B2DE5A2240077EE45 /* VocaiPDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* VocaiPDFDisplayView.h */; };
 		3FD6EC3C2DE5A2240077EE45 /* VocaiApiTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDB2DE5A2240077EE45 /* VocaiApiTool.h */; };
@@ -1362,6 +1362,7 @@
 				3FD6EC362DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
 				3FD6EC322DE5A2240077EE45 /* VocaiMessageCenter.h in Headers */,
 				D56FE5C38502BC3665B217194FFB06EB /* VocLiveChatFramework-umbrella.h in Headers */,
+				3FD6EC392DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */,
 				3FD6EC312DE5A2240077EE45 /* VocaiNetworkTool.h in Headers */,
 				A6A6AA6173FEA1225733D1F6888F5BE0 /* WebCallBackModel.h in Headers */,
 				3FD6EC332DE5A2240077EE45 /* VocaiImageUploader.h in Headers */,
@@ -1369,7 +1370,6 @@
 				3FD6EC342DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */,
 				3FD6EC352DE5A2240077EE45 /* VocaiCustomOptionsView.h in Headers */,
 				3FD6EC372DE5A2240077EE45 /* VocaiAVCaptureViewController.h in Headers */,
-				3FD6EC392DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */,
 				3FD6EC3A2DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */,
 				3FF280CB2DE5E04700258FCB /* VocaiLogger.h in Headers */,
 				3FD6EC3B2DE5A2240077EE45 /* VocaiPDFDisplayView.h in Headers */,
