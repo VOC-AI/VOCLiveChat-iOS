@@ -7,18 +7,18 @@
 
 #import "VocaiLanguageTool.h"
 
+@interface VocaiLanguageTool()
+
+@property(nonatomic, copy) NSDictionary<NSString*, NSDictionary<NSString*, NSString*>*>* i18nTable;
+
++(instancetype) sharedInstance;
+
+@end
+
 @implementation VocaiLanguageTool
 
-+ (NSString *)getStringForKey:(NSString *)key withLanguage:(NSString *)language {
-    // Read JSON file
-    // Get current framework bundle
-    NSString* defaultLang = [self normalizeForSDK:[self defaultLang]];
+- (NSDictionary*) getDefaultTable {
     NSBundle *frameworkBundle = [NSBundle bundleForClass:[self class]];
-    NSString* normalizedLang = [self normalizeForSDK:language];
-    if(!normalizedLang) {
-        normalizedLang = language;
-    }
-    
     NSString *filePath = [frameworkBundle pathForResource:@"Localizable" ofType:@"json"];
 
     if(!filePath) {
@@ -51,42 +51,40 @@
         return nil;
     }
     
-    // Traverse entities array to find matching language
+    NSMutableDictionary *result = [NSMutableDictionary dictionary];
     for (NSDictionary *entity in entities) {
-        NSString *entityLanguage = entity[@"language"];
-        if ([entityLanguage isEqualToString:normalizedLang]) {
-            NSDictionary *strings = entity[@"strings"];
-            if (strings) {
-                return strings[key];
-            }
-            break;
+        NSString *language = entity[@"language"];
+        NSDictionary *strings = entity[@"strings"];
+        
+        if ([language isKindOfClass:[NSString class]] &&
+            [strings isKindOfClass:[NSDictionary class]]) {
+            result[language] = strings;
+        } else {
+            NSLog(@"Invalid entity format: missing 'language' or 'strings'");
         }
+    }
+    return [result copy];
+}
+
++ (NSString *)getStringForKey:(NSString *)key withLanguage:(NSString *)language {
+    // Read JSON file
+    // Get current framework bundle
+    NSString* defaultLang = [self normalizeForSDK:[self defaultLang]];
+    NSString* normalizedLang = [self normalizeForSDK:language];
+    if(!normalizedLang) {
+        normalizedLang = language;
     }
     
     NSLog(@"No matching language found for %@. Using system default '%@'", language, defaultLang);
     
-    for (NSDictionary *entity in entities) {
-        NSString *entityLanguage = entity[@"language"];
-        if ([entityLanguage isEqualToString:defaultLang]) {
-            NSDictionary *strings = entity[@"strings"];
-            if (strings) {
-                return strings[key];
-            }
-            break;
-        }
+    NSDictionary *strings = [VocaiLanguageTool sharedInstance].i18nTable [normalizedLang];
+    if (strings[key]) {
+        return strings[key];
     }
-    
+
     NSLog(@"No matching language found for %@. Using system default 'en'", language);
-    
-    for (NSDictionary *entity in entities) {
-        NSString *entityLanguage = entity[@"language"];
-        if ([entityLanguage isEqualToString:@"en"]) {
-            NSDictionary *strings = entity[@"strings"];
-            if (strings) {
-                return strings[key];
-            }
-            break;
-        }
+    if (strings[@"en"]) {
+        return strings[@"en"];
     }
     return nil;
 }
@@ -134,6 +132,56 @@
         return lang;
     }
     return tar;
+}
+
+
++ (NSDictionary *)mergeLocalizationTable:(NSDictionary *)originalTable
+                              withNewTable:(NSDictionary *)newTable {
+    if (![originalTable isKindOfClass:[NSDictionary class]] || originalTable.count == 0) {
+        return [newTable copy];
+    }
+    
+    NSMutableDictionary *mergedTable = [originalTable mutableCopy];
+    
+    for (NSString *language in newTable.allKeys) {
+        if (![language isKindOfClass:[NSString class]]) continue;
+        
+        NSDictionary *newStrings = newTable[language];
+        if (![newStrings isKindOfClass:[NSDictionary class]]) continue;
+        
+        NSMutableDictionary *originalStrings = [mergedTable[language] mutableCopy];
+        
+        if (!originalStrings) {
+            mergedTable[language] = [newStrings copy];
+            continue;
+        }
+        
+        [newStrings enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            if ([key isKindOfClass:[NSString class]] && obj) {
+                originalStrings[key] = obj;
+            }
+        }];
+        
+        mergedTable[language] = [originalStrings copy];
+    }
+    
+    return [mergedTable copy];
+}
+
+
++ (void)registerLocalizedTable:(nonnull NSDictionary<NSString *,NSDictionary<NSString *,NSString *> *> *)table {
+    NSDictionary* originalTable = [VocaiLanguageTool sharedInstance].i18nTable.copy;
+    [VocaiLanguageTool sharedInstance].i18nTable = [self mergeLocalizationTable:originalTable withNewTable:table];
+}
+
++ (instancetype)sharedInstance {
+    static VocaiLanguageTool *instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[self alloc] init];
+        instance.i18nTable = [instance getDefaultTable];
+    });
+    return instance;
 }
 
 @end

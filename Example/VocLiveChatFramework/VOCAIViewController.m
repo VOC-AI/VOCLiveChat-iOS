@@ -11,6 +11,7 @@
 #import <VocLiveChatFramework/VocaiChatModel.h>
 #import <VocLiveChatFramework/VocaiSdkBuilder.h>
 #import <WebKit/WebKit.h>
+#import <VocLiveChatFramework/VocaiLanguageTool.h>
 
 @interface VOCAIViewController ()<VocaiMessageCenterDelegate, VocaiViewControllerLifecycleDelegate>
 
@@ -32,9 +33,29 @@
     [center startAutoRefresh];
 }
 
+-(void) customizeLocalization {
+    NSBundle* bundle = [NSBundle mainBundle];
+    NSString* filePath = [bundle pathForResource:@"Localizable" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    if (!data) {
+        NSLog(@"Failed to read JSON file.");
+        return ;
+    }
+    
+    NSError *error;
+    NSDictionary *table = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    if (error) {
+        NSLog(@"Failed to parse JSON: %@", error.localizedDescription);
+        return ;
+    }
+    [VocaiLanguageTool registerLocalizedTable:table];
+}
+
 -(VocaiChatModel*)createModel {
     NSString* str = [NSLocale preferredLanguages][0];
     NSLog(@"%@", str);
+    
+    
     VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"23029" token:@"684958ECE4B0FDB1BCAF63DE" email:@"anti2moron@gmail.com" language:str otherParams:nil];
     vocaiModel.enableLog = YES;
     vocaiModel.uploadFileTypes = @[@"public.data"];
