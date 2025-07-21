@@ -815,15 +815,8 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
 }
 
 - (void)startPollingWithUrl:(NSURL *)url {
-    // 创建轮询请求工具类实例
       self.pollingTool = [[VocaiPollingRequestTool alloc] init];
-      
-      // 要请求的 URL
-      
-      // 启动轮询请求，每隔 5 秒发送一次请求
       [self.pollingTool startPollingWithURL:url interval:5 success:^(NSData * _Nullable data, NSDictionary * _Nullable response) {
-          // 处理请求成功的结果
-          
           NSString * url = response[@"url"];
           NSString * status = response[@"status"];
           BOOL finished = [response[@"finished"] boolValue];
@@ -832,7 +825,6 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
               [self.pollingTool stopPolling];
           }
       } failure:^(NSError * _Nullable error) {
-          // 处理请求失败的情况
           [self.logger log:@"Request error: %@", error.localizedDescription];
       }];
 }
@@ -877,17 +869,56 @@ BOOL isStringEmptyOrNil(NSString *string) {
     [self.logger log:@"PDF view closed."];
 }
 
--(NSString *)dictionaryToQueryString:(NSDictionary *)dictionary {
+- (NSString *)dictionaryToQueryString:(NSDictionary *)dictionary {
     NSMutableArray *components = [NSMutableArray array];
-    for (id key in dictionary) {
-        id value = dictionary[key];
-        NSString *encodedKey = [key stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-        NSString *encodedValue = [value stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-        NSString *component = [NSString stringWithFormat:@"%@=%@", encodedKey, encodedValue];
-        [components addObject:component];
-    }
+    
+    [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
+        NSString *encodedKey = [self encodeQueryComponent:key];
+        if (!encodedKey) return;
+        
+        NSString *encodedValue = [self encodeQueryValue:value];
+        if (!encodedValue) return;
+
+        [components addObject:[NSString stringWithFormat:@"%@=%@", encodedKey, encodedValue]];
+    }];
+    
     return [components componentsJoinedByString:@"&"];
 }
+
+- (NSString *)encodeQueryComponent:(id)component {
+    if (!component) return nil;
+    NSString *stringValue;
+    if ([component isKindOfClass:[NSString class]]) {
+        stringValue = (NSString *)component;
+    } else if ([component isKindOfClass:[NSNumber class]]) {
+        stringValue = [component stringValue];
+    } else if ([component isKindOfClass:[NSDate class]]) {
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSSZ";
+        stringValue = [formatter stringFromDate:(NSDate *)component];
+    } else if ([component isKindOfClass:[NSArray class]] || [component isKindOfClass:[NSDictionary class]]) {
+        NSError *error;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:component options:0 error:&error];
+        if (!error) {
+            stringValue = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        } else {
+            NSLog(@"Failed to serialize object to JSON: %@", error);
+            return nil;
+        }
+    } else {
+        stringValue = [component description];
+    }
+    
+    return [stringValue stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+}
+
+- (NSString *)encodeQueryValue:(id)value {
+    if (value == nil || [value isEqual:[NSNull null]]) {
+        return @"";
+    }
+    return [self encodeQueryComponent:value];
+}
+
 
 // 封装的检测摄像头权限的方法
 BOOL hasCameraPermission(void) {
