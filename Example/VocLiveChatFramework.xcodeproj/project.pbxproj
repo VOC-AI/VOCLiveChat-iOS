@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F10C43D2DE961CD00390A42 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F10C43C2DE961CD00390A42 /* PhotosUI.framework */; };
 		3F10C43F2DE961D400390A42 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F10C43E2DE961D400390A42 /* Photos.framework */; };
+		3F1ED7DF2E2DF0B30033BDF4 /* Localization.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F1ED7DE2E2DF0B30033BDF4 /* Localization.json */; };
 		3F27FA172DDDCCEC0067E16D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		3F77E02F2DDD9524006DBB4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		59A76EDE13C234B166923550 /* Pods_VocLiveChatFramework_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3545FDAE1DAADB9A2E8B927D /* Pods_VocLiveChatFramework_Example.framework */; };
@@ -40,6 +41,7 @@
 		3545FDAE1DAADB9A2E8B927D /* Pods_VocLiveChatFramework_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VocLiveChatFramework_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F10C43C2DE961CD00390A42 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		3F10C43E2DE961D400390A42 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		3F1ED7DE2E2DF0B30033BDF4 /* Localization.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Localization.json; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* VocLiveChatFramework_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VocLiveChatFramework_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -148,6 +150,7 @@
 		6003F593195388D20070C39A /* Example for VocLiveChatFramework */ = {
 			isa = PBXGroup;
 			children = (
+				3F1ED7DE2E2DF0B30033BDF4 /* Localization.json */,
 				6003F59C195388D20070C39A /* VOCAIAppDelegate.h */,
 				6003F59D195388D20070C39A /* VOCAIAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -286,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1ED7DF2E2DF0B30033BDF4 /* Localization.json in Resources */,
 				3F27FA172DDDCCEC0067E16D /* InfoPlist.strings in Resources */,
 				3F77E02F2DDD9524006DBB4C /* Main.storyboard in Resources */,
 			);

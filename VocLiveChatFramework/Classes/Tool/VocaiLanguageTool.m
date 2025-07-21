@@ -67,24 +67,32 @@
 }
 
 + (NSString *)getStringForKey:(NSString *)key withLanguage:(NSString *)language {
+    return [[VocaiLanguageTool sharedInstance] getStringForKey:key withLanguage:language];
+}
+
+- (NSString *)getStringForKey:(NSString *)key withLanguage:(NSString *)language {
     // Read JSON file
     // Get current framework bundle
-    NSString* defaultLang = [self normalizeForSDK:[self defaultLang]];
-    NSString* normalizedLang = [self normalizeForSDK:language];
+    NSString* defaultLang = [VocaiLanguageTool normalizeForSDK:[VocaiLanguageTool defaultLang]];
+    NSString* normalizedLang = [VocaiLanguageTool normalizeForSDK:language];
     if(!normalizedLang) {
         normalizedLang = language;
     }
     
-    NSLog(@"No matching language found for %@. Using system default '%@'", language, defaultLang);
-    
-    NSDictionary *strings = [VocaiLanguageTool sharedInstance].i18nTable [normalizedLang];
+    NSDictionary *strings = self.i18nTable [normalizedLang];
     if (strings[key]) {
         return strings[key];
     }
-
+    NSLog(@"No matching language found for %@. Using system default '%@'", language, defaultLang);
+    strings = self.i18nTable[defaultLang];
+    if (strings[key]) {
+        return strings[key];
+    }
+    
     NSLog(@"No matching language found for %@. Using system default 'en'", language);
-    if (strings[@"en"]) {
-        return strings[@"en"];
+    strings = [VocaiLanguageTool sharedInstance].i18nTable[@"en"];
+    if (strings[key]) {
+        return strings[key];
     }
     return nil;
 }

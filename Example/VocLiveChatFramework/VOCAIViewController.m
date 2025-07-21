@@ -35,7 +35,7 @@
 
 -(void) customizeLocalization {
     NSBundle* bundle = [NSBundle mainBundle];
-    NSString* filePath = [bundle pathForResource:@"Localizable" ofType:@"json"];
+    NSString* filePath = [bundle pathForResource:@"Localization" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     if (!data) {
         NSLog(@"Failed to read JSON file.");
@@ -55,7 +55,7 @@
     NSString* str = [NSLocale preferredLanguages][0];
     NSLog(@"%@", str);
     
-    
+    [self customizeLocalization];
     VocaiChatModel *vocaiModel = [[VocaiChatModel alloc] initWithBotId:@"23029" token:@"684958ECE4B0FDB1BCAF63DE" email:@"anti2moron@gmail.com" language:str otherParams:nil];
     vocaiModel.enableLog = YES;
     vocaiModel.uploadFileTypes = @[@"public.data"];
