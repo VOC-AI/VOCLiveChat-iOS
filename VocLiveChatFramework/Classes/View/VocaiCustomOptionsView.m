@@ -4,7 +4,7 @@
 //
 //  Created by 刘志康 on 2025/2/26.
 //
-#import "CustomOptionsView.h"
+#import "VocaiCustomOptionsView.h"
 #import "VocaiLanguageTool.h"
 // 定义屏幕宽度宏
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width

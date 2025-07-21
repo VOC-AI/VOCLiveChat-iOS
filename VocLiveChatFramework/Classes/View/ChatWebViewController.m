@@ -7,7 +7,7 @@
 
 #import "ChatWebViewController.h"
 #import <WebKit/WebKit.h>
-#import "CustomOptionsView.h"
+#import "VocaiCustomOptionsView.h"
 #import "VocaiImageUploader.h"
 #import "UserModel.h"
 #import "WebCallBackModel.h"
@@ -17,7 +17,7 @@
 #import "VocaiPollingRequestTool.h"
 #import "VocaiChatModel.h"
 #import "VocaiLanguageTool.h"
-#import "PDFDisplayView.h"
+#import "VocaiPDFDisplayView.h"
 #import <AVFoundation/AVFoundation.h>
 #import <objc/runtime.h>
 #import "VocaiApiTool.h"
@@ -39,7 +39,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
 // 定义屏幕高度宏
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
-@interface ChatWebViewController ()<WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate, PDFDisplayViewDelegate, PHPickerViewControllerDelegate>
+@interface ChatWebViewController ()<WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate, VocaiPDFDisplayViewDelegate, PHPickerViewControllerDelegate>
 @property (nonatomic, strong) VocaiChatModel *vocaiChatParams;
 @property (nonatomic, strong) VocaiApiTool* apiTool;
 @property (nonatomic, strong) WKWebView *webView;
@@ -49,7 +49,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
 @property (nonatomic, copy) NSString *fileName;
 @property (nonatomic, strong) VocaiPollingRequestTool *pollingTool;
 @property (nonatomic, assign) UploadFileType uploadFileType; ///  只用于上传失败的时候记录上传文件类型
-@property (nonatomic, strong) PDFDisplayView *pdfDisplayView;
+@property (nonatomic, strong) VocaiPDFDisplayView *pdfDisplayView;
 @property (nonatomic, copy) NSString *uploadFileMeta;
 @property (nonatomic, strong) VocaiLogger *logger;
 @property (nonatomic, strong) VocaiJSBridge *jsBridge;
@@ -850,7 +850,6 @@ BOOL isStringEmptyOrNil(NSString *string) {
         return nil;
     }
     NSError *error;
-    // 将字典转换为 JSON 数据
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary
                                                        options:NSJSONWritingPrettyPrinted
                                                          error:&error];
@@ -858,19 +857,23 @@ BOOL isStringEmptyOrNil(NSString *string) {
         [self.logger log:@"JSON serialization error: %@", error.localizedDescription];
         return nil;
     }
-    // 将 JSON 数据转换为字符串
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     return jsonString;
 }
 
 - (void)displayPdfViewWithUrl:(NSString *)url {
     NSURL *pdfURL = [NSURL URLWithString: url];
-    self.pdfDisplayView = [[PDFDisplayView alloc] initWithFrame:self.view.bounds pdfURL: pdfURL];
-    self.pdfDisplayView.delegate = self;
-    [self.view addSubview:self.pdfDisplayView];
+    // PDF view is only available in iOS 11 and later
+    if (@available(iOS 11.0, *)) {
+        self.pdfDisplayView = [[VocaiPDFDisplayView alloc] initWithFrame:self.view.bounds pdfURL: pdfURL];
+        self.pdfDisplayView.delegate = self;
+        [self.view addSubview:self.pdfDisplayView];
+    } else {
+        [[UIApplication sharedApplication] openURL:url];
+    }
 }
 
-- (void)PDFDisplayViewDidClose:(PDFDisplayView *)view {
+- (void)PDFDisplayViewDidClose:(VocaiPDFDisplayView *)view {
     [self.logger log:@"PDF view closed."];
 }
 
@@ -955,7 +958,6 @@ BOOL hasCameraPermission(void) {
     if (self.viewDelegate && [self.viewDelegate respondsToSelector:@selector(voaiNeedToOpenURLAction:)]) {
         [self.viewDelegate voaiNeedToOpenURLAction:url];
     } else {
-        
         if (@available(iOS 10, *)) {
             [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success){
             }];

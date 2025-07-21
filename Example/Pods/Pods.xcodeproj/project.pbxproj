@@ -67,10 +67,10 @@
 		3FD6EBF82DE5A2240077EE45 /* ChatWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBED2DE5A2240077EE45 /* ChatWebViewController.m */; };
 		3FD6EBF92DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */; };
 		3FD6EBFA2DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE22DE5A2240077EE45 /* VocaiMessageCenter.m */; };
-		3FD6EBFB2DE5A2240077EE45 /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */; };
+		3FD6EBFB2DE5A2240077EE45 /* VocaiPDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* VocaiPDFDisplayView.m */; };
 		3FD6EBFC2DE5A2240077EE45 /* VocaiApiTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDC2DE5A2240077EE45 /* VocaiApiTool.m */; };
 		3FD6EBFD2DE5A2240077EE45 /* VocaiAVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEB2DE5A2240077EE45 /* VocaiAVCaptureViewController.m */; };
-		3FD6EBFE2DE5A2240077EE45 /* CustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* CustomOptionsView.m */; };
+		3FD6EBFE2DE5A2240077EE45 /* VocaiCustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* VocaiCustomOptionsView.m */; };
 		3FD6EBFF2DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE02DE5A2240077EE45 /* VocaiLanguageTool.m */; };
 		3FD6EC002DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE62DE5A2240077EE45 /* VocaiPollingRequestTool.m */; };
 		3FD6EC012DE5A2240077EE45 /* VocaiRandomStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE82DE5A2240077EE45 /* VocaiRandomStringGenerator.m */; };
@@ -79,23 +79,23 @@
 		3FD6EC042DE5A2240077EE45 /* ChatWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBED2DE5A2240077EE45 /* ChatWebViewController.m */; };
 		3FD6EC052DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */; };
 		3FD6EC062DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE22DE5A2240077EE45 /* VocaiMessageCenter.m */; };
-		3FD6EC072DE5A2240077EE45 /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */; };
+		3FD6EC072DE5A2240077EE45 /* VocaiPDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* VocaiPDFDisplayView.m */; };
 		3FD6EC082DE5A2240077EE45 /* VocaiApiTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDC2DE5A2240077EE45 /* VocaiApiTool.m */; };
 		3FD6EC092DE5A2240077EE45 /* VocaiAVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEB2DE5A2240077EE45 /* VocaiAVCaptureViewController.m */; };
-		3FD6EC0A2DE5A2240077EE45 /* CustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* CustomOptionsView.m */; };
+		3FD6EC0A2DE5A2240077EE45 /* VocaiCustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* VocaiCustomOptionsView.m */; };
 		3FD6EC0B2DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE02DE5A2240077EE45 /* VocaiLanguageTool.m */; };
 		3FD6EC0C2DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE62DE5A2240077EE45 /* VocaiPollingRequestTool.m */; };
 		3FD6EC0D2DE5A2240077EE45 /* VocaiNetworkTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE32DE5A2240077EE45 /* VocaiNetworkTool.h */; };
 		3FD6EC0E2DE5A2240077EE45 /* VocaiMessageCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE12DE5A2240077EE45 /* VocaiMessageCenter.h */; };
 		3FD6EC0F2DE5A2240077EE45 /* VocaiImageUploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDD2DE5A2240077EE45 /* VocaiImageUploader.h */; };
 		3FD6EC102DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE52DE5A2240077EE45 /* VocaiPollingRequestTool.h */; };
-		3FD6EC112DE5A2240077EE45 /* CustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* CustomOptionsView.h */; };
+		3FD6EC112DE5A2240077EE45 /* VocaiCustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* VocaiCustomOptionsView.h */; };
 		3FD6EC122DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF22DE5A2240077EE45 /* VocaiSdkBuilder.h */; };
 		3FD6EC132DE5A2240077EE45 /* VocaiAVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEA2DE5A2240077EE45 /* VocaiAVCaptureViewController.h */; };
 		3FD6EC142DE5A2240077EE45 /* ChatWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEC2DE5A2240077EE45 /* ChatWebViewController.h */; };
 		3FD6EC152DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDF2DE5A2240077EE45 /* VocaiLanguageTool.h */; };
 		3FD6EC162DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE72DE5A2240077EE45 /* VocaiRandomStringGenerator.h */; };
-		3FD6EC172DE5A2240077EE45 /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* PDFDisplayView.h */; };
+		3FD6EC172DE5A2240077EE45 /* VocaiPDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* VocaiPDFDisplayView.h */; };
 		3FD6EC182DE5A2240077EE45 /* VocaiApiTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDB2DE5A2240077EE45 /* VocaiApiTool.h */; };
 		3FD6EC192DE5A2240077EE45 /* VocaiRandomStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE82DE5A2240077EE45 /* VocaiRandomStringGenerator.m */; };
 		3FD6EC1A2DE5A2240077EE45 /* VocaiImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDE2DE5A2240077EE45 /* VocaiImageUploader.m */; };
@@ -103,35 +103,35 @@
 		3FD6EC1C2DE5A2240077EE45 /* ChatWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBED2DE5A2240077EE45 /* ChatWebViewController.m */; };
 		3FD6EC1D2DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */; };
 		3FD6EC1E2DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE22DE5A2240077EE45 /* VocaiMessageCenter.m */; };
-		3FD6EC1F2DE5A2240077EE45 /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */; };
+		3FD6EC1F2DE5A2240077EE45 /* VocaiPDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* VocaiPDFDisplayView.m */; };
 		3FD6EC202DE5A2240077EE45 /* VocaiApiTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDC2DE5A2240077EE45 /* VocaiApiTool.m */; };
 		3FD6EC212DE5A2240077EE45 /* VocaiAVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEB2DE5A2240077EE45 /* VocaiAVCaptureViewController.m */; };
-		3FD6EC222DE5A2240077EE45 /* CustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* CustomOptionsView.m */; };
+		3FD6EC222DE5A2240077EE45 /* VocaiCustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* VocaiCustomOptionsView.m */; };
 		3FD6EC232DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE02DE5A2240077EE45 /* VocaiLanguageTool.m */; };
 		3FD6EC242DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE62DE5A2240077EE45 /* VocaiPollingRequestTool.m */; };
 		3FD6EC252DE5A2240077EE45 /* VocaiNetworkTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE32DE5A2240077EE45 /* VocaiNetworkTool.h */; };
 		3FD6EC262DE5A2240077EE45 /* VocaiMessageCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE12DE5A2240077EE45 /* VocaiMessageCenter.h */; };
 		3FD6EC272DE5A2240077EE45 /* VocaiImageUploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDD2DE5A2240077EE45 /* VocaiImageUploader.h */; };
 		3FD6EC282DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE52DE5A2240077EE45 /* VocaiPollingRequestTool.h */; };
-		3FD6EC292DE5A2240077EE45 /* CustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* CustomOptionsView.h */; };
+		3FD6EC292DE5A2240077EE45 /* VocaiCustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* VocaiCustomOptionsView.h */; };
 		3FD6EC2A2DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF22DE5A2240077EE45 /* VocaiSdkBuilder.h */; };
 		3FD6EC2B2DE5A2240077EE45 /* VocaiAVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEA2DE5A2240077EE45 /* VocaiAVCaptureViewController.h */; };
 		3FD6EC2C2DE5A2240077EE45 /* ChatWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEC2DE5A2240077EE45 /* ChatWebViewController.h */; };
 		3FD6EC2D2DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDF2DE5A2240077EE45 /* VocaiLanguageTool.h */; };
 		3FD6EC2E2DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE72DE5A2240077EE45 /* VocaiRandomStringGenerator.h */; };
-		3FD6EC2F2DE5A2240077EE45 /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* PDFDisplayView.h */; };
+		3FD6EC2F2DE5A2240077EE45 /* VocaiPDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* VocaiPDFDisplayView.h */; };
 		3FD6EC302DE5A2240077EE45 /* VocaiApiTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDB2DE5A2240077EE45 /* VocaiApiTool.h */; };
 		3FD6EC312DE5A2240077EE45 /* VocaiNetworkTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE32DE5A2240077EE45 /* VocaiNetworkTool.h */; };
 		3FD6EC322DE5A2240077EE45 /* VocaiMessageCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE12DE5A2240077EE45 /* VocaiMessageCenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FD6EC332DE5A2240077EE45 /* VocaiImageUploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDD2DE5A2240077EE45 /* VocaiImageUploader.h */; };
 		3FD6EC342DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE52DE5A2240077EE45 /* VocaiPollingRequestTool.h */; };
-		3FD6EC352DE5A2240077EE45 /* CustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* CustomOptionsView.h */; };
+		3FD6EC352DE5A2240077EE45 /* VocaiCustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* VocaiCustomOptionsView.h */; };
 		3FD6EC362DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF22DE5A2240077EE45 /* VocaiSdkBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FD6EC372DE5A2240077EE45 /* VocaiAVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEA2DE5A2240077EE45 /* VocaiAVCaptureViewController.h */; };
 		3FD6EC382DE5A2240077EE45 /* ChatWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEC2DE5A2240077EE45 /* ChatWebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FD6EC392DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDF2DE5A2240077EE45 /* VocaiLanguageTool.h */; };
 		3FD6EC3A2DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE72DE5A2240077EE45 /* VocaiRandomStringGenerator.h */; };
-		3FD6EC3B2DE5A2240077EE45 /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* PDFDisplayView.h */; };
+		3FD6EC3B2DE5A2240077EE45 /* VocaiPDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* VocaiPDFDisplayView.h */; };
 		3FD6EC3C2DE5A2240077EE45 /* VocaiApiTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDB2DE5A2240077EE45 /* VocaiApiTool.h */; };
 		3FD6EC3D2DE5A2240077EE45 /* VocaiRandomStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE82DE5A2240077EE45 /* VocaiRandomStringGenerator.m */; };
 		3FD6EC3E2DE5A2240077EE45 /* VocaiImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDE2DE5A2240077EE45 /* VocaiImageUploader.m */; };
@@ -139,23 +139,23 @@
 		3FD6EC402DE5A2240077EE45 /* ChatWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBED2DE5A2240077EE45 /* ChatWebViewController.m */; };
 		3FD6EC412DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */; };
 		3FD6EC422DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE22DE5A2240077EE45 /* VocaiMessageCenter.m */; };
-		3FD6EC432DE5A2240077EE45 /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */; };
+		3FD6EC432DE5A2240077EE45 /* VocaiPDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* VocaiPDFDisplayView.m */; };
 		3FD6EC442DE5A2240077EE45 /* VocaiApiTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDC2DE5A2240077EE45 /* VocaiApiTool.m */; };
 		3FD6EC452DE5A2240077EE45 /* VocaiAVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEB2DE5A2240077EE45 /* VocaiAVCaptureViewController.m */; };
-		3FD6EC462DE5A2240077EE45 /* CustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* CustomOptionsView.m */; };
+		3FD6EC462DE5A2240077EE45 /* VocaiCustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* VocaiCustomOptionsView.m */; };
 		3FD6EC472DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE02DE5A2240077EE45 /* VocaiLanguageTool.m */; };
 		3FD6EC482DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE62DE5A2240077EE45 /* VocaiPollingRequestTool.m */; };
 		3FD6EC492DE5A2240077EE45 /* VocaiNetworkTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE32DE5A2240077EE45 /* VocaiNetworkTool.h */; };
 		3FD6EC4A2DE5A2240077EE45 /* VocaiMessageCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE12DE5A2240077EE45 /* VocaiMessageCenter.h */; };
 		3FD6EC4B2DE5A2240077EE45 /* VocaiImageUploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDD2DE5A2240077EE45 /* VocaiImageUploader.h */; };
 		3FD6EC4C2DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE52DE5A2240077EE45 /* VocaiPollingRequestTool.h */; };
-		3FD6EC4D2DE5A2240077EE45 /* CustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* CustomOptionsView.h */; };
+		3FD6EC4D2DE5A2240077EE45 /* VocaiCustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* VocaiCustomOptionsView.h */; };
 		3FD6EC4E2DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF22DE5A2240077EE45 /* VocaiSdkBuilder.h */; };
 		3FD6EC4F2DE5A2240077EE45 /* VocaiAVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEA2DE5A2240077EE45 /* VocaiAVCaptureViewController.h */; };
 		3FD6EC502DE5A2240077EE45 /* ChatWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEC2DE5A2240077EE45 /* ChatWebViewController.h */; };
 		3FD6EC512DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDF2DE5A2240077EE45 /* VocaiLanguageTool.h */; };
 		3FD6EC522DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE72DE5A2240077EE45 /* VocaiRandomStringGenerator.h */; };
-		3FD6EC532DE5A2240077EE45 /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* PDFDisplayView.h */; };
+		3FD6EC532DE5A2240077EE45 /* VocaiPDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* VocaiPDFDisplayView.h */; };
 		3FD6EC542DE5A2240077EE45 /* VocaiApiTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDB2DE5A2240077EE45 /* VocaiApiTool.h */; };
 		3FD6EC552DE5A2240077EE45 /* VocaiRandomStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE82DE5A2240077EE45 /* VocaiRandomStringGenerator.m */; };
 		3FD6EC562DE5A2240077EE45 /* VocaiImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDE2DE5A2240077EE45 /* VocaiImageUploader.m */; };
@@ -163,23 +163,23 @@
 		3FD6EC582DE5A2240077EE45 /* ChatWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBED2DE5A2240077EE45 /* ChatWebViewController.m */; };
 		3FD6EC592DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */; };
 		3FD6EC5A2DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE22DE5A2240077EE45 /* VocaiMessageCenter.m */; };
-		3FD6EC5B2DE5A2240077EE45 /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */; };
+		3FD6EC5B2DE5A2240077EE45 /* VocaiPDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* VocaiPDFDisplayView.m */; };
 		3FD6EC5C2DE5A2240077EE45 /* VocaiApiTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDC2DE5A2240077EE45 /* VocaiApiTool.m */; };
 		3FD6EC5D2DE5A2240077EE45 /* VocaiAVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEB2DE5A2240077EE45 /* VocaiAVCaptureViewController.m */; };
-		3FD6EC5E2DE5A2240077EE45 /* CustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* CustomOptionsView.m */; };
+		3FD6EC5E2DE5A2240077EE45 /* VocaiCustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* VocaiCustomOptionsView.m */; };
 		3FD6EC5F2DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE02DE5A2240077EE45 /* VocaiLanguageTool.m */; };
 		3FD6EC602DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE62DE5A2240077EE45 /* VocaiPollingRequestTool.m */; };
 		3FD6EC612DE5A2240077EE45 /* VocaiNetworkTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE32DE5A2240077EE45 /* VocaiNetworkTool.h */; };
 		3FD6EC622DE5A2240077EE45 /* VocaiMessageCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE12DE5A2240077EE45 /* VocaiMessageCenter.h */; };
 		3FD6EC632DE5A2240077EE45 /* VocaiImageUploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDD2DE5A2240077EE45 /* VocaiImageUploader.h */; };
 		3FD6EC642DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE52DE5A2240077EE45 /* VocaiPollingRequestTool.h */; };
-		3FD6EC652DE5A2240077EE45 /* CustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* CustomOptionsView.h */; };
+		3FD6EC652DE5A2240077EE45 /* VocaiCustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* VocaiCustomOptionsView.h */; };
 		3FD6EC662DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF22DE5A2240077EE45 /* VocaiSdkBuilder.h */; };
 		3FD6EC672DE5A2240077EE45 /* VocaiAVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEA2DE5A2240077EE45 /* VocaiAVCaptureViewController.h */; };
 		3FD6EC682DE5A2240077EE45 /* ChatWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEC2DE5A2240077EE45 /* ChatWebViewController.h */; };
 		3FD6EC692DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDF2DE5A2240077EE45 /* VocaiLanguageTool.h */; };
 		3FD6EC6A2DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE72DE5A2240077EE45 /* VocaiRandomStringGenerator.h */; };
-		3FD6EC6B2DE5A2240077EE45 /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* PDFDisplayView.h */; };
+		3FD6EC6B2DE5A2240077EE45 /* VocaiPDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* VocaiPDFDisplayView.h */; };
 		3FD6EC6C2DE5A2240077EE45 /* VocaiApiTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDB2DE5A2240077EE45 /* VocaiApiTool.h */; };
 		3FD6EC6D2DE5A2240077EE45 /* VocaiRandomStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE82DE5A2240077EE45 /* VocaiRandomStringGenerator.m */; };
 		3FD6EC6E2DE5A2240077EE45 /* VocaiImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDE2DE5A2240077EE45 /* VocaiImageUploader.m */; };
@@ -187,23 +187,23 @@
 		3FD6EC702DE5A2240077EE45 /* ChatWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBED2DE5A2240077EE45 /* ChatWebViewController.m */; };
 		3FD6EC712DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */; };
 		3FD6EC722DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE22DE5A2240077EE45 /* VocaiMessageCenter.m */; };
-		3FD6EC732DE5A2240077EE45 /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */; };
+		3FD6EC732DE5A2240077EE45 /* VocaiPDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* VocaiPDFDisplayView.m */; };
 		3FD6EC742DE5A2240077EE45 /* VocaiApiTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDC2DE5A2240077EE45 /* VocaiApiTool.m */; };
 		3FD6EC752DE5A2240077EE45 /* VocaiAVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEB2DE5A2240077EE45 /* VocaiAVCaptureViewController.m */; };
-		3FD6EC762DE5A2240077EE45 /* CustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* CustomOptionsView.m */; };
+		3FD6EC762DE5A2240077EE45 /* VocaiCustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* VocaiCustomOptionsView.m */; };
 		3FD6EC772DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE02DE5A2240077EE45 /* VocaiLanguageTool.m */; };
 		3FD6EC782DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE62DE5A2240077EE45 /* VocaiPollingRequestTool.m */; };
 		3FD6EC792DE5A2240077EE45 /* VocaiNetworkTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE32DE5A2240077EE45 /* VocaiNetworkTool.h */; };
 		3FD6EC7A2DE5A2240077EE45 /* VocaiMessageCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE12DE5A2240077EE45 /* VocaiMessageCenter.h */; };
 		3FD6EC7B2DE5A2240077EE45 /* VocaiImageUploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDD2DE5A2240077EE45 /* VocaiImageUploader.h */; };
 		3FD6EC7C2DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE52DE5A2240077EE45 /* VocaiPollingRequestTool.h */; };
-		3FD6EC7D2DE5A2240077EE45 /* CustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* CustomOptionsView.h */; };
+		3FD6EC7D2DE5A2240077EE45 /* VocaiCustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* VocaiCustomOptionsView.h */; };
 		3FD6EC7E2DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF22DE5A2240077EE45 /* VocaiSdkBuilder.h */; };
 		3FD6EC7F2DE5A2240077EE45 /* VocaiAVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEA2DE5A2240077EE45 /* VocaiAVCaptureViewController.h */; };
 		3FD6EC802DE5A2240077EE45 /* ChatWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEC2DE5A2240077EE45 /* ChatWebViewController.h */; };
 		3FD6EC812DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDF2DE5A2240077EE45 /* VocaiLanguageTool.h */; };
 		3FD6EC822DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE72DE5A2240077EE45 /* VocaiRandomStringGenerator.h */; };
-		3FD6EC832DE5A2240077EE45 /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* PDFDisplayView.h */; };
+		3FD6EC832DE5A2240077EE45 /* VocaiPDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* VocaiPDFDisplayView.h */; };
 		3FD6EC842DE5A2240077EE45 /* VocaiApiTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDB2DE5A2240077EE45 /* VocaiApiTool.h */; };
 		3FD6EC852DE5A2240077EE45 /* VocaiRandomStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE82DE5A2240077EE45 /* VocaiRandomStringGenerator.m */; };
 		3FD6EC862DE5A2240077EE45 /* VocaiImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDE2DE5A2240077EE45 /* VocaiImageUploader.m */; };
@@ -211,10 +211,10 @@
 		3FD6EC882DE5A2240077EE45 /* ChatWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBED2DE5A2240077EE45 /* ChatWebViewController.m */; };
 		3FD6EC892DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */; };
 		3FD6EC8A2DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE22DE5A2240077EE45 /* VocaiMessageCenter.m */; };
-		3FD6EC8B2DE5A2240077EE45 /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */; };
+		3FD6EC8B2DE5A2240077EE45 /* VocaiPDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* VocaiPDFDisplayView.m */; };
 		3FD6EC8C2DE5A2240077EE45 /* VocaiApiTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDC2DE5A2240077EE45 /* VocaiApiTool.m */; };
 		3FD6EC8D2DE5A2240077EE45 /* VocaiAVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEB2DE5A2240077EE45 /* VocaiAVCaptureViewController.m */; };
-		3FD6EC8E2DE5A2240077EE45 /* CustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* CustomOptionsView.m */; };
+		3FD6EC8E2DE5A2240077EE45 /* VocaiCustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* VocaiCustomOptionsView.m */; };
 		3FD6EC8F2DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE02DE5A2240077EE45 /* VocaiLanguageTool.m */; };
 		3FD6EC902DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE62DE5A2240077EE45 /* VocaiPollingRequestTool.m */; };
 		3FD6EC912DE5A2240077EE45 /* VocaiRandomStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE82DE5A2240077EE45 /* VocaiRandomStringGenerator.m */; };
@@ -223,23 +223,23 @@
 		3FD6EC942DE5A2240077EE45 /* ChatWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBED2DE5A2240077EE45 /* ChatWebViewController.m */; };
 		3FD6EC952DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */; };
 		3FD6EC962DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE22DE5A2240077EE45 /* VocaiMessageCenter.m */; };
-		3FD6EC972DE5A2240077EE45 /* PDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */; };
+		3FD6EC972DE5A2240077EE45 /* VocaiPDFDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBF12DE5A2240077EE45 /* VocaiPDFDisplayView.m */; };
 		3FD6EC982DE5A2240077EE45 /* VocaiApiTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBDC2DE5A2240077EE45 /* VocaiApiTool.m */; };
 		3FD6EC992DE5A2240077EE45 /* VocaiAVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEB2DE5A2240077EE45 /* VocaiAVCaptureViewController.m */; };
-		3FD6EC9A2DE5A2240077EE45 /* CustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* CustomOptionsView.m */; };
+		3FD6EC9A2DE5A2240077EE45 /* VocaiCustomOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBEF2DE5A2240077EE45 /* VocaiCustomOptionsView.m */; };
 		3FD6EC9B2DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE02DE5A2240077EE45 /* VocaiLanguageTool.m */; };
 		3FD6EC9C2DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6EBE62DE5A2240077EE45 /* VocaiPollingRequestTool.m */; };
 		3FD6EC9D2DE5A2240077EE45 /* VocaiNetworkTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE32DE5A2240077EE45 /* VocaiNetworkTool.h */; };
 		3FD6EC9E2DE5A2240077EE45 /* VocaiMessageCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE12DE5A2240077EE45 /* VocaiMessageCenter.h */; };
 		3FD6EC9F2DE5A2240077EE45 /* VocaiImageUploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDD2DE5A2240077EE45 /* VocaiImageUploader.h */; };
 		3FD6ECA02DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE52DE5A2240077EE45 /* VocaiPollingRequestTool.h */; };
-		3FD6ECA12DE5A2240077EE45 /* CustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* CustomOptionsView.h */; };
+		3FD6ECA12DE5A2240077EE45 /* VocaiCustomOptionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEE2DE5A2240077EE45 /* VocaiCustomOptionsView.h */; };
 		3FD6ECA22DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF22DE5A2240077EE45 /* VocaiSdkBuilder.h */; };
 		3FD6ECA32DE5A2240077EE45 /* VocaiAVCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEA2DE5A2240077EE45 /* VocaiAVCaptureViewController.h */; };
 		3FD6ECA42DE5A2240077EE45 /* ChatWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBEC2DE5A2240077EE45 /* ChatWebViewController.h */; };
 		3FD6ECA52DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDF2DE5A2240077EE45 /* VocaiLanguageTool.h */; };
 		3FD6ECA62DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBE72DE5A2240077EE45 /* VocaiRandomStringGenerator.h */; };
-		3FD6ECA72DE5A2240077EE45 /* PDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* PDFDisplayView.h */; };
+		3FD6ECA72DE5A2240077EE45 /* VocaiPDFDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBF02DE5A2240077EE45 /* VocaiPDFDisplayView.h */; };
 		3FD6ECA82DE5A2240077EE45 /* VocaiApiTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD6EBDB2DE5A2240077EE45 /* VocaiApiTool.h */; };
 		3FF280C82DE5E04700258FCB /* VocaiLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FF280C72DE5E04300258FCB /* VocaiLogger.h */; };
 		3FF280C92DE5E04700258FCB /* VocaiLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FF280C72DE5E04300258FCB /* VocaiLogger.h */; };
@@ -525,10 +525,10 @@
 		3FD6EBEB2DE5A2240077EE45 /* VocaiAVCaptureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VocaiAVCaptureViewController.m; sourceTree = "<group>"; };
 		3FD6EBEC2DE5A2240077EE45 /* ChatWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatWebViewController.h; sourceTree = "<group>"; };
 		3FD6EBED2DE5A2240077EE45 /* ChatWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatWebViewController.m; sourceTree = "<group>"; };
-		3FD6EBEE2DE5A2240077EE45 /* CustomOptionsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomOptionsView.h; sourceTree = "<group>"; };
-		3FD6EBEF2DE5A2240077EE45 /* CustomOptionsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomOptionsView.m; sourceTree = "<group>"; };
-		3FD6EBF02DE5A2240077EE45 /* PDFDisplayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFDisplayView.h; sourceTree = "<group>"; };
-		3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFDisplayView.m; sourceTree = "<group>"; };
+		3FD6EBEE2DE5A2240077EE45 /* VocaiCustomOptionsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VocaiCustomOptionsView.h; sourceTree = "<group>"; };
+		3FD6EBEF2DE5A2240077EE45 /* VocaiCustomOptionsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VocaiCustomOptionsView.m; sourceTree = "<group>"; };
+		3FD6EBF02DE5A2240077EE45 /* VocaiPDFDisplayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VocaiPDFDisplayView.h; sourceTree = "<group>"; };
+		3FD6EBF12DE5A2240077EE45 /* VocaiPDFDisplayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VocaiPDFDisplayView.m; sourceTree = "<group>"; };
 		3FD6EBF22DE5A2240077EE45 /* VocaiSdkBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VocaiSdkBuilder.h; sourceTree = "<group>"; };
 		3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VocaiSdkBuilder.m; sourceTree = "<group>"; };
 		3FF280C72DE5E04300258FCB /* VocaiLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VocaiLogger.h; sourceTree = "<group>"; };
@@ -889,10 +889,10 @@
 				3FD6EBEB2DE5A2240077EE45 /* VocaiAVCaptureViewController.m */,
 				3FD6EBEC2DE5A2240077EE45 /* ChatWebViewController.h */,
 				3FD6EBED2DE5A2240077EE45 /* ChatWebViewController.m */,
-				3FD6EBEE2DE5A2240077EE45 /* CustomOptionsView.h */,
-				3FD6EBEF2DE5A2240077EE45 /* CustomOptionsView.m */,
-				3FD6EBF02DE5A2240077EE45 /* PDFDisplayView.h */,
-				3FD6EBF12DE5A2240077EE45 /* PDFDisplayView.m */,
+				3FD6EBEE2DE5A2240077EE45 /* VocaiCustomOptionsView.h */,
+				3FD6EBEF2DE5A2240077EE45 /* VocaiCustomOptionsView.m */,
+				3FD6EBF02DE5A2240077EE45 /* VocaiPDFDisplayView.h */,
+				3FD6EBF12DE5A2240077EE45 /* VocaiPDFDisplayView.m */,
 				3FD6EBF22DE5A2240077EE45 /* VocaiSdkBuilder.h */,
 				3FD6EBF32DE5A2240077EE45 /* VocaiSdkBuilder.m */,
 			);
@@ -1235,13 +1235,13 @@
 				3FD6EC7A2DE5A2240077EE45 /* VocaiMessageCenter.h in Headers */,
 				3FD6EC7B2DE5A2240077EE45 /* VocaiImageUploader.h in Headers */,
 				3FD6EC7C2DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */,
-				3FD6EC7D2DE5A2240077EE45 /* CustomOptionsView.h in Headers */,
+				3FD6EC7D2DE5A2240077EE45 /* VocaiCustomOptionsView.h in Headers */,
 				3FD6EC7E2DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
 				3FD6EC7F2DE5A2240077EE45 /* VocaiAVCaptureViewController.h in Headers */,
 				3FD6EC802DE5A2240077EE45 /* ChatWebViewController.h in Headers */,
 				3FD6EC812DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */,
 				3FD6EC822DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */,
-				3FD6EC832DE5A2240077EE45 /* PDFDisplayView.h in Headers */,
+				3FD6EC832DE5A2240077EE45 /* VocaiPDFDisplayView.h in Headers */,
 				3FD6EC842DE5A2240077EE45 /* VocaiApiTool.h in Headers */,
 				26624BFAD48BCCFB28241872DBD12B70 /* EXPMatchers+match.h in Headers */,
 				273B99CB582E0EB46D675A2A90D72E3E /* EXPMatchers+postNotification.h in Headers */,
@@ -1264,13 +1264,13 @@
 				3FD6EC262DE5A2240077EE45 /* VocaiMessageCenter.h in Headers */,
 				3FD6EC272DE5A2240077EE45 /* VocaiImageUploader.h in Headers */,
 				3FD6EC282DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */,
-				3FD6EC292DE5A2240077EE45 /* CustomOptionsView.h in Headers */,
+				3FD6EC292DE5A2240077EE45 /* VocaiCustomOptionsView.h in Headers */,
 				3FD6EC2A2DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
 				3FD6EC2B2DE5A2240077EE45 /* VocaiAVCaptureViewController.h in Headers */,
 				3FD6EC2C2DE5A2240077EE45 /* ChatWebViewController.h in Headers */,
 				3FD6EC2D2DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */,
 				3FD6EC2E2DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */,
-				3FD6EC2F2DE5A2240077EE45 /* PDFDisplayView.h in Headers */,
+				3FD6EC2F2DE5A2240077EE45 /* VocaiPDFDisplayView.h in Headers */,
 				3FD6EC302DE5A2240077EE45 /* VocaiApiTool.h in Headers */,
 				A070787F25B1FE1600AB6DD8226EA2DD /* Pods-VocLiveChatFramework_Example-umbrella.h in Headers */,
 			);
@@ -1291,7 +1291,7 @@
 				3FD6EC0E2DE5A2240077EE45 /* VocaiMessageCenter.h in Headers */,
 				3FD6EC0F2DE5A2240077EE45 /* VocaiImageUploader.h in Headers */,
 				3FD6EC102DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */,
-				3FD6EC112DE5A2240077EE45 /* CustomOptionsView.h in Headers */,
+				3FD6EC112DE5A2240077EE45 /* VocaiCustomOptionsView.h in Headers */,
 				3FD6EC122DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
 				3FD6EC132DE5A2240077EE45 /* VocaiAVCaptureViewController.h in Headers */,
 				3FD6EC142DE5A2240077EE45 /* ChatWebViewController.h in Headers */,
@@ -1299,7 +1299,7 @@
 				3FD6EC152DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */,
 				3FC2192C2DF19D420029EEFC /* VocaiJSBridge.h in Headers */,
 				3FD6EC162DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */,
-				3FD6EC172DE5A2240077EE45 /* PDFDisplayView.h in Headers */,
+				3FD6EC172DE5A2240077EE45 /* VocaiPDFDisplayView.h in Headers */,
 				3FD6EC182DE5A2240077EE45 /* VocaiApiTool.h in Headers */,
 				409B8F0B99F08EB0D4E1E6B7962279BE /* UIImage+Snapshot.h in Headers */,
 			);
@@ -1315,13 +1315,13 @@
 				3FD6EC622DE5A2240077EE45 /* VocaiMessageCenter.h in Headers */,
 				3FD6EC632DE5A2240077EE45 /* VocaiImageUploader.h in Headers */,
 				3FD6EC642DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */,
-				3FD6EC652DE5A2240077EE45 /* CustomOptionsView.h in Headers */,
+				3FD6EC652DE5A2240077EE45 /* VocaiCustomOptionsView.h in Headers */,
 				3FD6EC662DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
 				3FD6EC672DE5A2240077EE45 /* VocaiAVCaptureViewController.h in Headers */,
 				3FD6EC682DE5A2240077EE45 /* ChatWebViewController.h in Headers */,
 				3FD6EC692DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */,
 				3FD6EC6A2DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */,
-				3FD6EC6B2DE5A2240077EE45 /* PDFDisplayView.h in Headers */,
+				3FD6EC6B2DE5A2240077EE45 /* VocaiPDFDisplayView.h in Headers */,
 				3FD6EC6C2DE5A2240077EE45 /* VocaiApiTool.h in Headers */,
 				F286B17F56DF04571F7AFFA3EC1CABA7 /* Pods-VocLiveChatFramework_Tests-umbrella.h in Headers */,
 			);
@@ -1338,13 +1338,13 @@
 				3FD6EC4B2DE5A2240077EE45 /* VocaiImageUploader.h in Headers */,
 				3FF280C92DE5E04700258FCB /* VocaiLogger.h in Headers */,
 				3FD6EC4C2DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */,
-				3FD6EC4D2DE5A2240077EE45 /* CustomOptionsView.h in Headers */,
+				3FD6EC4D2DE5A2240077EE45 /* VocaiCustomOptionsView.h in Headers */,
 				3FD6EC4E2DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
 				3FD6EC4F2DE5A2240077EE45 /* VocaiAVCaptureViewController.h in Headers */,
 				3FD6EC502DE5A2240077EE45 /* ChatWebViewController.h in Headers */,
 				3FD6EC512DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */,
 				3FD6EC522DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */,
-				3FD6EC532DE5A2240077EE45 /* PDFDisplayView.h in Headers */,
+				3FD6EC532DE5A2240077EE45 /* VocaiPDFDisplayView.h in Headers */,
 				3FC2192D2DF19D420029EEFC /* VocaiJSBridge.h in Headers */,
 				3FD6EC542DE5A2240077EE45 /* VocaiApiTool.h in Headers */,
 				0A58DB87B4A15B7D61EB5B42CAC9BDA4 /* EXPMatchers+FBSnapshotTest.h in Headers */,
@@ -1367,12 +1367,12 @@
 				3FD6EC332DE5A2240077EE45 /* VocaiImageUploader.h in Headers */,
 				3FC219302DF19D420029EEFC /* VocaiJSBridge.h in Headers */,
 				3FD6EC342DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */,
-				3FD6EC352DE5A2240077EE45 /* CustomOptionsView.h in Headers */,
+				3FD6EC352DE5A2240077EE45 /* VocaiCustomOptionsView.h in Headers */,
 				3FD6EC372DE5A2240077EE45 /* VocaiAVCaptureViewController.h in Headers */,
 				3FD6EC392DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */,
 				3FD6EC3A2DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */,
 				3FF280CB2DE5E04700258FCB /* VocaiLogger.h in Headers */,
-				3FD6EC3B2DE5A2240077EE45 /* PDFDisplayView.h in Headers */,
+				3FD6EC3B2DE5A2240077EE45 /* VocaiPDFDisplayView.h in Headers */,
 				3FD6EC3C2DE5A2240077EE45 /* VocaiApiTool.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1388,13 +1388,13 @@
 				3FD6EC9F2DE5A2240077EE45 /* VocaiImageUploader.h in Headers */,
 				3FF280CA2DE5E04700258FCB /* VocaiLogger.h in Headers */,
 				3FD6ECA02DE5A2240077EE45 /* VocaiPollingRequestTool.h in Headers */,
-				3FD6ECA12DE5A2240077EE45 /* CustomOptionsView.h in Headers */,
+				3FD6ECA12DE5A2240077EE45 /* VocaiCustomOptionsView.h in Headers */,
 				3FD6ECA22DE5A2240077EE45 /* VocaiSdkBuilder.h in Headers */,
 				3FD6ECA32DE5A2240077EE45 /* VocaiAVCaptureViewController.h in Headers */,
 				3FD6ECA42DE5A2240077EE45 /* ChatWebViewController.h in Headers */,
 				3FD6ECA52DE5A2240077EE45 /* VocaiLanguageTool.h in Headers */,
 				3FD6ECA62DE5A2240077EE45 /* VocaiRandomStringGenerator.h in Headers */,
-				3FD6ECA72DE5A2240077EE45 /* PDFDisplayView.h in Headers */,
+				3FD6ECA72DE5A2240077EE45 /* VocaiPDFDisplayView.h in Headers */,
 				3FD6ECA82DE5A2240077EE45 /* VocaiApiTool.h in Headers */,
 				3FC2192B2DF19D420029EEFC /* VocaiJSBridge.h in Headers */,
 				DD58BB38D980B2B476BFB99DAD0013ED /* SpectaDSL.h in Headers */,
@@ -1678,10 +1678,10 @@
 				3FD6EC942DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
 				3FD6EC952DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
 				3FD6EC962DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */,
-				3FD6EC972DE5A2240077EE45 /* PDFDisplayView.m in Sources */,
+				3FD6EC972DE5A2240077EE45 /* VocaiPDFDisplayView.m in Sources */,
 				3FD6EC982DE5A2240077EE45 /* VocaiApiTool.m in Sources */,
 				3FD6EC992DE5A2240077EE45 /* VocaiAVCaptureViewController.m in Sources */,
-				3FD6EC9A2DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
+				3FD6EC9A2DE5A2240077EE45 /* VocaiCustomOptionsView.m in Sources */,
 				3FD6EC9B2DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */,
 				3FD6EC9C2DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */,
 				E66C952D75345928AAEB0A66BE6FC5D7 /* SpectaUtility.m in Sources */,
@@ -1711,10 +1711,10 @@
 				3FC219362DF19D490029EEFC /* VocaiJSBridge.m in Sources */,
 				3FD6EBF92DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
 				3FD6EBFA2DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */,
-				3FD6EBFB2DE5A2240077EE45 /* PDFDisplayView.m in Sources */,
+				3FD6EBFB2DE5A2240077EE45 /* VocaiPDFDisplayView.m in Sources */,
 				3FD6EBFC2DE5A2240077EE45 /* VocaiApiTool.m in Sources */,
 				3FD6EBFD2DE5A2240077EE45 /* VocaiAVCaptureViewController.m in Sources */,
-				3FD6EBFE2DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
+				3FD6EBFE2DE5A2240077EE45 /* VocaiCustomOptionsView.m in Sources */,
 				3FD6EBFF2DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */,
 				3FD6EC002DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */,
 				3FF280D22DE5E04E00258FCB /* VocaiLogger.m in Sources */,
@@ -1739,10 +1739,10 @@
 				3FF280D02DE5E04E00258FCB /* VocaiLogger.m in Sources */,
 				3FD6EC052DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
 				3FD6EC062DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */,
-				3FD6EC072DE5A2240077EE45 /* PDFDisplayView.m in Sources */,
+				3FD6EC072DE5A2240077EE45 /* VocaiPDFDisplayView.m in Sources */,
 				3FD6EC082DE5A2240077EE45 /* VocaiApiTool.m in Sources */,
 				3FD6EC092DE5A2240077EE45 /* VocaiAVCaptureViewController.m in Sources */,
-				3FD6EC0A2DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
+				3FD6EC0A2DE5A2240077EE45 /* VocaiCustomOptionsView.m in Sources */,
 				3FD6EC0B2DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */,
 				3FD6EC0C2DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */,
 				64C5F389DE0FC7369E95217494EB561F /* UIImage+Compare.m in Sources */,
@@ -1763,11 +1763,11 @@
 				3FD6EC582DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
 				3FD6EC592DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
 				3FD6EC5A2DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */,
-				3FD6EC5B2DE5A2240077EE45 /* PDFDisplayView.m in Sources */,
+				3FD6EC5B2DE5A2240077EE45 /* VocaiPDFDisplayView.m in Sources */,
 				3FD6EC5C2DE5A2240077EE45 /* VocaiApiTool.m in Sources */,
 				3FF280D52DE5E04E00258FCB /* VocaiLogger.m in Sources */,
 				3FD6EC5D2DE5A2240077EE45 /* VocaiAVCaptureViewController.m in Sources */,
-				3FD6EC5E2DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
+				3FD6EC5E2DE5A2240077EE45 /* VocaiCustomOptionsView.m in Sources */,
 				3FC2193A2DF19D490029EEFC /* VocaiJSBridge.m in Sources */,
 				3FD6EC5F2DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */,
 				3FD6EC602DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */,
@@ -1787,10 +1787,10 @@
 				3FD6EC1C2DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
 				3FD6EC1D2DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
 				3FD6EC1E2DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */,
-				3FD6EC1F2DE5A2240077EE45 /* PDFDisplayView.m in Sources */,
+				3FD6EC1F2DE5A2240077EE45 /* VocaiPDFDisplayView.m in Sources */,
 				3FD6EC202DE5A2240077EE45 /* VocaiApiTool.m in Sources */,
 				3FD6EC212DE5A2240077EE45 /* VocaiAVCaptureViewController.m in Sources */,
-				3FD6EC222DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
+				3FD6EC222DE5A2240077EE45 /* VocaiCustomOptionsView.m in Sources */,
 				3FD6EC232DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */,
 				3FD6EC242DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */,
 				715863D2142BBE7E82A921288FA959D4 /* Pods-VocLiveChatFramework_Example-dummy.m in Sources */,
@@ -1809,10 +1809,10 @@
 				3FD6EC702DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
 				3FD6EC712DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
 				3FD6EC722DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */,
-				3FD6EC732DE5A2240077EE45 /* PDFDisplayView.m in Sources */,
+				3FD6EC732DE5A2240077EE45 /* VocaiPDFDisplayView.m in Sources */,
 				3FD6EC742DE5A2240077EE45 /* VocaiApiTool.m in Sources */,
 				3FD6EC752DE5A2240077EE45 /* VocaiAVCaptureViewController.m in Sources */,
-				3FD6EC762DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
+				3FD6EC762DE5A2240077EE45 /* VocaiCustomOptionsView.m in Sources */,
 				3FD6EC772DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */,
 				3FD6EC782DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */,
 				7E7AE86AB508898840C07045A10D86AD /* Pods-VocLiveChatFramework_Tests-dummy.m in Sources */,
@@ -1831,10 +1831,10 @@
 				3FD6EC402DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
 				3FD6EC412DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
 				3FD6EC422DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */,
-				3FD6EC432DE5A2240077EE45 /* PDFDisplayView.m in Sources */,
+				3FD6EC432DE5A2240077EE45 /* VocaiPDFDisplayView.m in Sources */,
 				3FD6EC442DE5A2240077EE45 /* VocaiApiTool.m in Sources */,
 				3FD6EC452DE5A2240077EE45 /* VocaiAVCaptureViewController.m in Sources */,
-				3FD6EC462DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
+				3FD6EC462DE5A2240077EE45 /* VocaiCustomOptionsView.m in Sources */,
 				3FF280D62DE5E04E00258FCB /* VocaiLogger.m in Sources */,
 				3FD6EC472DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */,
 				3FD6EC482DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */,
@@ -1882,10 +1882,10 @@
 				3FD6EC882DE5A2240077EE45 /* ChatWebViewController.m in Sources */,
 				3FD6EC892DE5A2240077EE45 /* VocaiSdkBuilder.m in Sources */,
 				3FD6EC8A2DE5A2240077EE45 /* VocaiMessageCenter.m in Sources */,
-				3FD6EC8B2DE5A2240077EE45 /* PDFDisplayView.m in Sources */,
+				3FD6EC8B2DE5A2240077EE45 /* VocaiPDFDisplayView.m in Sources */,
 				3FD6EC8C2DE5A2240077EE45 /* VocaiApiTool.m in Sources */,
 				3FD6EC8D2DE5A2240077EE45 /* VocaiAVCaptureViewController.m in Sources */,
-				3FD6EC8E2DE5A2240077EE45 /* CustomOptionsView.m in Sources */,
+				3FD6EC8E2DE5A2240077EE45 /* VocaiCustomOptionsView.m in Sources */,
 				3FD6EC8F2DE5A2240077EE45 /* VocaiLanguageTool.m in Sources */,
 				3FD6EC902DE5A2240077EE45 /* VocaiPollingRequestTool.m in Sources */,
 				86443C8A32ADB769B8985FBD68F4B99C /* EXPMatchers+equal.m in Sources */,

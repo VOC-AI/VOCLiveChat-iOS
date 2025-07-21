@@ -1,13 +1,14 @@
 //
-//  PDFDisplayView.m
+//  VocaiPDFDisplayView.m
 //  abc
 //
 //  Created by 刘志康 on 2025/3/5.
 //
 
-#import "PDFDisplayView.h"
+#import "VocaiPDFDisplayView.h"
 
-@interface PDFDisplayView () <NSURLSessionDataDelegate>
+API_AVAILABLE(ios(11.0))
+@interface VocaiPDFDisplayView () <NSURLSessionDataDelegate>
 
 @property (nonatomic, strong) PDFView *pdfView;
 @property (nonatomic, strong) NSURL *pdfURL;
@@ -17,7 +18,7 @@
 
 @end
 
-@implementation PDFDisplayView
+@implementation VocaiPDFDisplayView
 
 - (instancetype)initWithFrame:(CGRect)frame pdfURL:(NSURL *)pdfURL {
     self = [super initWithFrame:frame];
@@ -33,9 +34,11 @@
 }
 
 - (void)setupPDFView {
-    self.pdfView = [[PDFView alloc] initWithFrame:self.bounds];
-    self.pdfView.autoScales = YES;
-    [self addSubview:self.pdfView];
+    if (@available(iOS 11.0, *)) {
+        self.pdfView = [[PDFView alloc] initWithFrame:self.bounds];
+        self.pdfView.autoScales = YES;
+        [self addSubview:self.pdfView];
+    }
 }
 
 - (void)setupCloseButton {
@@ -48,9 +51,11 @@
 }
 
 - (void)setupActivityIndicator {
-    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleLarge];
-    self.activityIndicator.center = self.center;
-    [self addSubview:self.activityIndicator];
+    if (@available(iOS 13.0, *)) {
+        self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleLarge];
+        self.activityIndicator.center = self.center;
+        [self addSubview:self.activityIndicator];
+    }
 }
 
 - (void)startDownload {
@@ -81,11 +86,13 @@
     if (error) {
         NSLog(@"Download PDF error: %@", error.localizedDescription);
     } else {
-        PDFDocument *pdfDocument = [[PDFDocument alloc] initWithData:self.downloadedData];
-        if (pdfDocument) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.pdfView.document = pdfDocument;
-            });
+        if (@available(iOS 11.0, *)) {
+            PDFDocument *pdfDocument = [[PDFDocument alloc] initWithData:self.downloadedData];
+            if (pdfDocument) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.pdfView.document = pdfDocument;
+                });
+            }
         }
     }
 }
