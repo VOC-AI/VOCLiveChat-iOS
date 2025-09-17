@@ -87,6 +87,19 @@
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
+
+- (IBAction)presentViewController:(id)sender {
+    VocaiSdkBuilder *builder = VocaiSdkBuilder.sharedInstance;
+    self.model.showBackButton = YES;
+    ChatWebViewController *viewController = [builder buildSdkWithParams: self.model];
+    viewController.viewDelegate = self;
+    viewController.title = @"Support Center";
+    [self.navigationController presentViewController:viewController animated:YES completion:^{
+        
+    }];
+}
+
+
 - (IBAction)logoutAndClearChats:(id)sender {
     VocaiChatModel* model = [self createModel];
     [VocaiSdkBuilder.sharedInstance clearChatsForModel:model];

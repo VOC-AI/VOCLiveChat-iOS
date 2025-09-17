@@ -578,7 +578,8 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
             
             if ([callBackModel.type isEqualToString: @"Livechat_Input_File"]) {
                 [self showPickView];
-            } else if([callBackModel.type isEqualToString:@"Livechat_Close"]) {
+            } else if([callBackModel.type isEqualToString:@"Livechat_Close"] ||
+                      [callBackModel.type isEqualToString:@"LiveChat_Close"]) {
                 // try to close viewcontroller
                 [self closeCurrentViewController];
             } else if ([callBackModel.type isEqualToString: @"Livechat_Click_File"]) {
