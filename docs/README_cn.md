@@ -130,7 +130,7 @@ viewController.viewDelegate = self;
 2. 包拉不到怎么办？改下 Podfile 里的引用方式
 
 ```ruby
-pod 'VocLiveChatFramework', :git => 'git@github.com:VOC-AI/VOCLiveChat-iOS.git', :tag => '1.5.9'
+pod 'VocLiveChatFramework', :git => 'git@github.com:VOC-AI/VOCLiveChat-iOS.git', :tag => '1.6.3'
 ```
 
 
@@ -145,3 +145,8 @@ pod 'VocLiveChatFramework', :git => 'git@github.com:VOC-AI/VOCLiveChat-iOS.git',
 4. LiveChat 功能异常怎么解决？
 
 botId 和 botToken 的传入应该取决于 [后台配置](https://apps.voc.ai/chatbot)
+
+5. 关于返回按钮如何实现
+
+- 首先是否有返回按钮取决于您是否使用 UINavigationController, 如果使用的话，表现效果会和您实现的 NavigationBar 的效果一直。
+- 如果客服会话页面是被 presentViewController 打开的，您可以在初始化 `ChatViewController` 时，在参数里添加 `showBackButton = YES`参数，使用 VOCAI 自带的返回按钮

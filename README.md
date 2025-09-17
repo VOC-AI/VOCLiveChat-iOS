@@ -146,3 +146,8 @@ pod 'VocLiveChatFramework', :git => 'git@github.com:VOC-AI/VOCLiveChat-iOS.git',
 
 4. **LiveChat Functionality Issues**:
    Ensure `botId` and `botToken` are correctly configured according to [backend settings](https://apps.voc.ai/chatbot).
+
+5. How to implement the back button
+
+Whether there is a back button depends on whether you are using `UINavigationController` . If you are, the behavior will be consistent with your implementation of the NavigationBar.
+If the customer service chat page is opened using `presentViewController`, you can add the parameter `showBackButton = YES` when initializing `ChatViewController` to use VOCAI's built-in back button.
