@@ -220,6 +220,7 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang) {
         copy.otherParams = [self.otherParams copyWithZone:zone];
         copy.uploadFileTypes = [self.uploadFileTypes copyWithZone:zone];
         copy.userId = [self.userId copyWithZone:zone];
+        copy.showBackButton = self.showBackButton;
     }
     return copy;
 }

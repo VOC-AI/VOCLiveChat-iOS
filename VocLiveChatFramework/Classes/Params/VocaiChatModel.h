@@ -72,6 +72,7 @@ NSString *NSStringFromVOCLiveChatSystemLang(VOCLiveChatSystemLang lang);
 @property (nonatomic, assign) VOCLiveChatEnv env;
 @property (nonatomic, copy, nullable) NSString *userId;
 @property (nonatomic, assign) BOOL enableLog;
+@property (nonatomic, assign) BOOL showBackButton;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -92,6 +92,10 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
                            [self encodeURIComponent: self.email],
                            [self encodeURIComponent: self.vocaiChatParams.userId]
     ];
+    // display back button
+    if (self.vocaiChatParams.showBackButton) {
+        urlString = [NSString stringWithFormat:@"%@back_btn=true", urlString];
+    }
     [self.logger log:@"URL: %@", urlString];
     NSString *componentUrlString = [urlString stringByAppendingString: [self dictionaryToQueryString:self.vocaiChatParams.otherParams]];
     NSURL *url = [NSURL URLWithString: componentUrlString];
