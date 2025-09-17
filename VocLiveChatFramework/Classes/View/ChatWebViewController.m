@@ -537,6 +537,32 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
 
 /// MARK: WkWebView 协议
 
+- (void)closeCurrentViewController {
+    // Check if current view controller was presented modally
+    if (self.presentingViewController) {
+        // Dismiss if presented modally
+        // This method is compatible with iOS 10 and later
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    }
+    // Check if current view controller is in a navigation stack
+    else if (self.navigationController) {
+        NSArray *viewControllers = self.navigationController.viewControllers;
+        // Verify current VC is part of the navigation controller's stack
+        if ([viewControllers containsObject:self]) {
+            // Pop if it's a pushed view controller in navigation stack
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            // Special case: current VC is the navigation controller itself
+            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        }
+    }
+    // Fallback: attempt to dismiss directly for other presentation scenarios
+    else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
+
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
     if ([message.name isEqualToString:@"VOCLivechatMessageHandler"]) {
         // 获取前端传递过来的数据
@@ -548,9 +574,10 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
             
             if ([callBackModel.type isEqualToString: @"Livechat_Input_File"]) {
                 [self showPickView];
-            }
-                        
-            if ([callBackModel.type isEqualToString: @"Livechat_Click_File"]) {
+            } else if([callBackModel.type isEqualToString:@"Livechat_Close"]) {
+                // try to close viewcontroller
+                [self closeCurrentViewController];
+            } else if ([callBackModel.type isEqualToString: @"Livechat_Click_File"]) {
                 NSString* link = callBackModel.data.url;
                 @try {
                     NSURL *url = [NSURL URLWithString:link];
