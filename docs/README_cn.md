@@ -9,7 +9,7 @@
 platform :ios, '10.0'
 inhibit_all_warnings!
 target 'testProject' do
-  pod 'VocLiveChatFramework', '1.5.9'
+  pod 'VocLiveChatFramework', '1.7.0'
 end
 ```
 
@@ -130,7 +130,7 @@ viewController.viewDelegate = self;
 2. 包拉不到怎么办？改下 Podfile 里的引用方式
 
 ```ruby
-pod 'VocLiveChatFramework', :git => 'git@github.com:VOC-AI/VOCLiveChat-iOS.git', :tag => '1.6.3'
+pod 'VocLiveChatFramework', :git => 'git@github.com:VOC-AI/VOCLiveChat-iOS.git', :tag => '1.7.0'
 ```
 
 

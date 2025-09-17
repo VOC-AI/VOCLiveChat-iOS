@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4ag-gm-X3P">
-                                <rect key="frame" x="20" y="154" width="335" height="238.5"/>
+                                <rect key="frame" x="20" y="154" width="335" height="293"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8K-CC-kWJ">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="34.5"/>
@@ -72,6 +72,14 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Present View Controller"/>
                                         <connections>
                                             <action selector="presentViewController:" destination="U7M-K6-eZ6" eventType="touchUpInside" id="zCp-HB-WSJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsz-ZQ-kKi">
+                                        <rect key="frame" x="0.0" y="258.5" width="335" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Push View Controller"/>
+                                        <connections>
+                                            <action selector="pushViewController:" destination="U7M-K6-eZ6" eventType="touchUpInside" id="T3y-LM-xbp"/>
                                         </connections>
                                     </button>
                                 </subviews>
