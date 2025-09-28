@@ -81,6 +81,7 @@
 - (IBAction)popLoginWithUserID:(id)sender {
     VocaiSdkBuilder *builder = VocaiSdkBuilder.sharedInstance;
     self.model.userId = @"Some userId in your system";
+    self.model.otherParams = @{@"Test": @"abc"};
     ChatWebViewController *viewController = [builder buildSdkWithParams: self.model];
     viewController.viewDelegate = self;
     viewController.title = @"Support Center";
@@ -91,6 +92,8 @@
 - (IBAction)presentViewController:(id)sender {
     VocaiSdkBuilder *builder = VocaiSdkBuilder.sharedInstance;
     self.model.showBackButton = YES;
+    self.model.otherParams = @{@"Test": @"abc"};
+    self.model.enableLog = YES;
     ChatWebViewController *viewController = [builder buildSdkWithParams: self.model];
     viewController.viewDelegate = self;
     viewController.title = @"Support Center";
@@ -102,6 +105,7 @@
 - (IBAction)pushViewController:(id)sender {
     VocaiSdkBuilder *builder = VocaiSdkBuilder.sharedInstance;
     self.model.showBackButton = YES;
+    self.model.otherParams = @{@"Test": @"abc"};
     ChatWebViewController *viewController = [builder buildSdkWithParams: self.model];
     viewController.viewDelegate = self;
     viewController.title = @"Support Center";
