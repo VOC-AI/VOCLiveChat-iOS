@@ -94,7 +94,7 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
     ];
     // display back button
     if (self.vocaiChatParams.showBackButton) {
-        urlString = [NSString stringWithFormat:@"%@back_btn=true", urlString];
+        urlString = [NSString stringWithFormat:@"%@back_btn=true&", urlString];
     }
     [self.logger log:@"URL: %@", urlString];
     NSString *componentUrlString = [urlString stringByAppendingString: [self dictionaryToQueryString:self.vocaiChatParams.otherParams]];
