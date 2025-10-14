@@ -104,10 +104,12 @@ viewController.viewDelegate = self;
 ```
 
 ```objective-c
+// 控制是否要打开
 - (BOOL) voaiShouldOpenURL:(NSURL*) url {
     return YES;
 }
 
+// 控制如何打开链接
 - (void) voaiNeedToOpenURLAction:(NSURL*) url {
     NSLog(@"Opening URL:\n%@", url);
     [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL status){
