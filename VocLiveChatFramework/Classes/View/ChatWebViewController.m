@@ -661,16 +661,46 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
 - (void)uploadFile: (NSData *) fileData fileName:(NSString *)fileName uploadFiledType: (UploadFileType) uploadFileType {
     self.uploadFileType = uploadFileType;
     NSString *fileType = @"";
+    // derive extension once (may be empty)
+    NSString *extension = [[fileName pathExtension] lowercaseString];
     switch (uploadFileType) {
         case UploadFileTypePic:
             fileType = @"image/jpeg";
             break;
         case UploadFileTypeFile:
-            fileType = @"application/pdf";
+            // determine common file MIME types
+            if ([extension isEqualToString:@"pdf"]) {
+                fileType = @"application/pdf";
+            } else if ([extension isEqualToString:@"zip"]) {
+                fileType = @"application/zip";
+            } else if ([extension isEqualToString:@"docx"]) {
+                fileType = @"application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+            } else if ([extension isEqualToString:@"doc"]) {
+                fileType = @"application/msword";
+            } else if ([extension isEqualToString:@"txt"]) {
+                fileType = @"text/plain";
+            } else {
+                fileType = @"application/octet-stream";
+            }
             break;
-        case UploadFileTypeVideo:
-            fileType = @"video/x-msvideo";
+        case UploadFileTypeVideo: {
+            // Determine MIME type from file extension. Use common video MIME types and fall back to octet-stream.
+            if ([extension isEqualToString:@"mp4"]) {
+                fileType = @"video/mp4";
+            } else if ([extension isEqualToString:@"mov"]) {
+                fileType = @"video/quicktime";
+            } else if ([extension isEqualToString:@"m4v"]) {
+                fileType = @"video/x-m4v";
+            } else if ([extension isEqualToString:@"avi"]) {
+                fileType = @"video/x-msvideo";
+            } else if ([extension isEqualToString:@"3gp"]) {
+                fileType = @"video/3gpp";
+            } else {
+                // Unknown extension; use generic binary stream
+                fileType = @"application/octet-stream";
+            }
             break;
+        }
         default:
             break;
     }
@@ -837,13 +867,100 @@ typedef NS_ENUM(NSInteger, UploadFileType) {
 
 // 本地视频URL转NSData
 - (NSData *)convertLocalVideoURLToData:(NSURL *)videoURL {
-    NSError *error;
-    NSData *videoData = [NSData dataWithContentsOfURL:videoURL options:NSDataReadingMappedIfSafe error:&error];
-    if (error) {
-        [self.logger log:@"Reading local video error: %@", error.localizedDescription];
+    if (!videoURL) return nil;
+
+    NSError *error = nil;
+    // Try direct file read first (handle security-scoped urls)
+    if (videoURL.isFileURL) {
+        BOOL accessed = NO;
+        if ([videoURL respondsToSelector:@selector(startAccessingSecurityScopedResource)]) {
+            accessed = [videoURL startAccessingSecurityScopedResource];
+        }
+        NSData *data = [NSData dataWithContentsOfURL:videoURL options:NSDataReadingMappedIfSafe error:&error];
+        if (data && data.length > 0) {
+            if (accessed) {
+                [videoURL stopAccessingSecurityScopedResource];
+            }
+            return data;
+        }
+
+        // If direct read failed (0 bytes) try coordinated read via NSFileCoordinator (works for file-provider/photospicker URLs)
+        NSFileCoordinator *coordinator = [[NSFileCoordinator alloc] initWithFilePresenter:nil];
+        __block BOOL copied = NO;
+        __block NSURL *copiedURL = nil;
+        NSError *coordError = nil;
+        [coordinator coordinateReadingItemAtURL:videoURL options:NSFileCoordinatorReadingWithoutChanges error:&coordError byAccessor:^(NSURL * _Nonnull newURL) {
+            NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"vocai_coordinated_%@.mp4", [[NSUUID UUID] UUIDString]]];
+            NSURL *tempURL = [NSURL fileURLWithPath:tempPath];
+            NSError *copyErr = nil;
+            // Use copyItemAtURL to get an accessible local copy
+            if ([[NSFileManager defaultManager] copyItemAtURL:newURL toURL:tempURL error:&copyErr]) {
+                copied = YES;
+                copiedURL = tempURL;
+            } else {
+                // try to move or create via dataWithContentsOfURL fallback
+                copied = NO;
+            }
+        }];
+
+        if (accessed) {
+            [videoURL stopAccessingSecurityScopedResource];
+        }
+
+        if (copied && copiedURL) {
+            NSData *copiedData = [NSData dataWithContentsOfURL:copiedURL options:NSDataReadingMappedIfSafe error:&error];
+            // cleanup
+            [[NSFileManager defaultManager] removeItemAtURL:copiedURL error:nil];
+            if (copiedData && copiedData.length > 0) {
+                return copiedData;
+            }
+        }
+        // If direct read failed or returned 0 bytes, fall through to export approach
+    }
+
+    // Fallback: use AVAssetExportSession to export the asset to a temporary MP4 file and read it.
+    AVURLAsset *asset = [AVURLAsset URLAssetWithURL:videoURL options:nil];
+    NSArray<NSString *> *presets = [AVAssetExportSession exportPresetsCompatibleWithAsset:asset];
+    NSString *preset = AVAssetExportPresetPassthrough;
+    if (![presets containsObject:preset]) {
+        if (presets.count > 0) preset = presets.firstObject;
+        else preset = AVAssetExportPresetHighestQuality;
+    }
+
+    NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"vocai_export_%@.mp4", [[NSUUID UUID] UUIDString]]];
+    NSURL *tempURL = [NSURL fileURLWithPath:tempPath];
+
+    AVAssetExportSession *exporter = [[AVAssetExportSession alloc] initWithAsset:asset presetName:preset];
+    exporter.outputURL = tempURL;
+    exporter.outputFileType = AVFileTypeMPEG4;
+    exporter.shouldOptimizeForNetworkUse = YES;
+
+    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    [exporter exportAsynchronouslyWithCompletionHandler:^{
+        dispatch_semaphore_signal(sema);
+    }];
+
+    // wait up to 30 seconds for export (avoid blocking forever)
+    dispatch_time_t timeout = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC));
+    if (dispatch_semaphore_wait(sema, timeout) != 0) {
+        [self.logger log:@"Video export timed out"];
         return nil;
     }
-    return videoData;
+
+    if (exporter.status == AVAssetExportSessionStatusCompleted) {
+        NSData *exportedData = [NSData dataWithContentsOfURL:tempURL options:NSDataReadingMappedIfSafe error:&error];
+        // cleanup temporary file
+        [[NSFileManager defaultManager] removeItemAtURL:tempURL error:nil];
+        if (exportedData && exportedData.length > 0) {
+            return exportedData;
+        } else {
+            [self.logger log:@"Exported video is empty or unreadable: %@", error.localizedDescription];
+            return nil;
+        }
+    } else {
+        [self.logger log:@"Video export failed: %@", exporter.error.localizedDescription];
+        return nil;
+    }
 }
 
 - (void)startPollingWithUrl:(NSURL *)url {
