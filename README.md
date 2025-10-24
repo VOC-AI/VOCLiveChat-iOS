@@ -10,7 +10,7 @@ Refer to the following configuration:
 platform :ios, '10.0'
 inhibit_all_warnings!
 target 'testProject' do
-  pod 'VocLiveChatFramework', '1.7.1'
+  pod 'VocLiveChatFramework', '1.7.2'
 end
 ```
 
@@ -134,7 +134,7 @@ viewController.viewDelegate = self;
    Modify the reference in your `Podfile`:
 
 ```ruby
-pod 'VocLiveChatFramework', :git => 'git@github.com:VOC-AI/VOCLiveChat-iOS.git', :tag => '1.7.1'
+pod 'VocLiveChatFramework', :git => 'git@github.com:VOC-AI/VOCLiveChat-iOS.git', :tag => '1.7.2'
 ```
 
 3. **Post-Installation Error**:
